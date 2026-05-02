@@ -1,0 +1,137 @@
+<?php
+require_once __DIR__ . '/config.php';
+
+try {
+    $pdo->exec("SET FOREIGN_KEY_CHECKS = 0");
+
+    $tables = [
+        "CREATE TABLE IF NOT EXISTS admins (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            email VARCHAR(255) NOT NULL UNIQUE,
+            password VARCHAR(255) NOT NULL,
+            name VARCHAR(255) NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci",
+
+        "CREATE TABLE IF NOT EXISTS categories (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            slug VARCHAR(255) NOT NULL UNIQUE,
+            label VARCHAR(255) NOT NULL,
+            icon VARCHAR(255) DEFAULT 'fa-solid fa-folder',
+            accent VARCHAR(7) DEFAULT '#C8A961',
+            description TEXT,
+            sort_order INT DEFAULT 0
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci",
+
+        "CREATE TABLE IF NOT EXISTS posts (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            slug VARCHAR(255) NOT NULL UNIQUE,
+            title VARCHAR(500) NOT NULL,
+            excerpt TEXT,
+            summary TEXT,
+            category_id INT NOT NULL,
+            iso_date DATE,
+            updated_date DATE,
+            reading_time INT DEFAULT 5,
+            views INT DEFAULT 0,
+            featured TINYINT(1) DEFAULT 0,
+            image VARCHAR(500),
+            image_alt VARCHAR(500),
+            author_name VARCHAR(255) DEFAULT 'Equipe Douro Mármores',
+            author_role VARCHAR(255) DEFAULT 'Curadoria técnica em pedras naturais e superfícies premium',
+            author_avatar VARCHAR(500),
+            social_proof TEXT,
+            tags TEXT,
+            palette VARCHAR(50) DEFAULT 'palette-default',
+            status VARCHAR(20) DEFAULT 'published',
+            sections JSON,
+            material JSON,
+            related_posts TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE RESTRICT
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci",
+
+        "CREATE TABLE IF NOT EXISTS settings (
+            setting_key VARCHAR(255) PRIMARY KEY,
+            setting_value TEXT
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"
+    ];
+
+    foreach ($tables as $sql) {
+        $pdo->exec($sql);
+    }
+
+    $pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
+
+    // Criar admin padrão
+    $adminCount = $pdo->query("SELECT COUNT(*) FROM admins")->fetchColumn();
+    if ($adminCount == 0) {
+        $stmt = $pdo->prepare("INSERT INTO admins (email, password, name) VALUES (?, ?, ?)");
+        $stmt->execute([
+            'admin@douromarmores.com.br',
+            password_hash('Douro@2026', PASSWORD_DEFAULT),
+            'Administrador Douro'
+        ]);
+    }
+
+    // Criar categorias padrão
+    $catCount = $pdo->query("SELECT COUNT(*) FROM categories")->fetchColumn();
+    if ($catCount == 0) {
+        $cats = [
+            ['marmores', 'Mármores', 'fa-regular fa-gem', '#C8A961', 'Materiais clássicos, nobres e atemporais para projetos sofisticados.'],
+            ['granitos', 'Granitos', 'fa-solid fa-mountain', '#11182A', 'Alta resistência, baixa manutenção e excelente custo-benefício.'],
+            ['quartzitos', 'Quartzitos', 'fa-solid fa-fire-flame-curved', '#4A7C59', 'Performance premium para cozinhas e áreas de uso intenso.'],
+            ['porcelanatos', 'Porcelanatos', 'fa-regular fa-square', '#8D6E63', 'Versatilidade visual para painéis, pisos e revestimentos.'],
+            ['tendencias', 'Tendências & Inspiração', 'fa-regular fa-star', '#9C7A3A', 'Referências de interiores, arquitetura e superfícies em alta.'],
+            ['manutencao', 'Dicas de Manutenção', 'fa-solid fa-sparkles', '#577590', 'Cuidados, limpeza e conservação para manter o material impecável.'],
+            ['projetos', 'Projetos Realizados', 'fa-solid fa-ruler-combined', '#A68B45', 'Aplicações reais com soluções sob medida para alto padrão.'],
+            ['guias', 'Guia de Materiais', 'fa-regular fa-folder-open', '#6D597A', 'Conteúdos profundos para decidir com mais segurança.'],
+            ['arquitetura', 'Arquitetura & Design', 'fa-solid fa-compass-drafting', '#3A506B', 'Como cada superfície conversa com o estilo do ambiente.'],
+        ];
+        $stmt = $pdo->prepare("INSERT INTO categories (slug, label, icon, accent, description, sort_order) VALUES (?, ?, ?, ?, ?, ?)");
+        foreach ($cats as $i => $cat) {
+            $stmt->execute([$cat[0], $cat[1], $cat[2], $cat[3], $cat[4], $i + 1]);
+        }
+    }
+
+    // Criar configurações padrão
+    $setCount = $pdo->query("SELECT COUNT(*) FROM settings")->fetchColumn();
+    if ($setCount == 0) {
+        $pdo->exec("INSERT INTO settings (setting_key, setting_value) VALUES
+            ('whatsapp_url', 'https://wa.me/5511923210038?text=Olá! Vim do blog da Douro Mármores.'),
+            ('phone', '(11) 92321-0038'),
+            ('email', 'contato@douromarmores.com.br'),
+            ('instagram', 'https://www.instagram.com/douromarmores'),
+            ('site_url', 'https://douromarmores.com.br'),
+            ('blog_title', 'Blog Douro Mármores'),
+            ('blog_description', 'Inspiração, tendências e conhecimento técnico sobre pedras naturais e superfícies premium.')
+        ");
+    }
+
+    // Criar pasta de uploads
+    if (!is_dir(UPLOAD_DIR)) {
+        mkdir(UPLOAD_DIR, 0755, true);
+    }
+    if (!is_dir(UPLOAD_DIR . date('Y-m'))) {
+        mkdir(UPLOAD_DIR . date('Y-m'), 0755, true);
+    }
+
+    json_response([
+        'success' => true,
+        'message' => '✅ Instalação concluída com sucesso!',
+        'data' => [
+            'admin_email' => 'admin@douromarmores.com.br',
+            'admin_password' => 'Douro@2026 (altere após o primeiro login)',
+            'tables_created' => count($tables),
+            'categories_created' => $catCount == 0 ? 9 : 0,
+            'next_step' => 'Acesse /blog/#/admin para fazer login'
+        ]
+    ]);
+
+} catch (Exception $e) {
+    json_response([
+        'success' => false,
+        'error' => 'Erro na instalação: ' . $e->getMessage()
+    ], 500);
+}

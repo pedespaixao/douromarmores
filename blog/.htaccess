@@ -1,0 +1,39 @@
+```apache
+# Ativar reescrita de URL
+RewriteEngine On
+
+# ── Segurança ──────────────────────────────────
+# Bloquear acesso direto a arquivos PHP sensíveis
+<Files "config.php">
+    Require all denied
+</Files>
+
+# ── API PHP ────────────────────────────────────
+# Requisições para /blog/api/* vão para os arquivos PHP
+RewriteRule ^api/(.*)$ api/$1 [L,QSA]
+
+# ── Uploads ────────────────────────────────────
+# Permitir acesso às imagens
+RewriteRule ^uploads/(.*)$ uploads/$1 [L]
+
+# ── SPA Routing (React) ────────────────────────
+# Tudo que NÃO seja arquivo real vai para index.html
+# Isso permite que /blog/admin funcione sem erro 404
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /blog/index.html [L,QSA]
+
+# ── Cache de imagens ───────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# ── Compressão gzip ────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json
+</IfModule>
+```

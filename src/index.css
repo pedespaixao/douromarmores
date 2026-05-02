@@ -1,0 +1,335 @@
+@import "tailwindcss";
+
+:root {
+  --gold: #c9a961;
+  --hero-bg-image: none;
+  --douro-header-offset: 0px;
+  --font-sans-douro: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+html,
+body {
+  font-family: var(--font-sans-douro);
+  overflow-x: hidden;
+}
+
+/* Evita estouro de largura em textos/links longos */
+* {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Garante que componentes Tailwind usem a mesma fonte por padrão */
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  font-family: var(--font-sans-douro);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.border-gold {
+  border-color: var(--gold);
+}
+
+.btn-glow {
+  box-shadow: 0 10px 30px rgba(201, 169, 97, 0.25);
+}
+
+.hover-lift {
+  transform: translateY(0);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hero-text-shadow {
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* CTA Final (fundo dourado): reforça contraste do texto */
+.cta-text-shadow {
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.50);
+}
+
+/* Para trechos em preto (no CTA), removemos o shadow para não “sujar” o texto */
+.no-text-shadow {
+  text-shadow: none !important;
+}
+
+.hero-bg {
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-fit {
+  min-height: calc(100svh - var(--douro-header-offset));
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-video-scrim {
+  position: absolute;
+  inset: 0;
+  /* Overlay MUITO sutil: melhora a leitura sem “matar” o vídeo */
+  background: rgba(0, 0, 0, 0.18);
+  z-index: 1;
+}
+
+.gradient-gold-radial {
+  background: radial-gradient(800px circle at 20% 10%, rgba(201, 169, 97, 0.25), transparent 60%),
+    radial-gradient(900px circle at 80% 30%, rgba(201, 169, 97, 0.16), transparent 55%);
+}
+
+.hero-quad {
+  border-radius: 28px;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-filter-btn {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+}
+
+.faq-filter-btn.active {
+  background: rgba(201, 169, 97, 0.14);
+  border-color: rgba(201, 169, 97, 0.45);
+  color: #111827;
+}
+
+.faq-item .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 350ms ease;
+  margin-top: 0;
+}
+
+.faq-item.active .faq-answer {
+  /* Aumenta o limite para respostas longas (o dossiê é bem detalhado) */
+  max-height: 1800px;
+  margin-top: 12px;
+}
+
+/* Melhor leitura do conteúdo do FAQ */
+.faq-answer ul,
+.faq-answer ol {
+  margin: 0.5rem 0 0.75rem 1.25rem;
+}
+
+.faq-answer li {
+  margin: 0.25rem 0;
+}
+
+.faq-answer strong {
+  color: #111827;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer p {
+  margin: 0.35rem 0;
+}
+
+.catalog-card .catalog-img {
+  transition: opacity 350ms ease, transform 700ms ease;
+  transform: scale(var(--catalog-img-scale, 1));
+  will-change: transform;
+}
+
+.catalog-card:hover .catalog-img {
+  transform: scale(calc(var(--catalog-img-scale, 1) * 1.03));
+}
+
+/* Algumas amostras (ex.: PNGs) podem vir com “respiro”/borda. Aplicamos um zoom sutil para preencher melhor o card. */
+.catalog-img-tight {
+  --catalog-img-scale: 1.12;
+}
+
+.catalog-img-applied {
+  opacity: 0;
+}
+
+.catalog-label-applied {
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.catalog-card.show-applied .catalog-img-applied {
+  opacity: 1;
+}
+
+.catalog-card.show-applied .catalog-img-sample {
+  opacity: 0;
+}
+
+.catalog-card.show-applied .catalog-label-applied {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Seções especiais */
+.gradient-dark {
+  background: radial-gradient(900px circle at 20% 10%, rgba(201, 169, 97, 0.12), transparent 55%),
+    radial-gradient(900px circle at 80% 30%, rgba(201, 169, 97, 0.10), transparent 55%),
+    linear-gradient(180deg, #0b0b0b 0%, #050505 100%);
+}
+
+gold-gradient,
+.gold-gradient {
+  background: linear-gradient(135deg, #c9a961 0%, #f0d78c 35%, #c9a961 70%, #7a5f2b 100%);
+}
+
+/* “Glassmorphism” usado nos cards escuros */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+/* Depoimentos */
+.testimonial-card {
+  border-radius: 1.5rem;
+  border: 1px solid #f3f4f6;
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+}
+
+/* CTA/ações flutuantes */
+.whatsapp-float {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 1000;
+}
+
+/* Marca d'água (Projetos)
+   Nota: a URL é aplicada via style inline (respeita BASE_URL do Vite/preview).
+*/
+.wm-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.42;
+  mix-blend-mode: normal;
+  z-index: 2;
+}
+
+/* Versão mais forte (ex.: lightbox) */
+.wm-overlay.wm-strong {
+  opacity: 0.60;
+  z-index: 3;
+}
+
+/* Links */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 220ms ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Pagers de “Seleção” (Catálogos): corrigir corte no mobile */
+.selection-pager {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.selection-pager::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Carrossel (Projetos) */
+.carousel-track {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.carousel-item {
+  scroll-snap-align: start;
+}
+
+/* No mobile, encolhe os botões e esconde o rótulo “Seleção” (fica só 01/02/03) */
+.selection-pager button {
+  min-width: 76px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.selection-pager button span:nth-child(2) {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .selection-pager {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .selection-pager button {
+    min-width: 120px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .selection-pager button span:nth-child(2) {
+    display: inline;
+  }
+}

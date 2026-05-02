@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9a961" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#f0d78c" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#c9a961" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="rotate(-28 130 130)" opacity="0.35">
+    <g transform="translate(24 20)">
+      <rect x="0" y="0" width="56" height="56" rx="16" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      <path d="M18 46V12h13c10 0 17 6 17 17s-7 17-17 17H18Z" stroke="url(#gold)" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M22 38c6-7 12-5 15-9 2-4 7-3 11-8" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(0 122)">
+      <text x="20" y="0" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="2.2" fill="rgba(255,255,255,0.55)">
+        DOUROMÁRMORES
+      </text>
+      <text x="20" y="30" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="rgba(201,169,97,0.65)">
+        DOURO MÁRMORES
+      </text>
+    </g>
+  </g>
+</svg>
