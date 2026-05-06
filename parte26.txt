@@ -1,0 +1,220 @@
+ "cuba-esculpida-sao-paulo": {
+              title: "Cuba Esculpida em São Paulo",
+              intro:
+                "Criamos cubas esculpidas em São Paulo para lavabos e banheiros com acabamento sob medida em mármore, granito, quartzito e outras superfícies premium, valorizando desenho, proporção e escoamento correto.",
+              bullets: [
+                "Cubas esculpidas para lavabos e banheiros sob medida",
+                "Design personalizado com foco em acabamento e funcionalidade",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar cuba esculpida",
+            },
+            "lareira-marmore-sao-paulo": {
+              title: "Lareira em Mármore em São Paulo",
+              intro:
+                "Executamos lareiras em mármore em São Paulo com painéis, molduras e acabamento premium para projetos sofisticados e ambientes de alto padrão, sempre com composição visual elegante e sob medida.",
+              bullets: [
+                "Painéis e molduras para lareiras em mármore",
+                "Paginação e composição para ambientes sofisticados",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar lareira em mármore",
+            },
+            "mesa-quartzito-sao-paulo": {
+              title: "Mesa em Quartzito em São Paulo",
+              intro:
+                "Produzimos mesas em quartzito em São Paulo com tampo sob medida, visual sofisticado, veios naturais e acabamento premium para ambientes elegantes, residenciais e corporativos.",
+              bullets: [
+                "Tampos em quartzito para mesas sob medida",
+                "Visual sofisticado com veios naturais e personalidade",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar mesa em quartzito",
+            },
+            "marmoraria-campo-belo": {
+              title: "Marmoraria no Campo Belo",
+              intro:
+                "Atendemos quem procura marmoraria no Campo Belo para bancadas, lavatórios, painéis, escadas, cozinhas e projetos sob medida em mármore, granito, quartzito, quartzo e superfícies premium.",
+              bullets: [
+                "Projetos para apartamentos, casas e ambientes de alto padrão",
+                "Bancadas, lavabos, cozinhas e áreas gourmet sob medida",
+                "Atendimento em São Paulo e Grande São Paulo, com facilidade para o Campo Belo",
+              ],
+              cta: "Solicitar orçamento no Campo Belo",
+            },
+            "marmoraria-vila-olimpia": {
+              title: "Marmoraria na Vila Olímpia",
+              intro:
+                "Atendemos clientes que buscam marmoraria na Vila Olímpia para bancadas, cozinhas, banheiros, lavabos e projetos residenciais ou corporativos em pedra natural e superfícies premium.",
+              bullets: [
+                "Atendimento para residências, escritórios e projetos comerciais",
+                "Granito, mármore, quartzo, quartzito e Dekton",
+                "Medição, produção e instalação sob medida",
+              ],
+              cta: "Solicitar orçamento na Vila Olímpia",
+            },
+            "marmoraria-itaim-bibi": {
+              title: "Marmoraria no Itaim Bibi",
+              intro:
+                "Somos uma opção para quem procura marmoraria no Itaim Bibi com atendimento para bancadas, lavatórios, painéis, cozinhas, áreas gourmet e projetos de alto padrão.",
+              bullets: [
+                "Projetos sofisticados para residências e empreendimentos",
+                "Acabamento premium, paginação e instalação técnica",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento no Itaim Bibi",
+            },
+            "marmoraria-perdizes": {
+              title: "Marmoraria em Perdizes",
+              intro:
+                "Atendemos quem busca marmoraria em Perdizes para bancadas, banheiros, lavabos, escadas, áreas gourmet e projetos sob medida em mármore, granito, quartzo e quartzito.",
+              bullets: [
+                "Projetos residenciais e comerciais sob medida",
+                "Bancadas, painéis, lavatórios e cozinhas premium",
+                "Atendimento em São Paulo e Grande São Paulo, com facilidade para Perdizes",
+              ],
+              cta: "Solicitar orçamento em Perdizes",
+            },
+            "marmoraria-pompeia": {
+              title: "Marmoraria na Pompeia",
+              intro:
+                "Atendemos clientes que procuram marmoraria na Pompeia para cozinhas, bancadas, banheiros, lavatórios, áreas gourmet e projetos em pedra natural e superfícies premium.",
+              bullets: [
+                "Projetos para cozinhas, banheiros, lavabos e áreas gourmet",
+                "Granito, mármore, quartzito, quartzo e superfícies premium",
+                "Medição e instalação com acabamento de alto padrão",
+              ],
+              cta: "Solicitar orçamento na Pompeia",
+            },
+            "marmoraria-tatuape": {
+              title: "Marmoraria no Tatuapé",
+              intro:
+                "Atendemos quem procura marmoraria no Tatuapé para bancadas, cozinhas, banheiros, escadas, painéis e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Bancadas sob medida para cozinhas e banheiros",
+                "Escadas, painéis e áreas gourmet em pedra natural",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento no Tatuapé",
+            },
+            "marmoraria-ipiranga": {
+              title: "Marmoraria no Ipiranga",
+              intro:
+                "Atendemos clientes que buscam marmoraria no Ipiranga para bancadas, lavatórios, cozinhas, áreas gourmet, escadas e painéis em mármore, granito, quartzo e quartzito.",
+              bullets: [
+                "Projetos para residências e ambientes comerciais",
+                "Pedras naturais e superfícies premium sob medida",
+                "Atendimento em São Paulo e Grande São Paulo, com facilidade para o Ipiranga",
+              ],
+              cta: "Solicitar orçamento no Ipiranga",
+            },
+            "marmoraria-vila-sonia": {
+              title: "Marmoraria na Vila Sônia",
+              intro:
+                "Atendemos quem procura marmoraria na Vila Sônia para bancadas, banheiros, lavabos, áreas gourmet, cozinhas e projetos sob medida em pedra natural e superfícies premium.",
+              bullets: [
+                "Projetos sob medida para residências e comércios",
+                "Granito, mármore, quartzo, quartzito e superfícies premium",
+                "Medição, produção e instalação técnica",
+              ],
+              cta: "Solicitar orçamento na Vila Sônia",
+            },
+            "marmoraria-vila-andrade": {
+              title: "Marmoraria na Vila Andrade",
+              intro:
+                "Atendemos clientes que buscam marmoraria na Vila Andrade para bancadas, cozinhas, banheiros, painéis, lavatórios e projetos premium em pedra natural e superfícies industrializadas.",
+              bullets: [
+                "Projetos para apartamentos e casas de alto padrão",
+                "Bancadas, escadas, painéis e áreas gourmet",
+                "Atendimento em São Paulo e Grande São Paulo, com facilidade para a Vila Andrade",
+              ],
+              cta: "Solicitar orçamento na Vila Andrade",
+            },
+            "marmoraria-bela-vista": {
+              title: "Marmoraria na Bela Vista",
+              intro:
+                "Atendemos quem procura marmoraria na Bela Vista para bancadas, cozinhas, banheiros, lavatórios e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Bancadas, painéis e lavatórios sob medida",
+                "Atendimento para residências e ambientes comerciais",
+                "Medição, produção e instalação com acabamento premium",
+              ],
+              cta: "Solicitar orçamento na Bela Vista",
+            },
+            "marmoraria-jardim-europa": {
+              title: "Marmoraria no Jardim Europa",
+              intro:
+                "Atendemos quem busca marmoraria no Jardim Europa para bancadas, lavatórios, painéis, cozinhas e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos sob medida para residências e ambientes de alto padrão",
+                "Bancadas, lavatórios, painéis e cozinhas em pedra natural e superfícies premium",
+                "Atendimento em São Paulo, Grande São Paulo e região com acabamento premium",
+              ],
+              cta: "Solicitar orçamento no Jardim Europa",
+            },
+            "marmoraria-jardim-america": {
+              title: "Marmoraria no Jardim América",
+              intro:
+                "Somos uma opção para quem procura marmoraria no Jardim América com atendimento para cozinhas, banheiros, lavabos, áreas gourmet e projetos premium em pedra natural e superfícies sob medida.",
+              bullets: [
+                "Projetos sofisticados para residências e empreendimentos",
+                "Bancadas, painéis, lavatórios e áreas gourmet sob medida",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento no Jardim América",
+            },
+            "marmoraria-higienopolis": {
+              title: "Marmoraria em Higienópolis",
+              intro:
+                "Atendemos quem busca marmoraria em Higienópolis para bancadas, lavatórios, escadas, painéis e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos para apartamentos, casas e ambientes de alto padrão",
+                "Escadas, painéis, bancadas e lavatórios sob medida",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento em Higienópolis",
+            },
+            "marmoraria-mooca": {
+              title: "Marmoraria na Mooca",
+              intro:
+                "Atendemos quem procura marmoraria na Mooca para cozinhas, banheiros, áreas gourmet, lavabos e projetos residenciais ou comerciais em pedra natural e superfícies premium.",
+              bullets: [
+                "Projetos para cozinhas, banheiros e áreas gourmet",
+                "Mármore, granito, quartzo, quartzito e superfícies premium",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento na Mooca",
+            },
+            "marmoraria-anhangabau": {
+              title: "Marmoraria no Anhangabaú",
+              intro:
+                "Atendemos quem busca marmoraria no Anhangabaú para bancadas, painéis, lavatórios e projetos corporativos ou residenciais sob medida em mármore, granito, quartzo e quartzito.",
+              bullets: [
+                "Projetos corporativos e residenciais sob medida",
+                "Painéis, bancadas, lavatórios e ambientes de destaque",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento no Anhangabaú",
+            },
+            "marmoraria-vila-leopoldina": {
+              title: "Marmoraria na Vila Leopoldina",
+              intro:
+                "Atendemos quem procura marmoraria na Vila Leopoldina para cozinhas, banheiros, lavabos, áreas gourmet e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos sob medida para residências e empreendimentos",
+                "Bancadas, lavatórios, áreas gourmet e painéis premium",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento na Vila Leopoldina",
+            },
+            "marmoraria-vila-madalena": {
+              title: "Marmoraria na Vila Madalena",
+              intro:
+                "Atendemos quem busca marmoraria na Vila Madalena para bancadas, escadas, lavatórios, painéis e ambientes autorais em pedra natural e superfícies premium sob medida.",
+              bullets: [
+                "Projetos autorais para interiores sofisticados",
+                "Escadas, bancadas, lavatórios e painéis de destaque",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento na Vila Madalena",
+           

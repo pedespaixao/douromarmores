@@ -1,0 +1,287 @@
+
+function getPageFromLocation(): PageKey {
+  const url = new URL(window.location.href);
+  const p = (url.searchParams.get("p") || "home").toLowerCase();
+  return (ROUTES[p as PageKey] ? (p as PageKey) : "home") as PageKey;
+}
+
+function setQueryPage(page: PageKey, hash?: string) {
+  const url = new URL(window.location.href);
+  url.searchParams.set("p", page);
+  if (typeof hash === "string") url.hash = hash;
+  history.pushState({ p: page }, "", url);
+  window.dispatchEvent(new PopStateEvent("popstate"));
+}
+
+function useQueryPage() {
+  const [page, setPage] = useState<PageKey>(() => {
+    if (typeof window === "undefined") return "home";
+    return getPageFromLocation();
+  });
+
+  useEffect(() => {
+    const onPopState = () => setPage(getPageFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  return page;
+}
+
+function normalizeQuartzitoSlug(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/^quartzito\s+/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function getQuartzitoSlugFromLocation() {
+  if (typeof window === "undefined") return "";
+  const url = new URL(window.location.href);
+  return normalizeQuartzitoSlug(url.searchParams.get("slug") || "");
+}
+
+function buildQuartzitoPageUrl(slug: string) {
+  const safe = normalizeQuartzitoSlug(slug);
+  return `?p=quartzito-material&slug=${encodeURIComponent(safe)}`;
+}
+
+function useQuartzitoSlug() {
+  const [slug, setSlug] = useState(() => getQuartzitoSlugFromLocation());
+
+  useEffect(() => {
+    const onPopState = () => setSlug(getQuartzitoSlugFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  return slug;
+}
+
+function normalizeGranitoSlug(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/^granito\s+/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function getGranitoSlugFromLocation() {
+  if (typeof window === "undefined") return "";
+  const url = new URL(window.location.href);
+  return normalizeGranitoSlug(url.searchParams.get("slug") || "");
+}
+
+function buildGranitoPageUrl(slug: string) {
+  const safe = normalizeGranitoSlug(slug);
+  return `?p=granito-material&slug=${encodeURIComponent(safe)}`;
+}
+
+function useGranitoSlug() {
+  const [slug, setSlug] = useState(() => getGranitoSlugFromLocation());
+
+  useEffect(() => {
+    const onPopState = () => setSlug(getGranitoSlugFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  return slug;
+}
+
+function normalizeMarmoreSlug(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/^marmore\s+/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function getMarmoreSlugFromLocation() {
+  if (typeof window === "undefined") return "";
+  const url = new URL(window.location.href);
+  return normalizeMarmoreSlug(url.searchParams.get("slug") || "");
+}
+
+function buildMarmorePageUrl(slug: string) {
+  const safe = normalizeMarmoreSlug(slug);
+  return `?p=marmore-material&slug=${encodeURIComponent(safe)}`;
+}
+
+function useMarmoreSlug() {
+  const [slug, setSlug] = useState(() => getMarmoreSlugFromLocation());
+
+  useEffect(() => {
+    const onPopState = () => setSlug(getMarmoreSlugFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  return slug;
+}
+
+function normalizeSilestoneSlug(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/^silestone\s+/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function getSilestoneSlugFromLocation() {
+  if (typeof window === "undefined") return "";
+  const url = new URL(window.location.href);
+  return normalizeSilestoneSlug(url.searchParams.get("slug") || "");
+}
+
+function buildSilestonePageUrl(slug: string) {
+  const safe = normalizeSilestoneSlug(slug);
+  return `?p=silestone-material&slug=${encodeURIComponent(safe)}`;
+}
+
+function useSilestoneSlug() {
+  const [slug, setSlug] = useState(() => getSilestoneSlugFromLocation());
+
+  useEffect(() => {
+    const onPopState = () => setSlug(getSilestoneSlugFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  return slug;
+}
+
+function normalizeQuartzoStoneSlug(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/^quartzo\s+stone\s+/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function getQuartzoStoneSlugFromLocation() {
+  if (typeof window === "undefined") return "";
+  const url = new URL(window.location.href);
+  return normalizeQuartzoStoneSlug(url.searchParams.get("slug") || "");
+}
+
+function buildQuartzoStonePageUrl(slug: string) {
+  const safe = normalizeQuartzoStoneSlug(slug);
+  return `?p=quartzo-stone-material&slug=${encodeURIComponent(safe)}`;
+}
+
+function useQuartzoStoneSlug() {
+  const [slug, setSlug] = useState(() => getQuartzoStoneSlugFromLocation());
+
+  useEffect(() => {
+    const onPopState = () => setSlug(getQuartzoStoneSlugFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  return slug;
+}
+
+function normalizeDektonSlug(value: string) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/^dekton\s+/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function getDektonSlugFromLocation() {
+  if (typeof window === "undefined") return "";
+  const url = new URL(window.location.href);
+  return normalizeDektonSlug(url.searchParams.get("slug") || "");
+}
+
+function buildDektonPageUrl(slug: string) {
+  const safe = normalizeDektonSlug(slug);
+  return `?p=dekton-material&slug=${encodeURIComponent(safe)}`;
+}
+
+function useDektonSlug() {
+  const [slug, setSlug] = useState(() => getDektonSlugFromLocation());
+
+  useEffect(() => {
+    const onPopState = () => setSlug(getDektonSlugFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  return slug;
+}
+
+function normalizeSinthSlug(slug: string) {
+  return String(slug || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/^sinth\s+/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function getSinthSlugFromLocation() {
+  if (typeof window === "undefined") return "";
+  const url = new URL(window.location.href);
+  return normalizeSinthSlug(url.searchParams.get("slug") || "");
+}
+
+function buildSinthPageUrl(slug: string) {
+  const safe = normalizeSinthSlug(slug);
+  return `?p=sinth-material&slug=${encodeURIComponent(safe)}`;
+}
+
+function useSinthSlug() {
+  const [slug, setSlug] = useState(() => getSinthSlugFromLocation());
+
+  useEffect(() => {
+    const onPopState = () => setSlug(getSinthSlugFromLocation());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  return slug;
+}
+
+function useInViewOnce<T extends HTMLElement>(threshold = 0.1) {
+  const ref = useRef<T | null>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (!entry) return;
+        if (entry.isIntersecting) {
+          setInView(true);
+          obs.disconnect();
+        }
+      },
+      { threshold }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+
+  return { ref, inView };
+}

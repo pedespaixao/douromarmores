@@ -1,0 +1,300 @@
+
+    const hash = window.location.hash;
+    if (hash && hash !== "#") {
+      const id = hash.replace("#", "");
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el && !el.classList.contains("hidden")) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        else window.scrollTo({ top: 0, behavior: "auto" });
+      });
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [page, quartzitoSlug, granitoSlug, marmoreSlug, silestoneSlug, quartzoStoneSlug, dektonSlug, sinthSlug, currentQuartzitoItem, currentGranitoItem, currentMarmoreItem, currentSilestoneItem, currentQuartzoStoneItem, currentDektonItem, currentSinthItem]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setLightbox(null);
+      setBotOpen(false);
+      setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
+  useEffect(() => {
+    (window as any).setHeroVideo = (url: string) => {
+      if (!url) return;
+      try {
+        localStorage.setItem("douroHeroVideo", url);
+      } catch {
+        // ignore
+      }
+      setHeroVideoUrl(url);
+    };
+  }, []);
+
+  useEffect(() => {
+    const lock = lightbox || botOpen || mobileOpen;
+    document.body.style.overflow = lock ? "hidden" : "";
+
+    if (lightbox) {
+      requestAnimationFrame(() => lightboxCloseBtnRef.current?.focus());
+      return;
+    }
+
+    if (botOpen) {
+      requestAnimationFrame(() => botCloseBtnRef.current?.focus());
+    }
+  }, [lightbox, botOpen, mobileOpen]);
+
+  const footerLinks: Array<{ p: PageKey; label: string; hash?: string }> = [
+    { p: "sobre-inspiracao", label: "Nossa Inspiração" },
+    { p: "quem-somos", label: "Quem Somos" },
+    { p: "como-funciona", label: "Como Funciona" },
+    { p: "depoimentos", label: "Depoimentos" },
+    { p: "contato", label: "Contato" },
+  ];
+
+  const isQuemSomosPage = page === "quem-somos";
+
+  const [contatoTipo, setContatoTipo] = useState<"visita" | "duvida" | "orcamento">("visita");
+  const [contatoSent, setContatoSent] = useState(false);
+
+  const buildContatoWaText = (data: {
+    nome: string;
+    telefone: string;
+    email: string;
+    tipoProjeto?: string;
+    cidade?: string;
+    prazo?: string;
+    mensagem?: string;
+  }) => {
+    const lines: string[] = [];
+
+    if (contatoTipo === "visita") {
+      lines.push("Olá! Quero agendar uma visita técnica.");
+    } else if (contatoTipo === "duvida") {
+      lines.push("Olá! Quero tirar dúvidas e receber orientação técnica.");
+    } else {
+      lines.push("Olá! Quero solicitar um orçamento técnico.");
+    }
+
+    lines.push("");
+    lines.push(`Nome: ${data.nome}`);
+    lines.push(`Telefone: ${data.telefone}`);
+    lines.push(`E-mail: ${data.email}`);
+
+    if (data.cidade) lines.push(`Cidade/Bairro: ${data.cidade}`);
+    if (data.tipoProjeto && data.tipoProjeto !== "Selecione...") lines.push(`Projeto: ${data.tipoProjeto}`);
+    if (data.prazo) lines.push(`Prazo/Quando pretende instalar: ${data.prazo}`);
+
+    if (data.mensagem) {
+      lines.push("");
+      lines.push("Detalhes:");
+      lines.push(data.mensagem);
+    }
+
+    lines.push("");
+    lines.push("(Se tiver, vou enviar fotos e medidas aproximadas na sequência.)");
+
+    return lines.join("\n");
+  };
+
+  const onSubmitContato = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+
+    const nome = String(fd.get("nome") || "").trim();
+    const telefone = String(fd.get("telefone") || "").trim();
+    const email = String(fd.get("email") || "").trim();
+    const tipoProjeto = String(fd.get("tipo") || "").trim();
+    const cidade = String(fd.get("cidade") || "").trim();
+    const prazo = String(fd.get("prazo") || "").trim();
+    const mensagem = String(fd.get("mensagem") || "").trim();
+
+    const waText = buildContatoWaText({ nome, telefone, email, tipoProjeto, cidade, prazo, mensagem });
+    const waUrl = `https://wa.me/${ASSETS.waNumber}?text=${encodeURIComponent(waText)}`;
+
+    openExternal(waUrl);
+    setContatoSent(true);
+    e.currentTarget.reset();
+    setTimeout(() => setContatoSent(false), 4500);
+  };
+
+  const brandSize = `text-xl sm:text-2xl md:text-3xl`;
+
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
+      <a href="#mainContent" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:bg-white focus:text-gray-900 focus:px-4 focus:py-3 focus:rounded-xl focus:shadow-lg">
+        Pular para o conteúdo
+      </a>
+
+      <div ref={topBarRef} className="bg-black text-white text-sm border-b border-gray-800 fixed top-0 left-0 right-0 z-[80] pt-[calc(0.75rem+env(safe-area-inset-top))] pb-3">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-2">
+              <i className="fas fa-phone text-gold" />
+              (11) 92321-0038
+            </span>
+            <span className="hidden md:flex items-center gap-2">
+              <i className="fas fa-envelope text-gold" />
+              contato@douromarmores.com.br
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="https://www.instagram.com/douromarmores/" className="hover:text-gold transition" aria-label="Instagram" target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); openExternal("https://www.instagram.com/douromarmores/"); }}>
+              <i className="fab fa-instagram" />
+            </a>
+            <a href="#" className="hover:text-gold transition" aria-label="Facebook">
+              <i className="fab fa-facebook-f" />
+            </a>
+            <a href="https://wa.me/5511923210038" className="hover:text-gold transition" aria-label="WhatsApp" target="_blank" rel="noreferrer">
+              <i className="fab fa-whatsapp" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <header ref={headerRef} id="header" className={["bg-white shadow-md fixed left-0 right-0 z-[70] transition-all duration-300", headerScrolled ? "shadow-lg" : ""].join(" ")} style={{ top: "var(--douro-topbar-h, 0px)" } as React.CSSProperties}>
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center py-5">
+            <a href="?p=home" className="flex items-center gap-3 group min-w-0" onClick={(e) => { e.preventDefault(); onNav("home"); }} aria-label="Douro Mármores - Página inicial">
+              <LogoMark mode="header" />
+              <span className={["min-w-0 max-w-[58vw] sm:max-w-none uppercase tracking-wide sm:tracking-wider leading-none font-bold", brandSize].join(" ")}>
+                <span className="text-black group-hover:text-gray-900 transition">DOURO</span>
+                <span className="text-gold">MÁRMORES</span>
+              </span>
+            </a>
+
+            <button className="lg:hidden shrink-0 w-11 h-11 inline-flex items-center justify-center rounded-full border border-gray-200 text-2xl" aria-label="Abrir menu" aria-expanded={mobileOpen} aria-controls="mobileMenu" onClick={() => setMobileOpen((v) => !v)}>
+              <i className="fas fa-bars" />
+            </button>
+
+            <nav className="hidden lg:flex items-center gap-8">
+              <div className="relative group">
+                <a href="?p=sobre-inspiracao" className="nav-link text-gray-700 hover:text-gold font-medium transition" onClick={(e) => { e.preventDefault(); onNav("sobre-inspiracao"); }}>
+                  Sobre Nós
+                </a>
+
+                <div className="absolute top-full left-0 mt-2 w-[320px] bg-white shadow-2xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="p-3 flex flex-col">
+                    {([
+                      { p: "sobre-inspiracao", label: "Nossa Inspiração" },
+                      { p: "quem-somos", label: "Quem Somos" },
+                      { p: "como-funciona", label: "Como Funciona" },
+                    ] as const).map((l) => (
+                      <a
+                        key={l.p}
+                        href={`?p=${l.p}`}
+                        className="px-4 py-3 rounded-lg text-gray-700 hover:text-gold hover:bg-gray-50 transition font-medium"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          onNav(l.p);
+                        }}
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative group">
+                <a href="?p=produtos" className="nav-link text-gray-700 hover:text-gold font-medium transition" onClick={(e) => { e.preventDefault(); onNav("produtos"); }}>
+                  Produtos
+                </a>
+
+                <div className="absolute top-full left-0 mt-2 w-[460px] bg-white shadow-2xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="p-4 grid grid-cols-2 gap-4">
+                    <div>
+                      <div className="text-xs uppercase tracking-widest text-gray-500 mb-3">Pedras Naturais</div>
+                      <div className="flex flex-col">
+                        {([
+                          { p: "marmores", label: "Mármores" },
+                          { p: "granitos", label: "Granitos" },
+                          { p: "limestone", label: "Limestone" },
+                          { p: "quartzitos", label: "Quartzitos" },
+                          { p: "onix", label: "Ônix" },
+                        ] as const).map((l) => (
+                          <a key={l.p} href={`?p=${l.p}`} className="px-4 py-2 rounded-lg text-gray-700 hover:text-gold hover:bg-gray-50 transition" onClick={(e) => { e.preventDefault(); onNav(l.p); }}>
+                            {l.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="text-xs uppercase tracking-widest text-gray-500 mb-3">Pedras Industrializadas</div>
+                      <div className="flex flex-col">
+                        {([
+                          { p: "laminas", label: "Lâminas" },
+                          { p: "quartzo", label: "Quartzo" },
+                          { p: "aglostone", label: "Prime Stone" },
+                        ] as const).map((l) => (
+                          <a key={l.p} href={`?p=${l.p}`} className="px-4 py-2 rounded-lg text-gray-700 hover:text-gold hover:bg-gray-50 transition" onClick={(e) => { e.preventDefault(); onNav(l.p); }}>
+                            {l.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="px-4 pb-4">
+                    <a href="?p=produtos" className="flex items-center justify-between gap-3 rounded-xl bg-gray-900 text-white px-4 py-3 hover:bg-black transition btn-glow" onClick={(e) => { e.preventDefault(); onNav("produtos"); }}>
+                      <span className="font-semibold">Ver catálogo completo</span>
+                      <i className="fas fa-arrow-right text-gold" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <a href="?p=projetos" className="nav-link text-gray-700 hover:text-gold font-medium transition" onClick={(e) => { e.preventDefault(); onNav("projetos"); }}>
+                Projetos
+              </a>
+              <a href="?p=blog" className="nav-link text-gray-700 hover:text-gold font-medium transition" onClick={(e) => { e.preventDefault(); onNav("blog"); }}>
+                Blog
+              </a>
+              <a href="?p=duvidas" className="nav-link text-gray-700 hover:text-gold font-medium transition" onClick={(e) => { e.preventDefault(); onNav("duvidas"); }}>
+                Dúvidas
+              </a>
+              <a href="#contato" className="bg-gold text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow shadow-lg" onClick={(e) => { e.preventDefault(); scrollOrRouteToHash("#contato"); }}>
+                Orçamento Grátis
+              </a>
+            </nav>
+          </div>
+
+          {mobileOpen ? (
+            <div className="lg:hidden fixed left-0 right-0 bottom-0 z-[90]" style={{ top: "var(--douro-topbar-h, 0px)" } as React.CSSProperties} aria-label="Menu mobile">
+              <button type="button" className="absolute inset-0 bg-black/40" aria-label="Fechar menu" onClick={() => setMobileOpen(false)} />
+              <div id="mobileMenu" className="absolute right-0 top-0 h-full w-[78vw] max-w-xs sm:w-[360px] sm:max-w-[360px] md:w-[380px] md:max-w-[380px] bg-white shadow-2xl border-l border-gray-100 flex flex-col" role="dialog" aria-modal="true">
+                <div className="px-4 py-4 border-b border-gray-100 flex items-center justify-between">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <LogoMark mode="header" />
+                    <div className="min-w-0 leading-tight">
+                      <div className="min-w-0 truncate font-extrabold uppercase tracking-wide text-base sm:text-lg leading-none"><span className="text-gray-900">DOURO</span></div>
+                      <div className="mt-1 text-[11px] uppercase tracking-widest text-gray-500 font-semibold">Menu</div>
+                    </div>
+                  </div>
+                  <button type="button" className="w-10 h-10 rounded-full border border-gray-200 bg-white text-gray-900" aria-label="Fechar menu" onClick={() => setMobileOpen(false)}>
+                    <i className="fas fa-xmark" />
+                  </button>
+                </div>
+
+                <nav className="flex-1 overflow-y-auto px-4 py-4">
+                  <div className="flex flex-col gap-4">
+                    <div className="pt-1">
+                      <div className="text-xs uppercase tracking-widest text-gray-500 mb-2">Sobre Nós</div>
+                      <div className="flex flex-col">
+                        {([
+                          { p: "sobre-inspiracao", label: "Nossa Inspiração" },
+                          { p: "quem-somos", label: "Quem Somos" },
+                          { p: "como-funciona", label: "Como Funciona" },
+                        ] as const).map((l) => (
+                          <a key={l.p} href={`?p=${l.p}`} className="text-gray-700 hover:text-gold font-medium py-2 border-b" onClick={(e) => { e.preventDefault(); onNav(l.p); }}>
+                            {l.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+

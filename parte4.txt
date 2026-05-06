@@ -1,0 +1,289 @@
+
+function CatalogCard({ item }: { item: CatalogItem }) {
+  const [showApplied, setShowApplied] = useState(false);
+  const wa = useMemo(
+    () => `https://wa.me/5511923210038?text=${encodeURIComponent("Olá! Quero orçamento para " + item.name + ".")}`,
+    [item.name]
+  );
+  const isQuartzitoItem = item.name.toLowerCase().startsWith("quartzito ");
+  const quartzitoMaterialUrl = isQuartzitoItem ? buildQuartzitoPageUrl(normalizeQuartzitoSlug(item.name)) : "#";
+  const isGranitoItem = item.name.toLowerCase().startsWith("granito ");
+  const granitoMaterialUrl = isGranitoItem ? buildGranitoPageUrl(normalizeGranitoSlug(item.name)) : "#";
+  const isMarmoreItem = item.name.toLowerCase().startsWith("mármore ") || item.name.toLowerCase().startsWith("marmore ");
+  const marmoreMaterialUrl = isMarmoreItem ? buildMarmorePageUrl(normalizeMarmoreSlug(item.name)) : "#";
+  const isSilestoneItem = item.name.toLowerCase().startsWith("silestone ");
+  const silestoneMaterialUrl = isSilestoneItem ? buildSilestonePageUrl(normalizeSilestoneSlug(item.name)) : "#";
+  const isQuartzoStoneItem = item.name.toLowerCase().startsWith("quartzo stone ");
+  const quartzoStoneMaterialUrl = isQuartzoStoneItem ? buildQuartzoStonePageUrl(normalizeQuartzoStoneSlug(item.name)) : "#";
+  const isDektonItem = item.name.toLowerCase().startsWith("dekton ");
+  const dektonMaterialUrl = isDektonItem ? buildDektonPageUrl(normalizeDektonSlug(item.name)) : "#";
+  const isSinthItem = item.name.toLowerCase().startsWith("sinth ");
+  const sinthMaterialUrl = isSinthItem ? buildSinthPageUrl(normalizeSinthSlug(item.name)) : "#";
+
+  const isDekton =
+    item.name.toLowerCase().startsWith("dekton ") ||
+    item.sample.includes("/laminas/dekton/") ||
+    item.applied.includes("/laminas/dekton/");
+
+  const dektonSample = [item.sample, item.applied].find((u) => u.includes("/amostra")) || item.sample;
+  const dektonApplied = [item.sample, item.applied].find((u) => u.includes("/aplicacao")) || item.applied;
+
+  const sampleSrc = isDekton ? dektonSample : item.sample;
+  const appliedSrc = isDekton ? dektonApplied : item.applied;
+  const sampleFallbackSrcs = isDekton ? [] : [appliedSrc];
+  const appliedFallbackSrcs = isDekton ? [] : [sampleSrc];
+
+  const isQuartzoStone = item.name.toLowerCase().startsWith("quartzo stone ");
+  const allowApplied = !isQuartzoStone;
+  const { ref: cardRef, inView } = useInViewOnce<HTMLElement>(0.05);
+  const [mountAppliedLayer, setMountAppliedLayer] = useState(() => allowApplied);
+
+  const toggleView = () => {
+    if (!allowApplied) return;
+    setShowApplied((v) => {
+      const next = !v;
+      if (next) setMountAppliedLayer(true);
+      return next;
+    });
+  };
+
+  const effectiveSampleSrc = isQuartzoStone && !inView ? "" : sampleSrc;
+  const effectiveAppliedSrc = isQuartzoStone && !inView ? "" : appliedSrc;
+  const effectiveSampleFallbacks = isQuartzoStone && !inView ? [] : sampleFallbackSrcs;
+  const effectiveAppliedFallbacks = isQuartzoStone && !inView ? [] : appliedFallbackSrcs;
+
+  return (
+    <article
+      ref={cardRef}
+      className={[
+        "catalog-card group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition border border-gray-100 hover-lift",
+        showApplied ? "show-applied" : "",
+      ].join(" ")}
+      data-name={item.name}
+    >
+      <button
+        type="button"
+        className="w-full text-left"
+        onClick={toggleView}
+        aria-label="Alternar visualização (amostra/aplicação)"
+        aria-pressed={showApplied}
+      >
+        <div className="relative">
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <SmartImg
+              src={effectiveSampleSrc}
+              fallbackSrcs={effectiveSampleFallbacks}
+              alt={`${item.name} - amostra`}
+              className={[
+                "catalog-img catalog-img-sample absolute inset-0 w-full h-full object-cover",
+                effectiveSampleSrc.toLowerCase().endsWith(".png") ? "catalog-img-tight" : "",
+              ].join(" ")}
+              style={item.sampleScale ? ({ ["--catalog-img-scale" as any]: item.sampleScale } as any) : undefined}
+              loading="lazy"
+            />
+            {allowApplied && mountAppliedLayer ? (
+              <SmartImg
+                src={effectiveAppliedSrc}
+                fallbackSrcs={effectiveAppliedFallbacks}
+                alt={`${item.name} aplicado`}
+                className={[
+                  "catalog-img catalog-img-applied absolute inset-0 w-full h-full object-cover",
+                  effectiveAppliedSrc.toLowerCase().endsWith(".png") ? "catalog-img-tight" : "",
+                ].join(" ")}
+                style={item.appliedScale ? ({ ["--catalog-img-scale" as any]: item.appliedScale } as any) : undefined}
+                loading="lazy"
+              />
+            ) : null}
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent pointer-events-none" />
+          <div className="absolute top-3 left-3 flex items-center gap-2">
+            <span className="inline-flex items-center bg-black/70 text-white text-[11px] px-3 py-1 rounded-full tracking-widest">AMOSTRA</span>
+            {allowApplied ? (
+              <span className="catalog-label-applied inline-flex items-center bg-gold text-white text-[11px] px-3 py-1 rounded-full tracking-widest">APLICAÇÃO</span>
+            ) : null}
+          </div>
+        </div>
+      </button>
+
+      <div className="p-5">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h3 className="font-bold text-gray-900 leading-snug">{item.name}</h3>
+            <p className="text-sm text-gray-500 mt-1">{item.tag ? item.tag : "Clique para ver aplicação (projeto)"}</p>
+          </div>
+          <a
+            href={wa}
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-black transition btn-glow"
+            aria-label="Pedir orçamento no WhatsApp"
+          >
+            <i className="fab fa-whatsapp text-lg text-green-400" />
+          </a>
+        </div>
+
+        <div className="mt-4 flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-3 flex-wrap">
+            {allowApplied ? (
+              <button type="button" className="text-sm font-semibold text-gray-900 hover:text-black" onClick={toggleView}>
+                <i className="fas fa-repeat mr-2 text-gold" />
+                Ver aplicação
+              </button>
+            ) : (
+              <span className="text-sm text-gray-500">Amostra</span>
+            )}
+            {isQuartzitoItem ? (
+              <a href={quartzitoMaterialUrl} className="text-sm font-semibold text-gray-900 hover:text-black transition">
+                Ver detalhes <i className="fas fa-arrow-up-right-from-square ml-1 text-gold" />
+              </a>
+            ) : null}
+            {isGranitoItem ? (
+              <a href={granitoMaterialUrl} className="text-sm font-semibold text-gray-900 hover:text-black transition">
+                Ver detalhes <i className="fas fa-arrow-up-right-from-square ml-1 text-gold" />
+              </a>
+            ) : null}
+            {isMarmoreItem ? (
+              <a href={marmoreMaterialUrl} className="text-sm font-semibold text-gray-900 hover:text-black transition">
+                Ver detalhes <i className="fas fa-arrow-up-right-from-square ml-1 text-gold" />
+              </a>
+            ) : null}
+            {isSilestoneItem ? (
+              <a href={silestoneMaterialUrl} className="text-sm font-semibold text-gray-900 hover:text-black transition">
+                Ver detalhes <i className="fas fa-arrow-up-right-from-square ml-1 text-gold" />
+              </a>
+            ) : null}
+            {isQuartzoStoneItem ? (
+              <a href={quartzoStoneMaterialUrl} className="text-sm font-semibold text-gray-900 hover:text-black transition">
+                Ver detalhes <i className="fas fa-arrow-up-right-from-square ml-1 text-gold" />
+              </a>
+            ) : null}
+            {isDektonItem ? (
+              <a href={dektonMaterialUrl} className="text-sm font-semibold text-gray-900 hover:text-black transition">
+                Ver detalhes <i className="fas fa-arrow-up-right-from-square ml-1 text-gold" />
+              </a>
+            ) : null}
+            {isSinthItem ? (
+              <a href={sinthMaterialUrl} className="text-sm font-semibold text-gray-900 hover:text-black transition">
+                Ver detalhes <i className="fas fa-arrow-up-right-from-square ml-1 text-gold" />
+              </a>
+            ) : null}
+          </div>
+          <a href={wa} target="_blank" rel="noreferrer" className="text-sm font-semibold text-gold hover:text-yellow-700 transition">
+            Orçamento <i className="fas fa-arrow-right ml-1" />
+          </a>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function CatalogSection({
+  id,
+  title,
+  subtitle,
+  items,
+  onNav,
+  show,
+  backTo,
+  extraActions,
+  footerActions,
+}: {
+  id: string;
+  title: string;
+  subtitle: React.ReactNode;
+  items: CatalogItem[];
+  show: boolean;
+  onNav: (page: PageKey) => void;
+  backTo?: PageKey;
+  extraActions?: React.ReactNode;
+  footerActions?: React.ReactNode;
+}) {
+  if (!show) return null;
+
+  return (
+    <section id={id} className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-10">
+          <div className="min-w-0">
+            <p className="text-sm uppercase tracking-widest text-gold font-semibold">Catálogo</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">{title}</h2>
+            <div className="text-gray-600 mt-3 max-w-2xl space-y-3 leading-relaxed">{subtitle}</div>
+          </div>
+
+          <div className="w-full sm:w-auto flex flex-col gap-3 sm:items-end">
+            {backTo || extraActions ? (
+              <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-3">
+                {backTo ? (
+                  <a
+                    href={`?p=${backTo}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onNav(backTo);
+                    }}
+                    className="sm:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-gray-200 bg-white text-gray-900 hover:border-gray-900 hover:bg-gray-50 transition"
+                    aria-label="Voltar"
+                    title="Voltar"
+                  >
+                    <i className="fas fa-arrow-left" />
+                  </a>
+                ) : null}
+
+                {extraActions ? <div className="min-w-0 flex-1 sm:flex-none flex justify-end">{extraActions}</div> : null}
+              </div>
+            ) : null}
+
+            <div className="flex flex-wrap items-center gap-3 justify-start sm:justify-end">
+              {backTo ? (
+                <a
+                  href={`?p=${backTo}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNav(backTo);
+                  }}
+                  className="hidden sm:inline-flex items-center px-5 py-3 rounded-full font-semibold border border-gray-200 hover:border-gray-900 hover:text-gray-900 transition"
+                >
+                  <i className="fas fa-arrow-left mr-2" />
+                  Voltar
+                </a>
+              ) : null}
+
+              <a
+                href="?p=contato"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNav("contato");
+                }}
+                className="bg-gold text-white px-7 py-3 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow w-full sm:w-auto text-center"
+              >
+                Solicitar orçamento
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map((it) => (
+            <CatalogCard key={it.name} item={it} />
+          ))}
+        </div>
+
+        {footerActions ? (
+          <div className="mt-10 flex items-center justify-center">
+            <div className="inline-flex items-center gap-3">
+              <span className="hidden sm:inline text-sm text-gray-500">Navegação:</span>
+              {footerActions}
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </section>
+  );
+}
+
+function FadeInUp({ children, delayMs = 0 }: { children: React.ReactNode; delayMs?: number }) {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>(0.1);
+  return (
+    <div ref={ref} className={["fade-in-up", inView ? "visible" : ""].join(" ")} style={{ transitionDelay: `${delayMs}ms` }}>
+      {children}
+    </div>
+  );

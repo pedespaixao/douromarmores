@@ -1,0 +1,343 @@
+ <div className="p-4">
+                            <div className="font-semibold text-gray-900 leading-snug">{it.name.replace(/^Mármore\s+/i, "").replace(/^Marmore\s+/i, "")}</div>
+                            <div className="mt-1 text-sm text-gray-600">Ver detalhes deste material e comparar aplicação, amostra e proposta estética.</div>
+                            <div className="mt-3 inline-flex items-center text-sm font-semibold text-gold">
+                              Ver detalhes <i className="fas fa-arrow-right ml-2 transition group-hover:translate-x-1" />
+                            </div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {page === "silestone-material" && currentSilestoneItem ? (
+          <section id="silestone-material" className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-[1380px] mx-auto">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+                  <a href="?p=produtos" onClick={(e) => { e.preventDefault(); onNav("produtos"); }} className="hover:text-gray-900 transition">Produtos</a>
+                  <span>/</span>
+                  <a href="?p=quartzo" onClick={(e) => { e.preventDefault(); onNav("quartzo"); }} className="hover:text-gray-900 transition">Quartzo</a>
+                  <span>/</span>
+                  <a href="?p=silestone" onClick={(e) => { e.preventDefault(); onNav("silestone"); }} className="hover:text-gray-900 transition">Silestone</a>
+                  <span>/</span>
+                  <span className="text-gray-900 font-semibold">{currentSilestoneItem.name}</span>
+                </div>
+
+                <div className="grid lg:grid-cols-12 gap-10 xl:gap-12 items-start">
+                  <div className="space-y-5 lg:col-span-7">
+                    <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gray-50">
+                      <SmartImg src={currentSilestoneItem.applied} fallbackSrcs={[currentSilestoneItem.sample]} alt={`${currentSilestoneItem.name} aplicado`} className="w-full aspect-[16/10] object-cover" loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" />
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50">
+                        <SmartImg src={currentSilestoneItem.sample} fallbackSrcs={[currentSilestoneItem.applied]} alt={`${currentSilestoneItem.name} amostra`} className="w-full aspect-[4/3] object-cover" loading="lazy" />
+                      </div>
+                      <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Material</div>
+                        <div className="mt-2 font-bold text-gray-900 text-xl">{currentSilestoneItem.name}</div>
+                        <div className="mt-2 text-sm text-gray-600">{currentSilestoneItem.tag || "Silestone premium"}</div>
+                        <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Baixa porosidade e estética sofisticada</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Indicado para cozinhas, ilhas, banheiros e lavabos</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Acabamento sob medida com visual contemporâneo</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-5 xl:pl-2">
+                    <p className="text-sm uppercase tracking-widest text-gold font-semibold">{currentSilestoneContent.eyebrow || "Página exclusiva do material"}</p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">{currentSilestoneItem.name}</h1>
+                    <div className="mt-5 space-y-4 text-lg text-gray-600 leading-relaxed">
+                      <p>{currentSilestoneContent.intro}</p>
+                      <p><strong className="text-gray-900">Em termos técnicos:</strong> {currentSilestoneContent.technical}</p>
+                      <p><strong className="text-gray-900">Na prática:</strong> {currentSilestoneContent.practical}</p>
+                      <p>{currentSilestoneContent.value}</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                      <a href="?p=contato" onClick={(e) => { e.preventDefault(); onNav("contato"); }} className="inline-flex items-center justify-center bg-gold text-white px-7 py-3.5 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow">
+                        Solicitar orçamento deste Silestone
+                      </a>
+                      <a href="?p=silestone" onClick={(e) => { e.preventDefault(); onNav("silestone"); }} className="inline-flex items-center justify-center border border-gray-300 text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:border-gray-900 hover:bg-gray-50 transition">
+                        Voltar para Silestone
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Indicação</div><div className="mt-1 font-semibold text-gray-900">{currentSilestoneContent.indicationTitle}</div><div className="mt-1 text-sm text-gray-600">{currentSilestoneContent.indicationText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Benefício real</div><div className="mt-1 font-semibold text-gray-900">{currentSilestoneContent.benefitTitle}</div><div className="mt-1 text-sm text-gray-600">{currentSilestoneContent.benefitText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Execução</div><div className="mt-1 font-semibold text-gray-900">{currentSilestoneContent.executionTitle}</div><div className="mt-1 text-sm text-gray-600">{currentSilestoneContent.executionText}</div></div>
+                </div>
+
+                <div className="mt-10 rounded-3xl bg-gray-50 border border-gray-100 p-6 lg:p-7">
+                  <div className="text-xs uppercase tracking-widest text-gray-500">Outros Silestone</div>
+                  <div className="mt-1 font-bold text-gray-900 text-lg">Veja outras opções que podem combinar com a proposta do seu projeto</div>
+                  <p className="mt-2 text-sm text-gray-600 max-w-3xl">Se a sua ideia é comparar branco, marmorizado e leitura visual com marcenaria e metais, estas sugestões ajudam a ampliar o repertório sem perder o nível do projeto.</p>
+                  <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {silestoneSuggestions.map((it) => {
+                      const slug = normalizeSilestoneSlug(it.name);
+                      return (
+                        <a key={it.name} href={buildSilestonePageUrl(slug)} onClick={(e) => { e.preventDefault(); goToSilestoneMaterial(slug); }} className="group overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-gray-900 hover:shadow-md transition">
+                          <div className="relative overflow-hidden aspect-[16/10] bg-gray-100">
+                            <SmartImg src={it.applied} fallbackSrcs={[it.sample]} alt={it.name} className="w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+                          </div>
+                          <div className="p-4">
+                            <div className="font-semibold text-gray-900 leading-snug">{it.name.replace(/^Silestone\s+/i, "")}</div>
+                            <div className="mt-1 text-sm text-gray-600">Ver detalhes deste material e comparar aplicação, amostra e proposta estética.</div>
+                            <div className="mt-3 inline-flex items-center text-sm font-semibold text-gold">Ver detalhes <i className="fas fa-arrow-right ml-2 transition group-hover:translate-x-1" /></div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {page === "quartzo-stone-material" && currentQuartzoStoneItem ? (
+          <section id="quartzo-stone-material" className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-[1380px] mx-auto">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+                  <a href="?p=produtos" onClick={(e) => { e.preventDefault(); onNav("produtos"); }} className="hover:text-gray-900 transition">Produtos</a>
+                  <span>/</span>
+                  <a href="?p=quartzo" onClick={(e) => { e.preventDefault(); onNav("quartzo"); }} className="hover:text-gray-900 transition">Quartzo</a>
+                  <span>/</span>
+                  <a href="?p=quartzo-stone" onClick={(e) => { e.preventDefault(); onNav("quartzo-stone"); }} className="hover:text-gray-900 transition">Quartzo Stone</a>
+                  <span>/</span>
+                  <span className="text-gray-900 font-semibold">{currentQuartzoStoneItem.name}</span>
+                </div>
+
+                <div className="grid lg:grid-cols-12 gap-10 xl:gap-12 items-start">
+                  <div className="space-y-5 lg:col-span-7">
+                    <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gray-50">
+                      <SmartImg src={currentQuartzoStoneItem.applied} fallbackSrcs={[currentQuartzoStoneItem.sample]} alt={`${currentQuartzoStoneItem.name} aplicado`} className="w-full aspect-[16/10] object-cover" loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" />
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50">
+                        <SmartImg src={currentQuartzoStoneItem.sample} fallbackSrcs={[currentQuartzoStoneItem.applied]} alt={`${currentQuartzoStoneItem.name} amostra`} className="w-full aspect-[4/3] object-cover" loading="lazy" />
+                      </div>
+                      <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Material</div>
+                        <div className="mt-2 font-bold text-gray-900 text-xl">{currentQuartzoStoneItem.name}</div>
+                        <div className="mt-2 text-sm text-gray-600">{currentQuartzoStoneItem.tag || "Quartzo Stone premium"}</div>
+                        <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Baixa porosidade e visual contemporâneo</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Indicado para cozinhas, ilhas, banheiros e lavabos</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Acabamento sob medida com leitura uniforme</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-5 xl:pl-2">
+                    <p className="text-sm uppercase tracking-widest text-gold font-semibold">{currentQuartzoStoneContent.eyebrow || "Página exclusiva do material"}</p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">{currentQuartzoStoneItem.name}</h1>
+                    <div className="mt-5 space-y-4 text-lg text-gray-600 leading-relaxed">
+                      <p>{currentQuartzoStoneContent.intro}</p>
+                      <p><strong className="text-gray-900">Em termos técnicos:</strong> {currentQuartzoStoneContent.technical}</p>
+                      <p><strong className="text-gray-900">Na prática:</strong> {currentQuartzoStoneContent.practical}</p>
+                      <p>{currentQuartzoStoneContent.value}</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                      <a href="?p=contato" onClick={(e) => { e.preventDefault(); onNav("contato"); }} className="inline-flex items-center justify-center bg-gold text-white px-7 py-3.5 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow">
+                        Solicitar orçamento deste Quartzo Stone
+                      </a>
+                      <a href="?p=quartzo-stone" onClick={(e) => { e.preventDefault(); onNav("quartzo-stone"); }} className="inline-flex items-center justify-center border border-gray-300 text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:border-gray-900 hover:bg-gray-50 transition">
+                        Voltar para Quartzo Stone
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Indicação</div><div className="mt-1 font-semibold text-gray-900">{currentQuartzoStoneContent.indicationTitle}</div><div className="mt-1 text-sm text-gray-600">{currentQuartzoStoneContent.indicationText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Benefício real</div><div className="mt-1 font-semibold text-gray-900">{currentQuartzoStoneContent.benefitTitle}</div><div className="mt-1 text-sm text-gray-600">{currentQuartzoStoneContent.benefitText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Execução</div><div className="mt-1 font-semibold text-gray-900">{currentQuartzoStoneContent.executionTitle}</div><div className="mt-1 text-sm text-gray-600">{currentQuartzoStoneContent.executionText}</div></div>
+                </div>
+
+                <div className="mt-10 rounded-3xl bg-gray-50 border border-gray-100 p-6 lg:p-7">
+                  <div className="text-xs uppercase tracking-widest text-gray-500">Outros Quartzo Stone</div>
+                  <div className="mt-1 font-bold text-gray-900 text-lg">Veja outras opções que podem combinar com a proposta do seu projeto</div>
+                  <p className="mt-2 text-sm text-gray-600 max-w-3xl">Se a sua ideia é comparar branco, preto, bege e textura visual com a marcenaria e os metais, estas sugestões ajudam a ampliar o repertório sem perder o nível do projeto.</p>
+                  <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {quartzoStoneSuggestions.map((it) => {
+                      const slug = normalizeQuartzoStoneSlug(it.name);
+                      return (
+                        <a key={it.name} href={buildQuartzoStonePageUrl(slug)} onClick={(e) => { e.preventDefault(); goToQuartzoStoneMaterial(slug); }} className="group overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-gray-900 hover:shadow-md transition">
+                          <div className="relative overflow-hidden aspect-[16/10] bg-gray-100">
+                            <SmartImg src={it.sample} fallbackSrcs={[it.applied]} alt={it.name} className="w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+                          </div>
+                          <div className="p-4">
+                            <div className="font-semibold text-gray-900 leading-snug">{it.name.replace(/^Quartzo\s+Stone\s+/i, "")}</div>
+                            <div className="mt-1 text-sm text-gray-600">Ver detalhes deste material e comparar amostra, aplicação e proposta estética.</div>
+                            <div className="mt-3 inline-flex items-center text-sm font-semibold text-gold">Ver detalhes <i className="fas fa-arrow-right ml-2 transition group-hover:translate-x-1" /></div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {page === "dekton-material" && currentDektonItem ? (
+          <section id="dekton-material" className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-[1380px] mx-auto">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+                  <a href="?p=produtos" onClick={(e) => { e.preventDefault(); onNav("produtos"); }} className="hover:text-gray-900 transition">Produtos</a>
+                  <span>/</span>
+                  <a href="?p=laminas" onClick={(e) => { e.preventDefault(); onNav("laminas"); }} className="hover:text-gray-900 transition">Lâminas</a>
+                  <span>/</span>
+                  <a href="?p=dekton" onClick={(e) => { e.preventDefault(); onNav("dekton"); }} className="hover:text-gray-900 transition">Dekton</a>
+                  <span>/</span>
+                  <span className="text-gray-900 font-semibold">{currentDektonItem.name}</span>
+                </div>
+
+                <div className="grid lg:grid-cols-12 gap-10 xl:gap-12 items-start">
+                  <div className="space-y-5 lg:col-span-7">
+                    <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gray-50">
+                      <SmartImg src={currentDektonItem.applied} fallbackSrcs={[currentDektonItem.sample]} alt={`${currentDektonItem.name} aplicado`} className="w-full aspect-[16/10] object-cover" loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" />
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50">
+                        <SmartImg src={currentDektonItem.sample} fallbackSrcs={[currentDektonItem.applied]} alt={`${currentDektonItem.name} amostra`} className="w-full aspect-[4/3] object-cover" loading="lazy" />
+                      </div>
+                      <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Material</div>
+                        <div className="mt-2 font-bold text-gray-900 text-xl">{currentDektonItem.name}</div>
+                        <div className="mt-2 text-sm text-gray-600">{currentDektonItem.tag || "Dekton premium"}</div>
+                        <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Superfície sinterizada com linguagem premium</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Indicada para cozinhas, ilhas, painéis e áreas gourmet</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Acabamento sob medida com estética contemporânea</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-5 xl:pl-2">
+                    <p className="text-sm uppercase tracking-widest text-gold font-semibold">{currentDektonContent.eyebrow || "Página exclusiva do material"}</p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">{currentDektonItem.name}</h1>
+                    <div className="mt-5 space-y-4 text-lg text-gray-600 leading-relaxed">
+                      <p>{currentDektonContent.intro}</p>
+                      <p><strong className="text-gray-900">Em termos técnicos:</strong> {currentDektonContent.technical}</p>
+                      <p><strong className="text-gray-900">Na prática:</strong> {currentDektonContent.practical}</p>
+                      <p>{currentDektonContent.value}</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                      <a href="?p=contato" onClick={(e) => { e.preventDefault(); onNav("contato"); }} className="inline-flex items-center justify-center bg-gold text-white px-7 py-3.5 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow">
+                        Solicitar orçamento deste Dekton
+                      </a>
+                      <a href="?p=dekton" onClick={(e) => { e.preventDefault(); onNav("dekton"); }} className="inline-flex items-center justify-center border border-gray-300 text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:border-gray-900 hover:bg-gray-50 transition">
+                        Voltar para Dekton
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Indicação</div><div className="mt-1 font-semibold text-gray-900">{currentDektonContent.indicationTitle}</div><div className="mt-1 text-sm text-gray-600">{currentDektonContent.indicationText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Benefício real</div><div className="mt-1 font-semibold text-gray-900">{currentDektonContent.benefitTitle}</div><div className="mt-1 text-sm text-gray-600">{currentDektonContent.benefitText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Execução</div><div className="mt-1 font-semibold text-gray-900">{currentDektonContent.executionTitle}</div><div className="mt-1 text-sm text-gray-600">{currentDektonContent.executionText}</div></div>
+                </div>
+
+                <div className="mt-10 rounded-3xl bg-gray-50 border border-gray-100 p-6 lg:p-7">
+                  <div className="text-xs uppercase tracking-widest text-gray-500">Outros Dekton</div>
+                  <div className="mt-1 font-bold text-gray-900 text-lg">Veja outras opções que podem combinar com a proposta do seu projeto</div>
+                  <p className="mt-2 text-sm text-gray-600 max-w-3xl">Se a sua ideia é comparar claros, escuros, marmorizados e superfícies contemporâneas com marcenaria, metais e iluminação, estas sugestões ajudam a ampliar o repertório sem perder o nível do projeto.</p>
+                  <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {dektonSuggestions.map((it) => {
+                      const slug = normalizeDektonSlug(it.name);
+                      return (
+                        <a key={it.name} href={buildDektonPageUrl(slug)} onClick={(e) => { e.preventDefault(); goToDektonMaterial(slug); }} className="group overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-gray-900 hover:shadow-md transition">
+                          <div className="relative overflow-hidden aspect-[16/10] bg-gray-100">
+                            <SmartImg src={it.applied} fallbackSrcs={[it.sample]} alt={it.name} className="w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+                          </div>
+                          <div className="p-4">
+                            <div className="font-semibold text-gray-900 leading-snug">{it.name.replace(/^Dekton\s+/i, "")}</div>
+                            <div className="mt-1 text-sm text-gray-600">Ver detalhes deste material e comparar aplicação, amostra e proposta estética.</div>
+                            <div className="mt-3 inline-flex items-center text-sm font-semibold text-gold">Ver detalhes <i className="fas fa-arrow-right ml-2 transition group-hover:translate-x-1" /></div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {page === "sinth-material" && currentSinthItem ? (
+          <section id="sinth-material" className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-[1380px] mx-auto">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+                  <a href="?p=produtos" onClick={(e) => { e.preventDefault(); onNav("produtos"); }} className="hover:text-gray-900 transition">Produtos</a>
+                  <span>/</span>
+                  <a href="?p=laminas" onClick={(e) => { e.preventDefault(); onNav("laminas"); }} className="hover:text-gray-900 transition">Lâminas</a>
+                  <span>/</span>
+                  <a href="?p=sinth" onClick={(e) => { e.preventDefault(); onNav("sinth"); }} className="hover:text-gray-900 transition">Sinth</a>
+                  <span>/</span>
+                  <span className="text-gray-900 font-semibold">{currentSinthItem.name}</span>
+                </div>
+
+                <div className="grid lg:grid-cols-12 gap-10 xl:gap-12 items-start">
+                  <div className="space-y-5 lg:col-span-7">
+                    <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gray-50">
+                      <SmartImg src={currentSinthItem.applied} fallbackSrcs={[currentSinthItem.sample]} alt={`${currentSinthItem.name} aplicado`} className="w-full aspect-[16/10] object-cover" loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" />
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50">
+                        <SmartImg src={currentSinthItem.sample} fallbackSrcs={[currentSinthItem.applied]} alt={`${currentSinthItem.name} amostra`} className="w-full aspect-[4/3] object-cover" loading="lazy" />
+                      </div>
+                      <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Material</div>
+                        <div className="mt-2 font-bold text-gray-900 text-xl">{currentSinthItem.name}</div>
+                        <div className="mt-2 text-sm text-gray-600">{currentSinthItem.tag || "Sinth premium"}</div>
+                        <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Superfície sinterizada de linguagem contemporânea</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Indicada para bancadas, ilhas, painéis e banheiros</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Acabamento sob medida com leitura premium</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-5 xl:pl-2">
+                    <p className="text-sm uppercase tracking-widest text-gold font-semibold">{currentSinthContent.eyebrow || "Página exclusiva do material"}</p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">{currentSinthItem.name}</h1>
+                    <div className="mt-5 space-y-4 text-lg text-gray-600 leading-relaxed">
+                      <p>{currentSinthContent.intro}</p>
+                      <p><strong className="text-gray-900">Em termos técnicos:</strong> {currentSinthContent.technical}</p>
+                      <p><strong className="text-gray-900">Na prática:</strong> {currentSinthContent.practical}</p>
+                      <p>{currentSinthContent.value}</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                      <a href="?p=contato" onClick={(e) => { e.preventDefault(); onNav("contato"); }} className="inline-flex items-center justify-center bg-gold text-white px-7 py-3.5 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow">
+                        Solicitar orçamento deste Sinth
+                      </a>
+                      <a href="?p=sinth" onClick={(e) => { e.preventDefault(); onNav("sinth"); }} className="inline-flex items-center justify-center border border-gray-300 text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:border-gray-900 hover:bg-gray-50 transition">
+                        Voltar para Sinth
+                      </a>
+                    </div>
+                  </div>
+                </div>

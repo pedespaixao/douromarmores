@@ -1,0 +1,196 @@
+                       ? [
+                                    { p: "regioes-servicos", label: "Ver regiões atendidas" },
+                                    { p: "marmoraria-zona-sul-sao-paulo", label: "Marmoraria na Zona Sul" },
+                                    { p: "projetos", label: "Ver projetos" },
+                                    { p: "contato", label: "Solicitar orçamento" },
+                                  ]
+                              : [
+                                  { p: "projetos", label: "Ver projetos" },
+                                  { p: "produtos", label: "Ver materiais" },
+                                  { p: "contato", label: "Solicitar orçamento" },
+                                ];
+
+          return (
+            <section id="seo-local" className="py-24 bg-white">
+              <div className="container mx-auto px-4">
+                <div className="max-w-[1380px] mx-auto">
+                  <div className="grid xl:grid-cols-[minmax(0,1.08fr)_360px] gap-10 xl:gap-12 items-start">
+                    <div>
+                      <span className="text-gold font-semibold uppercase tracking-widest text-sm">Atendimento local</span>
+                      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">{seoLanding.title}</h1>
+                      <p className="text-xl text-gray-600 leading-relaxed max-w-4xl">{seoLanding.intro}</p>
+
+                      <div className="mt-8 grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                        {seoLanding.bullets.map((bullet) => (
+                          <div key={bullet} className="rounded-2xl bg-gray-50 border border-gray-100 p-5 h-full">
+                            <div className="text-xs uppercase tracking-widest text-gray-500">Destaque</div>
+                            <div className="mt-2 font-semibold text-gray-900 leading-snug">{bullet}</div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                        <a
+                          href="?p=contato"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            onNav("contato");
+                          }}
+                          className="inline-flex items-center justify-center bg-gray-900 text-white px-7 py-4 rounded-full font-semibold hover:bg-black transition btn-glow"
+                        >
+                          <i className="fas fa-calendar-check mr-2 text-gold" />
+                          {seoLanding.cta}
+                        </a>
+                        <a
+                          href="https://wa.me/5511923210038?text=Olá! Quero orientação e orçamento para meu projeto de marmoraria em São Paulo."
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center justify-center border-2 border-gray-900 text-gray-900 px-7 py-4 rounded-full font-semibold hover:bg-gray-900 hover:text-white transition"
+                        >
+                          <i className="fab fa-whatsapp mr-2" />
+                          Falar no WhatsApp
+                        </a>
+                      </div>
+                    </div>
+
+                    <aside className="xl:sticky xl:top-[calc(var(--douro-header-offset,0px)+20px)]">
+                      <div className="rounded-3xl bg-gray-50 border border-gray-100 p-6">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Serviços relacionados</div>
+                        <div className="mt-4 flex flex-wrap xl:flex-col gap-3">
+                          {relatedSeoLinks.map((l) => (
+                            <a
+                              key={l.p}
+                              href={`?p=${l.p}`}
+                              className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:border-gray-900 hover:bg-gray-50 transition xl:w-full xl:justify-between"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                onNav(l.p);
+                              }}
+                            >
+                              {l.label}
+                              <i className="fas fa-arrow-right text-gold xl:ml-3" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </aside>
+                  </div>
+                </div>
+              </div>
+            </section>
+          );
+        })()}
+      </main>
+
+      {page !== "blog" ? (
+        <footer className="bg-black text-white pt-20 pb-8 overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr] gap-12 mb-16">
+              <div className="min-w-0">
+                <a href="?p=home" className="flex items-center gap-2 sm:gap-3 group min-w-0 max-w-full" onClick={(e) => { e.preventDefault(); onNav("home"); }} aria-label="Douro Mármores - Página inicial">
+                  <LogoMark mode="footer" />
+                  <span className="flex-1 min-w-0 max-w-[62vw] sm:max-w-none overflow-hidden whitespace-nowrap uppercase tracking-wide sm:tracking-wider font-bold text-xl sm:text-3xl leading-none"><span className="text-white">DOURO</span><span className="text-gold">MÁRMORES</span></span>
+                </a>
+                <p className="text-gray-400 mt-4 mb-4 max-w-md">Transformando espaços em obras-primas. Cada projeto é uma história — e cada detalhe precisa emocionar.</p>
+                <div className="text-sm text-gray-300 mb-6"><div className="inline-flex items-start gap-2"><i className="fas fa-location-dot text-gold mt-[2px]" /><span><span className="font-semibold text-white">Fábrica:</span> Rua Paulo Guilguer Reimberg, 3311 — São Paulo - SP</span></div></div>
+                <div className="flex gap-4 flex-wrap">
+                  <a href="https://www.instagram.com/douromarmores/" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition" aria-label="Instagram" target="_blank" rel="noopener noreferrer" onClick={(e) => { e.preventDefault(); openExternal("https://www.instagram.com/douromarmores/"); }}><i className="fab fa-instagram" /></a>
+                  <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition" aria-label="Facebook"><i className="fab fa-facebook-f" /></a>
+                  <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition" aria-label="Pinterest"><i className="fab fa-pinterest-p" /></a>
+                </div>
+              </div>
+
+              <div className="min-w-0">
+                <h4 className="text-lg font-bold mb-6 text-gold">Links Úteis</h4>
+                <ul className="space-y-3">
+                  {footerLinks.map((l) => (
+                    <li key={l.p} className="min-w-0">
+                      <a href={l.hash ? l.hash : `?p=${l.p}`} className="text-gray-400 hover:text-white transition break-words" onClick={(e) => { e.preventDefault(); if (l.hash) scrollOrRouteToHash(l.hash); else onNav(l.p); }}>
+                        {l.label}
+                      </a>
+                    </li>
+                  ))}
+                  <li className="min-w-0">
+                    <a href="?p=blog" className="text-gray-400 hover:text-white transition break-words" onClick={(e) => { e.preventDefault(); onNav("blog"); }}>
+                      Blog
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="min-w-0">
+                <h5 className="text-sm font-bold text-gold mb-3 uppercase tracking-widest">Páginas úteis</h5>
+                <div className="rounded-2xl bg-white/5 border border-white/10 p-4">
+                  <p className="text-sm text-gray-400 leading-relaxed">Reunimos em uma página única as regiões atendidas e serviços estratégicos da Douro Mármores em São Paulo.</p>
+                  <a href="?p=regioes-servicos" className="mt-4 inline-flex items-center text-white font-semibold hover:text-gold transition" onClick={(e) => { e.preventDefault(); onNav("regioes-servicos"); }}>
+                    Ver regiões e serviços
+                    <i className="fas fa-arrow-right ml-2 text-gold" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-white/10 pt-8 text-center">
+              <p className="text-gray-400 text-sm">© 2026 Douro Mármores. Todos os direitos reservados.<span className="text-gray-500"> • </span><span className="text-gray-500">Desenvolvido por </span><span className="text-gold">@pedespaixao</span></p>
+            </div>
+          </div>
+        </footer>
+      ) : null}
+
+      {page !== "blog" && showScrollTop ? (
+        <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed left-6 bottom-6 z-[1000] w-14 h-14 rounded-full bg-gold text-white shadow-2xl hover:bg-yellow-600 transition btn-glow" aria-label="Voltar ao topo" title="Voltar ao topo">
+          <i className="fas fa-chevron-up text-xl" />
+        </button>
+      ) : null}
+
+      {page !== "blog" ? (
+        <a href="https://wa.me/5511923210038" target="_blank" rel="noreferrer" className="whatsapp-float bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition" aria-label="WhatsApp">
+          <i className="fab fa-whatsapp text-3xl" />
+        </a>
+      ) : null}
+
+      {lightbox ? (
+        <div className="fixed inset-0 z-[9999]" role="dialog" aria-modal="true" aria-label="Visualização de mídia">
+          <button className="absolute inset-0 bg-black/80" aria-label="Fechar" onClick={() => setLightbox(null)} />
+          <div className="absolute inset-0 flex items-center justify-center p-4">
+            <div className="relative max-w-5xl w-full">
+              <button ref={lightboxCloseBtnRef} className="absolute -top-12 right-0 text-white/90 hover:text-white text-3xl" aria-label="Fechar" onClick={() => setLightbox(null)} type="button">×</button>
+              <div className="relative">
+                {lightbox.src.toLowerCase().endsWith(".mp4") ? (
+                  <video className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl bg-black" controls playsInline preload="metadata">
+                    {(() => {
+                      const src = lightbox.src;
+                      const candidates: string[] = [];
+                      const add = (u: string) => {
+                        if (!u) return;
+                        if (!candidates.includes(u)) candidates.push(u);
+                      };
+                      add(src);
+                      if (src.startsWith("/media/")) {
+                        const bases = (ASSETS as any).mediaExtraBases as string[] | undefined;
+                        if (Array.isArray(bases)) {
+                          for (const base of bases) add(`${base}${src}`);
+                        }
+                        add(src.replace("/media/", "/files/public_html/media/"));
+                        add(src.replace("/media/", "/api/preview/big/public_html/media/"));
+                        add(src.replace("/media/", "/api/preview/medium/public_html/media/"));
+                        add(src.replace("/media/", "/api/preview/small/public_html/media/"));
+                      }
+                      return candidates.map((u) => <source key={u} src={u} type="video/mp4" />);
+                    })()}
+                  </video>
+                ) : (
+                  <SmartImg src={lightbox.src} alt={lightbox.alt || "Imagem"} className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl bg-black" loading="eager" />
+                )}
+
+                <div className="wm-overlay wm-strong" aria-hidden="true" style={{ backgroundImage: `url('${watermarkUrl}')` }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      <HashLinkInterceptor onHash={scrollOrRouteToHash} />
+    </div>
+  );
+}

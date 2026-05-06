@@ -1,0 +1,300 @@
+};
+
+const GRANITO_MATERIAL_COPY: Record<string, GranitoMaterialCopy> = {
+  "preto-sao-gabriel": {
+    eyebrow: "Granito preto para cozinhas, áreas gourmet e projetos de rotina intensa",
+    intro:
+      "O Granito Preto São Gabriel é um dos materiais mais procurados para quem quer uma cozinha elegante, prática e muito segura para o dia a dia. Ele entrega profundidade visual, leitura contemporânea e uma sensação de projeto bem resolvido, sem abrir mão de resistência real.",
+    technical:
+      "Em termos técnicos, é um granito natural de alta densidade, baixa absorção relativa e excelente comportamento para bancadas, ilhas, cozinhas e áreas gourmet. É um material valorizado pela estabilidade, pela dureza e pela boa performance em uso intenso.",
+    practical:
+      "Na prática, é a escolha de quem quer cozinhar com mais tranquilidade, manter a bancada bonita por mais tempo e reduzir a preocupação com marcas do uso diário. Também funciona muito bem com marcenaria amadeirada, cinza, off-white e metais pretos ou inox.",
+    value:
+      "É um investimento que vale a pena porque une estética forte, rotina prática e uma imagem de durabilidade que valoriza o ambiente e transmite segurança na escolha.",
+    indicationTitle: "Cozinhas, ilhas e áreas gourmet de uso intenso",
+    indicationText: "Excelente para quem quer um granito preto elegante, funcional e muito confiável para rotina real.",
+    benefitTitle: "Baixa manutenção com presença visual",
+    benefitText: "Entrega sensação de cozinha premium, leitura contemporânea e praticidade no uso diário.",
+    executionTitle: "Acabamento premium muda a percepção final",
+    executionText: "No São Gabriel, borda, meia-esquadria, recortes e emendas bem resolvidas são o que fazem a pedra sair do básico e entrar no alto padrão.",
+    seoDescription: "Granito Preto São Gabriel em São Paulo para bancadas, ilhas, cozinhas e áreas gourmet sob medida. Granito natural resistente, elegante e ideal para rotina intensa.",
+  },
+  "preto-absoluto": {
+    eyebrow: "Granito preto uniforme para projetos sofisticados e de alta presença",
+    intro:
+      "O Granito Preto Absoluto é indicado para quem busca uma bancada com leitura mais limpa, uniforme e sofisticada, sem perder a robustez e a confiança de um granito natural premium.",
+    technical:
+      "Em termos técnicos, é um granito de alta densidade e excelente desempenho para bancadas, cozinhas, ilhas, lavatórios e áreas gourmet. Seu destaque está na coloração mais homogênea, que valoriza cortes, volumes e detalhes de acabamento.",
+    practical:
+      "Na prática, ele entrega uma aparência mais arquitetônica e refinada, combinando muito bem com projetos contemporâneos, marcenaria escura, madeira natural, cinzas e metais sofisticados.",
+    value:
+      "É uma escolha que reforça elegância, precisão visual e sensação de exclusividade, transformando a bancada em uma peça de impacto sem abrir mão de durabilidade.",
+    indicationTitle: "Cozinhas contemporâneas, ilhas e lavatórios sofisticados",
+    indicationText: "Ideal para quem quer um preto mais uniforme e uma leitura visual mais limpa no projeto.",
+    benefitTitle: "Visual monolítico e elegante",
+    benefitText: "A uniformidade do material valoriza volumes, linhas retas e acabamentos premium.",
+    executionTitle: "Precisão de execução é o que revela o nível da peça",
+    executionText: "No Preto Absoluto, pequenas diferenças de emenda, borda e polimento aparecem mais. Por isso, a execução precisa ser realmente fina.",
+    seoDescription: "Granito Preto Absoluto em São Paulo para cozinhas, bancadas, ilhas e lavatórios sob medida. Granito natural uniforme, sofisticado e resistente para projetos premium.",
+  },
+  "preto-via-lactea": {
+    eyebrow: "Granito preto com movimento natural para projetos de alto impacto",
+    intro:
+      "O Granito Preto Via Láctea é uma excelente escolha para quem quer a força de um granito preto com mais desenho natural e personalidade visual. Ele cria bancadas e ilhas marcantes, sem perder a segurança do uso diário.",
+    technical:
+      "Em termos técnicos, é um granito natural resistente, indicado para cozinhas, ilhas, bancadas e áreas gourmet. A presença de movimento natural na superfície ajuda a construir uma leitura mais orgânica e autoral.",
+    practical:
+      "Na prática, ele combina muito bem com cozinhas contemporâneas, ambientes com madeira, metais pretos ou escovados e projetos que pedem presença sem parecer excessivamente homogêneos.",
+    value:
+      "É uma escolha que agrega valor porque une resistência, identidade visual e uma estética mais sofisticada para quem quer fugir do preto totalmente liso.",
+    indicationTitle: "Cozinhas, ilhas e áreas gourmet com personalidade",
+    indicationText: "Excelente para quem quer granito preto resistente com mais desenho e presença natural.",
+    benefitTitle: "Impacto visual com rotina tranquila",
+    benefitText: "Entrega força estética, identidade e excelente desempenho para uso intenso.",
+    executionTitle: "Paginação valoriza o desenho natural",
+    executionText: "No Via Láctea, estudar a direção do movimento e posicionar bem as emendas é o que transforma a pedra em destaque real do ambiente.",
+    seoDescription: "Granito Preto Via Láctea em São Paulo para cozinhas, ilhas e áreas gourmet sob medida. Granito natural preto, sofisticado e resistente para projetos premium.",
+  },
+  "branco-itaunas": {
+    eyebrow: "Granito claro para cozinhas luminosas e projetos práticos",
+    intro:
+      "O Granito Branco Itaúnas é muito procurado por quem quer uma cozinha clara, acolhedora e funcional. É uma pedra que amplia a percepção de luz e combina muito bem com ambientes residenciais de uso intenso.",
+    technical:
+      "Em termos técnicos, é um granito natural indicado para bancadas de cozinha, ilhas, áreas gourmet e lavatórios, com bom desempenho estrutural e excelente relação entre resistência, versatilidade e estética clara.",
+    practical:
+      "Na prática, ele ajuda a deixar o ambiente mais leve, conversa bem com marcenaria branca, bege, madeira e tons neutros, e funciona muito bem para quem quer claridade sem abrir mão da confiança de um granito.",
+    value:
+      "É uma escolha que vale a pena porque combina sensação de amplitude, facilidade de composição e a segurança de um material natural muito aceito em projetos residenciais.",
+    indicationTitle: "Cozinhas claras, ilhas e áreas gourmet acolhedoras",
+    indicationText: "Ideal para quem quer luz, praticidade e uma bancada de granito clara com boa performance.",
+    benefitTitle: "Claridade com resistência",
+    benefitText: "Ajuda a iluminar o ambiente e entrega a robustez esperada para uso diário.",
+    executionTitle: "Detalhe bem resolvido evita leitura comum",
+    executionText: "No Branco Itaúnas, borda, recorte e paginação são essenciais para que o projeto fique sofisticado e não pareça apenas mais uma cozinha clara.",
+    seoDescription: "Granito Branco Itaúnas em São Paulo para cozinhas, bancadas, ilhas e áreas gourmet sob medida. Granito natural claro, resistente e ideal para projetos funcionais.",
+  },
+  "branco-dallas": {
+    eyebrow: "Granito claro versátil para cozinhas elegantes e uso diário",
+    intro:
+      "O Granito Branco Dallas é uma opção muito equilibrada para quem quer uma pedra clara, versátil e confiável para cozinhas, ilhas e áreas gourmet. Ele combina luminosidade com leitura prática para a rotina.",
+    technical:
+      "Em termos técnicos, é um granito natural indicado para bancadas de uso intenso, com boa resistência e um padrão visual que favorece diferentes estilos de projeto.",
+    practical:
+      "Na prática, ele ajuda a compor cozinhas claras, aconchegantes e fáceis de harmonizar com madeira, off-white, cinzas suaves e metais escovados.",
+    value:
+      "É uma escolha inteligente para quem quer equilíbrio entre beleza, funcionalidade e uma aparência acolhedora que permanece atual por muito tempo.",
+    indicationTitle: "Cozinhas residenciais, ilhas e áreas gourmet",
+    indicationText: "Ótimo para quem quer granito claro, versátil e seguro para o dia a dia.",
+    benefitTitle: "Versatilidade que facilita o projeto",
+    benefitText: "Combina com vários estilos e ajuda a construir ambientes claros e agradáveis.",
+    executionTitle: "Borda e emenda fazem diferença no resultado",
+    executionText: "No Branco Dallas, acabamento premium é o que separa uma bancada comum de uma peça mais elegante e bem resolvida.",
+    seoDescription: "Granito Branco Dallas em São Paulo para bancadas, cozinhas, ilhas e áreas gourmet sob medida. Granito natural claro, versátil e resistente para rotina diária.",
+  },
+  "verde-ubatuba": {
+    eyebrow: "Granito escuro e resistente para cozinhas práticas e duráveis",
+    intro:
+      "O Granito Verde Ubatuba é uma escolha clássica para quem quer uma bancada resistente, de baixa manutenção visual e muito funcional para cozinhas e áreas de uso intenso.",
+    technical:
+      "Em termos técnicos, é um granito natural de excelente desempenho, indicado para bancadas, áreas gourmet e cozinhas que pedem resistência e boa estabilidade no longo prazo.",
+    practical:
+      "Na prática, ele disfarça melhor pequenos sinais do dia a dia, conversa bem com ambientes contemporâneos e continua sendo uma opção muito segura para quem prioriza durabilidade com estética sóbria.",
+    value:
+      "É um investimento consistente porque entrega confiança de uso, presença elegante e longa vida útil com baixa complexidade de manutenção.",
+    indicationTitle: "Cozinhas, bancadas e áreas gourmet de alta rotina",
+    indicationText: "Perfeito para quem quer uma pedra escura, robusta e muito confiável para o uso real.",
+    benefitTitle: "Tranquilidade no dia a dia",
+    benefitText: "Ajuda a manter a bancada bonita e funcional mesmo em rotinas mais intensas.",
+    executionTitle: "Acabamento certo renova um clássico",
+    executionText: "No Verde Ubatuba, a diferença está em fugir do visual básico por meio de bordas, paginação e instalação de nível premium.",
+    seoDescription: "Granito Verde Ubatuba em São Paulo para cozinhas, bancadas e áreas gourmet sob medida. Granito natural resistente, funcional e ideal para rotina intensa.",
+  },
+  "branco-fortaleza": {
+    eyebrow: "Granito claro para cozinhas luminosas, funcionais e acolhedoras",
+    intro:
+      "O Granito Branco Fortaleza é uma excelente opção para quem quer uma cozinha clara, leve e muito prática para o dia a dia. Ele ajuda a ampliar a percepção de luz e combina bem com projetos que pedem sensação de limpeza visual e funcionalidade.",
+    technical:
+      "Em termos técnicos, é um granito natural indicado para bancadas, cozinhas, ilhas e áreas gourmet, com boa resistência mecânica e desempenho confiável para aplicações de uso intenso.",
+    practical:
+      "Na prática, ele funciona muito bem com marcenaria branca, amadeirada, cinza-clara e tons neutros, ajudando a construir um ambiente mais aberto, agradável e fácil de compor.",
+    value:
+      "É uma escolha que vale a pena porque une claridade, versatilidade e a confiança de um material natural resistente, mantendo o ambiente bonito e funcional ao longo do tempo.",
+    indicationTitle: "Cozinhas claras, bancadas e ilhas residenciais",
+    indicationText: "Ideal para quem quer um granito claro, versátil e confiável para o uso diário.",
+    benefitTitle: "Ambiente mais leve e funcional",
+    benefitText: "Ajuda a valorizar a luz do espaço e entrega a segurança prática que se espera de uma bancada de granito.",
+    executionTitle: "Detalhes definem a elegância do claro",
+    executionText: "No Branco Fortaleza, borda, paginação e recortes bem resolvidos evitam que o resultado fique comum e elevam muito a percepção final.",
+    seoDescription: "Granito Branco Fortaleza em São Paulo para cozinhas, bancadas, ilhas e áreas gourmet sob medida. Granito natural claro, resistente e versátil para rotina diária.",
+  },
+  "santa-cecilia": {
+    eyebrow: "Granito versátil para cozinhas acolhedoras e de rotina real",
+    intro:
+      "O Granito Santa Cecília é muito procurado por quem quer unir praticidade, calor visual e boa aceitação estética em cozinhas, bancadas e áreas gourmet. É um material que funciona muito bem em projetos residenciais e conversa com vários estilos.",
+    technical:
+      "Em termos técnicos, é um granito natural indicado para bancadas de uso intenso, com resistência compatível com cozinhas e áreas de preparo, além de boa versatilidade em diferentes composições de projeto.",
+    practical:
+      "Na prática, ele ajuda a suavizar a percepção de sujeira do uso cotidiano, combina com madeira, bege, off-white e tons terrosos, e cria uma leitura mais acolhedora no ambiente.",
+    value:
+      "É uma escolha inteligente porque entrega funcionalidade, versatilidade estética e uma aparência confortável para quem quer uma cozinha bonita e fácil de viver.",
+    indicationTitle: "Cozinhas, bancadas e áreas gourmet residenciais",
+    indicationText: "Excelente para quem busca um granito funcional, agradável visualmente e muito fácil de compor.",
+    benefitTitle: "Equilíbrio entre beleza e praticidade",
+    benefitText: "Ajuda a criar cozinhas mais acolhedoras e funcionais, com ótima convivência com a rotina diária.",
+    executionTitle: "O acabamento define se ele parece comum ou premium",
+    executionText: "No Santa Cecília, a diferença está em bordas bem executadas, recortes limpos e instalação cuidadosa para valorizar o conjunto.",
+    seoDescription: "Granito Santa Cecília em São Paulo para cozinhas, bancadas e áreas gourmet sob medida. Granito natural versátil, resistente e ideal para rotina residencial.",
+  },
+  "capao-bonito": {
+    eyebrow: "Granito mesclado para cozinhas práticas, quentes e elegantes",
+    intro:
+      "O Granito Capão Bonito é uma ótima escolha para quem quer uma pedra natural com aparência acolhedora, boa leitura de movimento e excelente adaptação à rotina da cozinha. Ele combina praticidade com presença mais orgânica.",
+    technical:
+      "Em termos técnicos, é um granito natural indicado para bancadas, cozinhas, áreas gourmet e superfícies sob medida, valorizado pela resistência e pela boa performance em aplicações de uso frequente.",
+    practical:
+      "Na prática, ele tende a lidar muito bem com o dia a dia, ajuda a disfarçar mais a dinâmica real da cozinha e combina com marcenaria clara, amadeirada, cinza e tons quentes.",
+    value:
+      "É um material que vale a pena porque une robustez, estética confortável e uma sensação de projeto mais natural e bem resolvido para o uso contínuo.",
+    indicationTitle: "Cozinhas residenciais, bancadas e áreas gourmet",
+    indicationText: "Ideal para quem quer granito resistente com leitura visual acolhedora e prática.",
+    benefitTitle: "Rotina mais leve visualmente",
+    benefitText: "O movimento natural do material ajuda a manter uma aparência agradável mesmo no uso intenso.",
+    executionTitle: "O desenho natural precisa ser bem aproveitado",
+    executionText: "No Capão Bonito, paginação, bordas e transições bem resolvidas ajudam o material a parecer mais sofisticado e menos comum.",
+    seoDescription: "Granito Capão Bonito em São Paulo para cozinhas, bancadas e áreas gourmet sob medida. Granito natural resistente, acolhedor e ideal para o dia a dia.",
+  },
+  "siena": {
+    eyebrow: "Granito de tonalidade quente para cozinhas acolhedoras e duráveis",
+    intro:
+      "O Granito Siena é indicado para quem quer uma bancada com sensação mais calorosa, confortável e muito funcional. Ele valoriza ambientes que pedem acolhimento, praticidade e uma leitura natural da pedra.",
+    technical:
+      "Em termos técnicos, é um granito natural adequado para bancadas de cozinha, áreas gourmet e superfícies de uso intenso, com resistência e durabilidade compatíveis com a rotina real.",
+    practical:
+      "Na prática, ele conversa muito bem com madeira, bege, off-white, greige e projetos que buscam uma estética mais calorosa e menos fria, sem perder segurança no uso.",
+    value:
+      "É uma escolha que agrega valor porque equilibra uso diário, acolhimento visual e uma estética natural que continua agradável e relevante com o tempo.",
+    indicationTitle: "Cozinhas, bancadas e áreas gourmet com tons quentes",
+    indicationText: "Perfeito para quem quer uma pedra funcional com estética acolhedora e natural.",
+    benefitTitle: "Calor visual com segurança de uso",
+    benefitText: "Traz mais conforto visual ao ambiente sem abrir mão da robustez esperada para a rotina.",
+    executionTitle: "A execução valoriza o tom e o movimento",
+    executionText: "No Siena, bordas, paginação e instalação refinada ajudam a revelar o melhor da pedra e elevar a percepção final do ambiente.",
+    seoDescription: "Granito Siena em São Paulo para cozinhas, bancadas e áreas gourmet sob medida. Granito natural de tonalidade quente, resistente e versátil para projetos residenciais.",
+  },
+  "branco-ceara-polar": {
+    eyebrow: "Granito branco para projetos claros, elegantes e de uso diário",
+    intro:
+      "O Granito Branco Ceará Polar é procurado por quem deseja uma bancada clara com presença sofisticada e excelente adaptação à rotina. Ele ajuda a valorizar luz, sensação de amplitude e leitura premium no projeto.",
+    technical:
+      "Em termos técnicos, é um granito natural indicado para bancadas, ilhas e cozinhas sob medida, reunindo resistência, estabilidade e desempenho confiável para uso frequente.",
+    practical:
+      "Na prática, funciona muito bem em cozinhas contemporâneas, com marcenaria clara, amadeirada ou contrastes mais escuros, criando uma atmosfera mais leve e refinada.",
+    value:
+      "É uma escolha de valor porque une claridade, sofisticação e a segurança de uma pedra natural preparada para a rotina real do ambiente.",
+    indicationTitle: "Cozinhas claras, ilhas e bancadas premium",
+    indicationText: "Excelente para quem quer granito branco com visual refinado e bom desempenho no dia a dia.",
+    benefitTitle: "Ampla sensação de luz e elegância",
+    benefitText: "Ajuda o ambiente a parecer maior, mais claro e mais sofisticado sem perder funcionalidade.",
+    executionTitle: "Acabamento certo destaca ainda mais o branco",
+    executionText: "No Branco Ceará Polar, a qualidade da execução é o que garante um resultado limpo, elegante e coerente com projetos de alto padrão.",
+    seoDescription: "Granito Branco Ceará Polar em São Paulo para bancadas, ilhas e cozinhas sob medida. Granito natural branco, resistente e sofisticado para projetos claros e premium.",
+  },
+};
+
+function getQuartzitoMaterialCopy(item: CatalogItem | null): QuartzitoMaterialCopy {
+  if (!item) {
+    return {
+      intro: "Quartzito premium para quem quer unir força visual, desenho natural e excelente desempenho em cozinhas, ilhas, bancadas, painéis e projetos de alto padrão.",
+      technical: "Em termos técnicos, o quartzito é uma rocha metamórfica formada pela recristalização do quartzo sob alta pressão e temperatura, o que gera alta dureza, boa estabilidade e um desempenho muito valorizado em superfícies que pedem beleza e resistência.",
+      practical: "Na prática, ele entrega mais segurança para a rotina do que materiais mais sensíveis, ao mesmo tempo em que mantém a exclusividade visual e a riqueza de desenho que só uma pedra natural oferece.",
+      value: "É uma decisão que agrega valor ao projeto porque combina presença, autenticidade e um resultado final que transmite sofisticação, critério e permanência.",
+      indicationTitle: "Cozinhas, ilhas, bancadas e painéis",
+      indicationText: "Excelente para projetos que exigem estética premium, personalidade e desempenho real para o dia a dia.",
+      benefitTitle: "Beleza natural com confiança",
+      benefitText: "O quartzito une visual autoral, sensação de alto padrão e mais tranquilidade para aplicações exigentes.",
+      executionTitle: "Chapa, paginação e acabamento",
+      executionText: "No quartzito, o valor final aparece quando a escolha da chapa, a direção do veio e a execução trabalham juntas para criar um resultado limpo e memorável.",
+    };
+  }
+
+  return QUARTZITO_MATERIAL_COPY[normalizeQuartzitoSlug(item.name)] || {
+    intro: `${item.name} é um quartzito premium indicado para quem quer transformar cozinha, ilha, bancada, painel ou área gourmet em um ponto de destaque do projeto, com desenho natural, identidade própria e forte valorização estética do ambiente.`,
+    technical: `Em termos técnicos, ${item.name} reúne as características do quartzito natural: alta dureza, estrutura mineral rica em quartzo e excelente desempenho para aplicações que pedem uma pedra natural resistente para bancada, ilha, cozinha e superfícies sob medida.`,
+    practical: `Na prática, ele combina presença visual com confiança de uso, criando um projeto mais sofisticado, mais autoral e mais seguro para a rotina do que materiais mais sensíveis.`,
+    value: `${item.name} agrega valor porque transforma a pedra em assinatura visual do ambiente, reforçando exclusividade, acabamento premium e a percepção de um projeto bem pensado em todos os detalhes.`,
+    indicationTitle: "Cozinhas, ilhas, bancadas e painéis",
+    indicationText: "Excelente para quem busca uma pedra natural de alto padrão, com personalidade e desempenho para aplicações de destaque.",
+    benefitTitle: "Presença com segurança",
+    benefitText: "Entrega visual premium, desenho exclusivo e uma experiência de uso mais tranquila para quem quer beleza sem abrir mão de performance.",
+    executionTitle: "O resultado depende do conjunto",
+    executionText: "No quartzito, escolher a chapa certa e trabalhar bem paginação, emendas, bordas e instalação é o que transforma o material em peça realmente memorável.",
+  };
+}
+
+function getGranitoMaterialCopy(item: CatalogItem | null): GranitoMaterialCopy {
+  if (!item) {
+    return {
+      intro: "Granito premium para quem quer unir resistência real, estética consistente e excelente desempenho em cozinhas, ilhas, bancadas e áreas gourmet.",
+      technical: "Em termos técnicos, o granito é uma rocha magmática de alta dureza, muito valorizada pela resistência mecânica, pela estabilidade e pela excelente performance em superfícies de uso intenso.",
+      practical: "Na prática, ele entrega muito mais tranquilidade para a rotina, boa durabilidade e uma estética que pode ir do clássico ao contemporâneo com enorme segurança de uso.",
+      value: "É uma escolha que agrega valor porque combina funcionalidade, confiança e acabamento premium, criando um ambiente bonito, sólido e pensado para durar.",
+      indicationTitle: "Cozinhas, ilhas, bancadas e áreas gourmet",
+      indicationText: "Excelente para projetos que exigem resistência, praticidade e um acabamento bem resolvido.",
+      benefitTitle: "Resistência com tranquilidade",
+      benefitText: "O granito entrega segurança para a rotina real sem abrir mão de presença visual e sofisticação.",
+      executionTitle: "Borda, recorte e instalação fazem diferença",
+      executionText: "No granito, a percepção final de alto padrão aparece quando paginação, emendas, bordas e nivelamento são tratados com precisão.",
+    };
+  }
+
+  return GRANITO_MATERIAL_COPY[normalizeGranitoSlug(item.name)] || {
+    intro: `${item.name} é um granito natural indicado para quem quer unir resistência, estabilidade visual e excelente desempenho em cozinhas, bancadas, ilhas e áreas gourmet sob medida.`,
+    technical: `Em termos técnicos, ${item.name} reúne as características mais valorizadas do granito natural: alta dureza, boa resistência para uso intenso e comportamento confiável em aplicações que pedem uma pedra sólida para o dia a dia.`,
+    practical: `Na prática, ele oferece mais tranquilidade de uso, composição versátil com a marcenaria e uma presença visual que ajuda o ambiente a parecer mais resolvido e duradouro.`,
+    value: `${item.name} agrega valor porque combina desempenho real, estética consistente e a percepção de um projeto pensado para durar e continuar bonito ao longo dos anos.`,
+    indicationTitle: "Cozinhas, bancadas, ilhas e áreas gourmet",
+    indicationText: "Excelente para quem busca um material natural resistente, versátil e confiável para uso diário.",
+    benefitTitle: "Praticidade com presença",
+    benefitText: "Entrega segurança para a rotina e um resultado visual mais sólido e elegante.",
+    executionTitle: "Acabamento é o que define o nível do resultado",
+    executionText: "No granito, borda, recortes, emendas e instalação bem executados são o que transformam uma bancada funcional em uma peça realmente premium.",
+  };
+}
+
+const MARMORE_MATERIAL_COPY: Record<string, MarmoreMaterialCopy> = {
+  "branco-parana": {
+    eyebrow: "Mármore brasileiro claro para projetos elegantes, luminosos e atemporais",
+    intro:
+      "O Mármore Branco Paraná é muito procurado por quem quer um material natural claro, sofisticado e com leitura leve para lavabos, banheiros, painéis e ambientes de alto padrão. Ele ajuda o espaço a parecer mais claro, mais refinado e mais silencioso visualmente.",
+    technical:
+      "Em termos técnicos, é um mármore natural indicado principalmente para aplicações internas, onde o objetivo é valorizar desenho, luz e acabamento. Como outros mármores, pede especificação correta conforme o uso e atenção aos cuidados compatíveis com pedras carbonáticas.",
+    practical:
+      "Na prática, ele entrega um resultado muito elegante em lavatórios, banheiros, painéis, nichos, lareiras e paredes de destaque. Funciona muito bem com metais dourados, pretos ou cromados e conversa com marcenaria clara, amadeirada ou mais contemporânea.",
+    value:
+      "É um investimento que vale a pena porque transforma o ambiente em algo mais nobre, mais leve e mais memorável. O Branco Paraná carrega uma sensação de sofisticação natural que dificilmente passa despercebida quando a execução está bem resolvida.",
+    indicationTitle: "Lavabos, banheiros, painéis e interiores premium",
+    indicationText: "Ideal para quem quer um mármore claro com presença elegante e estética atemporal em áreas internas de destaque.",
+    benefitTitle: "Luz, delicadeza e assinatura visual",
+    benefitText: "Ajuda a criar espaços mais claros, sofisticados e visualmente valiosos, com forte percepção de alto padrão.",
+    executionTitle: "O refinamento aparece no detalhe",
+    executionText: "No Branco Paraná, paginação, recortes, encontros e bordas bem executadas são o que transformam uma chapa bonita em um resultado realmente premium.",
+    seoDescription: "Mármore Branco Paraná em São Paulo para lavabos, banheiros, painéis e interiores de alto padrão. Mármore natural claro, sofisticado e ideal para projetos internos premium.",
+  },
+  carrara: {
+    eyebrow: "Mármore clássico para banheiros, lavabos e painéis com estética internacional",
+    intro:
+      "O Mármore Carrara é um dos materiais mais desejados quando o objetivo é transmitir elegância clássica, referência de design e uma estética que atravessa o tempo. Ele é muito valorizado em lavabos, banheiros, painéis e superfícies internas onde a beleza da pedra é protagonista.",
+    technical:
+      "Em termos técnicos, o Carrara é um mármore natural de uso interno, escolhido especialmente pelo desenho de seus veios e pela leitura sofisticada da superfície. Como mármore, deve ser especificado com critério para aplicações adequadas e com orientação de uso compatível com sua natureza.",
+    practical:
+      "Na prática, ele cria ambientes com forte apelo estético e sensação imediata de projeto autoral. Funciona muito bem em banheiros, lavatórios, paredes de destaque, lareiras e tampos decorativos, principalmente quando combinado com marcenaria delicada e iluminação bem trabalhada.",
+    value:
+      "É um investimento que vale a pena porque carrega uma referência estética que o mercado reconhece imediatamente. O Carrara eleva a percepção do ambiente, reforça elegância e transforma a pedra em elemento central da arquitetura.",
+    indicationTitle: "Banheiros, lavabos, painéis e lareiras internas",
+    indicationText: "Perfeito para quem quer um mármore clássico, reconhecido e de forte valor estético para interiores.",
+    benefitTitle: "Beleza clássica com prestígio visual",
+    benefitText: "Entrega uma assinatura estética imediatamente associada a sofisticação, tradição e bom gosto em projetos premium.",
+    executionTitle: "A paginação é o que faz parecer obra autoral",
+    executionText: "No Carrara, a escolha do veio, das emendas e da direção da pedra muda completamente a percepção final do projeto e valoriza muito mais o resultado.",
+    seoDescription: "Mármore Carrara em São Paulo para lavabos, banheiros, lareiras e painéis sob medida. Mármore natural clássico e sofisticado para interiores de alto padrão.",
+  },

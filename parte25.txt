@@ -1,0 +1,358 @@
+
+                      <div className="rounded-3xl bg-gray-50 border border-gray-100 p-6">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Serviços e soluções</div>
+                        <ul className="mt-4 space-y-3">
+                          {seoIndexGroups.servicos.map((l) => (
+                            <li key={l.p}>
+                              <a
+                                href={`?p=${l.p}`}
+                                className="text-gray-900 font-semibold hover:text-gold transition"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  onNav(l.p);
+                                }}
+                              >
+                                {l.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          const seoLandingMap: Partial<Record<PageKey, { title: string; intro: string; bullets: string[]; cta: string }>> = {
+            "marmoraria-sao-paulo": {
+              title: "Marmoraria em São Paulo",
+              intro:
+                "A Douro Mármores é uma marmoraria em São Paulo especializada em bancadas, escadas, lavatórios, painéis, cozinhas, banheiros, lavabos e projetos sob medida em mármore, granito, quartzito, quartzo e superfícies premium.",
+              bullets: [
+                "Bancadas sob medida para cozinhas, banheiros e áreas gourmet",
+                "Escadas, painéis e revestimentos em pedra natural e superfícies premium",
+                "Atendimento em São Paulo, Grande São Paulo e regiões estratégicas da capital",
+              ],
+              cta: "Solicitar orçamento em São Paulo",
+            },
+            "marmoraria-zona-sul-sao-paulo": {
+              title: "Marmoraria na Zona Sul de São Paulo",
+              intro:
+                "A Douro Mármores está localizada na Zona Sul de São Paulo, o que facilita o atendimento para bairros próximos como Interlagos, Moema, Vila Mariana, Santo Amaro, Jabaquara, Saúde, Brooklin, Vila Mascote e Chácara Santo Antônio. Ainda assim, nossa atuação não se limita a essa região: atendemos toda a cidade de São Paulo, Grande São Paulo e região.",
+              bullets: [
+                "Base na Zona Sul, com facilidade logística para bairros próximos",
+                "Atendimento em toda São Paulo, Grande São Paulo e região",
+                "Medição, orientação técnica, acabamento premium e instalação sob medida",
+              ],
+              cta: "Solicitar orçamento em São Paulo",
+            },
+            "bancadas-granito-sao-paulo": {
+              title: "Bancadas em Granito em São Paulo",
+              intro:
+                "Produzimos bancadas em granito em São Paulo para cozinhas, áreas gourmet, banheiros e lavabos, com corte sob medida, acabamento premium, meia-esquadria 45º e instalação técnica.",
+              bullets: [
+                "Granitos escuros, claros e exóticos para cozinha e gourmet",
+                "Alta resistência para rotina intensa e fácil manutenção",
+                "Atendimento em São Paulo e Grande São Paulo com projeto sob medida",
+              ],
+              cta: "Quero bancada em granito",
+            },
+            "quartzo-cozinha-sao-paulo": {
+              title: "Quartzo para Cozinha em São Paulo",
+              intro:
+                "Trabalhamos com quartzo para cozinha em São Paulo, incluindo linhas como Silestone e Quartzo Stone, ideais para bancadas, ilhas e projetos contemporâneos com baixa porosidade e estética uniforme.",
+              bullets: [
+                "Opções de quartzo premium para bancadas e ilhas",
+                "Orientação para escolher a cor ideal conforme luz, marcenaria e uso",
+                "Instalação sob medida em São Paulo e região",
+              ],
+              cta: "Solicitar orçamento de quartzo",
+            },
+            "escadas-marmore-sao-paulo": {
+              title: "Escadas em Mármore em São Paulo",
+              intro:
+                "Executamos escadas em mármore em São Paulo com corte sob medida, paginação, acabamento premium e instalação técnica para projetos residenciais e comerciais de alto padrão.",
+              bullets: [
+                "Escadas em mármore, granito e outras pedras naturais",
+                "Acabamento limpo, alinhamento preciso e visual sofisticado",
+                "Atendimento em São Paulo capital, Zona Sul e Grande São Paulo",
+              ],
+              cta: "Solicitar orçamento de escada",
+            },
+            "lavabo-marmore-sao-paulo": {
+              title: "Lavabo em Mármore em São Paulo",
+              intro:
+                "Criamos lavabos em mármore em São Paulo com lavatórios sob medida, tampos, nichos e acabamentos premium para projetos residenciais e comerciais que buscam sofisticação e presença.",
+              bullets: [
+                "Lavatórios, nichos e tampos em mármore sob medida",
+                "Acabamentos premium para lavabos e banheiros elegantes",
+                "Atendimento na capital, Grande São Paulo e região",
+              ],
+              cta: "Quero lavabo em mármore",
+            },
+            "granito-churrasqueira-sao-paulo": {
+              title: "Granito para Churrasqueira em São Paulo",
+              intro:
+                "Trabalhamos com granito para churrasqueira em São Paulo, ideal para áreas gourmet, bancadas externas e projetos que exigem resistência, baixa manutenção e acabamento de alto padrão.",
+              bullets: [
+                "Granitos indicados para calor e rotina intensa",
+                "Bancadas para churrasqueira e área gourmet sob medida",
+                "Instalação técnica e acabamento premium",
+              ],
+              cta: "Solicitar orçamento para churrasqueira",
+            },
+            "quartzito-ilha-sao-paulo": {
+              title: "Quartzito para Ilha em São Paulo",
+              intro:
+                "Executamos ilhas em quartzito em São Paulo com paginação premium, visual sofisticado e alta resistência para cozinhas contemporâneas e áreas gourmet de alto padrão.",
+              bullets: [
+                "Quartzitos claros e exóticos para ilhas de destaque",
+                "Paginação, emenda planejada e acabamento premium",
+                "Atendimento na capital, Grande São Paulo e bairros nobres",
+              ],
+              cta: "Quero ilha em quartzito",
+            },
+            "marmoraria-moema": {
+              title: "Marmoraria em Moema",
+              intro:
+                "Atendemos clientes que buscam marmoraria em Moema para bancadas, lavatórios, painéis, escadas e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos residenciais e comerciais em Moema",
+                "Bancadas, lavabos, escadas e painéis sob medida",
+                "Atendimento com medição, produção e instalação técnica",
+              ],
+              cta: "Solicitar orçamento em Moema",
+            },
+            "marmoraria-morumbi": {
+              title: "Marmoraria no Morumbi",
+              intro:
+                "Somos uma marmoraria no Morumbi com atendimento para cozinhas, banheiros, áreas gourmet, lavabos e projetos premium em pedra natural e superfícies industrializadas sob medida.",
+              bullets: [
+                "Atendimento a apartamentos, casas e projetos de alto padrão",
+                "Materiais como mármore, granito, quartzito, quartzo e Dekton",
+                "Acabamento premium e instalação com precisão",
+              ],
+              cta: "Quero atendimento no Morumbi",
+            },
+            "marmoraria-santo-amaro": {
+              title: "Marmoraria em Santo Amaro",
+              intro:
+                "Atendemos quem procura marmoraria em Santo Amaro para bancadas, escadas, lavatórios, painéis e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos para cozinhas, banheiros, lavabos e áreas gourmet",
+                "Medição, produção e instalação sob medida",
+                "Atendimento em São Paulo, Grande São Paulo e região, com facilidade para Santo Amaro e proximidades",
+              ],
+              cta: "Solicitar orçamento em Santo Amaro",
+            },
+            "marmoraria-brooklin": {
+              title: "Marmoraria no Brooklin",
+              intro:
+                "Atendemos clientes que procuram marmoraria no Brooklin para bancadas, lavatórios, painéis, áreas gourmet e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos para cozinhas, banheiros, lavabos e áreas gourmet",
+                "Acabamento premium e instalação cuidadosa",
+                "Atendimento em São Paulo, Grande São Paulo e região, com facilidade para o Brooklin e bairros próximos",
+              ],
+              cta: "Solicitar orçamento no Brooklin",
+            },
+            "marmoraria-vila-mariana": {
+              title: "Marmoraria na Vila Mariana",
+              intro:
+                "Para quem busca marmoraria na Vila Mariana, atendemos projetos sob medida em bancadas, lavatórios, escadas, painéis e soluções em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Bancadas e lavatórios sob medida",
+                "Escadas, painéis e projetos residenciais ou comerciais",
+                "Atendimento em toda São Paulo, Grande São Paulo e região, com facilidade para a Vila Mariana e entorno",
+              ],
+              cta: "Solicitar orçamento na Vila Mariana",
+            },
+            "marmoraria-pinheiros": {
+              title: "Marmoraria em Pinheiros",
+              intro:
+                "Atendemos quem procura marmoraria em Pinheiros para cozinhas, banheiros, lavabos, áreas gourmet e projetos premium em pedra natural e superfícies industrializadas sob medida.",
+              bullets: [
+                "Projetos sob medida para residências e comércios",
+                "Granito, mármore, quartzo, quartzito e superfícies premium",
+                "Atendimento em toda a cidade de São Paulo e Grande São Paulo, com facilidade para Pinheiros e região",
+              ],
+              cta: "Solicitar orçamento em Pinheiros",
+            },
+            "marmoraria-interlagos": {
+              title: "Marmoraria em Interlagos",
+              intro:
+                "Para quem procura marmoraria em Interlagos, atendemos bancadas, escadas, lavatórios, painéis e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Bancadas para cozinhas, banheiros e áreas gourmet",
+                "Escadas, painéis, tampos e projetos especiais",
+                "Atendimento em São Paulo, Grande São Paulo e região, com proximidade de Interlagos e Zona Sul",
+              ],
+              cta: "Solicitar orçamento em Interlagos",
+            },
+            "marmoraria-alphaville": {
+              title: "Marmoraria em Alphaville",
+              intro:
+                "Atendemos quem busca marmoraria em Alphaville para cozinhas, banheiros, lavabos, áreas gourmet e projetos sofisticados em pedra natural e superfícies premium sob medida.",
+              bullets: [
+                "Projetos premium para residências e empreendimentos",
+                "Bancadas, lavatórios, painéis, escadas e áreas gourmet",
+                "Atendimento em São Paulo, Grande São Paulo e região, incluindo Alphaville e entorno",
+              ],
+              cta: "Solicitar orçamento em Alphaville",
+            },
+            "marmoraria-vila-mascote": {
+              title: "Marmoraria na Vila Mascote",
+              intro:
+                "Atendemos quem procura marmoraria na Vila Mascote para bancadas, cozinhas, banheiros, lavabos e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Bancadas e lavatórios sob medida para ambientes residenciais e comerciais",
+                "Atendimento em toda São Paulo e Grande São Paulo, com facilidade logística para a Vila Mascote e entorno",
+                "Projetos em pedra natural e superfícies premium com acabamento de alto padrão",
+              ],
+              cta: "Solicitar orçamento na Vila Mascote",
+            },
+            "marmoraria-chacara-santo-antonio": {
+              title: "Marmoraria na Chácara Santo Antônio",
+              intro:
+                "Para quem busca marmoraria na Chácara Santo Antônio, atendemos bancadas, lavatórios, áreas gourmet, painéis e projetos premium em pedra natural e superfícies industrializadas sob medida.",
+              bullets: [
+                "Projetos para cozinhas, banheiros, lavabos e espaços gourmet",
+                "Acabamento premium, medição e instalação técnica",
+                "Atendimento em São Paulo, Grande São Paulo e região, com facilidade para a Chácara Santo Antônio",
+              ],
+              cta: "Solicitar orçamento na Chácara Santo Antônio",
+            },
+            "marmoraria-jabaquara": {
+              title: "Marmoraria no Jabaquara",
+              intro:
+                "Atendemos quem procura marmoraria no Jabaquara para bancadas, escadas, lavatórios, painéis e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Bancadas para cozinhas, banheiros e áreas gourmet",
+                "Escadas, painéis, lavatórios e projetos especiais sob medida",
+                "Atendimento em São Paulo, Grande São Paulo e região, com proximidade do Jabaquara e Zona Sul",
+              ],
+              cta: "Solicitar orçamento no Jabaquara",
+            },
+            "marmoraria-saude": {
+              title: "Marmoraria na Saúde",
+              intro:
+                "Para quem busca marmoraria na Saúde, atendemos cozinhas, banheiros, lavabos, áreas gourmet e projetos sofisticados em pedra natural e superfícies premium sob medida.",
+              bullets: [
+                "Atendimento para apartamentos, casas e projetos comerciais",
+                "Granito, mármore, quartzo, quartzito e superfícies premium",
+                "Atuação em toda São Paulo e Grande São Paulo, com facilidade para a Saúde e bairros próximos",
+              ],
+              cta: "Solicitar orçamento na Saúde",
+            },
+            "marmoraria-planalto-paulista": {
+              title: "Marmoraria no Planalto Paulista",
+              intro:
+                "Atendemos clientes que procuram marmoraria no Planalto Paulista para bancadas, lavatórios, escadas, painéis e soluções sob medida em mármore, granito, quartzo e quartzito.",
+              bullets: [
+                "Projetos de cozinha, banheiro, lavabo e áreas de destaque",
+                "Medição, produção e instalação com acabamento premium",
+                "Atendimento em São Paulo, Grande São Paulo e região, com facilidade para o Planalto Paulista",
+              ],
+              cta: "Solicitar orçamento no Planalto Paulista",
+            },
+            "marmoraria-jardim-paulista": {
+              title: "Marmoraria no Jardim Paulista",
+              intro:
+                "Somos uma opção para quem procura marmoraria no Jardim Paulista com atendimento para cozinhas, banheiros, lavabos, áreas gourmet e projetos premium em pedra natural e superfícies sob medida.",
+              bullets: [
+                "Projetos sofisticados para residências e empreendimentos",
+                "Bancadas, lavatórios, painéis, áreas gourmet e escadas",
+                "Atendimento em São Paulo, Grande São Paulo e região, com facilidade para o Jardim Paulista",
+              ],
+              cta: "Solicitar orçamento no Jardim Paulista",
+            },
+            "marmoraria-jardins": {
+              title: "Marmoraria nos Jardins",
+              intro:
+                "Atendemos quem busca marmoraria nos Jardins para bancadas, lavatórios, escadas, painéis e projetos de alto padrão em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos autorais para residências e ambientes sofisticados",
+                "Acabamento premium, paginação e instalação técnica",
+                "Atuação em São Paulo, Grande São Paulo e região, com facilidade para os Jardins e entorno",
+              ],
+              cta: "Solicitar orçamento nos Jardins",
+            },
+            "banheiro-quartzo-sao-paulo": {
+              title: "Banheiro em Quartzo em São Paulo",
+              intro:
+                "Desenvolvemos banheiros em quartzo em São Paulo com bancadas, nichos e lavatórios sob medida para projetos que pedem baixa porosidade, visual uniforme e acabamento premium.",
+              bullets: [
+                "Quartzo para banheiros, lavabos e bancadas contemporâneas",
+                "Baixa porosidade e manutenção prática no dia a dia",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Quero banheiro em quartzo",
+            },
+            "lavatório-sob-medida-sao-paulo": {
+              title: "Lavatório Sob Medida em São Paulo",
+              intro:
+                "Criamos lavatórios sob medida em São Paulo para lavabos, banheiros e projetos residenciais ou comerciais de alto padrão em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Lavatórios esculpidos e tampos personalizados",
+                "Projetos para lavabos, banheiros e ambientes sofisticados",
+                "Produção e instalação sob medida com acabamento premium",
+              ],
+              cta: "Solicitar lavatório sob medida",
+            },
+            "painel-marmore-sao-paulo": {
+              title: "Painel em Mármore em São Paulo",
+              intro:
+                "Executamos painéis em mármore em São Paulo para salas, lavabos, lareiras e ambientes de destaque, com paginação planejada, recortes limpos e acabamento premium.",
+              bullets: [
+                "Painéis em mármore para interiores sofisticados",
+                "Paginação do veio e composição visual de alto padrão",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Quero painel em mármore",
+            },
+            "area-gourmet-granito-sao-paulo": {
+              title: "Área Gourmet em Granito em São Paulo",
+              intro:
+                "Desenvolvemos áreas gourmet em granito em São Paulo com bancadas, churrasqueiras e superfícies resistentes para uso intenso, unindo performance, baixa manutenção e acabamento premium.",
+              bullets: [
+                "Granito ideal para calor, rotina intensa e fácil limpeza",
+                "Bancadas e áreas gourmet sob medida para residências e apartamentos",
+                "Atendimento em toda São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Quero área gourmet em granito",
+            },
+            "bancada-cozinha-sob-medida-sao-paulo": {
+              title: "Bancada de Cozinha Sob Medida em São Paulo",
+              intro:
+                "Produzimos bancadas de cozinha sob medida em São Paulo com mármore, granito, quartzo, quartzito e superfícies premium, sempre considerando rotina, estética e acabamento de alto padrão.",
+              bullets: [
+                "Bancadas para cozinhas residenciais e áreas gourmet",
+                "Medição, orientação técnica, produção e instalação premium",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar bancada de cozinha",
+            },
+            "bancada-banheiro-sao-paulo": {
+              title: "Bancada para Banheiro em São Paulo",
+              intro:
+                "Desenvolvemos bancadas para banheiro em São Paulo com mármore, granito, quartzo, quartzito e superfícies premium para projetos sob medida, sempre com foco em acabamento, praticidade e estética sofisticada.",
+              bullets: [
+                "Bancadas sob medida para banheiros e lavabos",
+                "Materiais premium com orientação técnica conforme uso",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar bancada para banheiro",
+            },
+            "nicho-banheiro-sao-paulo": {
+              title: "Nicho para Banheiro em São Paulo",
+              intro:
+                "Produzimos nichos para banheiro em São Paulo com pedra natural ou superfície premium, sob medida para projetos residenciais e comerciais que pedem acabamento limpo e integração com o ambiente.",
+              bullets: [
+                "Nichos sob medida para banheiros e áreas molhadas",
+                "Acabamento premium e solução personalizada por projeto",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar nicho para banheiro",
+            },

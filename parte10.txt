@@ -1,0 +1,261 @@
+kovik: {
+    eyebrow: "Dekton de linguagem mineral para projetos contemporâneos e urbanos",
+    intro: "Dekton Kovik é uma escolha muito interessante para quem quer uma superfície com leitura mineral, sofisticada e contemporânea para cozinhas, ilhas, áreas gourmet, painéis e banheiros sob medida.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de alta performance, com baixa porosidade e ótima adaptação a projetos que pedem imagem arquitetônica forte e boa estabilidade visual.",
+    practical: "Na prática, ele ajuda a criar ambientes mais maduros, urbanos e atuais, funcionando muito bem com madeira, preto, inox e composições de linguagem mais sóbria.",
+    value: "É uma escolha que agrega valor porque entrega uma superfície de personalidade, com forte presença visual e percepção imediata de projeto bem desenhado.",
+    indicationTitle: "Cozinhas, ilhas e painéis de linguagem arquitetônica",
+    indicationText: "Ideal para quem quer uma superfície contemporânea com leitura mineral e imagem sofisticada.",
+    benefitTitle: "Identidade visual forte sem excessos",
+    benefitText: "Ajuda o projeto a parecer mais autoral, mais consistente e mais valorizado sem depender de exageros estéticos.",
+    executionTitle: "Texturas minerais exigem composição inteligente",
+    executionText: "No Kovik, recorte, borda e integração com marcenaria e metais são fundamentais para sustentar a leitura premium.",
+    seoDescription: "Dekton Kovik em São Paulo para cozinhas, ilhas, áreas gourmet e painéis sob medida. Superfície sinterizada premium com visual mineral e baixa absorção.",
+  },
+  nara: {
+    eyebrow: "Dekton sofisticado para cozinhas e ilhas de leitura clara e premium",
+    intro: "Dekton Nara é indicado para quem quer uma superfície clara e muito sofisticada, capaz de valorizar cozinhas, ilhas, painéis e banheiros com uma linguagem contemporânea e premium.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de baixa absorção, pensada para aplicações sob medida em projetos que exigem estética valorizada, boa performance e estabilidade visual.",
+    practical: "Na prática, ele ajuda a construir ambientes mais claros, elegantes e bem resolvidos, com uma presença refinada que conversa muito bem com marcenaria neutra ou amadeirada.",
+    value: "É um investimento que vale a pena porque entrega luz, sofisticação e uma leitura de alto padrão muito valorizada em cozinhas e ilhas contemporâneas.",
+    indicationTitle: "Cozinhas, ilhas e banheiros claros de alto valor estético",
+    indicationText: "Excelente para quem quer uma superfície clara premium, sofisticada e muito bem aceita em projetos contemporâneos.",
+    benefitTitle: "Ambientes mais claros e mais nobres",
+    benefitText: "Ajuda o espaço a ganhar amplitude visual, elegância e uma sensação imediata de acabamento premium.",
+    executionTitle: "Leitura clara premium depende do detalhe",
+    executionText: "No Nara, paginação, borda e integração com metais e marcenaria são decisivos para o resultado parecer realmente superior.",
+    seoDescription: "Dekton Nara em São Paulo para cozinhas, ilhas, banheiros e painéis sob medida. Superfície sinterizada clara premium com baixa absorção e visual sofisticado.",
+  },
+  bromo: {
+    eyebrow: "Dekton escuro e sofisticado para ambientes contemporâneos com profundidade",
+    intro: "Dekton Bromo é ideal para quem quer uma superfície escura, contemporânea e muito elegante em cozinhas, ilhas, áreas gourmet e painéis com linguagem arquitetônica mais madura.",
+    technical: "Em termos técnicos, é uma superfície sinterizada premium, com baixa absorção e excelente adaptação a superfícies sob medida que pedem estética forte e alta estabilidade visual.",
+    practical: "Na prática, ele ajuda a criar ambientes mais profundos, sofisticados e coerentes com projetos de alto padrão que usam contraste, textura e iluminação para valorizar o conjunto.",
+    value: "É uma escolha que agrega valor porque transforma a bancada ou o painel em uma base visual sólida, elegante e muito valorizada por quem busca design contemporâneo.",
+    indicationTitle: "Cozinhas, ilhas e painéis escuros de linguagem contemporânea",
+    indicationText: "Ideal para quem quer uma superfície escura premium com sofisticação e presença visual consistente.",
+    benefitTitle: "Contraste sofisticado e imagem madura",
+    benefitText: "Ajuda o ambiente a parecer mais arquitetônico, mais refinado e mais marcante, com uma leitura premium imediata.",
+    executionTitle: "Escuros minerais pedem acabamento preciso",
+    executionText: "No Bromo, precisão de borda, encontro entre planos e integração com metais e iluminação fazem toda a diferença no nível da entrega.",
+    seoDescription: "Dekton Bromo em São Paulo para cozinhas, ilhas, painéis e áreas gourmet sob medida. Superfície sinterizada escura premium com baixa absorção e visual sofisticado.",
+  },
+  sirius: {
+    eyebrow: "Dekton preto fosco para projetos contemporâneos de grande presença visual",
+    intro: "Dekton Sirius é indicado para quem busca uma superfície escura, intensa e sofisticada para cozinhas, ilhas, áreas gourmet e painéis com linguagem premium e muito protagonismo.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de baixa absorção, excelente estabilidade visual e ótima adequação a projetos sob medida em que a superfície precisa transmitir força e sofisticação.",
+    practical: "Na prática, ele ajuda a construir ambientes mais impactantes, mais elegantes e mais autorais, funcionando muito bem com madeira, inox, metais pretos e iluminação bem planejada.",
+    value: "É um investimento que vale a pena porque entrega contraste, personalidade e uma forte sensação de projeto exclusivo, bem desenhado e visualmente memorável.",
+    indicationTitle: "Cozinhas, ilhas e painéis escuros de alto impacto",
+    indicationText: "Excelente para quem quer uma superfície preta premium com presença, profundidade e leitura contemporânea.",
+    benefitTitle: "Protagonismo com estética arquitetônica forte",
+    benefitText: "Ajuda o espaço a parecer mais sofisticado, mais exclusivo e mais coerente com um projeto de alto padrão.",
+    executionTitle: "Superfícies pretas pedem excelência em cada detalhe",
+    executionText: "No Sirius, paginação, borda, recortes e integração com o conjunto definem se a superfície vai realmente parecer premium.",
+    seoDescription: "Dekton Sirius em São Paulo para cozinhas, ilhas, áreas gourmet e painéis sob medida. Superfície sinterizada preta premium com baixa absorção e visual contemporâneo.",
+  },
+  moone: {
+    eyebrow: "Dekton claro neutro para ambientes leves e muito sofisticados",
+    intro: "Dekton Moone é indicado para quem quer uma superfície clara, neutra e elegante para cozinhas, ilhas, banheiros e lavabos que pedem leveza visual e imagem premium.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de baixa absorção, ótima estabilidade visual e excelente adaptação a projetos sob medida de linguagem limpa e contemporânea.",
+    practical: "Na prática, ele ajuda a criar espaços mais luminosos, organizados e refinados, com grande facilidade de composição com marcenaria clara, amadeirada ou metais escovados.",
+    value: "É uma escolha que agrega valor porque entrega uma base sofisticada, versátil e muito valorizada em projetos que buscam elegância sem excessos.",
+    indicationTitle: "Cozinhas, ilhas e banheiros claros e contemporâneos",
+    indicationText: "Ideal para quem quer uma superfície clara premium, versátil e muito elegante no conjunto do ambiente.",
+    benefitTitle: "Leveza visual com forte percepção de acabamento",
+    benefitText: "Ajuda o ambiente a parecer mais amplo, mais claro e mais bem resolvido, com leitura premium e atemporal.",
+    executionTitle: "Neutros claros valorizam o rigor da execução",
+    executionText: "No Moone, borda, paginação e integração com iluminação e marcenaria são essenciais para sustentar o resultado premium.",
+    seoDescription: "Dekton Moone em São Paulo para cozinhas, ilhas, banheiros e lavabos sob medida. Superfície sinterizada clara premium com baixa absorção e visual elegante.",
+  },
+  soke: {
+    eyebrow: "Dekton de leitura industrial sofisticada para cozinhas e áreas gourmet",
+    intro: "Dekton Soke é uma excelente escolha para quem quer uma superfície com estética contemporânea, urbana e muito elegante para cozinhas, ilhas, painéis e áreas gourmet sob medida.",
+    technical: "Em termos técnicos, trata-se de uma superfície sinterizada premium, de baixa absorção e ótima estabilidade visual, indicada para projetos de linguagem arquitetônica mais sóbria e atual.",
+    practical: "Na prática, ele ajuda a construir ambientes com personalidade, sofisticação e uma leitura industrial refinada, que funciona muito bem com madeira, metais pretos e iluminação quente.",
+    value: "É um investimento que vale a pena porque dá ao projeto uma imagem contemporânea forte, equilibrada e muito valorizada em ambientes de alto padrão.",
+    indicationTitle: "Cozinhas, ilhas e painéis de linguagem industrial premium",
+    indicationText: "Ideal para quem quer uma superfície contemporânea com textura sofisticada e forte valor arquitetônico.",
+    benefitTitle: "Estética urbana com refinamento real",
+    benefitText: "Ajuda o espaço a parecer mais atual, mais maduro e visualmente mais interessante sem perder elegância.",
+    executionTitle: "Texturas contemporâneas exigem composição refinada",
+    executionText: "No Soke, proporção dos planos, borda e integração com marcenaria e iluminação são decisivos para a leitura premium.",
+    seoDescription: "Dekton Soke em São Paulo para cozinhas, ilhas, painéis e áreas gourmet sob medida. Superfície sinterizada premium com visual industrial sofisticado e baixa absorção.",
+  },
+  trilium: {
+    eyebrow: "Dekton de forte identidade visual para projetos autorais e contemporâneos",
+    intro: "Dekton Trilium é indicado para quem quer uma superfície marcante, autoral e de grande presença estética para cozinhas, ilhas, áreas gourmet e painéis com proposta contemporânea premium.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de alta performance, com baixa absorção e excelente adequação a projetos sob medida em que a superfície deve ter protagonismo visual e estabilidade.",
+    practical: "Na prática, ele transforma a bancada ou o painel em um elemento de identidade do ambiente, ajudando a criar projetos mais exclusivos, ousados e visualmente memoráveis.",
+    value: "É uma escolha que agrega valor porque entrega singularidade, imagem autoral e forte percepção de design, tornando o ambiente mais marcante e mais valorizado.",
+    indicationTitle: "Ilhas, cozinhas e painéis de forte assinatura visual",
+    indicationText: "Excelente para quem quer uma superfície protagonista, com identidade própria e proposta arquitetônica marcante.",
+    benefitTitle: "Superfície que vira assinatura do projeto",
+    benefitText: "Ajuda o ambiente a ganhar personalidade, exclusividade e um impacto visual que reforça a percepção premium.",
+    executionTitle: "Materiais autorais pedem paginação e composição impecáveis",
+    executionText: "No Trilium, paginação, borda, recortes e diálogo com o restante do projeto são determinantes para sustentar a sofisticação final.",
+    seoDescription: "Dekton Trilium em São Paulo para ilhas, cozinhas, áreas gourmet e painéis sob medida. Superfície sinterizada premium com forte identidade visual e baixa absorção.",
+  },
+};
+
+function getDektonMaterialCopy(item: CatalogItem | null): QuartzoEngenhariaMaterialCopy {
+  if (!item) {
+    return {
+      intro: "Dekton é uma superfície sinterizada indicada para cozinhas, ilhas, painéis, banheiros e áreas gourmet que pedem linguagem contemporânea, alta performance e acabamento premium.",
+      technical: "Em termos técnicos, trata-se de uma superfície sinterizada de alta performance, com baixa absorção e excelente adaptação a projetos sob medida em que estética e desempenho caminham juntos.",
+      practical: "Na prática, ele ajuda a criar ambientes mais sofisticados, atuais e bem resolvidos, com uma superfície que transmite segurança, elegância e leitura premium do projeto.",
+      value: "É um investimento que vale a pena porque combina tecnologia, estética valorizada e forte percepção de acabamento premium em cozinhas, ilhas e painéis de alto padrão.",
+      indicationTitle: "Cozinhas, ilhas, painéis e áreas gourmet contemporâneas",
+      indicationText: "Excelente para quem quer uma superfície premium com visual sofisticado, linguagem atual e ótima percepção de valor no projeto.",
+      benefitTitle: "Tecnologia com imagem de alto padrão",
+      benefitText: "Entrega um ambiente mais contemporâneo, mais elegante e com forte sensação de projeto bem executado.",
+      executionTitle: "Sinterizado premium pede leitura de projeto completa",
+      executionText: "No Dekton, recorte, borda, paginação visual e integração com marcenaria, metais e iluminação são o que definem o nível final da entrega.",
+    };
+  }
+
+  return DEKTON_MATERIAL_COPY[normalizeDektonSlug(item.name)] || {
+    intro: `${item.name} é uma superfície sinterizada indicada para quem quer uma bancada, ilha, painel ou área gourmet com linguagem contemporânea, visual sofisticado e forte percepção de acabamento premium.`,
+    technical: `Em termos técnicos, ${item.name} reúne as qualidades mais valorizadas das superfícies sinterizadas para projetos sob medida: baixa absorção, estabilidade visual e excelente adaptação a composições contemporâneas.`,
+    practical: `Na prática, ele ajuda a construir ambientes mais elegantes, mais atuais e muito bem resolvidos, com uma superfície que reforça a imagem premium do projeto.`,
+    value: `${item.name} agrega valor porque combina estética forte, linguagem contemporânea e uma percepção de tecnologia e sofisticação muito valorizada em bancadas e painéis sob medida.`,
+    indicationTitle: "Cozinhas, ilhas, painéis e superfícies premium sob medida",
+    indicationText: "Excelente para quem busca uma superfície contemporânea, sofisticada e com forte valor percebido no projeto.",
+    benefitTitle: "Imagem premium com leitura contemporânea",
+    benefitText: "Ajuda o ambiente a parecer mais atual, mais elegante e mais valorizado visualmente.",
+    executionTitle: "Detalhe técnico e visual precisam andar juntos",
+    executionText: "No Dekton, paginação visual, borda, recortes e integração com o conjunto são o que fazem a superfície parecer realmente premium.",
+  };
+}
+
+const SINTH_MATERIAL_COPY: Record<string, QuartzoEngenhariaMaterialCopy> = {
+  taj: {
+    intro: "Sinth Taj é indicado para quem quer uma superfície de linguagem leve, sofisticada e extremamente elegante para cozinhas, ilhas, lavabos e painéis sob medida.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de baixa absorção, ótima estabilidade visual e excelente adaptação a projetos contemporâneos em que continuidade, leitura de superfície e refinamento importam muito.",
+    practical: "Na prática, ele ajuda a criar ambientes mais claros, mais acolhedores e visualmente mais nobres, com uma estética inspirada em pedras de alto valor percebido e excelente facilidade de composição.",
+    value: "É um investimento que vale a pena porque entrega uma base muito sofisticada, luminosa e elegante, capaz de valorizar marcenaria, metais, iluminação e arquitetura de forma imediata.",
+    indicationTitle: "Cozinhas, ilhas e painéis claros de alto padrão",
+    indicationText: "Excelente para quem quer uma superfície clara com visual refinado, leitura premium e forte apelo estético no projeto.",
+    benefitTitle: "Leveza visual com forte percepção de sofisticação",
+    benefitText: "Ajuda o ambiente a parecer mais claro, mais amplo e mais valorizado, com uma leitura elegante e atual.",
+    executionTitle: "Materiais claros exigem rigor visual na execução",
+    executionText: "No Sinth Taj, paginação, borda, recortes e integração com a luz do ambiente são decisivos para o resultado final parecer realmente premium.",
+    seoDescription: "Sinth Taj em São Paulo para cozinhas, ilhas, painéis e lavabos sob medida. Superfície sinterizada clara premium com baixa absorção e visual sofisticado.",
+  },
+  "nero-marquina": {
+    intro: "Sinth Nero Marquina é indicado para quem quer uma superfície escura, sofisticada e de forte presença visual para cozinhas, ilhas, lavabos e painéis de linguagem premium.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de baixa absorção, ótima estabilidade visual e excelente adequação a projetos sob medida que pedem contraste, profundidade e desenho marcante.",
+    practical: "Na prática, ele ajuda a criar ambientes mais impactantes, elegantes e autorais, funcionando muito bem com marcenaria amadeirada, metais escovados, preto fosco e iluminação bem planejada.",
+    value: "É um investimento que vale a pena porque entrega contraste, presença e uma leitura visual muito valorizada em projetos de arquitetura de interiores com proposta sofisticada.",
+    indicationTitle: "Cozinhas, ilhas, painéis e lavabos escuros premium",
+    indicationText: "Ideal para quem quer uma superfície preta com veio marcante, presença forte e excelente valor estético no conjunto.",
+    benefitTitle: "Contraste que dá protagonismo ao ambiente",
+    benefitText: "Ajuda o projeto a parecer mais elegante, mais arquitetônico e visualmente mais exclusivo.",
+    executionTitle: "Superfícies escuras pedem detalhe impecável",
+    executionText: "No Nero Marquina, borda, recortes e diálogo com iluminação e marcenaria são fundamentais para sustentar o aspecto premium.",
+    seoDescription: "Sinth Nero Marquina em São Paulo para cozinhas, ilhas, painéis e lavabos sob medida. Superfície sinterizada preta premium com baixa absorção e visual sofisticado.",
+  },
+  calacatta: {
+    intro: "Sinth Calacatta é indicado para quem quer uma superfície clara marmorizada, elegante e muito valorizada para cozinhas, ilhas, painéis e banheiros contemporâneos.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de baixa absorção, excelente estabilidade visual e ótimo desempenho para projetos sob medida em que desenho, leitura de veio e acabamento são decisivos.",
+    practical: "Na prática, ele ajuda a criar ambientes mais sofisticados, luminosos e bem resolvidos, com a imponência do marmorizado e a conveniência de uma superfície tecnológica.",
+    value: "É um investimento que vale a pena porque entrega imagem de alto padrão, forte apelo visual e excelente harmonização com marcenaria clara, amadeirada ou metálica.",
+    indicationTitle: "Cozinhas, ilhas e painéis marmorizados premium",
+    indicationText: "Excelente para quem quer uma leitura clara, elegante e de grande presença visual no projeto.",
+    benefitTitle: "Marmorizado sofisticado com imagem contemporânea",
+    benefitText: "Ajuda o ambiente a parecer mais nobre, mais leve e muito mais valorizado visualmente.",
+    executionTitle: "Marmorizados pedem paginação e recorte bem resolvidos",
+    executionText: "No Sinth Calacatta, paginação, orientação do desenho e proporção dos planos são o que definem a percepção final de sofisticação.",
+    seoDescription: "Sinth Calacatta em São Paulo para cozinhas, ilhas, painéis e banheiros sob medida. Superfície sinterizada marmorizada premium com baixa absorção e acabamento sofisticado.",
+  },
+  statuario: {
+    intro: "Sinth Statuario é uma superfície indicada para quem quer um visual claro, elegante e muito refinado em cozinhas, ilhas, painéis e banheiros de proposta premium.",
+    technical: "Em termos técnicos, trata-se de uma superfície sinterizada com baixa absorção, excelente estabilidade visual e ótima adaptação a projetos sob medida que pedem leitura clara e desenho sofisticado.",
+    practical: "Na prática, ele ajuda a deixar o ambiente mais leve, mais luminoso e mais sofisticado, com um desenho marmorizado que transmite alto padrão sem excessos.",
+    value: "É um investimento que vale a pena porque cria uma imagem nobre, limpa e valorizada, muito desejada em interiores de arquitetura contemporânea e elegante.",
+    indicationTitle: "Cozinhas, ilhas e banheiros claros e sofisticados",
+    indicationText: "Excelente para quem quer uma superfície clara premium com visual elegante, limpo e de forte valor percebido.",
+    benefitTitle: "Clareza com leitura premium e atemporal",
+    benefitText: "Ajuda o espaço a parecer mais claro, mais organizado e mais sofisticado, com grande aceitação estética.",
+    executionTitle: "Claros nobres exigem execução visual rigorosa",
+    executionText: "No Statuario, borda, paginação, recortes e integração com iluminação são determinantes para o resultado parecer realmente refinado.",
+    seoDescription: "Sinth Statuario em São Paulo para cozinhas, ilhas, banheiros e painéis sob medida. Superfície sinterizada clara premium com baixa absorção e visual sofisticado.",
+  },
+  "super-white-fosco": {
+    intro: "Sinth Super White Fosco é indicado para quem quer uma superfície clara, contemporânea e muito elegante para cozinhas, ilhas, banheiros e lavabos com linguagem minimalista premium.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de baixa absorção e ótima estabilidade visual, indicada para projetos sob medida que buscam uniformidade, leveza e leitura sofisticada sem brilho excessivo.",
+    practical: "Na prática, ele ajuda a criar ambientes mais leves, silenciosos e arquitetonicamente maduros, com uma superfície clara que valoriza marcenaria, iluminação e metais de forma equilibrada.",
+    value: "É um investimento que vale a pena porque entrega elegância discreta, sensação de organização visual e forte percepção de projeto contemporâneo bem resolvido.",
+    indicationTitle: "Cozinhas, ilhas e banheiros claros de linguagem minimalista",
+    indicationText: "Ideal para quem quer uma superfície clara premium com acabamento fosco e leitura contemporânea refinada.",
+    benefitTitle: "Elegância silenciosa e muito atual",
+    benefitText: "Ajuda o ambiente a parecer mais calmo, mais sofisticado e mais coerente com um design de alto padrão.",
+    executionTitle: "Foscos claros valorizam muito a precisão da execução",
+    executionText: "No Super White Fosco, borda, paginação e integração com o restante do projeto são o que sustentam a percepção final de qualidade.",
+    seoDescription: "Sinth Super White Fosco em São Paulo para cozinhas, ilhas, banheiros e lavabos sob medida. Superfície sinterizada clara premium com baixa absorção e acabamento fosco sofisticado.",
+  },
+  black: {
+    intro: "Sinth Black é indicado para quem quer uma superfície escura, uniforme e muito sofisticada para cozinhas, ilhas, painéis e lavabos de linguagem contemporânea.",
+    technical: "Em termos técnicos, é uma superfície sinterizada de baixa absorção e ótima estabilidade visual, adequada para projetos sob medida que pedem uma leitura escura mais limpa e contínua.",
+    practical: "Na prática, ele ajuda a criar espaços mais sofisticados, equilibrados e visualmente fortes, funcionando muito bem com madeira natural, metais pretos e iluminação quente.",
+    value: "É um investimento que vale a pena porque entrega contraste, sobriedade e uma leitura arquitetônica elegante, muito valorizada em interiores de alto padrão.",
+    indicationTitle: "Cozinhas, ilhas e painéis escuros e contemporâneos",
+    indicationText: "Excelente para quem quer uma superfície preta premium, uniforme e com forte presença visual.",
+    benefitTitle: "Contraste sofisticado com leitura limpa",
+    benefitText: "Ajuda o espaço a parecer mais maduro, mais elegante e visualmente mais forte sem excesso de informação.",
+    executionTitle: "Superfícies escuras pedem integração visual de alto nível",
+    executionText: "No Sinth Black, borda, paginação e relação com iluminação e marcenaria são o que fazem a superfície parecer realmente premium.",
+    seoDescription: "Sinth Black em São Paulo para cozinhas, ilhas, painéis e lavabos sob medida. Superfície sinterizada preta premium com baixa absorção e visual contemporâneo.",
+  },
+};
+
+function getSinthMaterialCopy(item: CatalogItem | null): QuartzoEngenhariaMaterialCopy {
+  if (!item) {
+    return {
+      intro: "Sinth é uma superfície sinterizada indicada para cozinhas, ilhas, banheiros, painéis e lavabos que pedem linguagem contemporânea, baixa absorção e forte percepção de acabamento premium.",
+      technical: "Em termos técnicos, trata-se de uma superfície sinterizada de baixa absorção, ótima estabilidade visual e excelente adaptação a projetos sob medida em que desenho, proporção e acabamento são determinantes.",
+      practical: "Na prática, isso significa uma superfície que ajuda a construir ambientes mais sofisticados, mais atuais e muito bem resolvidos, com leitura arquitetônica madura e elegante.",
+      value: "É um investimento que vale a pena porque combina estética contemporânea, percepção de tecnologia e forte valorização visual do ambiente em bancadas, ilhas e painéis sob medida.",
+      indicationTitle: "Cozinhas, ilhas, banheiros, lavabos e painéis contemporâneos",
+      indicationText: "Excelente para quem busca uma superfície premium de linguagem atual, com ótimo valor percebido e visual sofisticado.",
+      benefitTitle: "Imagem premium com estética limpa e arquitetônica",
+      benefitText: "Entrega um ambiente mais elegante, mais atual e com forte percepção de projeto bem pensado.",
+      executionTitle: "Sinterizado premium pede leitura completa do conjunto",
+      executionText: "No Sinth, borda, paginação, recortes e integração com marcenaria, iluminação e metais são fundamentais para o nível final da entrega.",
+    };
+  }
+
+  return SINTH_MATERIAL_COPY[normalizeSinthSlug(item.name)] || {
+    intro: `${item.name} é uma superfície sinterizada indicada para quem quer uma bancada, ilha, painel, banheiro ou lavabo com linguagem contemporânea, visual sofisticado e forte percepção de acabamento premium.`,
+    technical: `Em termos técnicos, ${item.name} reúne as qualidades mais valorizadas das superfícies sinterizadas para projetos sob medida: baixa absorção, ótima estabilidade visual e excelente adaptação a composições contemporâneas.`,
+    practical: `Na prática, ele ajuda a construir ambientes mais elegantes, mais atuais e muito bem resolvidos, com uma superfície que reforça a imagem premium do projeto.`,
+    value: `${item.name} agrega valor porque combina estética forte, linguagem contemporânea e uma percepção de tecnologia e sofisticação muito valorizada em bancadas, ilhas e painéis sob medida.`,
+    indicationTitle: "Cozinhas, ilhas, painéis, banheiros e superfícies premium sob medida",
+    indicationText: "Excelente para quem busca uma superfície contemporânea, sofisticada e com forte valor percebido no projeto.",
+    benefitTitle: "Imagem premium com leitura contemporânea",
+    benefitText: "Ajuda o ambiente a parecer mais atual, mais elegante e mais valorizado visualmente.",
+    executionTitle: "Detalhe técnico e visual precisam andar juntos",
+    executionText: "No Sinth, paginação visual, borda, recortes e integração com o conjunto são o que fazem a superfície parecer realmente premium.",
+  };
+}
+
+export function App() {
+  const page = useQueryPage();
+  const quartzitoSlug = useQuartzitoSlug();
+  const granitoSlug = useGranitoSlug();
+  const marmoreSlug = useMarmoreSlug();
+  const silestoneSlug = useSilestoneSlug();
+  const quartzoStoneSlug = useQuartzoStoneSlug();
+  const dektonSlug = useDektonSlug();
+  const sinthSlug = useSinthSlug();
+  const visible = useMemo(() => new Set(ROUTES[page] || ROUTES.home), [page]);
+
+  const quartzitoItems = useMemo(() => ASSETS.catalog.quartzitos || [], []);
+  const quartzitoBySlug = useMemo(() => {
+    const map = new Map<string, CatalogItem>();
+    for (const item of quartzitoItems) map.set(normalizeQuartzitoSlug(item.name), item);
+    return map;
+  }, [quartzitoItems]);
+  const currentQuartzitoItem = useMemo(() => quartzitoBySlug.get(quartzitoSlug) || null, [quartzitoBySlug, quartzitoSlug]);
+  const currentQuartzitoContent = useMemo(() => getQuartzitoMaterialCopy(currentQuartzitoItem), [currentQuartzitoItem]);
+

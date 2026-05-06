@@ -1,0 +1,326 @@
+}
+
+function HashLinkInterceptor({ onHash }: { onHash: (hash: string) => void }) {
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      const t = e.target as HTMLElement | null;
+      if (!t) return;
+      const a = t.closest("a[href^='#']") as HTMLAnchorElement | null;
+      if (!a) return;
+      const href = a.getAttribute("href");
+      if (!href || href === "#") return;
+      e.preventDefault();
+      onHash(href);
+    };
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, [onHash]);
+
+  return null;
+}
+
+function upsertMeta(selector: string, attrs: Record<string, string>) {
+  let el = document.head.querySelector(selector) as HTMLMetaElement | null;
+  if (!el) {
+    el = document.createElement("meta");
+    if (attrs.name) el.setAttribute("name", attrs.name);
+    if (attrs.property) el.setAttribute("property", attrs.property);
+    document.head.appendChild(el);
+  }
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "content") el.setAttribute("content", v);
+    else if (k !== "name" && k !== "property") el.setAttribute(k, v);
+  }
+}
+
+function upsertLinkRel(rel: string, href: string) {
+  let el = document.head.querySelector(`link[rel='${rel}']`) as HTMLLinkElement | null;
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", rel);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("href", href);
+}
+
+function upsertJsonLd(id: string, data: unknown) {
+  let el = document.head.querySelector(`#${id}`) as HTMLScriptElement | null;
+  if (!el) {
+    el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.id = id;
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify(data);
+}
+
+type QuartzitoMaterialCopy = {
+  eyebrow?: string;
+  intro: string;
+  technical: string;
+  practical: string;
+  value: string;
+  indicationTitle: string;
+  indicationText: string;
+  benefitTitle: string;
+  benefitText: string;
+  executionTitle: string;
+  executionText: string;
+  seoDescription?: string;
+};
+
+type GranitoMaterialCopy = {
+  eyebrow?: string;
+  intro: string;
+  technical: string;
+  practical: string;
+  value: string;
+  indicationTitle: string;
+  indicationText: string;
+  benefitTitle: string;
+  benefitText: string;
+  executionTitle: string;
+  executionText: string;
+  seoDescription?: string;
+};
+
+type MarmoreMaterialCopy = {
+  eyebrow?: string;
+  intro: string;
+  technical: string;
+  practical: string;
+  value: string;
+  indicationTitle: string;
+  indicationText: string;
+  benefitTitle: string;
+  benefitText: string;
+  executionTitle: string;
+  executionText: string;
+  seoDescription?: string;
+};
+
+type QuartzoEngenhariaMaterialCopy = {
+  eyebrow?: string;
+  intro: string;
+  technical: string;
+  practical: string;
+  value: string;
+  indicationTitle: string;
+  indicationText: string;
+  benefitTitle: string;
+  benefitText: string;
+  executionTitle: string;
+  executionText: string;
+  seoDescription?: string;
+};
+
+const QUARTZITO_MATERIAL_COPY: Record<string, QuartzitoMaterialCopy> = {
+  "quartzito-taj-mahal-perla-santana": {
+    eyebrow: "Quartzito claro para cozinhas, ilhas e ambientes de alto padrão",
+    intro:
+      "O Quartzito Taj Mahal é procurado por quem quer uma pedra natural clara, sofisticada e extremamente versátil para cozinhas, ilhas, bancadas, painéis e áreas gourmet. Ele entrega aquela leitura elegante e luminosa que valoriza o ambiente inteiro, com um desenho orgânico que transmite equilíbrio, refinamento e sensação de projeto bem resolvido.",
+    technical:
+      "Em termos técnicos, o Taj Mahal é um quartzito natural com estrutura mineral rica em quartzo, alta dureza e excelente desempenho para aplicações que exigem resistência e estabilidade. É uma escolha forte para quem pesquisa quartzito para cozinha, quartzito para ilha e pedra natural resistente para bancada, especialmente quando o objetivo é unir desempenho prático com estética nobre.",
+    practical:
+      "Na prática, o maior benefício do Taj Mahal é a facilidade de construir ambientes claros, acolhedores e atemporais sem abrir mão de segurança para a rotina. Ele amplia a percepção de luz, conversa muito bem com marcenaria em tons de madeira, fendi, off-white e bege, e cria uma atmosfera sofisticada sem pesar visualmente o espaço.",
+    value:
+      "O Taj Mahal é uma decisão que agrega valor porque funciona muito bem hoje e continua elegante com o passar do tempo. É a pedra de quem quer abrir a cozinha, olhar o conjunto pronto e sentir que fez uma escolha segura, bonita e coerente com um projeto de alto nível.",
+    indicationTitle: "Cozinhas claras, ilhas e ambientes autorais",
+    indicationText: "Ideal para quem busca uma bancada clara com presença, luz e elegância duradoura, sem abrir mão de desempenho real no uso cotidiano.",
+    benefitTitle: "Luz, sofisticação e versatilidade",
+    benefitText: "O Taj Mahal valoriza a iluminação, harmoniza facilmente com marcenaria e metais e cria um visual sofisticado que não fica datado.",
+    executionTitle: "Paginação e borda mudam o nível do resultado",
+    executionText: "No Taj Mahal, a força do projeto aparece quando a escolha da chapa, a direção do veio, a emenda e a borda são tratadas como parte do design.",
+    seoDescription:
+      "Quartzito Taj Mahal em São Paulo para cozinhas, ilhas, bancadas e painéis sob medida. Pedra natural clara, sofisticada e resistente, com acabamento premium e paginação impecável.",
+  },
+  "quartzito-mont-blanc": {
+    eyebrow: "Quartzito branco com movimento suave e leitura sofisticada",
+    intro:
+      "O Quartzito Mont Blanc é uma das escolhas mais elegantes para quem quer uma pedra natural clara com personalidade, leveza visual e forte apelo arquitetônico. Ele funciona muito bem em cozinhas, ilhas, painéis e bancadas que pedem um visual limpo, refinado e contemporâneo.",
+    technical:
+      "Tecnicamente, o Mont Blanc combina a beleza de uma pedra de veios suaves com a estrutura e a dureza características do quartzito natural. Isso faz dele uma alternativa muito valorizada por quem procura pedra que parece mármore mas é mais resistente, especialmente em projetos onde estética e rotina precisam caminhar juntas.",
+    practical:
+      "Na prática, o Mont Blanc entrega amplitude, sensação de limpeza visual e enorme facilidade de composição com marcenaria clara, madeira natural, serralheria preta e metais escovados. É uma pedra que deixa o ambiente mais leve sem perder impacto, e ajuda a construir cozinhas e ilhas com aparência de projeto editorial.",
+    value:
+      "Escolher Mont Blanc é optar por uma pedra que eleva a percepção do imóvel e deixa o projeto mais elegante no primeiro olhar. É o tipo de material que transmite bom gosto, critério e uma estética premium que continua atual com o tempo.",
+    indicationTitle: "Ilhas e bancadas com leitura clara e elegante",
+    indicationText: "Excelente para cozinhas sofisticadas, ambientes integrados e projetos onde a pedra precisa iluminar e organizar visualmente o espaço.",
+    benefitTitle: "Amplitude com presença",
+    benefitText: "O Mont Blanc amplia visualmente o ambiente, melhora a leitura da luz e entrega uma elegância limpa, muito valorizada em projetos contemporâneos.",
+    executionTitle: "Veios suaves pedem recorte inteligente",
+    executionText: "No Mont Blanc, a execução premium está em respeitar o desenho natural da chapa e usar paginação, borda e emendas para reforçar continuidade e leveza.",
+    seoDescription:
+      "Quartzito Mont Blanc em São Paulo para bancada, cozinha, ilha e painéis sob medida. Pedra natural clara, elegante e resistente, ideal para projetos de alto padrão.",
+  },
+  "quartzito-branco-macaubas-wood-white": {
+    eyebrow: "Quartzito branco sofisticado para ambientes leves e atemporais",
+    intro:
+      "O Quartzito Branco Macaúbas, também conhecido como Wood White, é muito valorizado por quem quer uma pedra natural clara, elegante e com desenho delicado para cozinhas, ilhas, bancadas e painéis. Ele cria um visual sereno, refinado e extremamente arquitetônico, com uma presença mais silenciosa e sofisticada.",
+    technical:
+      "Em termos técnicos, trata-se de um quartzito natural com boa dureza, estrutura estável e excelente desempenho para aplicações internas de alto padrão. É uma pedra muito buscada por quem quer quartzito branco para cozinha, pedra natural clara para ilha ou bancada branca sofisticada com mais segurança para uso diário.",
+    practical:
+      "No uso prático, o Branco Macaúbas funciona muito bem para quem quer iluminar o ambiente, criar sensação de amplitude e manter uma estética limpa sem cair na frieza de superfícies artificiais muito chapadas. Ele conversa com marcenaria clara, madeira natural, linhas minimalistas e metais mais discretos.",
+    value:
+      "É uma pedra que entrega valor pelo conjunto: exclusividade de desenho, leveza visual, refinamento e uma presença premium que faz o ambiente parecer mais bem pensado, mais sofisticado e mais valorizado.",
+    indicationTitle: "Projetos claros e atemporais",
+    indicationText: "Indicado para quem quer um quartzito branco com leitura elegante e natural para cozinhas integradas, ilhas, painéis e bancadas premium.",
+    benefitTitle: "Clareza com naturalidade",
+    benefitText: "Ele ilumina o projeto e amplia o espaço sem perder profundidade, deixando o ambiente mais sofisticado e menos artificial.",
+    executionTitle: "Elegância está no detalhe silencioso",
+    executionText: "No Branco Macaúbas, o resultado premium depende de paginação delicada, cortes limpos e acabamento que preserve a leveza do material.",
+    seoDescription:
+      "Quartzito Branco Macaúbas em São Paulo para cozinhas, ilhas, bancadas e painéis. Pedra natural clara, elegante e resistente, com acabamento premium sob medida.",
+  },
+  "quartzito-azul-macaubas": {
+    eyebrow: "Quartzito azul de alto impacto visual para projetos autorais",
+    intro:
+      "O Quartzito Azul Macaúbas é um material de presença marcante, indicado para quem quer transformar bancada, ilha, painel ou mesa em protagonista do ambiente. É uma pedra natural extremamente expressiva, com desenho exclusivo e forte apelo estético em projetos de arquitetura e interiores de alto padrão.",
+    technical:
+      "Tecnicamente, o Azul Macaúbas reúne as características estruturais do quartzito natural, com alta dureza e desempenho superior ao de materiais mais sensíveis. É uma escolha procurada por quem busca quartzito azul em São Paulo, pedra natural exótica para ilha ou bancada premium com impacto visual e boa resistência.",
+    practical:
+      "Na prática, ele é perfeito para ambientes onde a pedra precisa criar identidade. Funciona muito bem em ilhas centrais, painéis de destaque, bancadas especiais e mesas, principalmente quando o projeto quer sair do óbvio e trabalhar profundidade, cor e sofisticação de forma controlada.",
+    value:
+      "O Azul Macaúbas agrega valor por exclusividade. Não é uma pedra para simplesmente compor: é uma pedra para assinar o espaço, gerar conversa, criar lembrança e posicionar o ambiente em outro nível de percepção estética.",
+    indicationTitle: "Ilhas, painéis e peças de destaque",
+    indicationText: "Ideal para projetos que querem usar a pedra como protagonista e transformar o ambiente em uma composição autoral de alto impacto.",
+    benefitTitle: "Exclusividade que valoriza",
+    benefitText: "O Azul Macaúbas imprime identidade, diferencia o projeto e cria uma percepção de sofisticação difícil de reproduzir com materiais genéricos.",
+    executionTitle: "Desenho da chapa é parte do projeto",
+    executionText: "Nesse material, escolher a chapa certa e planejar paginação, emendas e recortes faz toda a diferença entre uma peça bonita e uma peça memorável.",
+    seoDescription:
+      "Quartzito Azul Macaúbas em São Paulo para ilhas, bancadas, painéis e mesas sob medida. Pedra natural exótica, sofisticada e resistente para projetos premium.",
+  },
+  "quartzito-verde-pantanal": {
+    eyebrow: "Quartzito verde sofisticado para projetos naturais e exclusivos",
+    intro:
+      "O Quartzito Verde Pantanal é uma escolha muito valorizada em projetos que buscam sofisticação orgânica, profundidade visual e personalidade. Ele funciona muito bem em ilhas, bancadas, painéis e áreas gourmet onde a pedra precisa ter identidade própria e reforçar a assinatura do ambiente.",
+    technical:
+      "Em termos técnicos, o Verde Pantanal reúne a estrutura resistente do quartzito natural com uma composição visual marcante, rica em movimento e textura mineral. É indicado para quem procura quartzito verde para cozinha, pedra natural exótica para bancada ou uma solução de alto desempenho para projetos sofisticados em São Paulo.",
+    practical:
+      "Na prática, essa é uma pedra que combina muito bem com madeira, metais escovados, serralheria preta e iluminação quente. O resultado costuma ser um ambiente mais acolhedor, sofisticado e autoral, com presença forte sem perder elegância.",
+    value:
+      "O Verde Pantanal gera valor porque diferencia o projeto. Ele tira a bancada do campo do comum e leva o espaço para uma leitura mais exclusiva, mais arquitetônica e muito mais memorável para quem vive e para quem visita.",
+    indicationTitle: "Ambientes com assinatura e calor visual",
+    indicationText: "Excelente para ilhas, bancadas e painéis onde o objetivo é unir naturalidade, sofisticação e personalidade em uma mesma peça.",
+    benefitTitle: "Sofisticação orgânica",
+    benefitText: "O Verde Pantanal cria um ambiente mais acolhedor e exclusivo, valorizando marcenaria, metais e iluminação com muita elegância.",
+    executionTitle: "Composição define o nível do resultado",
+    executionText: "Nesse quartzito, marcenaria, luz, direção do veio e recorte precisam conversar para que o projeto fique verdadeiramente premium.",
+    seoDescription:
+      "Quartzito Verde Pantanal em São Paulo para cozinhas, ilhas, bancadas e painéis sob medida. Pedra natural verde, sofisticada e resistente para projetos autorais.",
+  },
+  "quartzito-negresco-escovado": {
+    eyebrow: "Quartzito escuro premium para cozinhas elegantes e de presença",
+    intro:
+      "O Quartzito Negresco Escovado é indicado para quem quer uma pedra escura de grande presença, com visual sofisticado e acabamento marcante. Ele funciona muito bem em cozinhas, ilhas, áreas gourmet e painéis onde o objetivo é criar profundidade, contraste e personalidade com uma leitura contemporânea.",
+    technical:
+      "Tecnicamente, trata-se de um quartzito natural com excelente resistência e acabamento escovado, que reforça textura e caráter do material. É uma opção muito procurada por quem busca quartzito preto para cozinha, bancada escura premium ou pedra natural escovada em São Paulo.",
+    practical:
+      "No uso prático, o Negresco Escovado oferece um visual muito sofisticado e, quando bem combinado com iluminação, marcenaria e metais, cria uma sensação de ambiente mais refinado e mais exclusivo. O acabamento escovado também ajuda a construir uma leitura mais tátil, menos fria e mais arquitetônica.",
+    value:
+      "É uma pedra para quem quer autoridade visual no projeto. O Negresco Escovado transforma a bancada em um elemento de assinatura, eleva a percepção do imóvel e imprime um padrão de acabamento que chama atenção pelo conjunto, não pelo excesso.",
+    indicationTitle: "Cozinhas, ilhas e gourmet com contraste premium",
+    indicationText: "Perfeito para projetos que precisam de profundidade visual, contraste sofisticado e uma pedra escura com leitura contemporânea.",
+    benefitTitle: "Presença com sofisticação",
+    benefitText: "Ele cria uma bancada de forte impacto visual, com acabamento elegante e linguagem arquitetônica madura e atemporal.",
+    executionTitle: "Luz e acabamento definem a percepção final",
+    executionText: "No Negresco Escovado, a escolha da borda, da iluminação e do posicionamento da chapa é o que transforma a pedra em peça realmente premium.",
+    seoDescription:
+      "Quartzito Negresco Escovado em São Paulo para cozinhas, ilhas e áreas gourmet. Pedra natural escura, sofisticada e resistente, com acabamento premium sob medida.",
+  },
+  "quartzito-bianco-superiore": {
+    eyebrow: "Quartzito claro premium para projetos elegantes e luminosos",
+    intro:
+      "O Quartzito Bianco Superiore é uma escolha muito forte para quem quer uma pedra natural clara, sofisticada e com desenho elegante para cozinhas, ilhas, bancadas e painéis. Ele entrega luminosidade, presença e uma sensação de projeto elevado, sem abrir mão da naturalidade da rocha.",
+    technical:
+      "Em termos técnicos, o Bianco Superiore reúne a estrutura de um quartzito natural com boa dureza, estabilidade e excelente desempenho em superfícies que exigem beleza e resistência. É uma pedra muito buscada por quem pesquisa quartzito branco para bancada e pedra natural clara para cozinha de alto padrão.",
+    practical:
+      "Na prática, ele ajuda a ampliar a percepção de espaço, valoriza a luz natural e combina com uma enorme variedade de linguagens de interiores — do contemporâneo ao clássico sofisticado. É uma pedra que funciona tanto para ambientes mais leves quanto para composições mais contrastadas.",
+    value:
+      "O Bianco Superiore agrega valor porque entrega refinamento com naturalidade. Ele deixa a bancada mais elegante, o ambiente mais claro e o projeto mais coerente com uma estética premium e atemporal.",
+    indicationTitle: "Bancadas claras e ambientes sofisticados",
+    indicationText: "Excelente para quem quer uma pedra clara e natural com leitura premium para cozinhas, ilhas, painéis e lavatórios marcantes.",
+    benefitTitle: "Leveza que valoriza o conjunto",
+    benefitText: "O Bianco Superiore melhora a leitura da luz, amplia visualmente o espaço e deixa o projeto mais elegante e mais bem resolvido.",
+    executionTitle: "Beleza natural pede acabamento fino",
+    executionText: "Nesse material, paginação, emendas discretas e acabamento preciso são o que fazem a pedra parecer ainda mais nobre no conjunto final.",
+    seoDescription:
+      "Quartzito Bianco Superiore em São Paulo para bancadas, cozinhas, ilhas e painéis sob medida. Pedra natural clara, sofisticada e resistente para projetos premium.",
+  },
+  "quartzito-wakanda-black": {
+    eyebrow: "Quartzito preto de alto impacto para projetos sofisticados",
+    intro:
+      "O Quartzito Wakanda Black é indicado para quem quer uma pedra natural escura, contemporânea e de forte presença visual. Ele funciona muito bem em cozinhas, ilhas, bancadas, áreas gourmet e painéis que pedem profundidade, elegância e uma linguagem mais ousada e autoral.",
+    technical:
+      "Tecnicamente, o Wakanda Black reúne a resistência característica do quartzito natural com um visual escuro de grande impacto. É uma escolha procurada por quem busca quartzito preto em São Paulo, pedra natural escura para bancada ou superfície premium para cozinhas e ilhas de alto padrão.",
+    practical:
+      "Na prática, ele entrega contraste forte, sofisticação imediata e enorme potencial de composição com madeira, inox, metais pretos, champagne e iluminação quente. É uma pedra que transforma o ambiente e dá à bancada um papel protagonista na arquitetura do espaço.",
+    value:
+      "O Wakanda Black agrega valor porque foge do comum e reforça identidade. É uma escolha para quem quer um projeto memorável, com personalidade, acabamento premium e uma percepção clara de sofisticação e exclusividade.",
+    indicationTitle: "Projetos escuros e de forte assinatura visual",
+    indicationText: "Indicado para cozinhas, ilhas e áreas gourmet onde a bancada precisa se destacar como elemento central do projeto.",
+    benefitTitle: "Contraste que impressiona",
+    benefitText: "O Wakanda Black cria profundidade, eleva a leitura de luxo e reforça a identidade do ambiente com muita personalidade.",
+    executionTitle: "Projeto, luz e chapa precisam conversar",
+    executionText: "Nesse quartzito, o impacto final depende da escolha certa da chapa, da iluminação e do acabamento para revelar toda a força do material.",
+    seoDescription:
+      "Quartzito Wakanda Black em São Paulo para cozinhas, ilhas, bancadas e áreas gourmet. Pedra natural preta, sofisticada e resistente para projetos exclusivos.",
+  },
+  "quartzito-artemis": {
+    eyebrow: "Quartzito claro e sofisticado para cozinhas, ilhas e painéis premium",
+    intro:
+      "O Quartzito Artemis é uma escolha muito forte para quem quer uma pedra natural clara com presença elegante, leitura refinada e excelente versatilidade de composição. Ele funciona muito bem em cozinhas, ilhas, bancadas e painéis de alto padrão, principalmente em projetos que pedem sofisticação sem exagero e uma estética luminosa com personalidade.",
+    technical:
+      "Em termos técnicos, o Artemis reúne as características estruturais do quartzito natural: alta dureza, boa estabilidade e desempenho muito valorizado em superfícies que exigem resistência para o uso cotidiano. É uma opção bastante coerente para quem pesquisa quartzito claro para cozinha, pedra natural resistente para bancada e quartzito para ilha em São Paulo.",
+    practical:
+      "Na prática, o Artemis entrega um ambiente mais claro, mais elegante e mais fácil de harmonizar com marcenaria em madeira, off-white, bege, cinza claro e metais escovados. Ele cria uma sensação de projeto bem resolvido, com luminosidade e acabamento de alto nível, sem perder a naturalidade do desenho da pedra.",
+    value:
+      "O Artemis vale a escolha porque combina imagem premium, segurança de uso e uma estética que continua atual com o tempo. É a pedra de quem quer investir em um resultado bonito hoje e continuar sentindo orgulho do ambiente no dia a dia.",
+    indicationTitle: "Cozinhas, ilhas e painéis com leitura clara",
+    indicationText: "Excelente para projetos que buscam elegância, luz e presença natural em bancadas, ilhas e superfícies de destaque.",
+    benefitTitle: "Clareza que valoriza o ambiente",
+    benefitText: "O Artemis amplia a percepção de luz, deixa o espaço mais sofisticado e facilita composições elegantes com marcenaria e metais.",
+    executionTitle: "Continuidade visual é o que faz parecer premium",
+    executionText: "No Artemis, a escolha da chapa, a direção do veio e as emendas discretas são fundamentais para construir um resultado limpo e elegante.",
+    seoDescription:
+      "Quartzito Artemis em São Paulo para cozinhas, ilhas, bancadas e painéis sob medida. Pedra natural clara, sofisticada e resistente para projetos de alto padrão.",
+  },
+  "quartzito-emerald-green": {
+    eyebrow: "Quartzito verde premium para projetos autorais e sofisticados",
+    intro:
+      "O Quartzito Emerald Green é indicado para quem quer uma pedra natural verde com impacto visual, profundidade e forte assinatura estética. É um material que funciona muito bem em ilhas, bancadas, painéis e áreas gourmet onde a pedra precisa participar ativamente da identidade do ambiente.",
+    technical:
+      "Tecnicamente, o Emerald Green combina a estrutura resistente do quartzito natural com uma leitura mineral marcante, rica em movimento e variações de cor. É uma excelente alternativa para quem busca quartzito verde em São Paulo, pedra natural exótica para bancada ou quartzito para ilha premium com personalidade.",
+    practical:
+      "Na prática, ele cria espaços mais exclusivos, sofisticados e memoráveis, especialmente quando combinado com madeira natural, serralheria preta, metais escovados e iluminação quente. O resultado costuma ser um ambiente com mais profundidade, mais design e uma sensação clara de projeto autoral.",
+    value:
+      "O Emerald Green agrega valor porque diferencia o projeto de forma elegante. Ele não apenas compõe; ele posiciona o ambiente em outro patamar de percepção estética e reforça a sensação de escolha criteriosa e acabamento premium.",
+    indicationTitle: "Ilhas, bancadas e painéis de destaque",
+    indicationText: "Ideal para projetos que querem usar a pedra como elemento protagonista, com personalidade e sofisticação orgânica.",
+    benefitTitle: "Identidade visual com exclusividade",
+    benefitText: "O Emerald Green transforma a bancada em assinatura do ambiente, reforçando design, profundidade e valor percebido.",
+    executionTitle: "Material marcante pede composição bem pensada",
+    executionText: "Nesse quartzito, paginação, luz e combinação com os demais materiais do projeto são decisivos para revelar todo o potencial da pedra.",
+    seoDescription:
+      "Quartzito Emerald Green em São Paulo para ilhas, bancadas, painéis e áreas gourmet. Pedra natural verde, sofisticada e resistente para projetos exclusivos.",
+  },
+  "quartzito-fusion": {
+    eyebrow: "Quartzito exótico para projetos que pedem movimento e alto impacto visual",
+    intro:
+      "O Quartzito Fusion é uma pedra natural indicada para projetos que querem transformar bancada, ilha ou painel em uma peça de forte expressão visual. Seu desenho marcante e sua composição cheia de movimento fazem dele uma escolha muito valorizada em interiores premium que buscam personalidade e presença.",
+    technical:
+      "Em termos técnicos, o Fusion reúne a resistência do quartzito natural com uma leitura estética mais dramática e artística. Ele é procurado por quem pesquisa quartzito exótico em São Paulo, pedra natural para ilha de cozinha premium e bancada de quartzito com desenho marcante.",
+    practical:
+      "Na prática, o maior benefício do Fusion é criar um ambiente memorável. Ele funciona especialmente bem em ilhas centrais, painéis, mesas e bancadas protagonistas, ajudando o projeto a ganhar identidade, sofisticação e uma sensação de peça exclusiva.",
+    value:
+      "O Fusion vale a escolha porque eleva o ambiente pela emoção visual. É o tipo de pedra que faz o espaço ser lembrado, reforça a percepção de alto padrão e mostra que o projeto foi pensado com intenção estética e curadoria de material.",
+    indicationTitle: "Ilhas, painéis e peças protagonistas",
+    indicationText: "Perfeito para projetos autorais onde a pedra precisa ser elemento central de design e valorização estética do espaço.",
+    benefitTitle: "Movimento que cria impacto",
+    benefitText: "O Fusion transforma o ambiente em uma composição muito mais expressiva, exclusiva e visualmente rica.",
+    executionTitle: "Paginação define o resultado final",
+    executionText: "Nesse material, o estudo da chapa e a direção dos veios são essenciais para o projeto parecer realmente sofisticado e intencional.",
+    seoDescription:
+      "Quartzito Fusion em São Paulo para ilhas, bancadas, painéis e mesas sob medida. Pedra natural exótica, sofisticada e resistente para projetos premium.",
+  },

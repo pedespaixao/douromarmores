@@ -1,0 +1,339 @@
+"carrara-gioia": {
+    eyebrow: "Mármore claro para projetos internos sofisticados e cheios de leveza",
+    intro:
+      "O Mármore Carrara Gioia é uma leitura mais refinada do universo dos mármores claros, muito procurado por quem deseja um ambiente elegante, leve e com veios sutis para banheiros, lavabos, painéis e revestimentos internos.",
+    technical:
+      "Em termos técnicos, trata-se de um mármore natural indicado para aplicações internas de destaque, onde o desenho do material e a qualidade do acabamento são determinantes para a percepção final do projeto.",
+    practical:
+      "Na prática, ele ajuda a construir interiores claros, acolhedores e sofisticados, funcionando muito bem com paletas neutras, metais delicados e projetos que pedem uma elegância mais serena do que ostensiva.",
+    value:
+      "É uma escolha que agrega valor porque transmite sutileza, critério e acabamento de alto padrão, reforçando a sensação de um ambiente pensado com mais cuidado em cada detalhe.",
+    indicationTitle: "Lavabos, banheiros e painéis claros",
+    indicationText: "Excelente para quem quer um mármore claro, refinado e com leitura elegante para interiores autorais.",
+    benefitTitle: "Sutileza que valoriza o ambiente",
+    benefitText: "Ajuda o espaço a parecer mais leve, refinado e coerente com uma estética premium e bem resolvida.",
+    executionTitle: "Quanto mais limpo o desenho, maior a exigência da execução",
+    executionText: "No Carrara Gioia, recortes, encontros e paginação precisam ser muito bem resolvidos para manter a leveza e a sofisticação visual da pedra.",
+    seoDescription: "Mármore Carrara Gioia em São Paulo para banheiros, lavabos e painéis internos sob medida. Mármore natural claro e sofisticado para projetos premium.",
+  },
+  "nero-marquina": {
+    eyebrow: "Mármore preto para interiores de impacto, contraste e presença sofisticada",
+    intro:
+      "O Mármore Nero Marquina é a escolha de quem quer um ambiente marcante, elegante e visualmente memorável. Seu fundo preto profundo com veios claros cria contraste forte e transforma lavabos, painéis, lareiras e paredes em pontos centrais do projeto.",
+    technical:
+      "Em termos técnicos, é um mármore natural indicado para uso interno, especialmente em aplicações decorativas e superfícies de destaque em que a força estética do material é parte essencial da composição arquitetônica.",
+    practical:
+      "Na prática, ele funciona muito bem em lavabos, painéis, paredes de destaque, lareiras e tampos internos, principalmente quando a proposta do ambiente pede sofisticação, dramaticidade controlada e leitura de alto padrão.",
+    value:
+      "É um investimento que vale a pena porque transforma o ambiente em algo muito mais autoral, expressivo e premium. O Nero Marquina é daquelas pedras que fazem o espaço parecer assinado e não apenas decorado.",
+    indicationTitle: "Lavabos, painéis, lareiras e interiores de destaque",
+    indicationText: "Ideal para projetos que buscam contraste, elegância e protagonismo visual em ambientes internos.",
+    benefitTitle: "Presença que eleva o nível do ambiente",
+    benefitText: "Cria impacto visual imediato e reforça a sensação de sofisticação com identidade forte e memorável.",
+    executionTitle: "No escuro, o detalhe malfeito aparece mais",
+    executionText: "No Nero Marquina, precisão de corte, borda e paginação são fundamentais para que o resultado pareça realmente nobre e não apenas chamativo.",
+    seoDescription: "Mármore Nero Marquina em São Paulo para lavabos, painéis, lareiras e interiores de destaque. Mármore preto sofisticado para projetos premium sob medida.",
+  },
+  "crema-marfil": {
+    eyebrow: "Mármore bege para interiores acolhedores, elegantes e atemporais",
+    intro:
+      "O Mármore Crema Marfil é muito valorizado por quem quer um ambiente mais acolhedor, sofisticado e atemporal. Seu tom bege claro cria uma atmosfera elegante, confortável e muito fácil de harmonizar em banheiros, lavabos, painéis e revestimentos internos.",
+    technical:
+      "Em termos técnicos, é um mármore natural indicado para aplicações internas onde o objetivo é valorizar o acabamento, a textura e a sensação de conforto visual do projeto.",
+    practical:
+      "Na prática, ele funciona muito bem em lavatórios, banheiros, pisos internos, paredes e painéis, especialmente em composições com madeira, metais dourados, off-white e paletas quentes ou neutras.",
+    value:
+      "É uma escolha que agrega valor porque cria ambientes mais acolhedores e sofisticados, com uma linguagem visual elegante que continua atual e relevante com o passar do tempo.",
+    indicationTitle: "Banheiros, lavabos, pisos internos e painéis",
+    indicationText: "Excelente para quem busca um mármore bege refinado, versátil e muito elegante para interiores premium.",
+    benefitTitle: "Conforto visual com sofisticação",
+    benefitText: "Entrega sensação de acolhimento, equilíbrio e elegância, sem pesar visualmente o ambiente.",
+    executionTitle: "A leveza depende de acabamento limpo",
+    executionText: "No Crema Marfil, paginação, borda e continuidade bem resolvidas ajudam a manter o projeto leve, elegante e visualmente muito mais valioso.",
+    seoDescription: "Mármore Crema Marfil em São Paulo para banheiros, lavabos, painéis e interiores sob medida. Mármore bege elegante e atemporal para projetos premium.",
+  },
+  "estatuario-venato": {
+    eyebrow: "Mármore branco de luxo para interiores sofisticados e autorais",
+    intro:
+      "O Mármore Estatuário Venato é uma pedra natural para quem quer um interior com forte leitura de luxo, desenho marcante e uma presença visual muito valorizada em banheiros, lavabos, painéis e superfícies de destaque.",
+    technical:
+      "Em termos técnicos, é um mármore natural de uso interno, escolhido especialmente por seu desenho expressivo, contraste de veios e impacto visual em composições de alto padrão.",
+    practical:
+      "Na prática, ele transforma ambientes internos em espaços muito mais exclusivos e fotogênicos, funcionando muito bem em lavabos, banheiros, lareiras, painéis e paredes com iluminação valorizando o movimento da pedra.",
+    value:
+      "É um investimento que vale a pena porque entrega uma percepção imediata de sofisticação e projeto de alto nível. O Estatuário Venato não apenas compõe o ambiente — ele o valoriza e o assina visualmente.",
+    indicationTitle: "Lavabos, banheiros, painéis e lareiras premium",
+    indicationText: "Ideal para quem quer um mármore branco expressivo e realmente protagonista em interiores de alto padrão.",
+    benefitTitle: "Impacto visual com linguagem de luxo",
+    benefitText: "Eleva a percepção do espaço e ajuda o ambiente a parecer mais sofisticado, exclusivo e memorável.",
+    executionTitle: "Veio forte exige projeto forte",
+    executionText: "No Estatuário Venato, a paginação certa é o que transforma o desenho da pedra em um diferencial visual de verdade e não apenas em uma superfície bonita.",
+    seoDescription: "Mármore Estatuário Venato em São Paulo para lavabos, banheiros, lareiras e painéis sob medida. Mármore branco de luxo para interiores premium.",
+  },
+  "calacatta-macchiaoro-extra": {
+    eyebrow: "Mármore branco com veios dourados para interiores de luxo e assinatura visual forte",
+    intro:
+      "O Mármore Calacatta Macchiaoro Extra é procurado por quem deseja um interior com forte leitura de luxo, desenho nobre e uma presença visual que valoriza imediatamente lavabos, banheiros, painéis e áreas internas de destaque.",
+    technical:
+      "Em termos técnicos, é um mármore natural de uso interno, valorizado pelo contraste entre fundo claro e veios quentes, o que o torna uma escolha muito forte para superfícies que pedem protagonismo e alto valor estético.",
+    practical:
+      "Na prática, ele funciona muito bem em lavabos, banheiros, painéis, paredes de destaque e lareiras, especialmente quando o objetivo é criar um ambiente elegante, marcante e visualmente sofisticado desde o primeiro olhar.",
+    value:
+      "É um investimento que vale a pena porque transforma a pedra em um elemento de prestígio dentro do projeto, reforçando exclusividade, sofisticação e sensação de acabamento realmente premium.",
+    indicationTitle: "Lavabos, banheiros, painéis e lareiras de alto padrão",
+    indicationText: "Ideal para projetos que pedem uma pedra clara com presença nobre, veios expressivos e forte impacto visual em interiores.",
+    benefitTitle: "Luxo visível e ambiente memorável",
+    benefitText: "Ajuda o espaço a parecer mais valioso, mais autoral e muito mais refinado, com percepção imediata de projeto premium.",
+    executionTitle: "Veios nobres pedem paginação impecável",
+    executionText: "No Calacatta Macchiaoro Extra, a leitura do veio, as emendas e a direção da pedra são decisivas para transformar a superfície em um verdadeiro ponto focal do ambiente.",
+    seoDescription: "Mármore Calacatta Macchiaoro Extra em São Paulo para lavabos, banheiros, painéis e lareiras sob medida. Mármore branco com veios dourados para interiores de luxo.",
+  },
+  "calacatta-arabescato": {
+    eyebrow: "Mármore branco de desenho sofisticado para interiores claros e muito valorizados",
+    intro:
+      "O Mármore Calacatta Arabescato é escolhido por quem quer um ambiente claro, sofisticado e com desenho de veios marcante, sem abrir mão de uma leitura elegante e refinada em banheiros, lavabos, painéis e interiores de destaque.",
+    technical:
+      "Em termos técnicos, é um mármore natural de uso interno, valorizado pela expressividade do veio e pelo equilíbrio entre fundo claro e movimento visual, o que o torna muito desejado em projetos de padrão elevado.",
+    practical:
+      "Na prática, ele ajuda o ambiente a parecer mais luminoso, mais sofisticado e mais autoral, funcionando muito bem em superfícies onde a pedra deve participar ativamente da identidade visual do projeto.",
+    value:
+      "É um investimento que vale a pena porque cria uma percepção imediata de luxo e cuidado estético, reforçando a sensação de um ambiente desenhado com mais critério e mais valor percebido.",
+    indicationTitle: "Lavabos, banheiros, painéis e revestimentos internos",
+    indicationText: "Excelente para quem quer uma pedra clara e nobre, com forte desenho natural e grande capacidade de valorização estética.",
+    benefitTitle: "Clareza com personalidade",
+    benefitText: "Entrega luminosidade, elegância e desenho marcante, sem perder a sensação de sofisticação silenciosa que define interiores premium.",
+    executionTitle: "O desenho precisa ser conduzido com intenção",
+    executionText: "No Calacatta Arabescato, paginação, sentido do veio e encontros bem planejados são fundamentais para extrair o máximo da beleza natural da pedra.",
+    seoDescription: "Mármore Calacatta Arabescato em São Paulo para lavabos, banheiros, painéis e interiores premium. Mármore branco sofisticado com veios marcantes para projetos de alto padrão.",
+  },
+  "branco-thassos": {
+    eyebrow: "Mármore branco para projetos minimalistas, luminosos e extremamente sofisticados",
+    intro:
+      "O Mármore Branco Thassos é procurado por quem quer uma leitura clara, limpa e altamente sofisticada em interiores, especialmente em lavabos, banheiros, painéis e composições onde a pureza visual da pedra é parte central do projeto.",
+    technical:
+      "Em termos técnicos, é um mármore natural de uso interno muito valorizado por sua leitura branca e pela capacidade de criar superfícies visualmente leves, elegantes e extremamente refinadas.",
+    practical:
+      "Na prática, ele funciona muito bem em projetos minimalistas, contemporâneos ou mais silenciosos visualmente, ajudando o ambiente a parecer maior, mais claro e mais premium sem depender de excesso de informação.",
+    value:
+      "É um investimento que vale a pena porque entrega exclusividade, pureza visual e uma sensação de acabamento sofisticado que transforma o espaço de maneira sutil, mas muito potente.",
+    indicationTitle: "Lavabos, banheiros e painéis minimalistas",
+    indicationText: "Ideal para quem busca uma pedra clara e muito refinada para interiores de linguagem mais limpa e elegante.",
+    benefitTitle: "Leveza visual com alto valor percebido",
+    benefitText: "Ajuda o ambiente a parecer mais amplo, mais luminoso e mais sofisticado, com uma estética serena e de alto padrão.",
+    executionTitle: "No branco, o acabamento precisa ser impecável",
+    executionText: "No Branco Thassos, qualquer desnível ou encontro mal resolvido aparece com mais força, por isso o resultado premium depende muito da qualidade da execução.",
+    seoDescription: "Mármore Branco Thassos em São Paulo para lavabos, banheiros e painéis sob medida. Mármore branco sofisticado para interiores minimalistas e premium.",
+  },
+  "branco-pigues": {
+    eyebrow: "Mármore branco elegante para interiores claros, sofisticados e atemporais",
+    intro:
+      "O Mármore Branco Pigues é uma escolha muito interessante para quem quer um interior claro, refinado e com desenho natural delicado, criando ambientes mais elegantes e valorizados em lavabos, banheiros e painéis.",
+    technical:
+      "Em termos técnicos, é um mármore natural indicado para aplicações internas em que a pedra deve contribuir para uma leitura clara, suave e visualmente sofisticada do projeto.",
+    practical:
+      "Na prática, ele ajuda a compor espaços com linguagem mais leve e equilibrada, funcionando muito bem com marcenaria clara, metais delicados e iluminação que favorece a textura natural da pedra.",
+    value:
+      "É um investimento que vale a pena porque amplia a percepção de elegância do ambiente sem exagero, entregando um resultado muito refinado e fácil de harmonizar em projetos premium.",
+    indicationTitle: "Lavabos, banheiros e painéis claros",
+    indicationText: "Excelente para quem busca um mármore branco com sofisticação suave e presença elegante em ambientes internos.",
+    benefitTitle: "Elegância leve e versátil",
+    benefitText: "Valoriza o ambiente com clareza, delicadeza e uma estética atemporal que conversa com diferentes estilos de projeto.",
+    executionTitle: "Sutileza também exige precisão",
+    executionText: "No Branco Pigues, acabamento limpo, paginação bem resolvida e bordas coerentes são o que mantêm a leveza e a sofisticação da pedra no resultado final.",
+    seoDescription: "Mármore Branco Pigues em São Paulo para lavabos, banheiros e painéis sob medida. Mármore branco elegante para interiores claros e sofisticados.",
+  },
+  "marrom-imperador": {
+    eyebrow: "Mármore marrom para interiores quentes, sofisticados e de forte presença visual",
+    intro:
+      "O Mármore Marrom Imperador é ideal para quem quer um ambiente com mais profundidade, elegância e sensação de conforto visual. Ele é muito valorizado em lavabos, banheiros, painéis e lareiras onde a pedra precisa transmitir sofisticação com identidade forte.",
+    technical:
+      "Em termos técnicos, é um mármore natural de uso interno, reconhecido por sua coloração intensa e pelos veios que reforçam movimento, profundidade e leitura de acabamento premium em superfícies de destaque.",
+    practical:
+      "Na prática, ele ajuda a criar interiores mais acolhedores, mais nobres e visualmente impactantes, funcionando muito bem com madeira escura, iluminação quente, metais dourados ou preto fosco.",
+    value:
+      "É um investimento que vale a pena porque transforma o ambiente em algo mais envolvente, sofisticado e memorável, reforçando uma estética de alto padrão com personalidade.",
+    indicationTitle: "Lavabos, banheiros, lareiras e painéis marcantes",
+    indicationText: "Ideal para projetos que pedem uma pedra com mais profundidade visual, calor e presença sofisticada.",
+    benefitTitle: "Conforto visual com imponência",
+    benefitText: "Cria ambientes mais acolhedores e elegantes, com uma linguagem sofisticada que transmite maturidade estética e valor.",
+    executionTitle: "Escuro quente exige composição inteligente",
+    executionText: "No Marrom Imperador, luz, paginação e combinação com marcenaria e metais definem se o resultado ficará apenas bonito ou realmente luxuoso.",
+    seoDescription: "Mármore Marrom Imperador em São Paulo para lavabos, banheiros, lareiras e painéis sob medida. Mármore sofisticado para interiores com presença e alto valor estético.",
+  },
+  "bronze-armani": {
+    eyebrow: "Mármore sofisticado para interiores contemporâneos, elegantes e muito valorizados",
+    intro:
+      "O Mármore Bronze Armani é uma escolha muito forte para quem busca um ambiente contemporâneo, sofisticado e com uma estética mais silenciosa, porém extremamente elegante, em painéis, banheiros, lavabos e superfícies internas de destaque.",
+    technical:
+      "Em termos técnicos, é um mármore natural de uso interno com leitura visual refinada, tons profundos e uma textura que combina muito bem com projetos contemporâneos e interiores de padrão elevado.",
+    practical:
+      "Na prática, ele funciona muito bem para quem quer sofisticação sem excessos, criando ambientes mais maduros, equilibrados e coerentes com arquitetura contemporânea, marcenaria escura e iluminação bem trabalhada.",
+    value:
+      "É um investimento que vale a pena porque entrega requinte, coerência visual e uma sensação de projeto muito mais autoral, com forte valor percebido para quem entra no ambiente.",
+    indicationTitle: "Banheiros, lavabos, painéis e interiores contemporâneos",
+    indicationText: "Excelente para quem quer uma pedra elegante, sofisticada e com leitura mais discreta, porém muito nobre.",
+    benefitTitle: "Sofisticação madura e atemporal",
+    benefitText: "Ajuda o projeto a parecer mais refinado, mais equilibrado e muito mais alinhado com uma linguagem arquitetônica premium.",
+    executionTitle: "O refinamento depende da proporção certa",
+    executionText: "No Bronze Armani, corte, paginação, direção do veio e combinação com os outros acabamentos fazem toda a diferença na força final do ambiente.",
+    seoDescription: "Mármore Bronze Armani em São Paulo para lavabos, banheiros e painéis sob medida. Mármore sofisticado para interiores contemporâneos e premium.",
+  },
+};
+
+function getMarmoreMaterialCopy(item: CatalogItem | null): MarmoreMaterialCopy {
+  if (!item) {
+    return {
+      intro: "Mármore premium para quem quer transformar interiores em ambientes mais elegantes, autorais e memoráveis por meio de veios naturais, profundidade e acabamento refinado.",
+      technical: "Em termos técnicos, o mármore é uma rocha natural muito valorizada em aplicações internas pela riqueza visual, pela sofisticação dos veios e pela capacidade de elevar a percepção estética de lavabos, banheiros, painéis, lareiras e revestimentos de destaque.",
+      practical: "Na prática, ele entrega atmosfera, personalidade e sensação de projeto de alto padrão, especialmente em áreas internas onde a pedra pode ser protagonista e a beleza do material realmente aparece.",
+      value: "É um investimento que vale a pena porque dá ao ambiente uma assinatura visual que poucos materiais conseguem oferecer, reforçando exclusividade, refinamento e valor percebido no conjunto final.",
+      indicationTitle: "Lavabos, banheiros, painéis e interiores premium",
+      indicationText: "Excelente para projetos internos em que a pedra deve criar presença, sofisticação e identidade visual.",
+      benefitTitle: "Beleza que valoriza o espaço",
+      benefitText: "O mármore ajuda o ambiente a parecer mais nobre, mais elegante e mais memorável.",
+      executionTitle: "O luxo aparece quando o detalhe está certo",
+      executionText: "No mármore, a diferença entre uma peça bonita e um resultado realmente premium está na paginação, na borda, nos encontros e na qualidade da instalação.",
+    };
+  }
+
+  return MARMORE_MATERIAL_COPY[normalizeMarmoreSlug(item.name)] || {
+    intro: `${item.name} é um mármore natural indicado para quem quer elevar lavabos, banheiros, painéis, lareiras e interiores de destaque com uma pedra de forte valor estético, veios elegantes e acabamento premium.`,
+    technical: `Em termos técnicos, ${item.name} reúne as características que fazem do mármore um material tão valorizado em interiores: desenho natural, profundidade visual e capacidade de transformar superfícies em elementos protagonistas da arquitetura.`,
+    practical: `Na prática, ele cria ambientes mais sofisticados, mais autorais e com maior percepção de cuidado, principalmente quando combinado com iluminação, paginação e materiais de apoio bem escolhidos.`,
+    value: `${item.name} agrega valor porque transforma a pedra em parte da identidade do projeto, reforçando sofisticação, exclusividade e um resultado final muito mais memorável.`,
+    indicationTitle: "Lavabos, banheiros, painéis e interiores de destaque",
+    indicationText: "Excelente para quem busca uma pedra natural com elegância, presença e forte valor estético para ambientes internos.",
+    benefitTitle: "Atmosfera premium e assinatura visual",
+    benefitText: "Entrega uma sensação imediata de sofisticação e ajuda o ambiente a parecer mais elegante e valorizado.",
+    executionTitle: "Mármore exige olhar e execução refinados",
+    executionText: "No mármore, paginação, recortes, emendas e acabamento são decisivos para que o resultado final pareça realmente autoral e de alto padrão.",
+  };
+}
+
+const SILESTONE_MATERIAL_COPY: Record<string, QuartzoEngenhariaMaterialCopy> = {
+  "white-zeus": {
+    eyebrow: "Silestone branco para cozinhas claras, elegantes e muito funcionais",
+    intro: "Silestone White Zeus é uma escolha forte para quem busca uma bancada clara, sofisticada e visualmente limpa para cozinhas, ilhas, banheiros e lavabos de linguagem contemporânea.",
+    technical: "Em termos técnicos, trata-se de um quartzo de engenharia de baixa porosidade, com superfície uniforme e excelente adaptação a projetos que pedem visual claro, leitura contínua e praticidade de manutenção.",
+    practical: "Na prática, ele ajuda o ambiente a parecer maior, mais iluminado e mais organizado visualmente, combinando muito bem com madeira, laca, marcenaria clara, metais dourados, pretos ou inox.",
+    value: "É um investimento que vale a pena porque entrega uma estética limpa e muito valorizada pelo mercado, com linguagem contemporânea e forte percepção de acabamento premium.",
+    indicationTitle: "Cozinhas, ilhas, banheiros e lavabos contemporâneos",
+    indicationText: "Ideal para quem busca quartzo branco com aparência sofisticada, uniforme e elegante para projetos claros.",
+    benefitTitle: "Clareza visual e sensação de projeto resolvido",
+    benefitText: "Ajuda o ambiente a parecer mais amplo, mais leve e mais sofisticado, com uma leitura de bancada muito bem acabada.",
+    executionTitle: "No branco, acabamento impecável faz toda a diferença",
+    executionText: "No White Zeus, recortes, encontros, bordas e paginação da bancada precisam ser muito bem executados para que o resultado fique realmente premium.",
+    seoDescription: "Silestone White Zeus em São Paulo para cozinhas, ilhas, banheiros e lavabos sob medida. Quartzo branco premium com baixa porosidade e visual sofisticado.",
+  },
+  yukon: {
+    eyebrow: "Silestone claro marmorizado para projetos contemporâneos e sofisticados",
+    intro: "Silestone Yukon é uma opção muito procurada por quem quer uma bancada de quartzo clara, refinada e com leitura inspirada em pedra natural, sem perder a praticidade de uma superfície de engenharia.",
+    technical: "Em termos técnicos, é um quartzo de engenharia de baixa porosidade, indicado para bancadas, ilhas, banheiros e lavabos em que a uniformidade do material e a facilidade de manutenção são muito valorizadas.",
+    practical: "Na prática, ele ajuda a criar cozinhas mais elegantes, luminosas e equilibradas, com uma estética suave que conversa bem com projetos contemporâneos, marcenaria amadeirada ou tons neutros.",
+    value: "É uma escolha que agrega valor porque oferece uma leitura mais nobre e sofisticada do quartzo, reforçando acabamento premium e uma percepção visual muito mais autoral no conjunto final.",
+    indicationTitle: "Cozinhas, ilhas e bancadas claras premium",
+    indicationText: "Excelente para quem quer quartzo claro com linguagem mais sofisticada e sensação de pedra natural contemporânea.",
+    benefitTitle: "Sofisticação clara com rotina prática",
+    benefitText: "Une a estética valorizada dos tons claros com a tranquilidade de um material pensado para o uso real do dia a dia.",
+    executionTitle: "A linguagem premium aparece nos detalhes",
+    executionText: "No Yukon, bordas, emendas e integração com a marcenaria são o que transformam a bancada em um elemento de valor real dentro do projeto.",
+    seoDescription: "Silestone Yukon em São Paulo para bancadas, ilhas e cozinhas sob medida. Quartzo claro premium com baixa porosidade e visual sofisticado.",
+  },
+  "et-calacatta-gold": {
+    eyebrow: "Silestone marmorizado para cozinhas premium com forte valor estético",
+    intro: "Silestone Et Calacatta Gold é indicado para quem quer uma bancada de quartzo com leitura mais nobre, desenho sofisticado e forte valorização visual em cozinhas, ilhas e banheiros de alto padrão.",
+    technical: "Em termos técnicos, é um quartzo de engenharia de baixa porosidade, desenvolvido para unir estética marmorizada, estabilidade visual e praticidade em superfícies muito usadas no dia a dia.",
+    practical: "Na prática, ele entrega uma imagem de cozinha mais refinada e mais autoral, especialmente quando combinado com marcenaria clara, metais dourados, iluminação quente e bordas bem resolvidas.",
+    value: "É um investimento que vale a pena porque eleva a percepção do ambiente, aproxima o visual do universo das pedras nobres e cria uma leitura de projeto mais sofisticada e valorizada.",
+    indicationTitle: "Cozinhas, ilhas e banheiros de alto padrão",
+    indicationText: "Ideal para quem quer quartzo marmorizado com forte apelo visual e linguagem premium.",
+    benefitTitle: "Leitura de luxo com praticidade de quartzo",
+    benefitText: "Cria um ambiente mais elegante e valorizado sem abrir mão da rotina prática que o quartzo proporciona.",
+    executionTitle: "Desenho marmorizado pede recorte inteligente",
+    executionText: "No Et Calacatta Gold, paginação visual, recortes e proporção da borda são decisivos para que o desenho do material apareça de forma realmente sofisticada.",
+    seoDescription: "Silestone Et Calacatta Gold em São Paulo para cozinhas, ilhas e banheiros sob medida. Quartzo marmorizado premium com baixa porosidade e visual sofisticado.",
+  },
+  "miami-white": {
+    eyebrow: "Silestone branco para projetos limpos, leves e muito versáteis",
+    intro: "Silestone Miami White é uma excelente alternativa para quem quer uma bancada branca de leitura uniforme, limpa e elegante em cozinhas, ilhas, lavabos e banheiros contemporâneos.",
+    technical: "Em termos técnicos, é um quartzo de engenharia indicado para superfícies que pedem baixa porosidade, facilidade de limpeza e visual homogêneo, muito valorizado em bancadas de uso frequente.",
+    practical: "Na prática, ele ajuda o ambiente a parecer mais claro, organizado e contemporâneo, com uma presença discreta e sofisticada que funciona muito bem em composições minimalistas.",
+    value: "É uma escolha que agrega valor porque reforça a sensação de projeto limpo, coerente e elegante, entregando uma estética clara que o mercado percebe como atual e premium.",
+    indicationTitle: "Cozinhas, banheiros e lavabos de linguagem clean",
+    indicationText: "Excelente para quem quer quartzo branco uniforme com visual contemporâneo e muita versatilidade.",
+    benefitTitle: "Leveza visual com manutenção prática",
+    benefitText: "Ajuda o ambiente a parecer mais leve e sofisticado, sem complicar a rotina de quem usa a bancada todos os dias.",
+    executionTitle: "O uniforme valoriza ainda mais a boa execução",
+    executionText: "No Miami White, qualquer desnível ou recorte mal resolvido aparece mais, por isso acabamento preciso é essencial para o resultado premium.",
+    seoDescription: "Silestone Miami White em São Paulo para cozinhas, lavabos e banheiros sob medida. Quartzo branco uniforme, elegante e prático para o dia a dia.",
+  },
+  "et-statuario": {
+    eyebrow: "Silestone marmorizado para cozinhas elegantes e projetos de presença",
+    intro: "Silestone Et Statuario é indicado para quem quer uma bancada de quartzo com desenho marmorizado sofisticado, forte presença visual e excelente integração com cozinhas, ilhas e banheiros de padrão elevado.",
+    technical: "Em termos técnicos, é um quartzo de engenharia de baixa porosidade, pensado para superfícies internas sob medida que precisam unir desenho valorizado, estabilidade visual e boa convivência com a rotina.",
+    practical: "Na prática, ele entrega uma bancada que chama atenção pela elegância do desenho e pela capacidade de transformar o ambiente em algo mais autoral, refinado e memorável.",
+    value: "É um investimento que vale a pena porque aproxima o projeto do universo das pedras nobres, mantendo a praticidade do quartzo e aumentando muito a percepção de valor do ambiente.",
+    indicationTitle: "Cozinhas, ilhas e banheiros de leitura marmorizada premium",
+    indicationText: "Ideal para quem quer quartzo com desenho sofisticado e presença visual marcante.",
+    benefitTitle: "Desenho valorizado com praticidade de quartzo",
+    benefitText: "Ajuda o espaço a parecer mais nobre e mais bem resolvido sem abrir mão de uma rotina prática.",
+    executionTitle: "O desenho pede paginação e recorte bem pensados",
+    executionText: "No Et Statuario, proporção, recorte e integração com marcenaria e metais são o que fazem o material aparecer de forma realmente premium.",
+    seoDescription: "Silestone Et Statuario em São Paulo para cozinhas, ilhas e banheiros sob medida. Quartzo marmorizado premium com baixa porosidade e desenho sofisticado.",
+  },
+  "pearl-jasmine": {
+    eyebrow: "Silestone claro marmorizado para ambientes luminosos e sofisticados",
+    intro: "Silestone Pearl Jasmine é uma opção muito interessante para quem quer uma bancada clara, delicada e elegante, com desenho suave e linguagem contemporânea para cozinhas, ilhas, lavabos e banheiros.",
+    technical: "Em termos técnicos, é um quartzo de engenharia de baixa porosidade indicado para superfícies internas sob medida que pedem boa estabilidade visual, manutenção prática e leitura mais refinada.",
+    practical: "Na prática, ele ajuda o ambiente a parecer mais leve, mais luminoso e mais acolhedor, com um desenho que adiciona sofisticação sem pesar na composição.",
+    value: "É uma escolha que agrega valor porque entrega uma estética clara e elegante, muito apreciada em projetos que buscam refinamento, suavidade e sensação de ambiente bem resolvido.",
+    indicationTitle: "Cozinhas, ilhas e lavabos claros com desenho suave",
+    indicationText: "Excelente para quem quer quartzo claro com mais personalidade visual e linguagem sofisticada.",
+    benefitTitle: "Leveza visual com desenho elegante",
+    benefitText: "Cria um ambiente mais luminoso, delicado e valorizado sem perder a praticidade esperada do quartzo.",
+    executionTitle: "A sutileza valoriza acabamento preciso",
+    executionText: "No Pearl Jasmine, a boa execução de bordas, emendas e recortes é o que sustenta a leitura limpa e premium da bancada.",
+    seoDescription: "Silestone Pearl Jasmine em São Paulo para cozinhas, ilhas, lavabos e banheiros sob medida. Quartzo claro marmorizado com baixa porosidade e visual sofisticado.",
+  },
+  "desert-silver": {
+    eyebrow: "Silestone cinza marmorizado para projetos contemporâneos e elegantes",
+    intro: "Silestone Desert Silver é indicado para quem quer uma bancada contemporânea com base clara, desenho cinza sofisticado e excelente equilíbrio entre presença visual e versatilidade.",
+    technical: "Em termos técnicos, trata-se de um quartzo de engenharia de baixa porosidade desenvolvido para bancadas internas sob medida com uso frequente, mantendo estabilidade visual e boa praticidade.",
+    practical: "Na prática, ele ajuda a construir cozinhas e ilhas com uma estética mais urbana e elegante, conversando muito bem com madeira, marcenaria cinza, preta ou off-white.",
+    value: "É uma escolha que agrega valor porque oferece desenho valorizado, composição contemporânea e uma linguagem de bancada muito apreciada em projetos atuais.",
+    indicationTitle: "Cozinhas, ilhas e áreas internas contemporâneas",
+    indicationText: "Ideal para quem quer quartzo cinza marmorizado com versatilidade e forte apelo estético.",
+    benefitTitle: "Equilíbrio entre desenho e neutralidade",
+    benefitText: "Ajuda a criar um ambiente sofisticado, atual e fácil de compor com diferentes estilos de marcenaria e metais.",
+    executionTitle: "Detalhes bem resolvidos elevam o cinza marmorizado",
+    executionText: "No Desert Silver, borda, paginação visual e integração com os demais acabamentos definem a leitura premium da bancada.",
+    seoDescription: "Silestone Desert Silver em São Paulo para cozinhas e ilhas sob medida. Quartzo cinza marmorizado premium com baixa porosidade e visual contemporâneo.",
+  },
+  "charcoal-soapstone": {
+    eyebrow: "Silestone escuro para projetos sofisticados, marcantes e contemporâneos",
+    intro: "Silestone Charcoal Soapstone é uma escolha muito forte para quem quer uma bancada escura, sofisticada e de presença autoral em cozinhas, ilhas, lavabos e banheiros contemporâneos.",
+    technical: "Em termos técnicos, é um quartzo de engenharia de baixa porosidade indicado para superfícies internas sob medida em que se busca visual escuro, composição elegante e praticidade de manutenção.",
+    practical: "Na prática, ele cria um ambiente mais profundo, mais refinado e com forte identidade visual, funcionando muito bem com metais escovados, madeira e iluminação quente.",
+    value: "É um investimento que vale a pena porque transforma a bancada em elemento protagonista do projeto, aumentando muito a percepção de sofisticação e assinatura visual do espaço.",
+    indicationTitle: "Cozinhas, ilhas e lavabos escuros premium",
+    indicationText: "Excelente para quem quer quartzo escuro com presença forte e linguagem contemporânea.",
+    benefitTitle: "Presença visual e sofisticação imediata",
+    benefitText: "Ajuda o ambiente a parecer mais exclusivo, mais autoral e mais valorizado visualmente.",
+    executionTitle: "Escuros premium pedem acabamento de alto nível",
+    executionText: "No Charcoal Soapstone, bordas, recortes e integração com marcenaria e iluminação precisam ser muito bem resolvidos para sustentar a leitura premium.",
+    seoDescription: "Silestone Charcoal Soapstone em São Paulo para cozinhas, ilhas e lavabos sob medida. Quartzo escuro premium com baixa porosidade e forte presença visual.",
+  },
+  "bronze-rivers": {
+    eyebrow: "Silestone escuro sofisticado para cozinhas e ilhas de forte assinatura visual",
+    intro: "Silestone Bronze Rivers é indicado para quem quer uma bancada marcante, elegante e muito contemporânea, com leitura escura sofisticada e presença forte no projeto.",
+    technical: "Em termos técnicos, é um quartzo de engenharia de baixa porosidade pensado para superfícies internas sob medida em que a combinação entre desenho valorizado, estabilidade visual e praticidade faz diferença.",
+    practical: "Na prática, ele cria cozinhas e ilhas mais autorais, mais refinadas e com cara de projeto muito bem pensado, especialmente em composições com madeira, metais escovados e luz quente.",
+    value: "É uma escolha que agrega valor porque deixa a bancada com status de protagonista, elevando o ambiente e reforçando percepção de sofisticação e exclusividade.",
+    indicationTitle: "Cozinhas, ilhas e áreas internas de linguagem escura premium",
+    indicationText: "Ideal para quem quer quartzo de forte impacto visual e composição sofisticada.",
+    benefitTitle: "Contraste, profundidade e assinatura estética",
+    benefitText: "Ajuda o ambiente a parecer mais sofisticado, mais maduro e muito mais memorável visualmente.",
+    executionTitle: "Em materiais protagonistas, detalhe define resultado",
+    executionText: "No Bronze Rivers, borda, recorte e composição com marcenaria e metais precisam ser planejados para que a bancada apareça no nível certo.",
+    seoDescription: "Silestone Bronze Rivers em São Paulo para cozinhas e ilhas sob medida. Quartzo premium escuro com baixa porosidade e forte assinatura visual.",
+  },

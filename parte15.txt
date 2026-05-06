@@ -1,0 +1,302 @@
+
+  const openExternal = (url: string) => {
+    try {
+      const w = window.open(url, "_blank", "noopener,noreferrer");
+      if (w) return;
+    } catch {
+      // ignore
+    }
+    try {
+      window.top?.location.assign(url);
+    } catch {
+      window.location.assign(url);
+    }
+  };
+
+  const onNav = (next: PageKey, hash?: string) => {
+    stopAboutAudio();
+    onTtsStop();
+    setMobileOpen(false);
+    setQueryPage(next, hash);
+  };
+
+  const goToQuartzitoMaterial = (slug: string) => {
+    stopAboutAudio();
+    onTtsStop();
+    setMobileOpen(false);
+    const url = new URL(window.location.href);
+    url.searchParams.set("p", "quartzito-material");
+    url.searchParams.set("slug", slug);
+    url.hash = "#quartzito-material";
+    history.pushState({ p: "quartzito-material", slug }, "", url);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  };
+
+  const goToGranitoMaterial = (slug: string) => {
+    stopAboutAudio();
+    onTtsStop();
+    setMobileOpen(false);
+    const url = new URL(window.location.href);
+    url.searchParams.set("p", "granito-material");
+    url.searchParams.set("slug", slug);
+    url.hash = "#granito-material";
+    history.pushState({ p: "granito-material", slug }, "", url);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  };
+
+  const goToMarmoreMaterial = (slug: string) => {
+    stopAboutAudio();
+    onTtsStop();
+    setMobileOpen(false);
+    const url = new URL(window.location.href);
+    url.searchParams.set("p", "marmore-material");
+    url.searchParams.set("slug", slug);
+    url.hash = "#marmore-material";
+    history.pushState({ p: "marmore-material", slug }, "", url);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  };
+
+  const goToSilestoneMaterial = (slug: string) => {
+    stopAboutAudio();
+    onTtsStop();
+    setMobileOpen(false);
+    const url = new URL(window.location.href);
+    url.searchParams.set("p", "silestone-material");
+    url.searchParams.set("slug", slug);
+    url.hash = "#silestone-material";
+    history.pushState({ p: "silestone-material", slug }, "", url);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  };
+
+  const goToQuartzoStoneMaterial = (slug: string) => {
+    stopAboutAudio();
+    onTtsStop();
+    setMobileOpen(false);
+    const url = new URL(window.location.href);
+    url.searchParams.set("p", "quartzo-stone-material");
+    url.searchParams.set("slug", slug);
+    url.hash = "#quartzo-stone-material";
+    history.pushState({ p: "quartzo-stone-material", slug }, "", url);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  };
+
+  const goToDektonMaterial = (slug: string) => {
+    stopAboutAudio();
+    onTtsStop();
+    setMobileOpen(false);
+    const url = new URL(window.location.href);
+    url.searchParams.set("p", "dekton-material");
+    url.searchParams.set("slug", slug);
+    url.hash = "#dekton-material";
+    history.pushState({ p: "dekton-material", slug }, "", url);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  };
+
+  const goToSinthMaterial = (slug: string) => {
+    stopAboutAudio();
+    onTtsStop();
+    setMobileOpen(false);
+    const url = new URL(window.location.href);
+    url.searchParams.set("p", "sinth-material");
+    url.searchParams.set("slug", slug);
+    url.hash = "#sinth-material";
+    history.pushState({ p: "sinth-material", slug }, "", url);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  };
+
+  const scrollOrRouteToHash = (hash: string) => {
+    const id = hash.startsWith("#") ? hash.slice(1) : hash;
+    if (!id) return;
+    if (!visible.has(id)) {
+      onNav("home", `#${id}`);
+      return;
+    }
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  useEffect(() => {
+    document.body.classList.add("scroll-smooth");
+    return () => document.body.classList.remove("scroll-smooth");
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty("--hero-bg-image", `url('${ASSETS.hero.bgImage}')`);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setHeaderScrolled(window.scrollY > 100);
+      setShowScrollTop(window.scrollY > 360);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    stopAboutAudio();
+    onTtsStop();
+
+    const baseTitle = "Douro Mármores";
+    const titles: Partial<Record<PageKey, string>> = {
+      home: "Douro Mármores em São Paulo | Mármores, Granitos e Quartzo Premium",
+      "sobre-nos": "Sobre a Douro Mármores | Marmoraria em São Paulo",
+      "sobre-inspiracao": "Nossa Inspiração | Douro Mármores em São Paulo",
+      "quem-somos": "Quem Somos | Marmoraria em São Paulo - Douro Mármores",
+      "como-funciona": "Como Funciona | Marmoraria em São Paulo - Douro Mármores",
+      produtos: "Produtos | Mármores, Granitos e Quartzo em São Paulo",
+      marmores: "Mármores em São Paulo | Catálogo Douro Mármores",
+      "marmores-2": "Mármores em São Paulo | Catálogo 2 | Douro Mármores",
+      "marmores-3": "Mármores em São Paulo | Catálogo 3 | Douro Mármores",
+      granitos: "Granitos em São Paulo | Catálogo Douro Mármores",
+      "granitos-2": "Granitos em São Paulo | Catálogo 2 | Douro Mármores",
+      "granitos-3": "Granitos em São Paulo | Catálogo 3 | Douro Mármores",
+      quartzo: "Quartzo em São Paulo | Marcas e Cores Premium",
+      silestone: "Silestone em São Paulo | Quartzo Premium Douro Mármores",
+      "silestone-2": "Silestone em São Paulo | Catálogo 2 | Douro Mármores",
+      "silestone-3": "Silestone em São Paulo | Catálogo 3 | Douro Mármores",
+      "quartzo-stone": "Quartzo Stone em São Paulo | Catálogo Douro Mármores",
+      "quartzo-stone-2": "Quartzo Stone em São Paulo | Catálogo 2 | Douro Mármores",
+      "quartzo-stone-3": "Quartzo Stone em São Paulo | Catálogo 3 | Douro Mármores",
+      quartzitos: "Quartzitos em São Paulo | Catálogo Douro Mármores",
+      "quartzitos-2": "Quartzitos (2) | Catálogo | Douro Mármores",
+      "quartzitos-3": "Quartzitos (3) | Catálogo | Douro Mármores",
+      limestone: "Limestone | Catálogo | Douro Mármores",
+      "limestone-2": "Limestone (2) | Catálogo | Douro Mármores",
+      "limestone-3": "Limestone (3) | Catálogo | Douro Mármores",
+      onix: "Ônix | Catálogo | Douro Mármores",
+      "onix-2": "Ônix (2) | Catálogo | Douro Mármores",
+      laminas: "Lâminas | Marcas Premium | Douro Mármores",
+      dekton: "Dekton | Cores | Douro Mármores",
+      "dekton-2": "Dekton (2) | Cores | Douro Mármores",
+      "dekton-3": "Dekton (3) | Cores | Douro Mármores",
+      neolith: "Neolith | Cores | Douro Mármores",
+      sinth: "Sinth | Cores | Douro Mármores",
+      "sinth-2": "Sinth (2) | Cores | Douro Mármores",
+      "sinth-3": "Sinth (3) | Cores | Douro Mármores",
+      aglostone: "Prime Stone | Catálogo | Douro Mármores",
+      projetos: "Projetos | Douro Mármores",
+      depoimentos: "Depoimentos de Clientes | Douro Mármores",
+      duvidas: "Dúvidas Frequentes | Marmoraria em São Paulo",
+      blog: "Blog de Marmoraria, Decoração e Arquitetura | Douro Mármores",
+      contato: "Contato | Orçamento de Marmoraria em São Paulo",
+      logo: "Logomarca | Douro Mármores",
+      "regioes-servicos": "Regiões e Serviços em São Paulo | Douro Mármores",
+      "marmoraria-campo-belo": "Marmoraria no Campo Belo | Douro Mármores",
+      "marmoraria-vila-olimpia": "Marmoraria na Vila Olímpia | Douro Mármores",
+      "marmoraria-itaim-bibi": "Marmoraria no Itaim Bibi | Douro Mármores",
+      "marmoraria-perdizes": "Marmoraria em Perdizes | Douro Mármores",
+      "marmoraria-pompeia": "Marmoraria na Pompeia | Douro Mármores",
+      "marmoraria-tatuape": "Marmoraria no Tatuapé | Douro Mármores",
+      "marmoraria-ipiranga": "Marmoraria no Ipiranga | Douro Mármores",
+      "marmoraria-vila-sonia": "Marmoraria na Vila Sônia | Douro Mármores",
+      "marmoraria-vila-andrade": "Marmoraria na Vila Andrade | Douro Mármores",
+      "marmoraria-bela-vista": "Marmoraria na Bela Vista | Douro Mármores",
+      "marmoraria-jardim-europa": "Marmoraria no Jardim Europa | Douro Mármores",
+      "marmoraria-jardim-america": "Marmoraria no Jardim América | Douro Mármores",
+      "marmoraria-higienopolis": "Marmoraria em Higienópolis | Douro Mármores",
+      "marmoraria-mooca": "Marmoraria na Mooca | Douro Mármores",
+      "marmoraria-anhangabau": "Marmoraria no Anhangabaú | Douro Mármores",
+      "marmoraria-vila-leopoldina": "Marmoraria na Vila Leopoldina | Douro Mármores",
+      "marmoraria-vila-madalena": "Marmoraria na Vila Madalena | Douro Mármores",
+      "marmoraria-cerqueira-cesar": "Marmoraria em Cerqueira César | Douro Mármores",
+      "marmoraria-sumare": "Marmoraria no Sumaré | Douro Mármores",
+      "marmoraria-socorro": "Marmoraria no Socorro | Douro Mármores",
+      "marmoraria-alto-da-boa-vista": "Marmoraria no Alto da Boa Vista | Douro Mármores",
+      "marmoraria-vila-suzana": "Marmoraria na Vila Suzana | Douro Mármores",
+      "marmoraria-vila-santa-catarina": "Marmoraria na Vila Santa Catarina | Douro Mármores",
+      "marmoraria-jardim-marajoara": "Marmoraria no Jardim Marajoara | Douro Mármores",
+      "marmoraria-chacara-flora": "Marmoraria na Chácara Flora | Douro Mármores",
+      "marmoraria-jurubatuba": "Marmoraria em Jurubatuba | Douro Mármores",
+      "marmoraria-campo-grande": "Marmoraria no Campo Grande | Douro Mármores",
+      "marmoraria-mirandopolis": "Marmoraria em Mirandópolis | Douro Mármores",
+      "marmoraria-veleiros": "Marmoraria em Veleiros | Douro Mármores",
+      "marmoraria-vila-cordeiro": "Marmoraria na Vila Cordeiro | Douro Mármores",
+      "marmoraria-vila-cruzeiro": "Marmoraria na Vila Cruzeiro | Douro Mármores",
+      "marmoraria-jardim-guedala": "Marmoraria no Jardim Guedala | Douro Mármores",
+      "marmoraria-vila-gumercindo": "Marmoraria na Vila Gumercindo | Douro Mármores",
+      "marmoraria-aconchego-da-zona-sul": "Marmoraria na Zona Sul de São Paulo | Douro Mármores",
+      "bancada-quartzito-sao-paulo": "Bancada em Quartzito em São Paulo | Douro Mármores",
+      "bancada-dekton-sao-paulo": "Bancada em Dekton em São Paulo | Douro Mármores",
+      "bancada-silestone-sao-paulo": "Bancada em Silestone em São Paulo | Douro Mármores",
+      "ilha-cozinha-quartzito-sao-paulo": "Ilha de Cozinha em Quartzito em São Paulo | Douro Mármores",
+      "escada-granito-sao-paulo": "Escada em Granito em São Paulo | Douro Mármores",
+      "lavabo-onix-sao-paulo": "Lavabo em Ônix em São Paulo | Douro Mármores",
+      "painel-quartzito-sao-paulo": "Painel em Quartzito em São Paulo | Douro Mármores",
+      "pia-cozinha-granito-sao-paulo": "Pia de Cozinha em Granito em São Paulo | Douro Mármores",
+      "bancada-quartzo-branco-sao-paulo": "Bancada de Quartzo Branco em São Paulo | Douro Mármores",
+      "bancada-preto-sao-gabriel-sao-paulo": "Bancada em Preto São Gabriel em São Paulo | Douro Mármores",
+      "cuba-esculpida-marmore-sao-paulo": "Cuba Esculpida em Mármore em São Paulo | Douro Mármores",
+      "lavatorio-quartzito-sao-paulo": "Lavatório em Quartzito em São Paulo | Douro Mármores",
+      "ilha-dekton-sao-paulo": "Ilha em Dekton em São Paulo | Douro Mármores",
+      "churrasqueira-quartzito-sao-paulo": "Churrasqueira em Quartzito em São Paulo | Douro Mármores",
+      "revestimento-lareira-marmore-sao-paulo": "Revestimento de Lareira em Mármore em São Paulo | Douro Mármores",
+      "escada-quartzito-sao-paulo": "Escada em Quartzito em São Paulo | Douro Mármores",
+      "bancada-porcelanato-sao-paulo": "Bancada em Porcelanato em São Paulo | Douro Mármores",
+      "bancada-area-gourmet-sao-paulo": "Bancada para Área Gourmet em São Paulo | Douro Mármores",
+      "lavatorio-marmore-sao-paulo": "Lavatório em Mármore em São Paulo | Douro Mármores",
+      "bancada-lavabo-sao-paulo": "Bancada para Lavabo em São Paulo | Douro Mármores",
+      "soleira-peitoril-sao-paulo": "Soleiras e Peitoris em São Paulo | Douro Mármores",
+      "mesa-pedra-sao-paulo": "Mesa em Pedra em São Paulo | Douro Mármores",
+      "nicho-marmore-sao-paulo": "Nicho em Mármore em São Paulo | Douro Mármores",
+      "pia-esculpida-sao-paulo": "Pia Esculpida em São Paulo | Douro Mármores",
+      "bancada-ilha-cozinha-sao-paulo": "Bancada para Ilha de Cozinha em São Paulo | Douro Mármores",
+      "pedra-para-cozinha-sao-paulo": "Pedra para Cozinha em São Paulo | Douro Mármores",
+      "marmoraria-perto-de-mim-sao-paulo": "Marmoraria Perto de Mim em São Paulo | Douro Mármores",
+    };
+
+    const descBase =
+      "Douro Mármores: mármores, granitos, quartzitos e superfícies premium com seleção de chapa, acabamento cuidadoso e instalação impecável em São Paulo e Grande São Paulo.";
+
+    const descByPage: Partial<Record<PageKey, string>> = {
+      home: "Marmoraria em São Paulo especializada em mármores, granitos, quartzitos, quartzo e superfícies premium para bancadas, lavatórios, escadas, cozinhas, banheiros e projetos sob medida.",
+      produtos: "Catálogo Douro Mármores com mármores, granitos, quartzitos, quartzo, lâminas premium e superfícies sob medida para projetos em São Paulo.",
+      projetos: "Veja projetos reais da Douro Mármores em cozinhas, banheiros, lavabos, escadas, bancadas, áreas gourmet e outros ambientes em São Paulo e Grande São Paulo.",
+      duvidas: "Tire dúvidas sobre materiais, engenharia, instalação, prazos, orçamento e manutenção de pedras e superfícies.",
+      contato: "Solicite orçamento técnico e fale com a Douro Mármores via WhatsApp ou formulário.",
+      blog: "Acesse o blog da Douro Mármores com conteúdos sobre mármore, granito, quartzito, quartzo, decoração, arquitetura, bancadas sob medida e tendências de marmoraria em São Paulo.",
+      "marmoraria-campo-belo": "Marmoraria no Campo Belo para bancadas, lavatórios, painéis, escadas e projetos sob medida em mármore, granito, quartzito, quartzo e superfícies premium.",
+      "marmoraria-vila-olimpia": "Marmoraria na Vila Olímpia com atendimento para cozinhas, banheiros, lavabos, áreas gourmet e projetos corporativos ou residenciais em pedra natural e superfícies premium.",
+      "marmoraria-itaim-bibi": "Marmoraria no Itaim Bibi para bancadas, lavatórios, painéis, cozinhas e projetos de alto padrão em mármore, granito, quartzo, quartzito e superfícies premium.",
+      "marmoraria-perdizes": "Marmoraria em Perdizes com atendimento para bancadas, lavabos, banheiros, áreas gourmet e projetos sob medida em pedra natural e superfícies premium.",
+      "marmoraria-pompeia": "Marmoraria na Pompeia para cozinhas, banheiros, lavabos, áreas gourmet, escadas e painéis sob medida em mármore, granito, quartzo e quartzito.",
+      "marmoraria-tatuape": "Marmoraria no Tatuapé com soluções sob medida para bancadas, cozinhas, banheiros, lavatórios e áreas gourmet em pedras naturais e superfícies premium.",
+      "marmoraria-ipiranga": "Marmoraria no Ipiranga para bancadas, escadas, painéis, lavatórios e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+      "marmoraria-vila-sonia": "Marmoraria na Vila Sônia para cozinhas, banheiros, lavabos, áreas gourmet e projetos sob medida com acabamento premium em pedra natural e superfícies industrializadas.",
+      "marmoraria-vila-andrade": "Marmoraria na Vila Andrade para bancadas, painéis, lavatórios, escadas e ambientes de alto padrão em mármore, granito, quartzo, quartzito e Dekton.",
+      "marmoraria-bela-vista": "Marmoraria na Bela Vista com atendimento para bancadas, banheiros, cozinhas, lavabos e projetos sob medida em mármore, granito, quartzo e superfícies premium.",
+      "marmoraria-jardim-europa": "Marmoraria no Jardim Europa para bancadas, painéis, lavatórios, cozinhas e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+      "marmoraria-jardim-america": "Marmoraria no Jardim América com atendimento para cozinhas, banheiros, lavabos, áreas gourmet e projetos de alto padrão em pedra natural e superfícies premium.",
+      "marmoraria-higienopolis": "Marmoraria em Higienópolis para bancadas, lavatórios, escadas, painéis e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+      "marmoraria-mooca": "Marmoraria na Mooca com atendimento para cozinhas, banheiros, áreas gourmet, lavabos e projetos residenciais ou comerciais em pedra natural e superfícies premium.",
+      "marmoraria-anhangabau": "Marmoraria no Anhangabaú para bancadas, painéis, lavatórios e projetos corporativos ou residenciais sob medida em mármore, granito, quartzo e quartzito.",
+      "marmoraria-vila-leopoldina": "Marmoraria na Vila Leopoldina para cozinhas, banheiros, lavabos, áreas gourmet e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+      "marmoraria-vila-madalena": "Marmoraria na Vila Madalena para bancadas, escadas, lavatórios, painéis e ambientes autorais em pedra natural e superfícies premium sob medida.",
+      "marmoraria-cerqueira-cesar": "Marmoraria em Cerqueira César com atendimento para bancadas, cozinhas, banheiros, lavabos e projetos de alto padrão em mármore, granito, quartzo e quartzito.",
+      "marmoraria-sumare": "Marmoraria no Sumaré para bancadas, lavatórios, painéis, escadas e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+      "marmoraria-socorro": "Marmoraria no Socorro com atendimento para bancadas, cozinhas, banheiros, lavabos, áreas gourmet e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+      "marmoraria-alto-da-boa-vista": "Marmoraria no Alto da Boa Vista para bancadas, escadas, lavatórios, painéis e projetos sob medida em pedra natural e superfícies premium.",
+      "marmoraria-vila-suzana": "Marmoraria na Vila Suzana para cozinhas, banheiros, lavabos, áreas gourmet e projetos sofisticados em mármore, granito, quartzo e quartzito.",
+      "marmoraria-vila-santa-catarina": "Marmoraria na Vila Santa Catarina com soluções sob medida para bancadas, lavatórios, nichos, painéis e áreas gourmet em pedras naturais e superfícies premium.",
+      "marmoraria-jardim-marajoara": "Marmoraria no Jardim Marajoara para bancadas, escadas, lavatórios, painéis e projetos especiais em mármore, granito, quartzo, quartzito e superfícies premium.",
+      "marmoraria-chacara-flora": "Marmoraria na Chácara Flora com atendimento para projetos residenciais de alto padrão em bancadas, escadas, lavabos, cozinhas e áreas gourmet sob medida.",
+      "marmoraria-jurubatuba": "Marmoraria em Jurubatuba para bancadas de cozinha, banheiros, lavabos, áreas gourmet e projetos comerciais ou residenciais com acabamento premium.",
+      "marmoraria-campo-grande": "Marmoraria no Campo Grande para bancadas, lavatórios, escadas, painéis e projetos sob medida em mármore, granito, quartzo e quartzito.",
+      "marmoraria-mirandopolis": "Marmoraria em Mirandópolis com atendimento para cozinhas, banheiros, lavabos, áreas gourmet e projetos de marmoraria sob medida com acabamento premium.",
+      "marmoraria-veleiros": "Marmoraria em Veleiros para bancadas, nichos, lavatórios, escadas e projetos sob medida em pedra natural e superfícies industrializadas premium.",
+      "marmoraria-vila-cordeiro": "Marmoraria na Vila Cordeiro com atendimento para bancadas, lavatórios, painéis, áreas gourmet e projetos sob medida em pedras naturais e superfícies premium.",
+      "marmoraria-vila-cruzeiro": "Marmoraria na Vila Cruzeiro para cozinhas, banheiros, lavabos, escadas e áreas gourmet com medição, produção e instalação sob medida.",
+      "marmoraria-jardim-guedala": "Marmoraria no Jardim Guedala para projetos residenciais de alto padrão em bancadas, escadas, lavatórios, painéis e mesas em pedra natural.",
+      "marmoraria-vila-gumercindo": "Marmoraria na Vila Gumercindo para bancadas, cozinhas, banheiros, lavabos e projetos especiais em mármore, granito, quartzo, quartzito e superfícies premium.",
+      "marmoraria-aconchego-da-zona-sul": "Marmoraria na Zona Sul de São Paulo com forte presença em bairros residenciais e nobres, atendendo bancadas, lavatórios, escadas, painéis e projetos sob medida.",
+      "bancada-quartzito-sao-paulo": "Bancada em quartzito em São Paulo para cozinhas, ilhas, banheiros e áreas gourmet com veios naturais, alta resistência e acabamento premium.",
+      "bancada-dekton-sao-paulo": "Bancada em Dekton em São Paulo para cozinhas, áreas gourmet e projetos contemporâneos com superfície sinterizada de alta performance.",
+      "bancada-silestone-sao-paulo": "Bancada em Silestone em São Paulo para cozinhas e banheiros com baixa porosidade, estética uniforme e acabamento premium sob medida.",
+      "ilha-cozinha-quartzito-sao-paulo": "Ilha de cozinha em quartzito em São Paulo com paginação premium, visual sofisticado, alta resistência e acabamento sob medida.",
+      "escada-granito-sao-paulo": "Escada em granito em São Paulo com corte técnico, acabamento premium e instalação sob medida para projetos residenciais e comerciais.",
+      "lavabo-onix-sao-paulo": "Lavabo em ônix em São Paulo com painéis, cubas, bancadas e projetos com translucidez, impacto visual e acabamento premium.",
+      "painel-quartzito-sao-paulo": "Painel em quartzito em São Paulo para salas, lareiras, halls e ambientes sofisticados com paginação do veio e acabamento de alto padrão.",
+      "pia-cozinha-granito-sao-paulo": "Pia de cozinha em granito em São Paulo com bancada sob medida, resistência para rotina intensa e acabamento premium para cozinhas e áreas gourmet.",
+      "bancada-quartzo-branco-sao-paulo": "Bancada de quartzo branco em São Paulo para cozinhas, ilhas, lavabos e banheiros com visual uniforme, baixa porosidade e acabamento premium.",
+      "bancada-preto-sao-gabriel-sao-paulo": "Bancada em Preto São Gabriel em São Paulo para cozinhas, áreas gourmet e lavabos com alta resistência, baixa manutenção e acabamento premium.",

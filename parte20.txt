@@ -1,0 +1,302 @@
+  {(() => {
+          const all = ASSETS.catalog.marmores;
+          const size = Math.ceil(all.length / 3);
+          const page1 = all.slice(0, size);
+          const page2 = all.slice(size, size * 2);
+          const page3 = all.slice(size * 2);
+
+          const isP1 = visible.has("marmores");
+          const isP2 = visible.has("marmores-2");
+          const isP3 = visible.has("marmores-3");
+
+          const pager = (active: 1 | 2 | 3) => (
+            <div className="selection-pager inline-flex items-center rounded-full border border-gray-200 overflow-hidden bg-white shadow-sm">
+              <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === 1 ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav("marmores")} aria-current={active === 1 ? "page" : undefined}>
+                <span aria-hidden="true" className="tracking-widest">01</span>
+                <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+              </button>
+              <div className="w-px self-stretch bg-gray-200" aria-hidden="true" />
+              <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === 2 ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav("marmores-2")} aria-current={active === 2 ? "page" : undefined}>
+                <span aria-hidden="true" className="tracking-widest">02</span>
+                <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+              </button>
+              <div className="w-px self-stretch bg-gray-200" aria-hidden="true" />
+              <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === 3 ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav("marmores-3")} aria-current={active === 3 ? "page" : undefined}>
+                <span aria-hidden="true" className="tracking-widest">03</span>
+                <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+              </button>
+            </div>
+          );
+
+          return (
+            <>
+              <CatalogSection id="marmores" title="Mármores" subtitle={<><p>Mármore é <strong>atmosfera</strong>. Ele entra no ambiente e muda tudo: luz, textura, silêncio visual. É a pedra do <strong>luxo clássico</strong> e do <strong>hotel boutique</strong> — perfeita para lavatórios, banheiros, painéis e áreas onde a estética é protagonista.</p><div className="grid sm:grid-cols-3 gap-3"><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Sensação</div><div className="mt-1 font-semibold text-gray-900">Elegância imediata</div><div className="mt-1 text-sm">Veios e profundidade que não existem em material “feito em série”.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Onde brilha</div><div className="mt-1 font-semibold text-gray-900">Banhos &amp; painéis</div><div className="mt-1 text-sm">Lavatórios, paredes de destaque, lareiras e pisos internos.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Decisão segura</div><div className="mt-1 font-semibold text-gray-900">Beleza + orientação</div><div className="mt-1 text-sm">A escolha certa depende do seu uso (ácidos, água, rotina).</div></div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-5"><div className="flex items-start gap-3"><button type="button" onClick={advanceMarmoresTip} className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition" aria-label="Trocar dica" title="Trocar dica"><i className="fas fa-wand-magic-sparkles" /></button><div className="min-w-0"><div className="flex items-center gap-2"><div className="text-xs uppercase tracking-widest text-gray-500">Dica de decorador (rotativa)</div><div className="text-[11px] text-gray-400">• clique no ícone para trocar</div></div><p className="mt-2 text-sm text-gray-700 leading-relaxed">{marmoresDecorTip}</p></div></div></div></>} items={page1} show={isP1} onNav={onNav} backTo="produtos" extraActions={pager(1)} footerActions={pager(1)} />
+              <CatalogSection id="marmores-2" title="Mármores" subtitle={<><p>Mais opções para você comparar <strong>veio</strong>, cor e personalidade. Clique no card para alternar entre <strong>amostra</strong> e <strong>aplicação real</strong>.</p><p>Quer um acabamento de alto padrão? Combine o mármore com <strong>meia‑esquadria 45º</strong>, paginação bem pensada e uma instalação nivelada. O luxo, no fim, é o <strong>silêncio do detalhe</strong>.</p></>} items={page2} show={isP2} onNav={onNav} backTo="produtos" extraActions={pager(2)} footerActions={pager(2)} />
+              <CatalogSection id="marmores-3" title="Mármores" subtitle={<><p>Última seleção — aqui estão os mármores para quem quer um resultado com assinatura: contrastes, movimentos e texturas que parecem uma peça de galeria.</p><p>Se você estiver em dúvida entre dois materiais, me mande fotos do ambiente + referências de estilo. Eu te digo qual vai ficar mais elegante <strong>com a sua marcenaria, luz e metais</strong>.</p><p className="text-sm text-gray-600">Dica prática: mármore bem cuidado (limpeza suave e impermeabilização em dia) atravessa anos com beleza — e, quando precisa, dá para restaurar com polimento.</p></>} items={page3} show={isP3} onNav={onNav} backTo="produtos" extraActions={pager(3)} footerActions={pager(3)} />
+            </>
+          );
+        })()}
+
+        {(() => {
+          const all = ASSETS.catalog.granitos;
+          const size = Math.ceil(all.length / 3);
+          const page1 = all.slice(0, size);
+          const page2 = all.slice(size, size * 2);
+          const page3 = all.slice(size * 2);
+          const isP1 = visible.has("granitos");
+          const isP2 = visible.has("granitos-2");
+          const isP3 = visible.has("granitos-3");
+
+          const pager = (active: 1 | 2 | 3) => (
+            <div className="selection-pager inline-flex items-center rounded-full border border-gray-200 overflow-hidden bg-white shadow-sm">
+              {[1, 2, 3].map((n) => (
+                <React.Fragment key={n}>
+                  <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === n ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav(n === 1 ? "granitos" : n === 2 ? "granitos-2" : "granitos-3")} aria-current={active === n ? "page" : undefined} aria-label={`Granitos — Seleção ${n}`} title={`Seleção ${n}`}>
+                    <span aria-hidden="true" className="tracking-widest">{String(n).padStart(2, "0")}</span>
+                    <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+                  </button>
+                  {n !== 3 ? <div className="w-px self-stretch bg-gray-200" aria-hidden="true" /> : null}
+                </React.Fragment>
+              ))}
+            </div>
+          );
+
+          return (
+            <>
+              <CatalogSection id="granitos" title="Granitos" subtitle={<><p>Granito é a escolha de quem quer <strong>tranquilidade na rotina</strong>. Ele aguenta cozinha de verdade, área gourmet, família e festa — com baixa manutenção e uma estética que vai do clássico ao super contemporâneo.</p><div className="grid sm:grid-cols-3 gap-3"><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Performance</div><div className="mt-1 font-semibold text-gray-900">Resistência real</div><div className="mt-1 text-sm">Ótimo para quem cozinha muito e quer durabilidade sem drama.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Estilo</div><div className="mt-1 font-semibold text-gray-900">Do neutro ao exótico</div><div className="mt-1 text-sm">Pretos profundos, claros iluminados e mesclados práticos.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Melhor resultado</div><div className="mt-1 font-semibold text-gray-900">Acabamento premium</div><div className="mt-1 text-sm">A mesma pedra muda de nível com meia‑esquadria 45º e emenda planejada.</div></div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-5"><div className="flex items-start gap-3"><button type="button" onClick={advanceGranitosTip} className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition" aria-label="Trocar dica" title="Trocar dica"><i className="fas fa-wand-magic-sparkles" /></button><div className="min-w-0"><div className="flex items-center gap-2"><div className="text-xs uppercase tracking-widest text-gray-500">Dica de decorador (rotativa)</div></div><p className="mt-2 text-sm text-gray-700 leading-relaxed">{granitosDecorTip}</p></div></div></div></>} items={page1} show={isP1} onNav={onNav} backTo="produtos" extraActions={pager(1)} footerActions={pager(1)} />
+              <CatalogSection id="granitos-2" title="Granitos" subtitle={<><p>Segunda seleção — mais opções para você comparar <strong>tonalidade</strong>, <strong>granulação</strong> e presença. Clique no card para alternar entre <strong>amostra</strong> e <strong>aplicação real</strong>.</p><p>Quer escolher sem erro? Envie fotos + medidas aproximadas e me diga seu uso (cozinha pesada, gourmet, família). A gente indica 2–3 opções ideais com prós/contras e uma faixa de investimento.</p><p className="text-sm text-gray-600">Granito bem instalado parece simples — mas é justamente a execução (nível, pingadeira, química e acabamento) que define se ele vai ficar perfeito por décadas.</p></>} items={page2} show={isP2} onNav={onNav} backTo="produtos" extraActions={pager(2)} footerActions={pager(2)} />
+              <CatalogSection id="granitos-3" title="Granitos" subtitle={<><p>Terceira seleção — final. Se você estiver em dúvida entre 2–3 opções, me mande uma foto do ambiente + medidas aproximadas. Eu te digo qual vai ficar mais elegante <strong>com a sua marcenaria, luz e metais</strong>.</p><p className="text-sm text-gray-600">Para resultado premium: planeje bordas (meia‑esquadria 45º), emendas discretas e instalação nivelada.</p></>} items={page3} show={isP3} onNav={onNav} backTo="produtos" extraActions={pager(3)} footerActions={pager(3)} />
+            </>
+          );
+        })()}
+
+        <section id="quartzo" className={["py-16 bg-white", visible.has("quartzo") ? "" : "hidden"].join(" ")}>
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-10">
+              <div className="min-w-0">
+                <p className="text-sm uppercase tracking-widest text-gold font-semibold">Catálogo</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Quartzo</h2>
+                <div className="text-gray-600 mt-3 max-w-2xl space-y-3 leading-relaxed">
+                  <p>Quartzo é uma superfície de engenharia: visual uniforme, baixa porosidade e excelente para projetos contemporâneos.</p>
+                  <p className="text-sm">Escolha a marca para comparar cores e ver <strong>aplicações reais</strong> com mais clareza.</p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 justify-start sm:justify-end">
+                <a href="?p=contato" className="bg-gold text-white px-7 py-3 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow w-full sm:w-auto text-center" onClick={(e) => { e.preventDefault(); onNav("contato"); }}>
+                  Solicitar orçamento
+                </a>
+              </div>
+            </div>
+
+            <div className="max-w-5xl text-left">
+              {(() => {
+                const silestoneItems = ASSETS.catalog.quartzo.filter((it) => it.name.toLowerCase().startsWith("silestone "));
+                const qsItems = ASSETS.catalog.quartzo.filter((it) => it.name.toLowerCase().startsWith("quartzo stone ") || (it.tag || "").toLowerCase().includes("quartzo stone"));
+                const silestonePick = pickSeeded(silestoneItems, "quartzo_silestone", quartzoHubSeed);
+                const qsPick = pickSeeded(qsItems, "quartzo_quartzostone", quartzoHubSeed);
+                const cards = [
+                  { p: "silestone" as const, label: "Silestone", badge: "QUARTZO", desc: "Cores premium e uniformidade.", img: silestonePick?.applied || silestonePick?.sample || ASSETS.produtosHub.quartzo, fallbackSrcs: [silestonePick?.applied, silestonePick?.sample, ASSETS.produtosHub.quartzo].filter(Boolean) as string[] },
+                  { p: "quartzo-stone" as const, label: "Quartzo Stone", badge: "QUARTZO", desc: "Opções versáteis e excelente custo-benefício.", img: qsPick?.sample || qsPick?.applied || ASSETS.produtosHub.quartzo, fallbackSrcs: [qsPick?.sample, qsPick?.applied, ASSETS.produtosHub.quartzo].filter(Boolean) as string[] },
+                ];
+                return (
+                  <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+                    {cards.map((b) => (
+                      <a key={b.p} href={`?p=${b.p}`} className="group relative overflow-hidden rounded-2xl hover-lift aspect-[16/10] sm:aspect-[16/9]" onClick={(e) => { e.preventDefault(); onNav(b.p); }}>
+                        <SmartImg src={b.img} fallbackSrcs={b.fallbackSrcs} alt={`${b.label} - quartzo`} className="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                        <div className="absolute top-4 left-4"><span className="inline-flex items-center bg-white/10 text-white border border-white/15 px-3 py-1 rounded-full text-xs tracking-widest">{b.badge}</span></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-6"><h3 className="text-2xl font-bold text-white">{b.label}</h3><p className="text-gray-200 text-sm mt-2">{b.desc}</p><span className="inline-flex items-center text-gold mt-3 font-semibold">Ver cores <i className="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition" /></span></div>
+                      </a>
+                    ))}
+                  </div>
+                );
+              })()}
+            </div>
+          </div>
+        </section>
+
+        {(() => {
+          const allSilestone = ASSETS.catalog.quartzo.filter((it) => it.name.toLowerCase().startsWith("silestone "));
+          const size = Math.ceil(allSilestone.length / 3);
+          const page1 = allSilestone.slice(0, size);
+          const page2 = allSilestone.slice(size, size * 2);
+          const page3 = allSilestone.slice(size * 2);
+          const isP1 = visible.has("silestone");
+          const isP2 = visible.has("silestone-2");
+          const isP3 = visible.has("silestone-3");
+
+          const pager = (active: 1 | 2 | 3) => (
+            <div className="selection-pager inline-flex items-center rounded-full border border-gray-200 overflow-hidden bg-white shadow-sm">
+              {[1, 2, 3].map((n) => (
+                <React.Fragment key={n}>
+                  <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === n ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav(n === 1 ? "silestone" : n === 2 ? "silestone-2" : "silestone-3")} aria-current={active === n ? "page" : undefined} aria-label={`Silestone — Seleção ${n}`} title={`Seleção ${n}`}>
+                    <span aria-hidden="true" className="tracking-widest">{String(n).padStart(2, "0")}</span>
+                    <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+                  </button>
+                  {n !== 3 ? <div className="w-px self-stretch bg-gray-200" aria-hidden="true" /> : null}
+                </React.Fragment>
+              ))}
+            </div>
+          );
+
+          return (
+            <>
+              <CatalogSection id="silestone" title="Silestone" subtitle={<><p>Silestone é quartzo de engenharia com estética uniforme e acabamento sofisticado — ideal para cozinhas e banheiros contemporâneos.</p><div className="rounded-2xl bg-gray-50 border border-gray-100 p-5"><div className="flex items-start gap-3"><button type="button" onClick={advanceSilestoneTip} className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition" aria-label="Trocar dica" title="Trocar dica"><i className="fas fa-wand-magic-sparkles" /></button><div className="min-w-0"><div className="flex items-center gap-2"><div className="text-xs uppercase tracking-widest text-gray-500">Dica de decorador (rotativa)</div><div className="text-[11px] text-gray-400">• clique no ícone para trocar</div></div><p className="mt-2 text-sm text-gray-700 leading-relaxed">{silestoneDecorTip}</p></div></div></div><p className="text-sm text-gray-600">Clique no card para alternar <strong>amostra</strong> e <strong>aplicação</strong>. A tag mostra a <strong>coleção</strong> de cada cor.</p></>} items={page1} show={isP1} onNav={onNav} backTo="quartzo" extraActions={pager(1)} footerActions={pager(1)} />
+              <CatalogSection id="silestone-2" title="Silestone" subtitle={<><p>Segunda seleção — mais cores para você comparar visual, brilho e personalidade. Use a tag do card para ver a <strong>coleção</strong>.</p></>} items={page2} show={isP2} onNav={onNav} backTo="quartzo" extraActions={pager(2)} footerActions={pager(2)} />
+              <CatalogSection id="silestone-3" title="Silestone" subtitle={<><p>Terceira seleção — final. Se você estiver entre 2–3 opções, me envie uma foto do ambiente e eu te ajudo a harmonizar com <strong>marcenaria</strong>, <strong>metais</strong> e <strong>iluminação</strong>.</p></>} items={page3} show={isP3} onNav={onNav} backTo="quartzo" extraActions={pager(3)} footerActions={pager(3)} />
+            </>
+          );
+        })()}
+
+        {(() => {
+          const allQS = ASSETS.catalog.quartzo.filter((it) => it.name.toLowerCase().startsWith("quartzo stone "));
+          const size = Math.ceil(allQS.length / 3);
+          const page1 = allQS.slice(0, size);
+          const page2 = allQS.slice(size, size * 2);
+          const page3 = allQS.slice(size * 2);
+          const isP1 = visible.has("quartzo-stone");
+          const isP2 = visible.has("quartzo-stone-2");
+          const isP3 = visible.has("quartzo-stone-3");
+
+          const pager = (active: 1 | 2 | 3) => (
+            <div className="selection-pager inline-flex items-center rounded-full border border-gray-200 overflow-hidden bg-white shadow-sm">
+              {[1, 2, 3].map((n) => (
+                <React.Fragment key={n}>
+                  <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === n ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav(n === 1 ? "quartzo-stone" : n === 2 ? "quartzo-stone-2" : "quartzo-stone-3")} aria-current={active === n ? "page" : undefined} aria-label={`Quartzo Stone — Seleção ${n}`} title={`Seleção ${n}`}>
+                    <span aria-hidden="true" className="tracking-widest">{String(n).padStart(2, "0")}</span>
+                    <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+                  </button>
+                  {n !== 3 ? <div className="w-px self-stretch bg-gray-200" aria-hidden="true" /> : null}
+                </React.Fragment>
+              ))}
+            </div>
+          );
+
+          return (
+            <>
+              <CatalogSection id="quartzo-stone" title="Quartzo Stone" subtitle={<><p>Quartzo Stone é quartzo de engenharia: visual uniforme, baixa porosidade e ótima praticidade para cozinhas e banheiros contemporâneos. Clique no card para alternar entre <strong>amostra</strong> e <strong>aplicação</strong>.</p><div className="grid sm:grid-cols-3 gap-3"><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Rotina</div><div className="mt-1 font-semibold text-gray-900">Baixa porosidade</div><div className="mt-1 text-sm">Excelente para o dia a dia: limpeza simples e aparência consistente.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Linhas</div><div className="mt-1 font-semibold text-gray-900">Absoluto &amp; Stellar</div><div className="mt-1 text-sm">Absoluto = cores sólidas • Stellar = partículas e brilho discreto.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Atenção</div><div className="mt-1 font-semibold text-gray-900">Calor extremo</div><div className="mt-1 text-sm">Use apoio térmico para panela muito quente (protege a resina).</div></div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-5"><div className="flex items-start gap-3"><button type="button" onClick={advanceQuartzoStoneTip} className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition" aria-label="Trocar dica" title="Trocar dica"><i className="fas fa-wand-magic-sparkles" /></button><div className="min-w-0"><div className="flex items-center gap-2"><div className="text-xs uppercase tracking-widest text-gray-500">Dica (rotativa)</div><div className="text-[11px] text-gray-400">• clique no ícone para trocar</div></div><p className="mt-2 text-sm text-gray-700 leading-relaxed">{quartzoStoneDecorTip}</p></div></div></div><p className="text-sm text-gray-600">A tag do card indica a linha (ex.: <strong>Stellar</strong> / <strong>Absoluto</strong>).</p></>} items={page1} show={isP1} onNav={onNav} backTo="quartzo" extraActions={pager(1)} footerActions={pager(1)} />
+              <CatalogSection id="quartzo-stone-2" title="Quartzo Stone" subtitle={<><p>Segunda seleção — mais cores para você comparar com sua marcenaria, metais e iluminação.</p><p className="text-sm text-gray-600">Dica: tons médios (cinzas e beges) costumam ser os mais fáceis de manter bonitos no dia a dia.</p></>} items={page2} show={isP2} onNav={onNav} backTo="quartzo" extraActions={pager(2)} footerActions={pager(2)} />
+              <CatalogSection id="quartzo-stone-3" title="Quartzo Stone" subtitle={<><p>Terceira seleção — final. Se você estiver entre 2 opções, me mande uma foto do ambiente (luz + marcenaria) e eu te ajudo a escolher.</p></>} items={page3} show={isP3} onNav={onNav} backTo="quartzo" extraActions={pager(3)} footerActions={pager(3)} />
+            </>
+          );
+        })()}
+
+        {(() => {
+          const all = ASSETS.catalog.quartzitos;
+          const size = Math.ceil(all.length / 3);
+          const page1 = all.slice(0, size);
+          const page2 = all.slice(size, size * 2);
+          const page3 = all.slice(size * 2);
+          const isP1 = visible.has("quartzitos");
+          const isP2 = visible.has("quartzitos-2");
+          const isP3 = visible.has("quartzitos-3");
+
+          const pager = (active: 1 | 2 | 3) => (
+            <div className="selection-pager inline-flex items-center rounded-full border border-gray-200 overflow-hidden bg-white shadow-sm">
+              {[1, 2, 3].map((n) => (
+                <React.Fragment key={n}>
+                  <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === n ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav(n === 1 ? "quartzitos" : n === 2 ? "quartzitos-2" : "quartzitos-3")} aria-current={active === n ? "page" : undefined} aria-label={`Quartzitos — Seleção ${n}`} title={`Seleção ${n}`}>
+                    <span aria-hidden="true" className="tracking-widest">{String(n).padStart(2, "0")}</span>
+                    <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+                  </button>
+                  {n !== 3 ? <div className="w-px self-stretch bg-gray-200" aria-hidden="true" /> : null}
+                </React.Fragment>
+              ))}
+            </div>
+          );
+
+          return (
+            <>
+              <CatalogSection
+                id="quartzitos"
+                title="Quartzitos"
+                subtitle={
+                  <>
+                    <p>
+                      Quartzito é para quem quer o visual nobre das pedras mais desejadas da arquitetura com um desempenho excelente para <strong>cozinhas</strong>, <strong>ilhas</strong>, <strong>bancadas</strong> e <strong>áreas gourmet</strong>. Ele combina veios marcantes, presença natural e uma estrutura mineral muito mais preparada para a rotina real.
+                    </p>
+                    <div className="grid sm:grid-cols-3 gap-3">
+                      <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Estética</div>
+                        <div className="mt-1 font-semibold text-gray-900">Veios naturais e exclusivos</div>
+                        <div className="mt-1 text-sm">Cada chapa tem movimento próprio e cria uma leitura sofisticada no ambiente.</div>
+                      </div>
+                      <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Desempenho</div>
+                        <div className="mt-1 font-semibold text-gray-900">Mais segurança no uso</div>
+                        <div className="mt-1 text-sm">Excelente para quem busca uma pedra natural resistente para bancada sem abrir mão do impacto visual.</div>
+                      </div>
+                      <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Resultado</div>
+                        <div className="mt-1 font-semibold text-gray-900">Chapa + paginação + acabamento</div>
+                        <div className="mt-1 text-sm">No quartzito, o resultado premium aparece quando a escolha da chapa conversa com o corte e a instalação.</div>
+                      </div>
+                    </div>
+                    <div className="rounded-2xl bg-gray-50 border border-gray-100 p-5">
+                      <div className="flex items-start gap-3">
+                        <button
+                          type="button"
+                          onClick={advanceQuartzitosTip}
+                          className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition"
+                          aria-label="Trocar dica"
+                          title="Trocar dica"
+                        >
+                          <i className="fas fa-wand-magic-sparkles" />
+                        </button>
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-2">
+                            <div className="text-xs uppercase tracking-widest text-gray-500">Dica de decorador (rotativa)</div>
+                          </div>
+                          <p className="mt-2 text-sm text-gray-700 leading-relaxed">{quartzitosDecorTip}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                }
+                items={page1}
+                show={isP1}
+                onNav={onNav}
+                backTo="produtos"
+                extraActions={pager(1)}
+                footerActions={pager(1)}
+              />
+              <CatalogSection id="quartzitos-2" title="Quartzitos" subtitle={<><p>Segunda seleção — mais quartzitos para você comparar <strong>movimento do veio</strong>, tonalidade e presença. Clique no card para alternar entre <strong>amostra</strong> e <strong>aplicação real</strong>.</p><p className="text-sm text-gray-600">Para um resultado premium: combine quartzito com <strong>meia‑esquadria 45º</strong>, emendas planejadas e acabamento bem fechado.</p></>} items={page2} show={isP2} onNav={onNav} backTo="produtos" extraActions={pager(2)} footerActions={pager(2)} />
+              <CatalogSection id="quartzitos-3" title="Quartzitos" subtitle={<><p>Terceira seleção — final. Se você estiver em dúvida entre 2–3 opções, me mande fotos do ambiente + medidas aproximadas. Eu te digo qual vai ficar mais elegante <strong>com a sua marcenaria, luz e metais</strong>.</p></>} items={page3} show={isP3} onNav={onNav} backTo="produtos" extraActions={pager(3)} footerActions={pager(3)} />
+            </>
+          );
+        })()}
+
+        {page === "granito-material" && currentGranitoItem ? (
+          <section id="granito-material" className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-[1380px] mx-auto">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+                  <a href="?p=produtos" onClick={(e) => { e.preventDefault(); onNav("produtos"); }} className="hover:text-gray-900 transition">Produtos</a>
+                  <span>/</span>
+                  <a href="?p=granitos" onClick={(e) => { e.preventDefault(); onNav("granitos"); }} className="hover:text-gray-900 transition">Granitos</a>
+                  <span>/</span>
+                  <span className="text-gray-900 font-semibold">{currentGranitoItem.name}</span>
+                </div>
+
+                <div className="grid lg:grid-cols-12 gap-10 xl:gap-12 items-start">
+                  <div className="space-y-5 lg:col-span-7">
+                    <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gray-50">
+                      <SmartImg src={currentGranitoItem.applied} fallbackSrcs={[currentGranitoItem.sample]} alt={`${currentGranitoItem.name} aplicado`} className="w-full aspect-[16/10] object-cover" loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" />
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50">
+                        <SmartImg src={currentGranitoItem.sample} fallbackSrcs={[currentGranitoItem.applied]} alt={`${currentGranitoItem.name} amostra`} className="w-full aspect-[4/3] object-cover" loading="lazy" />
+                      </div>
+                      <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Material</div>
+                        <div className="mt-2 font-bold text-gray-900 text-xl">{currentGranitoItem.name}</div>
+                        <div className="mt-2 text-sm text-gray-600">{currentGranitoItem.tag || "Granito premium"}</div>
+                        <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Alta resistência para cozinhas e áreas gourmet</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Excelente desempenho para rotina intensa</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Acabamento sob medida com paginação premium</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>

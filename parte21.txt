@@ -1,0 +1,277 @@
+
+                  <div className="lg:col-span-5 xl:pl-2">
+                    <p className="text-sm uppercase tracking-widest text-gold font-semibold">{currentGranitoContent.eyebrow || "Página exclusiva do material"}</p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">{currentGranitoItem.name}</h1>
+                    <div className="mt-5 space-y-4 text-lg text-gray-600 leading-relaxed">
+                      <p>{currentGranitoContent.intro}</p>
+                      <p><strong className="text-gray-900">Em termos técnicos:</strong> {currentGranitoContent.technical}</p>
+                      <p><strong className="text-gray-900">Na prática:</strong> {currentGranitoContent.practical}</p>
+                      <p>{currentGranitoContent.value}</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                      <a href="?p=contato" onClick={(e) => { e.preventDefault(); onNav("contato"); }} className="inline-flex items-center justify-center bg-gold text-white px-7 py-3.5 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow">
+                        Solicitar orçamento deste granito
+                      </a>
+                      <a href="?p=granitos" onClick={(e) => { e.preventDefault(); onNav("granitos"); }} className="inline-flex items-center justify-center border border-gray-300 text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:border-gray-900 hover:bg-gray-50 transition">
+                        Voltar para granitos
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Indicação</div><div className="mt-1 font-semibold text-gray-900">{currentGranitoContent.indicationTitle}</div><div className="mt-1 text-sm text-gray-600">{currentGranitoContent.indicationText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Benefício real</div><div className="mt-1 font-semibold text-gray-900">{currentGranitoContent.benefitTitle}</div><div className="mt-1 text-sm text-gray-600">{currentGranitoContent.benefitText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Execução</div><div className="mt-1 font-semibold text-gray-900">{currentGranitoContent.executionTitle}</div><div className="mt-1 text-sm text-gray-600">{currentGranitoContent.executionText}</div></div>
+                </div>
+
+                <div className="mt-10 rounded-3xl bg-gray-50 border border-gray-100 p-6 lg:p-7">
+                  <div className="flex items-center justify-between gap-4 flex-wrap">
+                    <div>
+                      <div className="text-xs uppercase tracking-widest text-gray-500">Outros granitos</div>
+                      <div className="mt-1 font-bold text-gray-900 text-lg">Veja outras opções que podem combinar com a proposta do seu projeto</div>
+                      <p className="mt-2 text-sm text-gray-600 max-w-3xl">Se a sua ideia é comparar tonalidade, granulação, presença e harmonia com a marcenaria e os metais, estas sugestões ajudam a ampliar o repertório sem perder o nível do projeto.</p>
+                    </div>
+                  </div>
+                  <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {granitoSuggestions.map((it) => {
+                      const slug = normalizeGranitoSlug(it.name);
+                      return (
+                        <a
+                          key={it.name}
+                          href={buildGranitoPageUrl(slug)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            goToGranitoMaterial(slug);
+                          }}
+                          className="group overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-gray-900 hover:shadow-md transition"
+                        >
+                          <div className="relative overflow-hidden aspect-[16/10] bg-gray-100">
+                            <SmartImg
+                              src={it.applied}
+                              fallbackSrcs={[it.sample]}
+                              alt={it.name}
+                              className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                              loading="lazy"
+                              sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                            />
+                          </div>
+                          <div className="p-4">
+                            <div className="font-semibold text-gray-900 leading-snug">{it.name.replace(/^Granito\s+/i, "")}</div>
+                            <div className="mt-1 text-sm text-gray-600">Ver detalhes deste material e comparar aplicação, amostra e proposta estética.</div>
+                            <div className="mt-3 inline-flex items-center text-sm font-semibold text-gold">
+                              Ver detalhes <i className="fas fa-arrow-right ml-2 transition group-hover:translate-x-1" />
+                            </div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {page === "quartzito-material" && currentQuartzitoItem ? (
+          <section id="quartzito-material" className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-[1380px] mx-auto">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+                  <a href="?p=produtos" onClick={(e) => { e.preventDefault(); onNav("produtos"); }} className="hover:text-gray-900 transition">Produtos</a>
+                  <span>/</span>
+                  <a href="?p=quartzitos" onClick={(e) => { e.preventDefault(); onNav("quartzitos"); }} className="hover:text-gray-900 transition">Quartzitos</a>
+                  <span>/</span>
+                  <span className="text-gray-900 font-semibold">{currentQuartzitoItem.name}</span>
+                </div>
+
+                <div className="grid lg:grid-cols-12 gap-10 xl:gap-12 items-start">
+                  <div className="space-y-5 lg:col-span-7">
+                    <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gray-50">
+                      <SmartImg src={currentQuartzitoItem.applied} fallbackSrcs={[currentQuartzitoItem.sample]} alt={`${currentQuartzitoItem.name} aplicado`} className="w-full aspect-[16/10] object-cover" loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" />
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50">
+                        <SmartImg src={currentQuartzitoItem.sample} fallbackSrcs={[currentQuartzitoItem.applied]} alt={`${currentQuartzitoItem.name} amostra`} className="w-full aspect-[4/3] object-cover" loading="lazy" />
+                      </div>
+                      <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Material</div>
+                        <div className="mt-2 font-bold text-gray-900 text-xl">{currentQuartzitoItem.name}</div>
+                        <div className="mt-2 text-sm text-gray-600">{currentQuartzitoItem.tag || "Quartzito premium"}</div>
+                        <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Veios naturais e visual exclusivo</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Alta resistência para cozinhas, ilhas e painéis</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Acabamento sob medida com paginação premium</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-5 xl:pl-2">
+                    <p className="text-sm uppercase tracking-widest text-gold font-semibold">{currentQuartzitoContent.eyebrow || "Página exclusiva do material"}</p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">{currentQuartzitoItem.name}</h1>
+                    <div className="mt-5 space-y-4 text-lg text-gray-600 leading-relaxed">
+                      <p>{currentQuartzitoContent.intro}</p>
+                      <p><strong className="text-gray-900">Em termos técnicos:</strong> {currentQuartzitoContent.technical}</p>
+                      <p><strong className="text-gray-900">Na prática:</strong> {currentQuartzitoContent.practical}</p>
+                      <p>{currentQuartzitoContent.value}</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                      <a href="?p=contato" onClick={(e) => { e.preventDefault(); onNav("contato"); }} className="inline-flex items-center justify-center bg-gold text-white px-7 py-3.5 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow">
+                        Solicitar orçamento deste quartzito
+                      </a>
+                      <a href="?p=quartzitos" onClick={(e) => { e.preventDefault(); onNav("quartzitos"); }} className="inline-flex items-center justify-center border border-gray-300 text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:border-gray-900 hover:bg-gray-50 transition">
+                        Voltar para quartzitos
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Indicação</div><div className="mt-1 font-semibold text-gray-900">{currentQuartzitoContent.indicationTitle}</div><div className="mt-1 text-sm text-gray-600">{currentQuartzitoContent.indicationText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Benefício real</div><div className="mt-1 font-semibold text-gray-900">{currentQuartzitoContent.benefitTitle}</div><div className="mt-1 text-sm text-gray-600">{currentQuartzitoContent.benefitText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Execução</div><div className="mt-1 font-semibold text-gray-900">{currentQuartzitoContent.executionTitle}</div><div className="mt-1 text-sm text-gray-600">{currentQuartzitoContent.executionText}</div></div>
+                </div>
+
+                <div className="mt-10 rounded-3xl bg-gray-50 border border-gray-100 p-6 lg:p-7">
+                  <div className="flex items-center justify-between gap-4 flex-wrap">
+                    <div>
+                      <div className="text-xs uppercase tracking-widest text-gray-500">Outros quartzitos</div>
+                      <div className="mt-1 font-bold text-gray-900 text-lg">Veja outras opções que podem combinar com a proposta do seu projeto</div>
+                      <p className="mt-2 text-sm text-gray-600 max-w-3xl">Se a sua ideia é comparar movimento de veio, temperatura visual, presença e harmonia com marcenaria e metais, estas sugestões ajudam a ampliar o repertório sem perder o nível do projeto.</p>
+                    </div>
+                  </div>
+                  <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {quartzitoSuggestions.map((it) => {
+                      const slug = normalizeQuartzitoSlug(it.name);
+                      return (
+                        <a
+                          key={it.name}
+                          href={buildQuartzitoPageUrl(slug)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            goToQuartzitoMaterial(slug);
+                          }}
+                          className="group overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-gray-900 hover:shadow-md transition"
+                        >
+                          <div className="relative overflow-hidden aspect-[16/10] bg-gray-100">
+                            <SmartImg
+                              src={it.applied}
+                              fallbackSrcs={[it.sample]}
+                              alt={it.name}
+                              className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                              loading="lazy"
+                              sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                            />
+                          </div>
+                          <div className="p-4">
+                            <div className="font-semibold text-gray-900 leading-snug">{it.name.replace(/^Quartzito\s+/i, "")}</div>
+                            <div className="mt-1 text-sm text-gray-600">Ver detalhes deste material e comparar aplicação, amostra e proposta estética.</div>
+                            <div className="mt-3 inline-flex items-center text-sm font-semibold text-gold">
+                              Ver detalhes <i className="fas fa-arrow-right ml-2 transition group-hover:translate-x-1" />
+                            </div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {page === "marmore-material" && currentMarmoreItem ? (
+          <section id="marmore-material" className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-[1380px] mx-auto">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-6">
+                  <a href="?p=produtos" onClick={(e) => { e.preventDefault(); onNav("produtos"); }} className="hover:text-gray-900 transition">Produtos</a>
+                  <span>/</span>
+                  <a href="?p=marmores" onClick={(e) => { e.preventDefault(); onNav("marmores"); }} className="hover:text-gray-900 transition">Mármores</a>
+                  <span>/</span>
+                  <span className="text-gray-900 font-semibold">{currentMarmoreItem.name}</span>
+                </div>
+
+                <div className="grid lg:grid-cols-12 gap-10 xl:gap-12 items-start">
+                  <div className="space-y-5 lg:col-span-7">
+                    <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gray-50">
+                      <SmartImg src={currentMarmoreItem.applied} fallbackSrcs={[currentMarmoreItem.sample]} alt={`${currentMarmoreItem.name} aplicado`} className="w-full aspect-[16/10] object-cover" loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" />
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50">
+                        <SmartImg src={currentMarmoreItem.sample} fallbackSrcs={[currentMarmoreItem.applied]} alt={`${currentMarmoreItem.name} amostra`} className="w-full aspect-[4/3] object-cover" loading="lazy" />
+                      </div>
+                      <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+                        <div className="text-xs uppercase tracking-widest text-gray-500">Material</div>
+                        <div className="mt-2 font-bold text-gray-900 text-xl">{currentMarmoreItem.name}</div>
+                        <div className="mt-2 text-sm text-gray-600">{currentMarmoreItem.tag || "Mármore premium"}</div>
+                        <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Elegância natural para interiores de alto padrão</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Ideal para lavabos, banheiros, painéis e lareiras</span></li>
+                          <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Acabamento sob medida com paginação premium</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-5 xl:pl-2">
+                    <p className="text-sm uppercase tracking-widest text-gold font-semibold">{currentMarmoreContent.eyebrow || "Página exclusiva do material"}</p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">{currentMarmoreItem.name}</h1>
+                    <div className="mt-5 space-y-4 text-lg text-gray-600 leading-relaxed">
+                      <p>{currentMarmoreContent.intro}</p>
+                      <p><strong className="text-gray-900">Em termos técnicos:</strong> {currentMarmoreContent.technical}</p>
+                      <p><strong className="text-gray-900">Na prática:</strong> {currentMarmoreContent.practical}</p>
+                      <p>{currentMarmoreContent.value}</p>
+                    </div>
+
+                    <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                      <a href="?p=contato" onClick={(e) => { e.preventDefault(); onNav("contato"); }} className="inline-flex items-center justify-center bg-gold text-white px-7 py-3.5 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow">
+                        Solicitar orçamento deste mármore
+                      </a>
+                      <a href="?p=marmores" onClick={(e) => { e.preventDefault(); onNav("marmores"); }} className="inline-flex items-center justify-center border border-gray-300 text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:border-gray-900 hover:bg-gray-50 transition">
+                        Voltar para mármores
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Indicação</div><div className="mt-1 font-semibold text-gray-900">{currentMarmoreContent.indicationTitle}</div><div className="mt-1 text-sm text-gray-600">{currentMarmoreContent.indicationText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Benefício real</div><div className="mt-1 font-semibold text-gray-900">{currentMarmoreContent.benefitTitle}</div><div className="mt-1 text-sm text-gray-600">{currentMarmoreContent.benefitText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Execução</div><div className="mt-1 font-semibold text-gray-900">{currentMarmoreContent.executionTitle}</div><div className="mt-1 text-sm text-gray-600">{currentMarmoreContent.executionText}</div></div>
+                </div>
+
+                <div className="mt-10 rounded-3xl bg-gray-50 border border-gray-100 p-6 lg:p-7">
+                  <div className="flex items-center justify-between gap-4 flex-wrap">
+                    <div>
+                      <div className="text-xs uppercase tracking-widest text-gray-500">Outros mármores</div>
+                      <div className="mt-1 font-bold text-gray-900 text-lg">Veja outras opções que podem combinar com a proposta do seu projeto</div>
+                      <p className="mt-2 text-sm text-gray-600 max-w-3xl">Se a sua ideia é comparar movimento de veio, temperatura visual, sofisticação e harmonia com metais, iluminação e marcenaria, estas sugestões ajudam a ampliar o repertório sem perder o nível do projeto.</p>
+                    </div>
+                  </div>
+                  <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {marmoreSuggestions.map((it) => {
+                      const slug = normalizeMarmoreSlug(it.name);
+                      return (
+                        <a
+                          key={it.name}
+                          href={buildMarmorePageUrl(slug)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            goToMarmoreMaterial(slug);
+                          }}
+                          className="group overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-gray-900 hover:shadow-md transition"
+                        >
+                          <div className="relative overflow-hidden aspect-[16/10] bg-gray-100">
+                            <SmartImg
+                              src={it.applied}
+                              fallbackSrcs={[it.sample]}
+                              alt={it.name}
+                              className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                              loading="lazy"
+                              sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                            />
+                          </div>

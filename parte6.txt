@@ -1,0 +1,285 @@
+"quartzito-magma": {
+    eyebrow: "Quartzito de presença intensa para ambientes com personalidade",
+    intro:
+      "O Quartzito Magma é indicado para quem quer uma pedra natural de grande impacto, com movimento forte e presença visual marcante. Ele funciona muito bem em ilhas, bancadas, painéis e mesas onde o objetivo é criar um ambiente exclusivo, sofisticado e com linguagem mais autoral.",
+    technical:
+      "Tecnicamente, o Magma combina a dureza e a resistência do quartzito natural com um desenho de grande dramaticidade visual. É uma escolha buscada por quem procura quartzito exótico em São Paulo, pedra natural para bancada premium e ilha de cozinha com forte assinatura estética.",
+    practical:
+      "Na prática, o Magma transforma o espaço. Ele cria contraste, profundidade e uma leitura de design muito mais forte, principalmente quando usado em projetos que combinam iluminação correta, marcenaria equilibrada e uma composição que deixa a pedra assumir protagonismo.",
+    value:
+      "O Magma agrega valor porque ele não passa despercebido. É a escolha de quem quer um ambiente com identidade, impacto e sensação de exclusividade real, sem abrir mão de uma base técnica confiável para o uso cotidiano.",
+    indicationTitle: "Bancadas, ilhas e painéis com protagonismo",
+    indicationText: "Excelente para projetos onde a pedra precisa gerar impacto visual e reforçar o caráter autoral do ambiente.",
+    benefitTitle: "Presença que diferencia o projeto",
+    benefitText: "O Magma cria um efeito memorável, valoriza o espaço e reforça a percepção de um ambiente muito mais exclusivo.",
+    executionTitle: "Direção do desenho precisa ser estratégica",
+    executionText: "Nesse quartzito, estudar a chapa e planejar cortes, emendas e bordas faz toda a diferença no resultado final.",
+    seoDescription:
+      "Quartzito Magma em São Paulo para bancadas, ilhas, painéis e mesas sob medida. Pedra natural exótica, marcante e resistente para projetos de alto padrão.",
+  },
+  "quartzito-maldive": {
+    eyebrow: "Quartzito claro e elegante para projetos leves e sofisticados",
+    intro:
+      "O Quartzito Maldive é uma opção muito interessante para quem busca uma pedra natural clara com desenho elegante, leitura suave e grande versatilidade estética. Ele funciona muito bem em cozinhas, ilhas, bancadas e painéis que pedem um visual refinado, contemporâneo e fácil de integrar ao restante do projeto.",
+    technical:
+      "Em termos técnicos, o Maldive reúne boa dureza, estabilidade e as características valorizadas do quartzito natural para superfícies de alto padrão. É uma escolha coerente para quem pesquisa quartzito claro em São Paulo, bancada de quartzito para cozinha e pedra natural para ilha com resistência e elegância.",
+    practical:
+      "Na prática, ele entrega leveza visual, sensação de amplitude e enorme flexibilidade para combinar com diferentes estilos de marcenaria e metais. O resultado costuma ser um ambiente claro, harmonioso e com aparência de projeto bem resolvido, sem excesso visual.",
+    value:
+      "O Maldive agrega valor porque ajuda a construir uma estética sofisticada e atemporal. É uma escolha que favorece a luminosidade do ambiente e reforça a percepção de acabamento premium com naturalidade.",
+    indicationTitle: "Cozinhas e ilhas com leitura leve",
+    indicationText: "Indicado para projetos que procuram uma pedra clara, elegante e versátil para bancadas, ilhas e painéis de alto padrão.",
+    benefitTitle: "Leveza que organiza o espaço",
+    benefitText: "O Maldive melhora a leitura da luz e ajuda o ambiente a parecer mais amplo, claro e sofisticado.",
+    executionTitle: "Detalhe bem resolvido valoriza ainda mais",
+    executionText: "No Maldive, emendas discretas, paginação correta e borda bem escolhida elevam a percepção final do projeto.",
+    seoDescription:
+      "Quartzito Maldive em São Paulo para cozinhas, ilhas, bancadas e painéis sob medida. Pedra natural clara, elegante e resistente para projetos premium.",
+  },
+  "quartzito-mandalay-green": {
+    eyebrow: "Quartzito verde elegante para projetos com sofisticação natural",
+    intro:
+      "O Quartzito Mandalay Green é indicado para quem quer uma pedra natural verde com sofisticação, profundidade e uma leitura mais orgânica do luxo. Ele se destaca muito bem em bancadas, ilhas, painéis e áreas gourmet onde a pedra precisa adicionar identidade sem perder elegância.",
+    technical:
+      "Tecnicamente, o Mandalay Green reúne a resistência típica do quartzito natural com uma composição visual muito valorizada por arquitetos e clientes que buscam quartzito verde em São Paulo, pedra natural diferenciada para bancada e materiais premium para cozinhas e ilhas.",
+    practical:
+      "Na prática, ele funciona muito bem com madeira, metais escovados, serralheria preta e iluminação quente, criando uma atmosfera sofisticada, acolhedora e muito mais autoral. É uma pedra que ajuda o ambiente a ter personalidade sem cair no excesso.",
+    value:
+      "O Mandalay Green vale a pena porque entrega exclusividade, identidade e um tipo de beleza natural que valoriza o imóvel e reforça a percepção de projeto premium em cada detalhe.",
+    indicationTitle: "Ambientes com sofisticação orgânica",
+    indicationText: "Excelente para quem quer usar uma pedra verde de alto padrão em ilhas, bancadas e painéis sofisticados.",
+    benefitTitle: "Personalidade com elegância",
+    benefitText: "O Mandalay Green cria um ambiente mais exclusivo, acolhedor e visualmente rico, com uma presença muito refinada.",
+    executionTitle: "Composição certa é o que revela a pedra",
+    executionText: "Nesse material, o resultado premium aparece quando a chapa, a luz, a marcenaria e os metais trabalham em harmonia.",
+    seoDescription:
+      "Quartzito Mandalay Green em São Paulo para cozinhas, ilhas, bancadas e painéis sob medida. Pedra natural verde, sofisticada e resistente para projetos exclusivos.",
+  },
+  "quartzito-green-bamboo": {
+    eyebrow: "Quartzito verde para projetos elegantes, naturais e autorais",
+    intro:
+      "O Quartzito Green Bamboo é uma escolha muito valorizada em projetos que procuram uma pedra natural verde com leitura refinada, movimento orgânico e forte potencial decorativo. Ele funciona muito bem em ilhas, bancadas, painéis e espaços gourmet de alto padrão.",
+    technical:
+      "Em termos técnicos, o Green Bamboo reúne boa resistência, dureza e estabilidade, características próprias do quartzito natural em aplicações sob medida. É um material buscado por quem pesquisa quartzito verde para cozinha, bancada premium em São Paulo e pedra natural exclusiva para ilha e painel.",
+    practical:
+      "Na prática, ele ajuda a criar ambientes mais sofisticados e acolhedores, especialmente quando combinado com madeira, metais discretos e iluminação quente. O resultado é uma composição muito mais autoral, com sensação de curadoria e design intencional.",
+    value:
+      "O Green Bamboo agrega valor porque foge do padrão óbvio sem perder elegância. É uma pedra para quem quer um ambiente mais memorável, mais exclusivo e com clara percepção de acabamento premium.",
+    indicationTitle: "Ilhas, bancadas e painéis com identidade natural",
+    indicationText: "Indicado para projetos que buscam um quartzito verde sofisticado e exclusivo para superfícies de destaque.",
+    benefitTitle: "Naturalidade com assinatura visual",
+    benefitText: "O Green Bamboo cria uma composição mais rica e refinada, fortalecendo a identidade do ambiente com muita elegância.",
+    executionTitle: "Projeto e pedra precisam conversar",
+    executionText: "Nesse quartzito, o nível do resultado depende do encaixe entre a escolha da chapa, a paginação e a linguagem geral do ambiente.",
+    seoDescription:
+      "Quartzito Green Bamboo em São Paulo para bancadas, ilhas, painéis e áreas gourmet. Pedra natural verde, elegante e resistente para projetos premium.",
+  },
+  "quartzito-woodstone": {
+    eyebrow: "Quartzito para cozinhas e áreas gourmet com leitura natural e sofisticada",
+    intro:
+      "O Quartzito Woodstone é muito procurado por quem quer uma pedra natural com aparência acolhedora, desenho elegante e enorme capacidade de integração com marcenaria, iluminação quente e projetos contemporâneos. Ele funciona muito bem em bancadas, ilhas, áreas gourmet e painéis que pedem naturalidade com presença.",
+    technical:
+      "Em termos técnicos, o Woodstone reúne as características mais valorizadas do quartzito natural: boa dureza, estrutura estável e excelente desempenho em superfícies que precisam unir beleza e resistência. É uma opção coerente para quem pesquisa quartzito para cozinha, quartzito para área gourmet e pedra natural resistente para bancada em São Paulo.",
+    practical:
+      "Na prática, ele entrega um ambiente mais acolhedor, sofisticado e fácil de harmonizar. É uma pedra que funciona especialmente bem quando a proposta do projeto é criar conforto visual sem abrir mão de uma leitura premium e de uma superfície confiável para o uso diário.",
+    value:
+      "O Woodstone vale a pena porque constrói um resultado elegante, equilibrado e muito mais atemporal. É o tipo de escolha que melhora a sensação do ambiente no dia a dia e reforça a percepção de projeto bem pensado e bem executado.",
+    indicationTitle: "Cozinhas, ilhas e gourmet com calor visual",
+    indicationText: "Excelente para quem quer uma pedra natural com leitura acolhedora e sofisticada em bancadas, ilhas e áreas de convivência.",
+    benefitTitle: "Acolhimento com desempenho",
+    benefitText: "O Woodstone ajuda a criar um ambiente mais confortável visualmente, com aparência premium e excelente versatilidade de composição.",
+    executionTitle: "O desenho da chapa precisa ser respeitado",
+    executionText: "Nesse quartzito, a direção do veio, a borda e as emendas bem resolvidas são decisivas para transformar a pedra em parte do design.",
+    seoDescription:
+      "Quartzito Woodstone em São Paulo para cozinhas, ilhas, bancadas e áreas gourmet sob medida. Pedra natural sofisticada, resistente e ideal para projetos premium.",
+  },
+  "quartzito-wakanda-grey": {
+    eyebrow: "Quartzito cinza premium para cozinhas, ilhas e bancadas sofisticadas",
+    intro:
+      "O Quartzito Wakanda Grey é uma excelente escolha para quem busca uma pedra natural cinza com presença elegante, leitura contemporânea e grande potencial de composição em cozinhas, ilhas, bancadas e painéis. Ele entrega sofisticação sem excesso e conversa muito bem com arquitetura limpa e materiais de alto padrão.",
+    technical:
+      "Tecnicamente, o Wakanda Grey reúne resistência, estabilidade e o desempenho típico do quartzito natural em aplicações sob medida. É muito coerente para quem pesquisa quartzito cinza para cozinha, bancada em quartzito em São Paulo e pedra natural resistente para ilha e área gourmet.",
+    practical:
+      "Na prática, essa é uma pedra que facilita projetos maduros, equilibrados e com visual premium. Ela harmoniza com madeira, preto, inox, champagne e tons neutros, criando ambientes sofisticados e fáceis de manter esteticamente consistentes com o passar do tempo.",
+    value:
+      "O Wakanda Grey agrega valor porque entrega versatilidade com personalidade. É uma escolha segura para quem quer um projeto elegante, forte e com percepção clara de acabamento premium.",
+    indicationTitle: "Projetos contemporâneos e bancadas de presença",
+    indicationText: "Indicado para cozinhas, ilhas e bancadas que pedem uma pedra cinza sofisticada, equilibrada e de alto desempenho.",
+    benefitTitle: "Elegância versátil",
+    benefitText: "O Wakanda Grey cria um ambiente mais sofisticado e coerente, com facilidade de composição e forte valor estético.",
+    executionTitle: "Acabamento define o tom do projeto",
+    executionText: "Nesse material, paginação, iluminação e escolha de borda ajudam a transformar a bancada em uma peça muito mais refinada.",
+    seoDescription:
+      "Quartzito Wakanda Grey em São Paulo para cozinhas, ilhas, bancadas e painéis. Pedra natural cinza, sofisticada e resistente para projetos de alto padrão.",
+  },
+  "quartzito-verde-bambu": {
+    eyebrow: "Quartzito verde para ambientes sofisticados com apelo natural",
+    intro:
+      "O Quartzito Verde Bambu é indicado para quem quer uma pedra natural verde com forte apelo decorativo, sofisticação orgânica e excelente potencial para bancadas, ilhas, painéis e áreas gourmet. Ele cria uma leitura refinada, natural e muito valorizada em projetos autorais.",
+    technical:
+      "Em termos técnicos, o Verde Bambu apresenta boa resistência, estabilidade e o desempenho típico do quartzito natural em superfícies sob medida. É um material muito alinhado a buscas como quartzito verde para bancada, quartzito para cozinha e pedra natural premium em São Paulo.",
+    practical:
+      "Na prática, ele ajuda a construir ambientes mais acolhedores, mais exclusivos e visualmente mais ricos, especialmente quando combinado com madeira natural, metais escovados e uma iluminação que valorize seus tons e movimentos.",
+    value:
+      "O Verde Bambu vale a escolha porque diferencia o projeto com elegância. É uma pedra que imprime personalidade, reforça a curadoria do ambiente e aumenta a percepção de sofisticação do conjunto.",
+    indicationTitle: "Ilhas, bancadas e painéis com identidade natural",
+    indicationText: "Excelente para projetos que procuram uma pedra verde elegante e autoral para superfícies de destaque.",
+    benefitTitle: "Sofisticação orgânica e memorável",
+    benefitText: "O Verde Bambu ajuda o ambiente a ganhar calor visual, exclusividade e uma presença muito mais refinada.",
+    executionTitle: "Composição certa potencializa a pedra",
+    executionText: "Nesse quartzito, a direção do veio e a combinação com marcenaria e metais são fundamentais para alcançar um resultado premium.",
+    seoDescription:
+      "Quartzito Verde Bambu em São Paulo para bancadas, ilhas, painéis e áreas gourmet. Pedra natural verde, sofisticada e resistente para projetos exclusivos.",
+  },
+  "quartzito-nybirus": {
+    eyebrow: "Quartzito exótico para bancadas, ilhas e painéis de alto impacto",
+    intro:
+      "O Quartzito Nybirus é uma escolha indicada para projetos que querem transformar a pedra em protagonista. Ele funciona muito bem em ilhas, bancadas, painéis e mesas de destaque, especialmente quando o objetivo é criar um ambiente exclusivo, sofisticado e com forte identidade visual.",
+    technical:
+      "Tecnicamente, o Nybirus reúne a resistência do quartzito natural com uma leitura estética muito marcante, rica em movimento e personalidade. É uma opção valorizada por quem busca quartzito exótico em São Paulo, pedra natural para ilha e bancada premium com desenho autoral.",
+    practical:
+      "Na prática, o Nybirus entrega efeito de peça única. Ele ajuda a criar um ambiente memorável, reforça a assinatura do projeto e dá à bancada ou ao painel uma presença que muda completamente a percepção do espaço.",
+    value:
+      "O Nybirus agrega valor porque posiciona o projeto em outro patamar visual. É uma decisão para quem quer mais do que revestir: quer construir uma experiência estética de alto nível.",
+    indicationTitle: "Peças protagonistas e ambientes autorais",
+    indicationText: "Perfeito para ilhas, bancadas e painéis que precisam funcionar como elemento central do design do espaço.",
+    benefitTitle: "Impacto com exclusividade",
+    benefitText: "O Nybirus cria um ambiente muito mais singular e valoriza o projeto pela força visual e pela personalidade da pedra.",
+    executionTitle: "Paginação transforma a peça em assinatura",
+    executionText: "Nesse material, estudar a chapa e a direção do desenho é essencial para transformar a pedra em um verdadeiro destaque arquitetônico.",
+    seoDescription:
+      "Quartzito Nybirus em São Paulo para ilhas, bancadas, painéis e mesas sob medida. Pedra natural exótica, sofisticada e resistente para projetos premium.",
+  },
+  "quartzito-oak-bamboo": {
+    eyebrow: "Quartzito com leitura natural e elegante para cozinhas e áreas gourmet",
+    intro:
+      "O Quartzito Oak Bamboo é indicado para projetos que procuram uma pedra natural com presença acolhedora, desenho elegante e forte capacidade de composição com madeira, tons neutros e iluminação quente. Ele funciona muito bem em cozinhas, ilhas, bancadas e áreas gourmet premium.",
+    technical:
+      "Em termos técnicos, o Oak Bamboo reúne as características valorizadas do quartzito natural, com boa resistência, estabilidade e excelente desempenho para superfícies de uso cotidiano. É coerente para quem busca quartzito para cozinha, bancada de quartzito em São Paulo e pedra natural para área gourmet.",
+    practical:
+      "Na prática, ele cria ambientes mais confortáveis visualmente e com aparência de projeto bem resolvido. É uma pedra que ajuda a construir elegância de forma natural, sem excesso e sem perder a força de presença que um material premium deve ter.",
+    value:
+      "O Oak Bamboo agrega valor porque une imagem sofisticada, funcionalidade e uma sensação de permanência que deixa o ambiente mais maduro e mais valorizado.",
+    indicationTitle: "Bancadas e ilhas com leitura acolhedora",
+    indicationText: "Excelente para quem quer uma pedra natural versátil, elegante e com grande capacidade de harmonização.",
+    benefitTitle: "Conforto visual com assinatura premium",
+    benefitText: "O Oak Bamboo deixa o espaço mais acolhedor e sofisticado, melhorando a sensação de equilíbrio no projeto.",
+    executionTitle: "Detalhe silencioso é o que eleva o resultado",
+    executionText: "Nesse quartzito, borda, paginação e continuidade visual são os pontos que fazem a pedra parecer ainda mais nobre.",
+    seoDescription:
+      "Quartzito Oak Bamboo em São Paulo para cozinhas, ilhas, bancadas e áreas gourmet sob medida. Pedra natural sofisticada, resistente e ideal para projetos premium.",
+  },
+  "quartzito-negroni": {
+    eyebrow: "Quartzito marcante para projetos com identidade e sofisticação",
+    intro:
+      "O Quartzito Negroni é uma excelente escolha para quem quer uma pedra natural de presença forte, leitura sofisticada e personalidade bem definida em bancadas, ilhas, painéis e mesas. É um material que funciona muito bem em projetos que valorizam exclusividade e assinatura visual.",
+    technical:
+      "Tecnicamente, o Negroni reúne a resistência do quartzito natural com um desenho expressivo e muito valorizado em aplicações sob medida. É uma opção coerente para quem pesquisa quartzito exótico em São Paulo, pedra natural para bancada premium e ilha com forte impacto visual.",
+    practical:
+      "Na prática, ele ajuda o ambiente a sair do comum. O Negroni cria profundidade, reforça a identidade do projeto e gera uma sensação clara de curadoria, intenção estética e acabamento de alto padrão.",
+    value:
+      "O Negroni vale a escolha porque transforma a bancada em parte da narrativa do espaço. É uma pedra para quem quer mais presença, mais design e mais percepção de exclusividade.",
+    indicationTitle: "Projetos autorais e peças protagonistas",
+    indicationText: "Ideal para ilhas, bancadas e painéis que precisam ter impacto, personalidade e valor estético evidente.",
+    benefitTitle: "Assinatura visual real",
+    benefitText: "O Negroni diferencia o projeto e ajuda o ambiente a ser lembrado pela força do conjunto e pela personalidade da pedra.",
+    executionTitle: "A leitura final depende da composição",
+    executionText: "Nesse material, a escolha da chapa, o recorte e a paginação são fundamentais para transformar potencial estético em resultado premium.",
+    seoDescription:
+      "Quartzito Negroni em São Paulo para bancadas, ilhas, painéis e mesas sob medida. Pedra natural exótica, sofisticada e resistente para projetos autorais.",
+  },
+  "quartzito-moulin-rouge": {
+    eyebrow: "Quartzito exótico para ambientes exclusivos e memoráveis",
+    intro:
+      "O Quartzito Moulin Rouge é indicado para projetos que querem usar a pedra como elemento de assinatura. Ele funciona muito bem em ilhas, bancadas, painéis e peças especiais onde o objetivo é criar impacto visual, exclusividade e uma estética verdadeiramente autoral.",
+    technical:
+      "Em termos técnicos, o Moulin Rouge apresenta a resistência e a estabilidade típicas do quartzito natural, somadas a um desenho expressivo que valoriza aplicações premium. É uma excelente escolha para quem busca quartzito exótico em São Paulo e pedra natural para bancadas e ilhas com alto valor estético.",
+    practical:
+      "Na prática, ele transforma a percepção do ambiente. O Moulin Rouge ajuda a construir espaços mais sofisticados e únicos, onde a pedra deixa de ser apenas superfície e passa a participar ativamente da identidade do projeto.",
+    value:
+      "O Moulin Rouge agrega valor porque entrega presença, exclusividade e uma sensação clara de curadoria de material. É uma pedra para quem quer um ambiente com mais emoção visual e mais assinatura.",
+    indicationTitle: "Bancadas, ilhas e painéis protagonistas",
+    indicationText: "Perfeito para projetos que precisam de uma pedra natural com impacto visual e grande potencial de diferenciação.",
+    benefitTitle: "Exclusividade que se percebe no primeiro olhar",
+    benefitText: "O Moulin Rouge reforça a identidade do espaço e valoriza o projeto pela força estética e pela singularidade do material.",
+    executionTitle: "Desenho e recorte determinam o nível da peça",
+    executionText: "Nesse quartzito, estudar o movimento da chapa é essencial para que a pedra seja instalada como um verdadeiro elemento de design.",
+    seoDescription:
+      "Quartzito Moulin Rouge em São Paulo para bancadas, ilhas, painéis e peças especiais sob medida. Pedra natural exótica, sofisticada e resistente para projetos premium.",
+  },
+  "quartzito-vitoria-regia": {
+    eyebrow: "Quartzito sofisticado para projetos com naturalidade e alto padrão",
+    intro:
+      "O Quartzito Vitória Régia é uma escolha muito interessante para quem quer uma pedra natural elegante, com desenho diferenciado e presença refinada em bancadas, ilhas, painéis e áreas gourmet. Ele cria uma estética premium com forte leitura de exclusividade.",
+    technical:
+      "Tecnicamente, o Vitória Régia reúne boa dureza, resistência e estabilidade, características valorizadas no quartzito natural em aplicações sob medida. É uma pedra alinhada a buscas como quartzito premium em São Paulo, pedra natural para bancada e quartzito para ilha de cozinha.",
+    practical:
+      "Na prática, ele ajuda a deixar o ambiente mais sofisticado e mais memorável, principalmente quando integrado a uma marcenaria bem desenhada e a uma iluminação que valorize o movimento do material. É uma pedra que constrói presença sem perder elegância.",
+    value:
+      "O Vitória Régia agrega valor porque reforça a percepção de critério, bom gosto e acabamento superior. É uma escolha que melhora o conjunto do projeto e posiciona o ambiente em um padrão mais alto de sofisticação.",
+    indicationTitle: "Ilhas, bancadas e painéis com elegância natural",
+    indicationText: "Excelente para projetos que buscam uma pedra natural sofisticada, exclusiva e visualmente equilibrada.",
+    benefitTitle: "Beleza que valoriza o conjunto",
+    benefitText: "O Vitória Régia cria um ambiente mais nobre, mais bem resolvido e com muito mais personalidade visual.",
+    executionTitle: "A instalação certa revela a pedra",
+    executionText: "Nesse quartzito, paginação, acabamento e leitura do desenho são os pontos que elevam o material a um resultado realmente premium.",
+    seoDescription:
+      "Quartzito Vitória Régia em São Paulo para bancadas, ilhas, painéis e áreas gourmet sob medida. Pedra natural sofisticada, resistente e ideal para projetos de alto padrão.",
+  },
+  "quartzito-azulli": {
+    eyebrow: "Quartzito de expressão autoral para projetos marcantes e sofisticados",
+    intro:
+      "O Quartzito Azulli é indicado para quem quer uma pedra natural com forte identidade estética e grande capacidade de transformar bancada, ilha ou painel em um ponto focal do ambiente. É uma escolha de alto valor visual para projetos contemporâneos e autorais.",
+    technical:
+      "Em termos técnicos, o Azulli reúne as características estruturais do quartzito natural, com resistência e estabilidade importantes para aplicações sob medida. Ele é muito coerente para quem pesquisa quartzito exótico em São Paulo, pedra natural para ilha e bancada premium com personalidade.",
+    practical:
+      "Na prática, o Azulli cria ambientes com muito mais presença e diferenciação. Ele ajuda a construir um projeto que foge do padrão comum e ganha força estética, sofisticação e memorabilidade no primeiro olhar.",
+    value:
+      "O Azulli vale a pena porque reforça exclusividade. É uma pedra para quem quer um ambiente com assinatura própria, percepção de alto padrão e valor estético muito acima do convencional.",
+    indicationTitle: "Peças protagonistas e composições autorais",
+    indicationText: "Ideal para ilhas, bancadas e painéis onde a pedra precisa ser parte central da identidade do projeto.",
+    benefitTitle: "Design com personalidade real",
+    benefitText: "O Azulli diferencia o ambiente e fortalece a sensação de um projeto exclusivo, sofisticado e muito bem curado.",
+    executionTitle: "O estudo da chapa muda tudo",
+    executionText: "Nesse material, a paginação correta é essencial para transformar o potencial visual da pedra em um resultado marcante e elegante.",
+    seoDescription:
+      "Quartzito Azulli em São Paulo para ilhas, bancadas, painéis e peças especiais sob medida. Pedra natural exótica, sofisticada e resistente para projetos premium.",
+  },
+  "quartzito-pietra-toscana": {
+    eyebrow: "Quartzito elegante para projetos atemporais e sofisticados",
+    intro:
+      "O Quartzito Pietra Toscana é uma excelente escolha para quem quer uma pedra natural com aparência sofisticada, leitura equilibrada e grande potencial para bancadas, ilhas, painéis e áreas gourmet. Ele funciona muito bem em projetos que pedem refinamento e naturalidade no mesmo conjunto.",
+    technical:
+      "Tecnicamente, a Pietra Toscana reúne boa resistência, estabilidade e desempenho valorizado em superfícies sob medida. É alinhada a buscas como quartzito para cozinha, pedra natural para bancada em São Paulo e quartzito premium para ilha e gourmet.",
+    practical:
+      "Na prática, ela ajuda a construir um ambiente elegante, maduro e fácil de harmonizar com marcenaria, metais e iluminação. É uma pedra que transmite bom gosto e organização visual, sem perder profundidade e riqueza natural.",
+    value:
+      "A Pietra Toscana agrega valor porque entrega sofisticação com equilíbrio. É uma pedra para quem quer investir em um ambiente bonito, duradouro e com percepção clara de acabamento superior.",
+    indicationTitle: "Cozinhas, ilhas e áreas gourmet refinadas",
+    indicationText: "Excelente para projetos que buscam uma pedra natural versátil, elegante e premium para superfícies de destaque.",
+    benefitTitle: "Elegância que atravessa o tempo",
+    benefitText: "A Pietra Toscana valoriza o ambiente e ajuda a construir uma estética sofisticada, sólida e coerente com projetos de alto padrão.",
+    executionTitle: "Acabamento discreto, percepção premium",
+    executionText: "Nesse quartzito, o valor aparece quando paginação, borda e emendas são resolvidas de forma limpa e precisa.",
+    seoDescription:
+      "Quartzito Pietra Toscana em São Paulo para cozinhas, ilhas, bancadas e áreas gourmet sob medida. Pedra natural sofisticada, resistente e ideal para projetos premium.",
+  },
+  "quartzito-grey": {
+    eyebrow: "Quartzito cinza para projetos contemporâneos e sofisticados",
+    intro:
+      "O Quartzito Grey é indicado para quem busca uma pedra natural cinza com leitura elegante, forte capacidade de composição e excelente desempenho em bancadas, ilhas, painéis e áreas gourmet. Ele funciona muito bem em projetos contemporâneos que valorizam equilíbrio, sofisticação e presença sem excesso.",
+    technical:
+      "Em termos técnicos, o Grey reúne resistência, estabilidade e as qualidades mais valorizadas do quartzito natural para aplicações sob medida. É uma pedra muito coerente para quem procura quartzito cinza em São Paulo, pedra natural para bancada e quartzito para cozinha e ilha com estética premium.",
+    practical:
+      "Na prática, ele é uma escolha versátil e segura para composições com madeira, preto, inox, metais escovados e paletas neutras. O resultado costuma ser um ambiente elegante, maduro e visualmente bem resolvido, com grande longevidade estética.",
+    value:
+      "O Quartzito Grey agrega valor porque entrega sofisticação sem esforço visual. É uma pedra que melhora a leitura do projeto, reforça a percepção de acabamento premium e ajuda o espaço a parecer mais coerente e mais valorizado.",
+    indicationTitle: "Cozinhas, ilhas e bancadas contemporâneas",
+    indicationText: "Indicado para projetos que querem uma pedra natural cinza premium com leitura equilibrada e excelente capacidade de harmonização.",
+    benefitTitle: "Versatilidade com presença", 
+    benefitText: "O Grey facilita composições sofisticadas e deixa o ambiente mais elegante, atual e visualmente consistente.",
+    executionTitle: "Detalhes limpos reforçam a sofisticação",
+    executionText: "Nesse quartzito, borda, paginação e encaixes bem resolvidos são os pontos que transformam a bancada em um elemento realmente premium.",
+    seoDescription:
+      "Quartzito Grey em São Paulo para cozinhas, ilhas, bancadas e áreas gourmet sob medida. Pedra natural cinza, sofisticada e resistente para projetos premium.",
+  },

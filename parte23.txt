@@ -1,0 +1,260 @@
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Indicação</div><div className="mt-1 font-semibold text-gray-900">{currentSinthContent.indicationTitle}</div><div className="mt-1 text-sm text-gray-600">{currentSinthContent.indicationText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Benefício real</div><div className="mt-1 font-semibold text-gray-900">{currentSinthContent.benefitTitle}</div><div className="mt-1 text-sm text-gray-600">{currentSinthContent.benefitText}</div></div>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Execução</div><div className="mt-1 font-semibold text-gray-900">{currentSinthContent.executionTitle}</div><div className="mt-1 text-sm text-gray-600">{currentSinthContent.executionText}</div></div>
+                </div>
+
+                <div className="mt-10 rounded-3xl bg-gray-50 border border-gray-100 p-6 lg:p-7">
+                  <div className="text-xs uppercase tracking-widest text-gray-500">Outros Sinth</div>
+                  <div className="mt-1 font-bold text-gray-900 text-lg">Veja outras opções que podem combinar com a proposta do seu projeto</div>
+                  <p className="mt-2 text-sm text-gray-600 max-w-3xl">Se a sua ideia é comparar claros, escuros, marmorizados e superfícies contemporâneas com marcenaria, metais e iluminação, estas sugestões ajudam a ampliar o repertório sem perder o nível do projeto.</p>
+                  <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {sinthSuggestions.map((it) => {
+                      const slug = normalizeSinthSlug(it.name);
+                      return (
+                        <a key={it.name} href={buildSinthPageUrl(slug)} onClick={(e) => { e.preventDefault(); goToSinthMaterial(slug); }} className="group overflow-hidden rounded-2xl border border-gray-200 bg-white hover:border-gray-900 hover:shadow-md transition">
+                          <div className="relative overflow-hidden aspect-[16/10] bg-gray-100">
+                            <SmartImg src={it.applied} fallbackSrcs={[it.sample]} alt={it.name} className="w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+                          </div>
+                          <div className="p-4">
+                            <div className="font-semibold text-gray-900 leading-snug">{it.name.replace(/^Sinth\s+/i, "")}</div>
+                            <div className="mt-1 text-sm text-gray-600">Ver detalhes deste material e comparar aplicação, amostra e proposta estética.</div>
+                            <div className="mt-3 inline-flex items-center text-sm font-semibold text-gold">Ver detalhes <i className="fas fa-arrow-right ml-2 transition group-hover:translate-x-1" /></div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {(() => {
+          const all = ASSETS.catalog.limestone;
+          const size = Math.ceil(all.length / 3);
+          const page1 = all.slice(0, size);
+          const page2 = all.slice(size, size * 2);
+          const page3 = all.slice(size * 2);
+          const isP1 = visible.has("limestone");
+          const isP2 = visible.has("limestone-2");
+          const isP3 = visible.has("limestone-3");
+
+          const pager = (active: 1 | 2 | 3) => (
+            <div className="selection-pager inline-flex items-center rounded-full border border-gray-200 overflow-hidden bg-white shadow-sm">
+              {[1, 2, 3].map((n) => (
+                <React.Fragment key={n}>
+                  <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === n ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav(n === 1 ? "limestone" : n === 2 ? "limestone-2" : "limestone-3")} aria-current={active === n ? "page" : undefined} aria-label={`Limestone — Seleção ${n}`} title={`Seleção ${n}`}>
+                    <span aria-hidden="true" className="tracking-widest">{String(n).padStart(2, "0")}</span>
+                    <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+                  </button>
+                  {n !== 3 ? <div className="w-px self-stretch bg-gray-200" aria-hidden="true" /> : null}
+                </React.Fragment>
+              ))}
+            </div>
+          );
+
+          return (
+            <>
+              <CatalogSection id="limestone" title="Limestone" subtitle={<><p>Limestone é a pedra do <strong>orgânico sofisticado</strong>: tons quentes, textura elegante e uma estética que deixa o ambiente mais acolhedor. É muito usado em banheiros, lavabos, paredes de destaque e projetos onde a sensação de conforto é prioridade.</p><div className="grid sm:grid-cols-3 gap-3"><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Estética</div><div className="mt-1 font-semibold text-gray-900">Textura &amp; calor</div><div className="mt-1 text-sm">Tons creme, bege e variações naturais que deixam o espaço mais humano.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Onde brilha</div><div className="mt-1 font-semibold text-gray-900">Banhos &amp; paredes</div><div className="mt-1 text-sm">Lavatórios, painéis, nichos e revestimentos internos.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Resultado</div><div className="mt-1 font-semibold text-gray-900">Detalhe silencioso</div><div className="mt-1 text-sm">Acabamento certo (borda/paginação) faz o material parecer ainda mais premium.</div></div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-5"><div className="flex items-start gap-3"><button type="button" onClick={advanceLimestoneTip} className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition" aria-label="Trocar dica" title="Trocar dica"><i className="fas fa-wand-magic-sparkles" /></button><div className="min-w-0"><div className="flex items-center gap-2"><div className="text-xs uppercase tracking-widest text-gray-500">Dica (rotativa)</div></div><p className="mt-2 text-sm text-gray-700 leading-relaxed">{limestoneDecorTip}</p></div></div></div><p className="text-sm text-gray-600">Clique no card para alternar entre <strong>amostra</strong> e <strong>aplicação real</strong>.</p></>} items={page1} show={isP1} onNav={onNav} backTo="produtos" extraActions={pager(1)} footerActions={pager(1)} />
+              <CatalogSection id="limestone-2" title="Limestone" subtitle={<><p>Segunda seleção — mais opções para você comparar <strong>tonalidade</strong>, <strong>textura</strong> e presença. Use as imagens de <strong>aplicação</strong> para sentir como o material conversa com luz e marcenaria.</p><p className="text-sm text-gray-600">Quer que eu te ajude a escolher? Envie uma foto do seu ambiente e diga a sensação que você quer (mais claro, mais quente, mais minimalista). Eu te devolvo 2–3 opções com prós/contras.</p></>} items={page2} show={isP2} onNav={onNav} backTo="produtos" extraActions={pager(2)} footerActions={pager(2)} />
+              <CatalogSection id="limestone-3" title="Limestone" subtitle={<><p>Terceira seleção — final. Aqui estão as últimas opções para você fechar sua escolha.</p><p className="text-sm text-gray-600">Se você estiver entre 2 materiais, me mande uma foto do ambiente (luz + marcenaria). Eu te digo qual vai ficar mais elegante e mais coerente com o conjunto.</p></>} items={page3} show={isP3} onNav={onNav} backTo="produtos" extraActions={pager(3)} footerActions={pager(3)} />
+            </>
+          );
+        })()}
+
+        {(() => {
+          const all = ASSETS.catalog.onix;
+          const mid = Math.ceil(all.length / 2);
+          const page1 = all.slice(0, mid);
+          const page2 = all.slice(mid);
+          const isP1 = visible.has("onix");
+          const isP2 = visible.has("onix-2");
+
+          const pager = (active: 1 | 2) => (
+            <div className="selection-pager inline-flex items-center rounded-full border border-gray-200 overflow-hidden bg-white shadow-sm">
+              <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === 1 ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav("onix")} aria-current={active === 1 ? "page" : undefined}>
+                <span aria-hidden="true" className="tracking-widest">01</span>
+                <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+              </button>
+              <div className="w-px self-stretch bg-gray-200" aria-hidden="true" />
+              <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === 2 ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav("onix-2")} aria-current={active === 2 ? "page" : undefined}>
+                <span aria-hidden="true" className="tracking-widest">02</span>
+                <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+              </button>
+            </div>
+          );
+
+          return (
+            <>
+              <CatalogSection id="onix" title="Ônix" subtitle={<><p>Ônix é uma pedra para <strong>impacto máximo</strong>. Quando você usa em painel, bar, lavabo ou parede de destaque, o ambiente vira uma peça de galeria — principalmente com <strong>backlight</strong> (iluminação por trás).</p><div className="grid sm:grid-cols-3 gap-3"><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Efeito</div><div className="mt-1 font-semibold text-gray-900">Translúcido (backlight)</div><div className="mt-1 text-sm">Iluminação por trás transforma a pedra em “joia”.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Onde brilha</div><div className="mt-1 font-semibold text-gray-900">Painéis &amp; bares</div><div className="mt-1 text-sm">Lavabos, bares, paredes de destaque e nichos premium.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Resultado</div><div className="mt-1 font-semibold text-gray-900">Paginação do desenho</div><div className="mt-1 text-sm">O luxo aparece quando o desenho do veio é planejado.</div></div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-5"><div className="flex items-start gap-3"><button type="button" onClick={advanceOnixTip} className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition" aria-label="Trocar dica" title="Trocar dica"><i className="fas fa-wand-magic-sparkles" /></button><div className="min-w-0"><div className="flex items-center gap-2"><div className="text-xs uppercase tracking-widest text-gray-500">Dica (rotativa)</div></div><p className="mt-2 text-sm text-gray-700 leading-relaxed">{onixDecorTip}</p></div></div></div><p className="text-sm text-gray-600">Clique no card para alternar entre <strong>amostra</strong> e <strong>aplicação real</strong>.</p></>} items={page1} show={isP1} onNav={onNav} backTo="produtos" extraActions={pager(1)} footerActions={pager(1)} />
+              <CatalogSection id="onix-2" title="Ônix" subtitle={<><p>Segunda seleção de Ônix — mais opções para você comparar cor, translucidez e presença no ambiente.</p><p className="text-sm text-gray-600">Se você quiser backlight, me diga o tamanho do painel e onde será instalado: a escolha da chapa e a iluminação definem o resultado final.</p></>} items={page2} show={isP2} onNav={onNav} backTo="produtos" extraActions={pager(2)} footerActions={pager(2)} />
+            </>
+          );
+        })()}
+
+        <section id="laminas" className={["py-16 bg-white", visible.has("laminas") ? "" : "hidden"].join(" ")}>
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-10">
+              <div className="min-w-0">
+                <p className="text-sm uppercase tracking-widest text-gold font-semibold">Catálogo</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Lâminas</h2>
+                <div className="text-gray-600 mt-3 max-w-2xl space-y-3 leading-relaxed">
+                  <p>Trabalhamos com lâminas (ultra compactas / sinterizadas) para bancadas, ilhas, painéis e fachadas — alta performance com estética premium.</p>
+                  <p className="text-sm">Escolha a marca e veja as <strong>cores</strong> disponíveis.</p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 justify-start sm:justify-end">
+                <a href="?p=contato" className="bg-gold text-white px-7 py-3 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow w-full sm:w-auto text-center" onClick={(e) => { e.preventDefault(); onNav("contato"); }}>
+                  Solicitar orçamento
+                </a>
+              </div>
+            </div>
+
+            <div className="max-w-5xl lg:max-w-6xl">
+              <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+                {([
+                  { p: "dekton", label: "Dekton", badge: "ULTRA COMPACTO", desc: "Alta resistência", img: ASSETS.laminasHub.dekton },
+                  { p: "neolith", label: "Neolith", badge: "SINTERIZADO", desc: "Design premium", img: ASSETS.laminasHub.neolith },
+                  { p: "sinth", label: "Sinth", badge: "SINTERIZADO", desc: "Grande formato", img: ASSETS.laminasHub.sinth },
+                ] as const).map((b) => (
+                  <a key={b.p} href={`?p=${b.p}`} className="group relative overflow-hidden rounded-2xl hover-lift aspect-[16/10] sm:aspect-[16/9] md:aspect-[4/3]" onClick={(e) => { e.preventDefault(); onNav(b.p); }}>
+                    <img src={b.img} alt={`${b.label} - lâmina`} className="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                    <div className="absolute top-4 left-4"><span className="inline-flex items-center bg-white/10 text-white border border-white/15 px-3 py-1 rounded-full text-xs tracking-widest">{b.badge}</span></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-5"><h3 className="text-2xl font-bold text-white">{b.label}</h3><p className="text-gray-200 text-sm mt-2">{b.desc}</p><span className="inline-flex items-center text-gold mt-3 font-semibold">Ver cores <i className="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition" /></span></div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {(() => {
+          const all = ASSETS.catalog.dekton;
+          const size = Math.ceil(all.length / 3);
+          const page1 = all.slice(0, size);
+          const page2 = all.slice(size, size * 2);
+          const page3 = all.slice(size * 2);
+          const isP1 = visible.has("dekton");
+          const isP2 = visible.has("dekton-2");
+          const isP3 = visible.has("dekton-3");
+
+          const pager = (active: 1 | 2 | 3) => (
+            <div className="selection-pager inline-flex items-center rounded-full border border-gray-200 overflow-hidden bg-white shadow-sm">
+              {[1, 2, 3].map((n) => (
+                <React.Fragment key={n}>
+                  <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === n ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav(n === 1 ? "dekton" : n === 2 ? "dekton-2" : "dekton-3")} aria-current={active === n ? "page" : undefined}>
+                    <span aria-hidden="true" className="tracking-widest">{String(n).padStart(2, "0")}</span>
+                    <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+                  </button>
+                  {n !== 3 ? <div className="w-px self-stretch bg-gray-200" aria-hidden="true" /> : null}
+                </React.Fragment>
+              ))}
+            </div>
+          );
+
+          return (
+            <>
+              <CatalogSection id="dekton" title="Dekton" subtitle={<><p>Dekton é uma <strong>superfície sinterizada ultra compacta</strong> — feita para quem quer estética premium com performance: baixa porosidade, alta resistência ao calor e excelente estabilidade de cor. É o tipo de material que dá liberdade: cozinha, área gourmet e painéis com visual impecável.</p><div className="grid sm:grid-cols-3 gap-3"><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Para o dia a dia</div><div className="mt-1 font-semibold text-gray-900">Baixa porosidade</div><div className="mt-1 text-sm">Menos absorção, mais tranquilidade com respingos e rotina.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Performance</div><div className="mt-1 font-semibold text-gray-900">Calor &amp; química</div><div className="mt-1 text-sm">Ótimo para quem cozinha e quer uma superfície de alto desempenho.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Resultado</div><div className="mt-1 font-semibold text-gray-900">Linhas limpas</div><div className="mt-1 text-sm">Perfeito para projetos contemporâneos e grandes planos.</div></div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-5"><div className="flex items-start gap-3"><button type="button" onClick={advanceDektonTip} className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition" aria-label="Trocar dica" title="Trocar dica"><i className="fas fa-wand-magic-sparkles" /></button><div className="min-w-0"><div className="flex items-center gap-2"><div className="text-xs uppercase tracking-widest text-gray-500">Dica (rotativa)</div><div className="text-[11px] text-gray-400">• clique no ícone para trocar</div></div><p className="mt-2 text-sm text-gray-700 leading-relaxed">{dektonDecorTip}</p></div></div></div></>} items={page1} show={isP1} onNav={onNav} backTo="laminas" extraActions={pager(1)} footerActions={pager(1)} />
+              <CatalogSection id="dekton-2" title="Dekton" subtitle={<><p>Segunda seleção de cores Dekton. Aqui você vai perceber o que faz o material ser tão versátil: ele funciona do marmorizado elegante ao cimento moderno, passando por pedras escuras e tons industriais.</p><p className="text-sm text-gray-600">Dica técnica: sinterizados são excelentes, mas bordas podem lascar por impacto. Em cozinhas muito movimentadas, planeje quinas com raio e evite pancadas.</p></>} items={page2} show={isP2} onNav={onNav} backTo="laminas" extraActions={pager(2)} footerActions={pager(2)} />
+              <CatalogSection id="dekton-3" title="Dekton" subtitle={<><p>Terceira seleção — final. Se você estiver em dúvida entre 2–3 cores, me mande fotos do ambiente e a referência de estilo. Eu te digo qual vai ficar mais elegante com a sua marcenaria, luz e metais.</p><p className="text-sm text-gray-600">Para um resultado de alto padrão, combine com paginação e instalação nivelada. Superfície premium pede execução premium.</p></>} items={page3} show={isP3} onNav={onNav} backTo="laminas" extraActions={pager(3)} footerActions={pager(3)} />
+            </>
+          );
+        })()}
+
+        <CatalogSection id="neolith" title="Neolith" subtitle={<>Superfície sinterizada com estética sofisticada.</>} items={ASSETS.catalog.neolith} show={visible.has("neolith")} onNav={onNav} backTo="laminas" />
+
+        {(() => {
+          const all = ASSETS.catalog.sinth;
+          const size = Math.ceil(all.length / 3);
+          const page1 = all.slice(0, size);
+          const page2 = all.slice(size, size * 2);
+          const page3 = all.slice(size * 2);
+          const isP1 = visible.has("sinth");
+          const isP2 = visible.has("sinth-2");
+          const isP3 = visible.has("sinth-3");
+
+          const pager = (active: 1 | 2 | 3) => (
+            <div className="selection-pager inline-flex items-center rounded-full border border-gray-200 overflow-hidden bg-white shadow-sm">
+              {[1, 2, 3].map((n) => (
+                <React.Fragment key={n}>
+                  <button type="button" className={["px-4 py-2 text-sm font-semibold transition min-w-[120px] flex items-center justify-center gap-2", active === n ? "bg-gray-900 text-white" : "bg-white text-gray-900 hover:bg-gray-50"].join(" ")} onClick={() => onNav(n === 1 ? "sinth" : n === 2 ? "sinth-2" : "sinth-3")} aria-current={active === n ? "page" : undefined} aria-label={`Sinth — Seleção ${n}`} title={`Seleção ${n}`}>
+                    <span aria-hidden="true" className="tracking-widest">{String(n).padStart(2, "0")}</span>
+                    <span className="text-[11px] tracking-widest uppercase opacity-80">Seleção</span>
+                  </button>
+                  {n !== 3 ? <div className="w-px self-stretch bg-gray-200" aria-hidden="true" /> : null}
+                </React.Fragment>
+              ))}
+            </div>
+          );
+
+          return (
+            <>
+              <CatalogSection id="sinth" title="Sinth" subtitle={<><p>Sinth é uma lâmina sinterizada pensada para projetos contemporâneos: <strong>grandes planos</strong>, estética limpa e um acabamento que eleva cozinhas, lavabos e painéis. Aqui você encontra desde brancos premium (Super White) até clássicos (Nero Marquina, Gris Armani) e efeitos de design (Iron Corten).</p><div className="grid sm:grid-cols-3 gap-3"><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Estética</div><div className="mt-1 font-semibold text-gray-900">Visual de alto padrão</div><div className="mt-1 text-sm">Mármore, cimento, tons neutros e efeitos especiais — sem ruído visual.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Projeto</div><div className="mt-1 font-semibold text-gray-900">Grandes formatos</div><div className="mt-1 text-sm">Ótimo para ilhas, bancadas e painéis contínuos com menos recortes.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Resultado</div><div className="mt-1 font-semibold text-gray-900">Acabamento que define</div><div className="mt-1 text-sm">Meia‑esquadria 45º e paginação correta deixam o conjunto mais premium.</div></div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-5"><div className="flex items-start gap-3"><button type="button" onClick={advanceSinthTip} className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition" aria-label="Trocar dica" title="Trocar dica"><i className="fas fa-wand-magic-sparkles" /></button><div className="min-w-0"><div className="flex items-center gap-2"><div className="text-xs uppercase tracking-widest text-gray-500">Dica (rotativa)</div><div className="text-[11px] text-gray-400">• clique no ícone para trocar</div></div><p className="mt-2 text-sm text-gray-700 leading-relaxed">{sinthDecorTip}</p></div></div></div></>} items={page1} show={isP1} onNav={onNav} backTo="laminas" extraActions={pager(1)} footerActions={pager(1)} />
+              <CatalogSection id="sinth-2" title="Sinth" subtitle={<><p>Segunda seleção de cores Sinth. Clique no card para alternar entre <strong>amostra</strong> e <strong>aplicação</strong> e compare com mais clareza.</p><p className="text-sm text-gray-600">Se você estiver entre 2 opções, me diga seu uso (cozinha, gourmet, lavabo) e o estilo do ambiente. Eu te devolvo uma recomendação rápida.</p></>} items={page2} show={isP2} onNav={onNav} backTo="laminas" extraActions={pager(2)} footerActions={pager(2)} />
+              <CatalogSection id="sinth-3" title="Sinth" subtitle={<><p>Terceira seleção — final. Se quiser, me mande uma foto do ambiente (luz + marcenaria) e eu te ajudo a escolher a opção mais elegante.</p><p className="text-sm text-gray-600">Dica técnica: como sinterizado, o material é excelente, mas bordas podem lascar por impacto. Planeje quinas e manuseio para o longo prazo.</p></>} items={page3} show={isP3} onNav={onNav} backTo="laminas" extraActions={pager(3)} footerActions={pager(3)} />
+            </>
+          );
+        })()}
+
+        <CatalogSection id="aglostone" title="Prime Stone" subtitle={<><p><strong>Prime Stone é um composto de mármore</strong> (mármore + resinas), na mesma família de materiais como <strong>Quarella</strong>, <strong>Aglostone</strong> e <strong>Marmol Compac</strong>. Ele entrega um visual mais <strong>uniforme</strong> e um acabamento consistente — excelente para projetos internos com proposta contemporânea.</p><div className="rounded-2xl bg-amber-50 border border-amber-200 p-5 text-gray-900"><div className="font-bold">Importante: não recomendamos Prime Stone para cozinha</div><p className="mt-2 text-sm text-gray-800 leading-relaxed">Por ser base mármore, pode sofrer <strong>ataque químico</strong> com ácidos (limão, vinagre, tomate) e ficar fosco/manchado. Além disso, por conter resina, <strong>calor extremo</strong> pode marcar/queimar. Para cozinha, prefira quartzo de engenharia, quartzito ou sinterizados.</p></div><div className="grid sm:grid-cols-3 gap-3"><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">O que é</div><div className="mt-1 font-semibold text-gray-900">Composto de mármore</div><div className="mt-1 text-sm">Estética homogênea, padrão consistente e excelente acabamento.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Onde funciona bem</div><div className="mt-1 font-semibold text-gray-900">Uso interno (baixo risco)</div><div className="mt-1 text-sm">Lavabos, banheiros (uso controlado), painéis e tampos decorativos em áreas secas.</div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-4"><div className="text-xs uppercase tracking-widest text-gray-500">Cuidados</div><div className="mt-1 font-semibold text-gray-900">Ácidos &amp; calor</div><div className="mt-1 text-sm">Evite limão/vinagre direto e proteja contra calor/impactos (apoio térmico).</div></div></div><div className="rounded-2xl bg-gray-50 border border-gray-100 p-5"><div className="flex items-start gap-3"><button type="button" onClick={advancePrimeStoneTip} className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0 hover:bg-gray-50 hover:border-gray-200 transition" aria-label="Trocar dica" title="Trocar dica"><i className="fas fa-wand-magic-sparkles" /></button><div className="min-w-0"><div className="flex items-center gap-2"><div className="text-xs uppercase tracking-widest text-gray-500">Dica (rotativa)</div><div className="text-[11px] text-gray-400">• clique no ícone para trocar</div></div><p className="mt-2 text-sm text-gray-700 leading-relaxed">{primeStoneDecorTip}</p></div></div></div><p className="text-sm text-gray-600">Clique no card para alternar entre <strong>amostra</strong> e <strong>aplicação real</strong>.</p></>} items={ASSETS.catalog.aglostone} show={visible.has("aglostone")} onNav={onNav} backTo="produtos" />
+        <section id="diferenciais" className={["py-24 gradient-dark text-white relative overflow-hidden", visible.has("diferenciais") ? "" : "hidden"].join(" ")}>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-gold font-semibold uppercase tracking-widest text-sm">Diferenciais • Autoridade técnica</span>
+              <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">O que separa uma bancada <span className="text-gold">bonita hoje</span> de uma bancada <span className="text-gold">perfeita por décadas</span></h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {([
+                { icon: "fa-camera", title: "Chapa aprovada", text: "Você escolhe a chapa real (fotos/vídeo/showroom)." },
+                { icon: "fa-bezier-curve", title: "Paginação & veios", text: "Emendas discretas e continuidade." },
+                { icon: "fa-angle-right", title: "Meia‑esquadria 45º", text: "Acabamento que muda o nível do projeto." },
+              ] as const).map((d) => (
+                <div key={d.title} className="glass rounded-2xl p-8 hover-lift">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-[rgba(201,169,97,0.2)] rounded-2xl flex items-center justify-center shrink-0"><i className={`fas ${d.icon} text-2xl text-gold`} /></div>
+                    <div><h3 className="text-xl font-bold">{d.title}</h3><p className="text-gray-300 text-sm mt-2 leading-relaxed">{d.text}</p></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <ProjectsSection show={visible.has("galeria")} page={page} onNav={(p: any, hash?: string) => onNav(p as any, hash)} onOpenLightbox={(img) => setLightbox(img)} SmartImg={SmartImg} />
+
+        <section id="depoimentos" className={["py-24 bg-white", visible.has("depoimentos") ? "" : "hidden"].join(" ")}>
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-gold font-semibold uppercase tracking-widest text-sm">Clientes Reais</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">Quem Já Vive a <span className="text-gold">Experiência Douro</span></h2>
+              <p className="text-xl text-gray-600">Qualidade se mede no detalhe. E se sente no dia a dia.</p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8">
+              {ASSETS.depoimentos.map((d) => (
+                <div key={d.name} className="testimonial-card hover-lift">
+                  <div className="flex items-center gap-4 mb-4">
+                    <img src={d.photo} alt={`Foto de ${d.name}`} className="w-12 h-12 rounded-full object-cover ring-2 ring-[rgba(201,169,97,0.45)]" loading="lazy" />
+                    <div>
+                      <div className="font-bold text-gray-900">{d.name}</div>
+                      <div className="text-sm text-gray-500">{d.role}</div>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{d.text}</p>
+                  <div className="mt-5 flex gap-1 text-gold" aria-label="Avaliação 5 estrelas"><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <Suspense fallback={<section id="faq" className="py-16 bg-gray-50"><div className="container mx-auto px-4"><div className="rounded-2xl bg-white border border-gray-100 p-6 text-gray-600">Carregando dúvidas…</div></div></section>}>
+          <LazyFaqSection show={visible.has("faq")} variant={page === "duvidas" ? "page" : "home"} onNav={(p) => onNav(p as PageKey)} onHash={scrollOrRouteToHash} />
+        </Suspense>
+

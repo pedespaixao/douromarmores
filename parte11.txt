@@ -1,0 +1,301 @@
+
+  const granitoItems = useMemo(() => ASSETS.catalog.granitos || [], []);
+  const granitoBySlug = useMemo(() => {
+    const map = new Map<string, CatalogItem>();
+    for (const item of granitoItems) map.set(normalizeGranitoSlug(item.name), item);
+    return map;
+  }, [granitoItems]);
+  const currentGranitoItem = useMemo(() => granitoBySlug.get(granitoSlug) || null, [granitoBySlug, granitoSlug]);
+  const currentGranitoContent = useMemo(() => getGranitoMaterialCopy(currentGranitoItem), [currentGranitoItem]);
+
+  const marmoreItems = useMemo(() => ASSETS.catalog.marmores || [], []);
+  const marmoreBySlug = useMemo(() => {
+    const map = new Map<string, CatalogItem>();
+    for (const item of marmoreItems) map.set(normalizeMarmoreSlug(item.name), item);
+    return map;
+  }, [marmoreItems]);
+  const currentMarmoreItem = useMemo(() => marmoreBySlug.get(marmoreSlug) || null, [marmoreBySlug, marmoreSlug]);
+  const currentMarmoreContent = useMemo(() => getMarmoreMaterialCopy(currentMarmoreItem), [currentMarmoreItem]);
+
+  const silestoneItems = useMemo(() => (ASSETS.catalog.quartzo || []).filter((item) => item.name.toLowerCase().startsWith("silestone ")), []);
+  const silestoneBySlug = useMemo(() => {
+    const map = new Map<string, CatalogItem>();
+    for (const item of silestoneItems) map.set(normalizeSilestoneSlug(item.name), item);
+    return map;
+  }, [silestoneItems]);
+  const currentSilestoneItem = useMemo(() => silestoneBySlug.get(silestoneSlug) || null, [silestoneBySlug, silestoneSlug]);
+  const currentSilestoneContent = useMemo(() => getSilestoneMaterialCopy(currentSilestoneItem), [currentSilestoneItem]);
+
+  const quartzoStoneItems = useMemo(() => (ASSETS.catalog.quartzo || []).filter((item) => item.name.toLowerCase().startsWith("quartzo stone ")), []);
+  const quartzoStoneBySlug = useMemo(() => {
+    const map = new Map<string, CatalogItem>();
+    for (const item of quartzoStoneItems) map.set(normalizeQuartzoStoneSlug(item.name), item);
+    return map;
+  }, [quartzoStoneItems]);
+  const currentQuartzoStoneItem = useMemo(() => quartzoStoneBySlug.get(quartzoStoneSlug) || null, [quartzoStoneBySlug, quartzoStoneSlug]);
+  const currentQuartzoStoneContent = useMemo(() => getQuartzoStoneMaterialCopy(currentQuartzoStoneItem), [currentQuartzoStoneItem]);
+
+  const dektonItems = useMemo(() => ASSETS.catalog.dekton || [], []);
+  const dektonBySlug = useMemo(() => {
+    const map = new Map<string, CatalogItem>();
+    for (const item of dektonItems) map.set(normalizeDektonSlug(item.name), item);
+    return map;
+  }, [dektonItems]);
+  const currentDektonItem = useMemo(() => dektonBySlug.get(dektonSlug) || null, [dektonBySlug, dektonSlug]);
+  const currentDektonContent = useMemo(() => getDektonMaterialCopy(currentDektonItem), [currentDektonItem]);
+
+  const sinthItems = useMemo(() => ASSETS.catalog.sinth || [], []);
+  const sinthBySlug = useMemo(() => {
+    const map = new Map<string, CatalogItem>();
+    for (const item of sinthItems) map.set(normalizeSinthSlug(item.name), item);
+    return map;
+  }, [sinthItems]);
+  const currentSinthItem = useMemo(() => sinthBySlug.get(sinthSlug) || null, [sinthBySlug, sinthSlug]);
+  const currentSinthContent = useMemo(() => getSinthMaterialCopy(currentSinthItem), [currentSinthItem]);
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [produtosHubSeed, setProdutosHubSeed] = useState<number>(() => Date.now());
+  const [quartzoHubSeed, setQuartzoHubSeed] = useState<number>(() => Date.now());
+
+  const hash32 = (str: string) => {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  };
+
+  const mulberry32 = (a: number) => {
+    return () => {
+      let t = (a += 0x6d2b79f5);
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  };
+
+  const pickSeeded = (items: CatalogItem[], key: string, seed: number) => {
+    if (!items || items.length === 0) return null;
+    const rng = mulberry32((seed ^ hash32(key)) >>> 0);
+    const idx = Math.floor(rng() * items.length);
+    return items[Math.min(Math.max(idx, 0), items.length - 1)] || null;
+  };
+
+  const quartzitoSuggestions = useMemo(() => {
+    if (!currentQuartzitoItem) return [] as CatalogItem[];
+    const pool = quartzitoItems.filter((it) => normalizeQuartzitoSlug(it.name) !== normalizeQuartzitoSlug(currentQuartzitoItem.name));
+    const rng = mulberry32(hash32(`quartzito-suggestions:${normalizeQuartzitoSlug(currentQuartzitoItem.name)}`));
+    const items = [...pool];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    return items.slice(0, 6);
+  }, [currentQuartzitoItem, quartzitoItems]);
+
+  const granitoSuggestions = useMemo(() => {
+    if (!currentGranitoItem) return [] as CatalogItem[];
+    const pool = granitoItems.filter((it) => normalizeGranitoSlug(it.name) !== normalizeGranitoSlug(currentGranitoItem.name));
+    const rng = mulberry32(hash32(`granito-suggestions:${normalizeGranitoSlug(currentGranitoItem.name)}`));
+    const items = [...pool];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    return items.slice(0, 6);
+  }, [currentGranitoItem, granitoItems]);
+
+  const marmoreSuggestions = useMemo(() => {
+    if (!currentMarmoreItem) return [] as CatalogItem[];
+    const pool = marmoreItems.filter((it) => normalizeMarmoreSlug(it.name) !== normalizeMarmoreSlug(currentMarmoreItem.name));
+    const rng = mulberry32(hash32(`marmore-suggestions:${normalizeMarmoreSlug(currentMarmoreItem.name)}`));
+    const items = [...pool];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    return items.slice(0, 6);
+  }, [currentMarmoreItem, marmoreItems]);
+
+  const silestoneSuggestions = useMemo(() => {
+    if (!currentSilestoneItem) return [] as CatalogItem[];
+    const pool = silestoneItems.filter((it) => normalizeSilestoneSlug(it.name) !== normalizeSilestoneSlug(currentSilestoneItem.name));
+    const rng = mulberry32(hash32(`silestone-suggestions:${normalizeSilestoneSlug(currentSilestoneItem.name)}`));
+    const items = [...pool];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    return items.slice(0, 6);
+  }, [currentSilestoneItem, silestoneItems]);
+
+  const quartzoStoneSuggestions = useMemo(() => {
+    if (!currentQuartzoStoneItem) return [] as CatalogItem[];
+    const pool = quartzoStoneItems.filter((it) => normalizeQuartzoStoneSlug(it.name) !== normalizeQuartzoStoneSlug(currentQuartzoStoneItem.name));
+    const rng = mulberry32(hash32(`quartzo-stone-suggestions:${normalizeQuartzoStoneSlug(currentQuartzoStoneItem.name)}`));
+    const items = [...pool];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    return items.slice(0, 6);
+  }, [currentQuartzoStoneItem, quartzoStoneItems]);
+
+  const dektonSuggestions = useMemo(() => {
+    if (!currentDektonItem) return [] as CatalogItem[];
+    const pool = dektonItems.filter((it) => normalizeDektonSlug(it.name) !== normalizeDektonSlug(currentDektonItem.name));
+    const rng = mulberry32(hash32(`dekton-suggestions:${normalizeDektonSlug(currentDektonItem.name)}`));
+    const items = [...pool];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    return items.slice(0, 6);
+  }, [currentDektonItem, dektonItems]);
+
+  const sinthSuggestions = useMemo(() => {
+    if (!currentSinthItem) return [] as CatalogItem[];
+    const pool = sinthItems.filter((it) => normalizeSinthSlug(it.name) !== normalizeSinthSlug(currentSinthItem.name));
+    const rng = mulberry32(hash32(`sinth-suggestions:${normalizeSinthSlug(currentSinthItem.name)}`));
+    const items = [...pool];
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    return items.slice(0, 6);
+  }, [currentSinthItem, sinthItems]);
+
+  const produtosHubCards = useMemo(() => {
+    const mk = (cfg: { p: PageKey; label: string; desc: string; items: CatalogItem[]; fallback: string; key: string }) => {
+      const it = pickSeeded(cfg.items || [], cfg.key, produtosHubSeed);
+      const img = it?.sample || it?.applied || cfg.fallback;
+      const fallbackSrcs = Array.from(new Set([it?.sample, it?.applied, cfg.fallback].filter(Boolean) as string[]));
+      return { p: cfg.p, label: cfg.label, desc: cfg.desc, img, fallbackSrcs };
+    };
+
+    const laminasAll = [...(ASSETS.catalog.dekton || []), ...(ASSETS.catalog.neolith || []), ...(ASSETS.catalog.sinth || [])];
+
+    return [
+      mk({ p: "marmores", label: "Mármores", desc: "Veios marcantes e elegância clássica", items: ASSETS.catalog.marmores || [], fallback: ASSETS.produtosHub.marmores, key: "marmores" }),
+      mk({ p: "granitos", label: "Granitos", desc: "Alta resistência para uso intenso", items: ASSETS.catalog.granitos || [], fallback: ASSETS.produtosHub.granitos, key: "granitos" }),
+      mk({ p: "quartzitos", label: "Quartzitos", desc: "Beleza natural + resistência superior", items: ASSETS.catalog.quartzitos || [], fallback: ASSETS.produtosHub.quartzitos, key: "quartzitos" }),
+      mk({ p: "quartzo", label: "Quartzo", desc: "Visual uniforme + praticidade", items: ASSETS.catalog.quartzo || [], fallback: ASSETS.produtosHub.quartzo, key: "quartzo" }),
+      mk({ p: "limestone", label: "Limestone", desc: "Tons quentes e textura sofisticada", items: ASSETS.catalog.limestone || [], fallback: ASSETS.produtosHub.limestone, key: "limestone" }),
+      mk({ p: "onix", label: "Ônix", desc: "Efeito translúcido e impacto máximo", items: ASSETS.catalog.onix || [], fallback: ASSETS.produtosHub.onix, key: "onix" }),
+      mk({ p: "laminas", label: "Lâminas", desc: "Dekton • Neolith • Sinth", items: laminasAll, fallback: ASSETS.laminasHub.dekton, key: "laminas" }),
+      mk({ p: "aglostone", label: "Prime Stone", desc: "Composto de mármore (não recomendado para cozinha)", items: ASSETS.catalog.aglostone || [], fallback: ASSETS.produtosHub.aglostone, key: "aglostone" }),
+    ];
+  }, [produtosHubSeed]);
+
+  const quartzitosDecorTips = useMemo(
+    () => [
+      "Em cozinhas pequenas, quartzitos claros (Taj Mahal, Mont Blanc) ampliam a luz e deixam o ambiente mais ‘caro’ sem pesar.",
+      "Quer um resultado premium? Combine quartzito com iluminação quente (2700–3000K) e marcenaria em tons naturais. O veio vira protagonista com elegância.",
+      "Quartzitos verdes (Pantanal, Bamboo, Emerald) ficam impecáveis com metais escovados (inox, champagne) e madeira nogueira/carvalho.",
+      "Para bancadas longas, o segredo não é só a pedra: é a paginação do veio + emendas planejadas. É isso que faz parecer peça única.",
+      "Se você quer ‘design de revista’ com rotina real, prefira quartzito ao mármore na cozinha: estética orgânica com muito mais resistência.",
+      "Acabamento acetinado/leather é lindo e esconde marcas, mas pede impermeabilização bem feita e limpeza suave (detergente neutro).",
+      "Quartzitos escuros (Negresco, Wakanda Black) ficam mais sofisticados quando a cozinha tem boa luz: pendentes e fitas de LED fazem a pedra ‘acender’.",
+      "Em ilha gourmet, uma borda mais robusta (meia‑esquadria 45º) muda o nível do projeto na primeira olhada.",
+    ] as const,
+    []
+  );
+  const quartzitosTipStorageKey = "douro_quartzitos_tip_idx";
+  const [quartzitosDecorTipIdx, setQuartzitosDecorTipIdx] = useState(0);
+  const quartzitosDecorTip = quartzitosDecorTips[quartzitosDecorTipIdx] || quartzitosDecorTips[0] || "";
+  const advanceQuartzitosTip = () => {
+    const len = quartzitosDecorTips.length;
+    if (!len) return;
+    setQuartzitosDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(quartzitosTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
+  const limestoneDecorTips = useMemo(
+    () => [
+      "Limestone traz um visual orgânico e acolhedor. Fica perfeito com madeira clara, palhinha e iluminação quente.",
+      "Para áreas molhadas, combine com impermeabilização bem feita e limpeza suave (detergente neutro).",
+      "Em projetos contemporâneos, limestone em acabamento acetinado/levigado deixa o ambiente mais elegante e ‘silencioso’.",
+      "Tons bege e creme ficam mais ‘premium’ com metais champagne/inox escovado; tons azulados pedem paleta mais neutra para destacar a pedra.",
+      "O segredo do limestone é a composição: ele funciona melhor quando o resto do ambiente deixa a textura aparecer (pouco contraste, boa luz).",
+    ] as const,
+    []
+  );
+  const limestoneTipStorageKey = "douro_limestone_tip_idx";
+  const [limestoneDecorTipIdx, setLimestoneDecorTipIdx] = useState(0);
+  const limestoneDecorTip = limestoneDecorTips[limestoneDecorTipIdx] || limestoneDecorTips[0] || "";
+  const advanceLimestoneTip = () => {
+    const len = limestoneDecorTips.length;
+    if (!len) return;
+    setLimestoneDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(limestoneTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
+  const onixDecorTips = useMemo(
+    () => [
+      "Ônix fica ‘absurdo’ com backlight (iluminação por trás). Use em painéis, bares e lavabos para criar efeito de joia.",
+      "Para um resultado de alto padrão, planeje o painel com paginação (desenho do veio) e iluminação quente (2700–3000K).",
+      "Ônix é protagonista: combine com marcenaria mais neutra e metais escovados para não ‘brigar’ com o desenho.",
+      "Em áreas molhadas, o que define durabilidade é selagem/impermeabilização + uso correto (limpeza suave, sem ácido).",
+      "Quer um visual mais contemporâneo? Ônix branco/estriado com linhas retas e cortes limpos dá efeito minimalista premium.",
+    ] as const,
+    []
+  );
+  const onixTipStorageKey = "douro_onix_tip_idx";
+  const [onixDecorTipIdx, setOnixDecorTipIdx] = useState(0);
+  const onixDecorTip = onixDecorTips[onixDecorTipIdx] || onixDecorTips[0] || "";
+  const advanceOnixTip = () => {
+    const len = onixDecorTips.length;
+    if (!len) return;
+    setOnixDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(onixTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
+  const silestoneDecorTips = useMemo(
+    () => [
+      "Em cozinha com luz fria, tons quentes (como Bronze Rivers) ficam mais elegantes. Em luz quente, brancos marmorizados ganham profundidade sem “estourar” o ambiente.",
+      "Para ilha gourmet, o que muda o nível do quartzo não é só a cor: é borda bem planejada + recorte limpo + paginação (mesmo em material uniforme).",
+      "Quartzo é perfeito para rotina, mas respeite o calor: use apoio para panela muito quente — isso mantém a peça bonita por anos.",
+      "Quer um visual mais ‘caro’? Combine Silestone claro com metais escovados (inox/champagne) e marcenaria em madeira natural. O contraste faz a bancada ‘assinar’ o ambiente.",
+      "Antes de escolher uma cor, pense em 3 coisas: luz (quente/fria), marcenaria (clara/escura) e nível de manutenção que você quer (brancos mostram mais migalhas; tons médios são campeões de praticidade).",
+    ] as const,
+    []
+  );
+  const silestoneTipStorageKey = "douro_silestone_tip_idx";
+  const [silestoneDecorTipIdx, setSilestoneDecorTipIdx] = useState(0);
+  const silestoneDecorTip = silestoneDecorTips[silestoneDecorTipIdx] || silestoneDecorTips[0] || "";
+  const advanceSilestoneTip = () => {
+    const len = silestoneDecorTips.length;
+    if (!len) return;
+    setSilestoneDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(silestoneTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });

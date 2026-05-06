@@ -1,0 +1,196 @@
+};
+
+  const quartzoStoneDecorTips = useMemo(
+    () => [
+      "Quartzo é ideal para rotina: baixa porosidade e visual uniforme. Para manter perfeito, respeite o calor: use apoio para panela muito quente.",
+      "Tons médios (cinzas e beges) são campeões de praticidade no dia a dia: disfarçam migalhas e marcas mais do que brancos puros.",
+      "Quer um resultado mais premium? Combine quartzo com meia‑esquadria 45º, recortes limpos e uma paginação alinhada com marcenaria e metais.",
+      "Em cozinhas com luz fria, tons mais quentes (fendi, bege) ficam mais elegantes. Em luz quente, brancos marmorizados ganham profundidade.",
+      "Para uma ilha protagonista, escolha uma cor com textura (Stellar/Snowflakes) e use iluminação quente para a bancada ‘acender’.",
+    ] as const,
+    []
+  );
+  const quartzoStoneTipStorageKey = "douro_quartzostone_tip_idx";
+  const [quartzoStoneDecorTipIdx, setQuartzoStoneDecorTipIdx] = useState(0);
+  const quartzoStoneDecorTip = quartzoStoneDecorTips[quartzoStoneDecorTipIdx] || quartzoStoneDecorTips[0] || "";
+  const advanceQuartzoStoneTip = () => {
+    const len = quartzoStoneDecorTips.length;
+    if (!len) return;
+    setQuartzoStoneDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(quartzoStoneTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
+  const primeStoneDecorTips = useMemo(
+    () => [
+      "Prime Stone é um composto de mármore: visual uniforme e acabamento consistente — excelente para ambientes internos de menor agressão.",
+      "Não recomendamos Prime Stone para cozinha/área gourmet: ácidos (limão/vinagre), gordura e rotina intensa tendem a marcar/atacar com o tempo.",
+      "Onde funciona melhor: lavabos, banheiros (uso controlado), painéis e tampos decorativos em áreas secas.",
+      "Quer estética clara e rotina tranquila na cozinha? Prefira quartzo de engenharia (Silestone/Quartzo Stone), quartzito ou sinterizados (Dekton/Neolith).",
+      "Se a escolha for Prime Stone, a beleza depende do uso correto: limpeza suave e proteção contra químicos/agressões.",
+    ] as const,
+    []
+  );
+  const primeStoneTipStorageKey = "douro_primestone_tip_idx";
+  const [primeStoneDecorTipIdx, setPrimeStoneDecorTipIdx] = useState(0);
+  const primeStoneDecorTip = primeStoneDecorTips[primeStoneDecorTipIdx] || primeStoneDecorTips[0] || "";
+  const advancePrimeStoneTip = () => {
+    const len = primeStoneDecorTips.length;
+    if (!len) return;
+    setPrimeStoneDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(primeStoneTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
+  const granitosDecorTips = useMemo(
+    () => [
+      "Granito é a escolha do dia a dia: quando você quer cozinhar de verdade sem medo de mancha, risco bobo ou manutenção chata.",
+      "Granitos escuros (São Gabriel, Via Láctea, Preto Absoluto) ficam impecáveis com metais pretos ou inox e marcenaria amadeirada — visual contemporâneo e fácil de manter.",
+      "Granitos claros (Itaúnas, Dallas, Fortaleza) iluminam a cozinha e combinam com portas em laca/off-white. O segredo é impermeabilização bem feita e limpeza simples.",
+      "Para um acabamento ‘de revista’, o que muda tudo é borda em meia‑esquadria 45º + emenda planejada. Granito pode ser extremamente premium.",
+      "Quer esconder migalhas e poeira do dia a dia? Tons médios e mesclados (Santa Cecília, Capão Bonito, Siena) são campeões de praticidade.",
+      "Em área gourmet/churrasqueira, granito é excelente: aguenta rotina intensa e tem ótimo custo-benefício frente a algumas superfícies tecnológicas.",
+    ] as const,
+    []
+  );
+  const granitosTipStorageKey = "douro_granitos_tip_idx";
+  const [granitosDecorTipIdx, setGranitosDecorTipIdx] = useState(0);
+  const granitosDecorTip = granitosDecorTips[granitosDecorTipIdx] || granitosDecorTips[0] || "";
+  const advanceGranitosTip = () => {
+    const len = granitosDecorTips.length;
+    if (!len) return;
+    setGranitosDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(granitosTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
+  const marmoresDecorTips = useMemo(
+    () => ["Mármore é para quem quer sensação de hotel boutique: use em lavatórios e painéis.", "O segredo do mármore não é só a chapa: é a paginação do veio."] as const,
+    []
+  );
+  const marmoresTipStorageKey = "douro_marmores_tip_idx";
+  const [marmoresDecorTipIdx, setMarmoresDecorTipIdx] = useState(0);
+  const marmoresDecorTip = marmoresDecorTips[marmoresDecorTipIdx] || marmoresDecorTips[0] || "";
+  const advanceMarmoresTip = () => {
+    const len = marmoresDecorTips.length;
+    if (!len) return;
+    setMarmoresDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(marmoresTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
+  const dektonDecorTips = useMemo(
+    () => [
+      "Dekton é perfeito para quem quer bancada bonita e ‘sem medo’: baixa porosidade, ótima resistência ao calor e excelente performance no dia a dia.",
+      "Sinterizado é forte, mas borda pode lascar por impacto. Se a sua rotina é intensa, planeje quinas com raio e evite bater panela na quina.",
+      "Para um visual premium, combine Dekton claro com metais escovados e iluminação quente. A superfície ‘acende’ e deixa o ambiente mais sofisticado.",
+      "Vai usar em área externa? Sinterizados costumam performar muito bem em UV e variações de clima — ótimo para gourmet e fachada (conforme especificação).",
+      "Escolha o acabamento pensando na limpeza: foscos e texturizados são lindos, mas pedem pano macio e detergente neutro (sem abrasivo).",
+      "Em ilha grande, o que muda o resultado não é só a cor: é paginação + recortes + instalação nivelada. É isso que faz parecer peça única.",
+    ] as const,
+    []
+  );
+  const dektonTipStorageKey = "douro_dekton_tip_idx";
+  const [dektonDecorTipIdx, setDektonDecorTipIdx] = useState(0);
+  const dektonDecorTip = dektonDecorTips[dektonDecorTipIdx] || dektonDecorTips[0] || "";
+  const advanceDektonTip = () => {
+    const len = dektonDecorTips.length;
+    if (!len) return;
+    setDektonDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(dektonTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
+  const sinthDecorTips = useMemo(() => ["Sinth é ideal para quem quer visual contemporâneo com praticidade.", "Acabamentos foscos são discretos; polidos dão ‘efeito joia’."] as const, []);
+  const sinthTipStorageKey = "douro_sinth_tip_idx";
+  const [sinthDecorTipIdx, setSinthDecorTipIdx] = useState(0);
+  const sinthDecorTip = sinthDecorTips[sinthDecorTipIdx] || sinthDecorTips[0] || "";
+  const advanceSinthTip = () => {
+    const len = sinthDecorTips.length;
+    if (!len) return;
+    setSinthDecorTipIdx((prev) => {
+      const next = (prev + 1) % len;
+      try {
+        localStorage.setItem(sinthTipStorageKey, String(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+  };
+
+  const prevPageRef = useRef<PageKey | null>(null);
+  useEffect(() => {
+    const prev = prevPageRef.current;
+    prevPageRef.current = page;
+
+    const isQuartzitos = page === "quartzitos" || page === "quartzitos-2" || page === "quartzitos-3";
+    const wasQuartzitos = prev === "quartzitos" || prev === "quartzitos-2" || prev === "quartzitos-3";
+    const isGranitos = page === "granitos" || page === "granitos-2" || page === "granitos-3";
+    const wasGranitos = prev === "granitos" || prev === "granitos-2" || prev === "granitos-3";
+    const isMarmores = page === "marmores" || page === "marmores-2" || page === "marmores-3";
+    const wasMarmores = prev === "marmores" || prev === "marmores-2" || prev === "marmores-3";
+    const isSilestone = page === "silestone" || page === "silestone-2" || page === "silestone-3";
+    const wasSilestone = prev === "silestone" || prev === "silestone-2" || prev === "silestone-3";
+    const isDekton = page === "dekton" || page === "dekton-2" || page === "dekton-3";
+    const wasDekton = prev === "dekton" || prev === "dekton-2" || prev === "dekton-3";
+    const isSinth = page === "sinth" || page === "sinth-2" || page === "sinth-3";
+    const wasSinth = prev === "sinth" || prev === "sinth-2" || prev === "sinth-3";
+    const isOnix = page === "onix" || page === "onix-2";
+    const wasOnix = prev === "onix" || prev === "onix-2";
+    const isLimestone = page === "limestone" || page === "limestone-2" || page === "limestone-3";
+    const wasLimestone = prev === "limestone" || prev === "limestone-2" || prev === "limestone-3";
+    const isProdutos = page === "produtos";
+    const wasProdutos = prev === "produtos";
+    const isQuartzoHub = page === "quartzo";
+    const wasQuartzoHub = prev === "quartzo";
+    const isQuartzoStone = page === "quartzo-stone" || page === "quartzo-stone-2" || page === "quartzo-stone-3";
+    const wasQuartzoStone = prev === "quartzo-stone" || prev === "quartzo-stone-2" || prev === "quartzo-stone-3";
+    const isPrimeStone = page === "aglostone" || page === "aglostone-2" || page === "aglostone-3";
+    const wasPrimeStone = prev === "aglostone" || prev === "aglostone-2" || prev === "aglostone-3";
+
+    if (isProdutos && !wasProdutos) setProdutosHubSeed(Date.now());
+    if (isQuartzoHub && !wasQuartzoHub) setQuartzoHubSeed(Date.now());
+
+    const rotate = (key: string, len: number, setter: (idx: number) => void) => {
+      if (!len) return;
+      try {
+        const raw = localStorage.getItem(key);
+        const last = raw ? Number.parseInt(raw, 10) : -1;
+        const lastSafe = Number.isFinite(last) ? last : -1;
+        const next = (lastSafe + 1) % len;
+        localStorage.setItem(key, String(next));
+        setter(next);
+      } catch {
+        setter(0);
+      }

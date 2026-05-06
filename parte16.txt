@@ -1,0 +1,309 @@
+
+    document.title = currentTitle;
+
+    upsertMeta('meta[name="description"]', { name: "description", content: currentDescription });
+    upsertMeta('meta[name="keywords"]', { name: "keywords", content: seoKeywords.join(", ") });
+    upsertLinkRel("canonical", canonicalUrl);
+    upsertMeta('meta[name="robots"]', { name: "robots", content: page === "logo" ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" });
+    upsertMeta('meta[name="author"]', { name: "author", content: siteName });
+    upsertMeta('meta[name="application-name"]', { name: "application-name", content: siteName });
+
+    upsertMeta('meta[property="og:site_name"]', { property: "og:site_name", content: siteName });
+    upsertMeta('meta[property="og:locale"]', { property: "og:locale", content: "pt_BR" });
+    upsertMeta('meta[property="og:title"]', { property: "og:title", content: currentTitle });
+    upsertMeta('meta[property="og:description"]', { property: "og:description", content: currentDescription });
+    upsertMeta('meta[property="og:type"]', { property: "og:type", content: "website" });
+    upsertMeta('meta[property="og:url"]', { property: "og:url", content: canonicalUrl });
+    upsertMeta('meta[property="og:image"]', { property: "og:image", content: ogImage });
+
+    upsertMeta('meta[name="twitter:card"]', { name: "twitter:card", content: "summary_large_image" });
+    upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: currentTitle });
+    upsertMeta('meta[name="twitter:description"]', { name: "twitter:description", content: currentDescription });
+    upsertMeta('meta[name="twitter:image"]', { name: "twitter:image", content: ogImage });
+    upsertMeta('meta[name="twitter:image:alt"]', { name: "twitter:image:alt", content: currentTitle });
+
+    const pageJsonLd = {
+      "@context": "https://schema.org",
+      "@type": page === "produtos" || page === "projetos" ? "CollectionPage" : page === "contato" ? "ContactPage" : "WebPage",
+      name: currentTitle,
+      url: canonicalUrl,
+      description: currentDescription,
+      isPartOf: {
+        "@type": "WebSite",
+        name: siteName,
+        url: siteUrl,
+      },
+    };
+
+    const breadcrumbJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: currentTitle.replace(" | Douro Mármores", ""), item: canonicalUrl },
+      ],
+    };
+
+    const websiteJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: siteName,
+      url: siteUrl,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${siteUrl}?p=produtos&q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    };
+
+    const serviceJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: siteName,
+      url: siteUrl,
+      image: ogImage,
+      telephone: "+55 11 92321-0038",
+      areaServed: seoAreas,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Rua Paulo Guilguer Reimberg, 3311",
+        addressLocality: "São Paulo",
+        addressRegion: "SP",
+        addressCountry: "BR",
+      },
+      serviceType: [
+        "Marmoraria em São Paulo",
+        "Bancadas em mármore e granito",
+        "Bancadas em quartzito",
+        "Bancadas em quartzo e Silestone",
+        "Bancadas em Dekton",
+        "Escadas em pedra",
+        "Lavatórios e cubas esculpidas",
+        "Painéis em mármore e quartzito",
+        "Projetos sob medida para cozinhas, banheiros e áreas gourmet",
+      ],
+      knowsAbout: seoKeywords,
+      description: currentDescription,
+    };
+
+    const faqJsonLd =
+      page === "duvidas"
+        ? {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQ_DATA.slice(0, 100).map((item: (typeof FAQ_DATA)[number]) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answerHtml.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim(),
+              },
+            })),
+          }
+        : null;
+
+    const quartzitoMaterialJsonLd =
+      page === "quartzito-material" && currentQuartzitoItem
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: currentQuartzitoItem.name,
+            image: [currentQuartzitoItem.applied, currentQuartzitoItem.sample].filter(Boolean),
+            description: currentDescription,
+            category: "Quartzito",
+            material: "Quartzito natural",
+            brand: {
+              "@type": "Brand",
+              name: siteName,
+            },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "BRL",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+          }
+        : null;
+
+    const granitoMaterialJsonLd =
+      page === "granito-material" && currentGranitoItem
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: currentGranitoItem.name,
+            image: [currentGranitoItem.applied, currentGranitoItem.sample].filter(Boolean),
+            description: currentDescription,
+            category: "Granito",
+            material: "Granito natural",
+            brand: {
+              "@type": "Brand",
+              name: siteName,
+            },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "BRL",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+          }
+        : null;
+
+    const marmoreMaterialJsonLd =
+      page === "marmore-material" && currentMarmoreItem
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: currentMarmoreItem.name,
+            image: [currentMarmoreItem.applied, currentMarmoreItem.sample].filter(Boolean),
+            description: currentDescription,
+            category: "Mármore",
+            material: "Mármore natural",
+            brand: {
+              "@type": "Brand",
+              name: siteName,
+            },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "BRL",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+          }
+        : null;
+
+    const silestoneMaterialJsonLd =
+      page === "silestone-material" && currentSilestoneItem
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: currentSilestoneItem.name,
+            image: [currentSilestoneItem.applied, currentSilestoneItem.sample].filter(Boolean),
+            description: currentDescription,
+            category: "Silestone",
+            material: "Quartzo de engenharia",
+            brand: {
+              "@type": "Brand",
+              name: siteName,
+            },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "BRL",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+          }
+        : null;
+
+    const quartzoStoneMaterialJsonLd =
+      page === "quartzo-stone-material" && currentQuartzoStoneItem
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: currentQuartzoStoneItem.name,
+            image: [currentQuartzoStoneItem.applied, currentQuartzoStoneItem.sample].filter(Boolean),
+            description: currentDescription,
+            category: "Quartzo Stone",
+            material: "Quartzo de engenharia",
+            brand: {
+              "@type": "Brand",
+              name: siteName,
+            },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "BRL",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+          }
+        : null;
+
+    const dektonMaterialJsonLd =
+      page === "dekton-material" && currentDektonItem
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: currentDektonItem.name,
+            image: [currentDektonItem.applied, currentDektonItem.sample].filter(Boolean),
+            description: currentDescription,
+            category: "Dekton",
+            material: "Superfície sinterizada",
+            brand: {
+              "@type": "Brand",
+              name: siteName,
+            },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "BRL",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+          }
+        : null;
+
+    const sinthMaterialJsonLd =
+      page === "sinth-material" && currentSinthItem
+        ? {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: currentSinthItem.name,
+            image: [currentSinthItem.applied, currentSinthItem.sample].filter(Boolean),
+            description: currentDescription,
+            category: "Sinth",
+            material: "Superfície sinterizada",
+            brand: {
+              "@type": "Brand",
+              name: siteName,
+            },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "BRL",
+              availability: "https://schema.org/InStock",
+              url: canonicalUrl,
+            },
+          }
+        : null;
+
+    upsertJsonLd("douro-dynamic-seo-jsonld", pageJsonLd);
+    upsertJsonLd("douro-breadcrumb-jsonld", breadcrumbJsonLd);
+    upsertJsonLd("douro-website-jsonld", websiteJsonLd);
+    upsertJsonLd("douro-service-jsonld", serviceJsonLd);
+    if (faqJsonLd) upsertJsonLd("douro-faq-jsonld", faqJsonLd);
+    else {
+      const faqNode = document.getElementById("douro-faq-jsonld");
+      if (faqNode) faqNode.remove();
+    }
+    if (quartzitoMaterialJsonLd) upsertJsonLd("douro-quartzito-material-jsonld", quartzitoMaterialJsonLd);
+    else {
+      const quartzitoNode = document.getElementById("douro-quartzito-material-jsonld");
+      if (quartzitoNode) quartzitoNode.remove();
+    }
+    if (granitoMaterialJsonLd) upsertJsonLd("douro-granito-material-jsonld", granitoMaterialJsonLd);
+    else {
+      const granitoNode = document.getElementById("douro-granito-material-jsonld");
+      if (granitoNode) granitoNode.remove();
+    }
+    if (marmoreMaterialJsonLd) upsertJsonLd("douro-marmore-material-jsonld", marmoreMaterialJsonLd);
+    else {
+      const marmoreNode = document.getElementById("douro-marmore-material-jsonld");
+      if (marmoreNode) marmoreNode.remove();
+    }
+    if (silestoneMaterialJsonLd) upsertJsonLd("douro-silestone-material-jsonld", silestoneMaterialJsonLd);
+    else {
+      const silestoneNode = document.getElementById("douro-silestone-material-jsonld");
+      if (silestoneNode) silestoneNode.remove();
+    }
+    if (quartzoStoneMaterialJsonLd) upsertJsonLd("douro-quartzo-stone-material-jsonld", quartzoStoneMaterialJsonLd);
+    else {
+      const quartzoStoneNode = document.getElementById("douro-quartzo-stone-material-jsonld");
+      if (quartzoStoneNode) quartzoStoneNode.remove();
+    }
+    if (dektonMaterialJsonLd) upsertJsonLd("douro-dekton-material-jsonld", dektonMaterialJsonLd);
+    else {
+      const dektonNode = document.getElementById("douro-dekton-material-jsonld");
+      if (dektonNode) dektonNode.remove();
+    }
+    if (sinthMaterialJsonLd) upsertJsonLd("douro-sinth-material-jsonld", sinthMaterialJsonLd);
+    else {
+      const sinthNode = document.getElementById("douro-sinth-material-jsonld");
+      if (sinthNode) sinthNode.remove();
+    }

@@ -1,0 +1,281 @@
+  "marmoraria-veleiros": {
+              title: "Marmoraria em Veleiros",
+              intro:
+                "Atendemos Veleiros com soluções em bancadas, escadas, lavatórios, nichos, painéis e áreas gourmet em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos sob medida para casas e apartamentos",
+                "Acabamento premium e instalação cuidadosa",
+                "Atendimento em Veleiros, Socorro e Interlagos",
+              ],
+              cta: "Solicitar orçamento em Veleiros",
+            },
+            "marmoraria-vila-cordeiro": {
+              title: "Marmoraria na Vila Cordeiro",
+              intro:
+                "Atendemos a Vila Cordeiro com bancadas, lavatórios, áreas gourmet, painéis e projetos sob medida em pedras naturais e superfícies premium para ambientes residenciais e corporativos.",
+              bullets: [
+                "Projetos para cozinhas, lavabos, banheiros e espaços gourmet",
+                "Granito, quartzo, quartzito, mármore e Dekton",
+                "Atendimento na Vila Cordeiro, Brooklin e Chácara Santo Antônio",
+              ],
+              cta: "Solicitar orçamento na Vila Cordeiro",
+            },
+            "marmoraria-vila-cruzeiro": {
+              title: "Marmoraria na Vila Cruzeiro",
+              intro:
+                "Para quem busca marmoraria na Vila Cruzeiro, atendemos bancadas, lavatórios, painéis, cozinhas, banheiros e áreas gourmet com produção sob medida e acabamento premium.",
+              bullets: [
+                "Projetos residenciais sob medida em pedra natural e superfícies premium",
+                "Medição, corte, acabamento e instalação técnica",
+                "Atendimento na Vila Cruzeiro e Zona Sul de São Paulo",
+              ],
+              cta: "Solicitar orçamento na Vila Cruzeiro",
+            },
+            "marmoraria-jardim-guedala": {
+              title: "Marmoraria no Jardim Guedala",
+              intro:
+                "Atendemos o Jardim Guedala com projetos de alto padrão em bancadas, escadas, lavatórios, áreas gourmet, lareiras e painéis em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos premium para residências sofisticadas",
+                "Paginação, meia-esquadria e acabamento de alto padrão",
+                "Atendimento no Jardim Guedala, Morumbi e Vila Sônia",
+              ],
+              cta: "Solicitar orçamento no Jardim Guedala",
+            },
+            "marmoraria-vila-gumercindo": {
+              title: "Marmoraria na Vila Gumercindo",
+              intro:
+                "Atendemos a Vila Gumercindo com bancadas, cozinhas, banheiros, lavabos, escadas e projetos especiais em pedra natural e superfícies premium sob medida.",
+              bullets: [
+                "Bancadas e lavatórios sob medida",
+                "Projetos em granito, mármore, quartzo e quartzito",
+                "Atendimento na Vila Gumercindo, Mirandópolis e Saúde",
+              ],
+              cta: "Solicitar orçamento na Vila Gumercindo",
+            },
+            "bancada-porcelanato-sao-paulo": {
+              title: "Bancada em Porcelanato em São Paulo",
+              intro:
+                "Executamos bancadas em porcelanato em São Paulo para cozinhas, banheiros e áreas gourmet com grandes formatos, acabamento contemporâneo e produção sob medida.",
+              bullets: [
+                "Bancadas em porcelanato para cozinha, banheiro e lavabo",
+                "Grandes formatos com acabamento limpo e atual",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar bancada em porcelanato",
+            },
+            "bancada-area-gourmet-sao-paulo": {
+              title: "Bancada para Área Gourmet em São Paulo",
+              intro:
+                "Produzimos bancadas para área gourmet em São Paulo em granito, quartzito, quartzo e superfícies sinterizadas para projetos sofisticados e resistentes ao uso intenso.",
+              bullets: [
+                "Granito, quartzito, quartzo e Dekton para área gourmet",
+                "Bancadas sob medida para churrasqueiras e espaços externos",
+                "Acabamento premium e instalação técnica",
+              ],
+              cta: "Solicitar bancada para área gourmet",
+            },
+            "lavatorio-marmore-sao-paulo": {
+              title: "Lavatório em Mármore em São Paulo",
+              intro:
+                "Criamos lavatórios em mármore em São Paulo para lavabos e banheiros sob medida com desenho elegante, acabamento premium e integração perfeita com o ambiente.",
+              bullets: [
+                "Lavatórios em mármore para lavabos e banheiros",
+                "Projetos sob medida com cuba esculpida ou tampo personalizado",
+                "Atendimento em São Paulo e Grande São Paulo",
+              ],
+              cta: "Solicitar lavatório em mármore",
+            },
+            "bancada-lavabo-sao-paulo": {
+              title: "Bancada para Lavabo em São Paulo",
+              intro:
+                "Desenvolvemos bancadas para lavabo em São Paulo em mármore, ônix, quartzo, quartzito e granito para projetos sofisticados com acabamento sob medida.",
+              bullets: [
+                "Bancadas de lavabo em pedra natural e superfícies premium",
+                "Cuba esculpida, nichos e composição para ambientes elegantes",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar bancada para lavabo",
+            },
+            "soleira-peitoril-sao-paulo": {
+              title: "Soleiras e Peitoris em São Paulo",
+              intro:
+                "Executamos soleiras e peitoris em São Paulo em granito, mármore e outras pedras naturais com corte sob medida, acabamento premium e instalação precisa.",
+              bullets: [
+                "Soleiras e peitoris em granito e mármore",
+                "Acabamentos para portas, janelas e transições de piso",
+                "Atendimento residencial e comercial em São Paulo",
+              ],
+              cta: "Solicitar soleiras e peitoris",
+            },
+            "mesa-pedra-sao-paulo": {
+              title: "Mesa em Pedra em São Paulo",
+              intro:
+                "Produzimos mesas em pedra em São Paulo com tampos sob medida em mármore, granito, quartzito e superfícies premium para ambientes residenciais e corporativos.",
+              bullets: [
+                "Tampos em pedra sob medida para mesas de jantar, centro e apoio",
+                "Mármore, granito, quartzito e outras superfícies premium",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar mesa em pedra",
+            },
+            "nicho-marmore-sao-paulo": {
+              title: "Nicho em Mármore em São Paulo",
+              intro:
+                "Criamos nichos em mármore em São Paulo para banheiros, lavabos e ambientes sofisticados com acabamento limpo, paginação e produção sob medida.",
+              bullets: [
+                "Nichos em mármore para banheiros e lavabos",
+                "Projeto sob medida com acabamento premium",
+                "Atendimento em São Paulo e Grande São Paulo",
+              ],
+              cta: "Solicitar nicho em mármore",
+            },
+            "pia-esculpida-sao-paulo": {
+              title: "Pia Esculpida em São Paulo",
+              intro:
+                "Executamos pias esculpidas em São Paulo para lavabos e banheiros com escoamento correto, desenho sob medida e acabamento premium em mármore, quartzito e outras superfícies.",
+              bullets: [
+                "Pias esculpidas para lavabos e banheiros sob medida",
+                "Design personalizado com foco em funcionalidade e estética",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar pia esculpida",
+            },
+            "bancada-ilha-cozinha-sao-paulo": {
+              title: "Bancada para Ilha de Cozinha em São Paulo",
+              intro:
+                "Produzimos bancadas para ilha de cozinha em São Paulo em quartzito, granito, quartzo, Dekton e outras superfícies premium para projetos contemporâneos e sofisticados.",
+              bullets: [
+                "Ilhas de cozinha sob medida com acabamento premium",
+                "Quartzo, quartzito, granito, mármore e superfícies sinterizadas",
+                "Atendimento em São Paulo e Grande São Paulo",
+              ],
+              cta: "Solicitar bancada para ilha de cozinha",
+            },
+            "pedra-para-cozinha-sao-paulo": {
+              title: "Pedra para Cozinha em São Paulo",
+              intro:
+                "Ajudamos você a escolher a melhor pedra para cozinha em São Paulo entre granito, quartzito, quartzo, mármore e superfícies sinterizadas conforme uso, rotina e estética desejada.",
+              bullets: [
+                "Orientação técnica para escolher a pedra ideal",
+                "Comparação entre granito, quartzo, quartzito, mármore e Dekton",
+                "Atendimento com produção e instalação sob medida",
+              ],
+              cta: "Quero ajuda para escolher a pedra da cozinha",
+            },
+            "marmoraria-perto-de-mim-sao-paulo": {
+              title: "Marmoraria Perto de Mim em São Paulo",
+              intro:
+                "Se você procura marmoraria perto de mim em São Paulo, a Douro Mármores atende a Zona Sul, bairros nobres e a Grande São Paulo com projetos sob medida em pedra natural e superfícies premium.",
+              bullets: [
+                "Atendimento próximo em bairros estratégicos da capital",
+                "Bancadas, lavatórios, escadas, painéis e áreas gourmet",
+                "Medição, produção e instalação com acabamento premium",
+              ],
+              cta: "Solicitar orçamento agora",
+            },
+          };
+
+          const seoLanding = seoLandingMap[page];
+          if (!seoLanding) return null;
+
+          const relatedSeoLinks: Array<{ p: PageKey; label: string }> =
+            page === "marmoraria-sao-paulo" || page === "marmoraria-zona-sul-sao-paulo"
+              ? [
+                  { p: "projetos", label: "Ver projetos realizados" },
+                  { p: "granitos", label: "Conhecer granitos" },
+                  { p: "quartzitos", label: "Conhecer quartzitos" },
+                  { p: "quartzo", label: "Conhecer quartzo" },
+                ]
+              : page === "bancadas-granito-sao-paulo" || page === "granito-churrasqueira-sao-paulo" || page === "area-gourmet-granito-sao-paulo"
+                ? [
+                    { p: "granitos", label: "Ver catálogo de granitos" },
+                    { p: "projetos-churrasqueiras", label: "Projetos de churrasqueiras" },
+                    { p: "projetos-bancadas", label: "Projetos de bancadas" },
+                    { p: "contato", label: "Solicitar orçamento" },
+                  ]
+                : page === "quartzo-cozinha-sao-paulo" || page === "banheiro-quartzo-sao-paulo"
+                  ? [
+                      { p: "quartzo", label: "Ver marcas de quartzo" },
+                      { p: "silestone", label: "Ver Silestone" },
+                      { p: "quartzo-stone", label: "Ver Quartzo Stone" },
+                      { p: "contato", label: "Solicitar orçamento" },
+                    ]
+                  : page === "escadas-marmore-sao-paulo" || page === "lareira-marmore-sao-paulo" || page === "painel-marmore-sao-paulo"
+                    ? [
+                        { p: "marmores", label: "Ver catálogo de mármores" },
+                        { p: "projetos-escadas", label: "Projetos de escadas" },
+                        { p: "projetos-lareiras", label: "Projetos de lareiras" },
+                        { p: "contato", label: "Solicitar orçamento" },
+                      ]
+                    : page === "quartzito-ilha-sao-paulo" || page === "mesa-quartzito-sao-paulo" || page === "bancada-quartzito-sao-paulo" || page === "ilha-cozinha-quartzito-sao-paulo" || page === "painel-quartzito-sao-paulo" || page === "lavatorio-quartzito-sao-paulo" || page === "churrasqueira-quartzito-sao-paulo" || page === "escada-quartzito-sao-paulo"
+                      ? [
+                          { p: "quartzitos", label: "Ver catálogo de quartzitos" },
+                          { p: "projetos-cozinhas", label: "Projetos de cozinhas" },
+                          { p: "projetos-mesas", label: "Projetos de mesas" },
+                          { p: "contato", label: "Solicitar orçamento" },
+                        ]
+                      : page === "bancada-quartzo-branco-sao-paulo"
+                        ? [
+                            { p: "quartzo", label: "Ver marcas de quartzo" },
+                            { p: "silestone", label: "Ver Silestone" },
+                            { p: "quartzo-stone", label: "Ver Quartzo Stone" },
+                            { p: "contato", label: "Solicitar orçamento" },
+                          ]
+                      : page === "bancada-dekton-sao-paulo" || page === "ilha-dekton-sao-paulo"
+                        ? [
+                            { p: "dekton", label: "Ver catálogo de Dekton" },
+                            { p: "laminas", label: "Ver lâminas e sinterizados" },
+                            { p: "projetos-bancadas", label: "Projetos de bancadas" },
+                            { p: "contato", label: "Solicitar orçamento" },
+                          ]
+                        : page === "bancada-silestone-sao-paulo"
+                          ? [
+                              { p: "silestone", label: "Ver catálogo de Silestone" },
+                              { p: "quartzo", label: "Ver marcas de quartzo" },
+                              { p: "projetos-bancadas", label: "Projetos de bancadas" },
+                              { p: "contato", label: "Solicitar orçamento" },
+                            ]
+                            : page === "lavabo-onix-sao-paulo"
+                              ? [
+                                  { p: "onix", label: "Ver catálogo de ônix" },
+                                  { p: "projetos-lavabos", label: "Projetos de lavabos" },
+                                  { p: "projetos-banheiros", label: "Projetos de banheiros" },
+                                  { p: "contato", label: "Solicitar orçamento" },
+                                ]
+                              : page === "cuba-esculpida-marmore-sao-paulo" || page === "revestimento-lareira-marmore-sao-paulo"
+                                ? [
+                                    { p: "marmores", label: "Ver catálogo de mármores" },
+                                    { p: "projetos-lavabos", label: "Projetos de lavabos" },
+                                    { p: "projetos-lareiras", label: "Projetos de lareiras" },
+                                    { p: "contato", label: "Solicitar orçamento" },
+                                  ]
+                              : page === "escada-granito-sao-paulo" || page === "pia-cozinha-granito-sao-paulo" || page === "bancada-preto-sao-gabriel-sao-paulo"
+                                ? [
+                                    { p: "granitos", label: "Ver catálogo de granitos" },
+                                    { p: "projetos-escadas", label: "Projetos de escadas" },
+                                    { p: "projetos-cozinhas", label: "Projetos de cozinhas" },
+                                    { p: "contato", label: "Solicitar orçamento" },
+                                  ]
+                              : page === "bancada-porcelanato-sao-paulo" || page === "bancada-area-gourmet-sao-paulo" || page === "bancada-ilha-cozinha-sao-paulo" || page === "pedra-para-cozinha-sao-paulo"
+                                ? [
+                                    { p: "produtos", label: "Ver materiais" },
+                                    { p: "granitos", label: "Ver granitos" },
+                                    { p: "quartzitos", label: "Ver quartzitos" },
+                                    { p: "contato", label: "Solicitar orçamento" },
+                                  ]
+                              : page === "lavatorio-marmore-sao-paulo" || page === "bancada-lavabo-sao-paulo" || page === "nicho-marmore-sao-paulo" || page === "pia-esculpida-sao-paulo"
+                                ? [
+                                    { p: "marmores", label: "Ver mármores" },
+                                    { p: "projetos-lavabos", label: "Projetos de lavabos" },
+                                    { p: "projetos-banheiros", label: "Projetos de banheiros" },
+                                    { p: "contato", label: "Solicitar orçamento" },
+                                  ]
+                              : page === "soleira-peitoril-sao-paulo" || page === "mesa-pedra-sao-paulo"
+                                ? [
+                                    { p: "projetos-mesas", label: "Projetos de mesas" },
+                                    { p: "projetos-ambientes", label: "Projetos de ambientes" },
+                                    { p: "produtos", label: "Ver materiais" },
+                                    { p: "contato", label: "Solicitar orçamento" },
+                                  ]
+                              : page === "marmoraria-perto-de-mim-sao-paulo"

@@ -1,0 +1,310 @@
+
+                    <div className="pt-2">
+                      <div className="text-xs uppercase tracking-widest text-gray-500 mb-2">Produtos</div>
+                      <div className="text-[11px] uppercase tracking-widest text-gray-400 mt-2">Pedras Naturais</div>
+                      <div className="flex flex-col">
+                        {([
+                          { p: "marmores", label: "Mármores" },
+                          { p: "granitos", label: "Granitos" },
+                          { p: "limestone", label: "Limestone" },
+                          { p: "quartzitos", label: "Quartzitos" },
+                          { p: "onix", label: "Ônix" },
+                        ] as const).map((l) => (
+                          <a key={l.p} href={`?p=${l.p}`} className="text-gray-700 hover:text-gold font-medium py-2 border-b" onClick={(e) => { e.preventDefault(); onNav(l.p); }}>
+                            {l.label}
+                          </a>
+                        ))}
+                      </div>
+
+                      <div className="text-[11px] uppercase tracking-widest text-gray-400 mt-4">Pedras Industrializadas</div>
+                      <div className="flex flex-col">
+                        {([
+                          { p: "laminas", label: "Lâminas" },
+                          { p: "quartzo", label: "Quartzo" },
+                          { p: "aglostone", label: "Prime Stone" },
+                        ] as const).map((l) => (
+                          <a key={l.p} href={`?p=${l.p}`} className="text-gray-700 hover:text-gold font-medium py-2 border-b" onClick={(e) => { e.preventDefault(); onNav(l.p); }}>
+                            {l.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    <a href="?p=projetos" className="text-gray-700 hover:text-gold font-medium py-2 border-b" onClick={(e) => { e.preventDefault(); onNav("projetos"); }}>
+                      Projetos
+                    </a>
+                    <a href="?p=blog" className="text-gray-700 hover:text-gold font-medium py-2 border-b" onClick={(e) => { e.preventDefault(); onNav("blog"); }}>
+                      Blog
+                    </a>
+                    <a href="?p=duvidas" className="text-gray-700 hover:text-gold font-medium py-2 border-b" onClick={(e) => { e.preventDefault(); onNav("duvidas"); }}>
+                      Dúvidas
+                    </a>
+
+                    <a href="#contato" className="bg-gold text-white px-6 py-3 rounded-full font-semibold text-center" onClick={(e) => { e.preventDefault(); scrollOrRouteToHash("#contato"); setMobileOpen(false); }}>
+                      Orçamento Grátis
+                    </a>
+                  </div>
+                </nav>
+
+                <div className="px-4 py-4 border-t border-gray-100">
+                  <a href="https://wa.me/5511923210038" target="_blank" rel="noreferrer" className="w-full inline-flex items-center justify-center bg-gray-900 text-white px-5 py-3 rounded-full font-semibold hover:bg-black transition btn-glow" onClick={() => setMobileOpen(false)}>
+                    <i className="fab fa-whatsapp mr-2 text-green-400" />
+                    Falar no WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          ) : null}
+        </div>
+      </header>
+
+      <main id="mainContent" style={{ paddingTop: "var(--douro-header-offset, 0px)" } as React.CSSProperties}>
+        <section id="home" aria-labelledby="home-hero-title" className={["hero-bg hero-fit flex items-start md:items-center relative", visible.has("home") ? "" : "hidden"].join(" ")}>
+          <video key={heroVideoUrl} className="hero-video" autoPlay muted loop playsInline preload="metadata" poster={ASSETS.hero.poster}>
+            <source src={heroVideoUrl} type="video/mp4" />
+            <source src={ASSETS.hero.videoFallback} type="video/mp4" />
+            Seu navegador não suporta vídeo em HTML5.
+          </video>
+
+          <div className="hero-video-scrim" />
+          <div className="absolute inset-0 gradient-gold-radial z-[2] opacity-[0.08] pointer-events-none" />
+
+          <div className="container mx-auto px-4 relative z-10 pt-8 pb-10 md:py-20">
+            <FadeInUp delayMs={60}>
+              <div className="hero-quad max-w-6xl">
+                <div className="max-w-4xl mx-auto">
+                  <div className="text-left pt-6 md:pt-10">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-black/55 border border-white/15 backdrop-blur-md px-4 py-2 text-[11px] tracking-widest uppercase text-white hero-text-shadow">
+                      <span className="w-2 h-2 rounded-full bg-gold" aria-hidden="true" />
+                      Pedras naturais e superfícies premium
+                    </div>
+
+                    <h1 id="home-hero-title" className="mt-5 text-[2.35rem] sm:text-[3.25rem] md:text-6xl lg:text-7xl font-bold text-white leading-[1.02] tracking-tight hero-text-shadow">
+                      Pedra com alma.
+                      <br />
+                      <span className="text-gold">Ambiente com presença.</span>
+                    </h1>
+                  </div>
+
+                  <div className="mt-10 md:mt-12 flex flex-col sm:flex-row gap-3 justify-center md:justify-end">
+                    <a href="#contato" className="bg-gold text-white px-8 py-3.5 rounded-full font-semibold hover:bg-yellow-600 transition btn-glow shadow-lg inline-flex items-center justify-center" onClick={(e) => { e.preventDefault(); scrollOrRouteToHash("#contato"); }}>
+                      Quero orçamento
+                    </a>
+                    <a href="?p=projetos" className="bg-white/12 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white/18 transition border border-white/12 backdrop-blur-md inline-flex items-center justify-center" onClick={(e) => { e.preventDefault(); onNav("projetos"); }}>
+                      Ver projetos
+                      <i className="fas fa-arrow-right ml-2 text-gold" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </FadeInUp>
+          </div>
+        </section>
+
+        <section id="hero-copy" className={["bg-white", visible.has("hero-copy") ? "" : "hidden"].join(" ")}>
+          <div className="container mx-auto px-4 -mt-12 sm:-mt-14 relative z-20 pb-6">
+            <div className="mx-auto max-w-5xl">
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gray-950 shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/85" aria-hidden="true" />
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gold" aria-hidden="true" />
+
+                <div className="relative p-6 sm:hidden">
+                  <p className="text-white/95 text-[14px] leading-relaxed">
+                    <span className="text-white font-semibold">A diferença não é só a pedra.</span> É a escolha, o desenho dos veios e o encaixe.
+                    <span className="text-white font-semibold"> No fim,</span> você vê um ambiente pronto — <span className="text-gold font-semibold">com presença</span>.
+                  </p>
+                </div>
+
+                <div className="relative p-7 hidden sm:grid gap-7 md:grid-cols-[1.35fr_1fr] md:items-center">
+                  <div className="md:pr-3">
+                    <p className="text-white/95 text-[15px] md:text-[16px] leading-relaxed">
+                      <span className="text-white font-semibold">A diferença não é só a pedra.</span> É como ela é escolhida, como os veios conversam com o projeto e como cada recorte encaixa.
+                      <span className="text-white font-semibold"> No fim, você não vê “obra”.</span> Você vê um ambiente pronto — <span className="text-gold font-semibold">com presença</span>.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-3 text-center">
+                    {([
+                      { n: "01", t: "Escolha guiada", d: "Material certo para seu uso" },
+                      { n: "02", t: "Veios & corte", d: "Harmonia no desenho final" },
+                      { n: "03", t: "Instalação fina", d: "Encaixe limpo e seguro" },
+                    ] as const).map((m) => (
+                      <div key={m.n} className="rounded-2xl bg-white/6 border border-white/10 px-3 py-4">
+                        <div className="text-gold font-extrabold tracking-tight text-lg">{m.n}</div>
+                        <div className="text-white font-semibold text-xs mt-1">{m.t}</div>
+                        <div className="text-white/70 text-[11px] mt-1 leading-snug">{m.d}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sobre-nos" className={["py-24 bg-white relative overflow-hidden", visible.has("sobre-nos") ? "" : "hidden"].join(" ")}>
+          <div className="absolute inset-0 gradient-gold-radial opacity-40" />
+          <div className="absolute -top-28 -left-28 w-96 h-96 bg-[rgba(201,169,97,0.1)] rounded-full blur-3xl" />
+          <div className="absolute -bottom-28 -right-28 w-96 h-96 bg-[rgba(201,169,97,0.1)] rounded-full blur-3xl" />
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="mb-8 flex flex-wrap items-center gap-3">
+              {([
+                { p: "sobre-inspiracao", label: "Nossa Inspiração" },
+                { p: "quem-somos", label: "Quem Somos" },
+                { p: "como-funciona", label: "Como Funciona" },
+              ] as const).map((tab) => (
+                <a
+                  key={tab.p}
+                  href={`?p=${tab.p}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNav(tab.p);
+                  }}
+                  className={[
+                    "inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold border transition",
+                    page === tab.p || (tab.p === "sobre-inspiracao" && (page === "sobre-nos" || page === "sobre"))
+                      ? "bg-gray-900 text-white border-gray-900"
+                      : "bg-white text-gray-900 border-gray-200 hover:border-gray-900 hover:bg-gray-50",
+                  ].join(" ")}
+                >
+                  {tab.label}
+                </a>
+              ))}
+            </div>
+
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-10 xl:gap-12">
+              <div className="lg:col-span-7 xl:col-span-8 lg:pr-2">
+                <span className="text-gold font-semibold uppercase tracking-widest text-sm">Sobre nós</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 leading-tight">
+                  {page === "quem-somos" ? (
+                    <>Quem Somos — <span className="text-gold">marmoraria em São Paulo, Zona Sul, com atuação na Grande São Paulo e região</span></>
+                  ) : page === "como-funciona" ? (
+                    <>Como Funciona — <span className="text-gold">do primeiro contato à instalação sem surpresa</span></>
+                  ) : (
+                    <>Douro Mármores — <span className="text-gold">o detalhe que faz a casa virar cenário de vida</span></>
+                  )}
+                </h2>
+
+                {page !== "quem-somos" && aboutAudioSrc ? (
+                  <div className="mt-6 rounded-2xl border border-gray-100 bg-gray-50 p-4 sm:p-5">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <div className="text-sm text-gray-700">
+                        <span className="font-semibold text-gray-900">Prefere ouvir?</span> Toque e escute a história.
+                        {aboutAudioProgress.duration > 0 ? (
+                          <span className="ml-2 text-gray-500">
+                            {formatAudioTime(aboutAudioProgress.current)} / {formatAudioTime(aboutAudioProgress.duration)}
+                          </span>
+                        ) : null}
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-2">
+                        <button type="button" onClick={onAboutAudioMain} className="inline-flex items-center justify-center rounded-full bg-gray-900 text-white px-5 py-2.5 text-sm font-semibold hover:bg-black transition">
+                          <i className={aboutAudioStatus === "idle" ? "fas fa-volume-high mr-2 text-gold" : aboutAudioStatus === "playing" ? "fas fa-pause mr-2 text-gold" : "fas fa-play mr-2 text-gold"} />
+                          {aboutAudioStatus === "idle" ? "Ouvir" : aboutAudioStatus === "playing" ? "Pausar" : "Continuar"}
+                        </button>
+
+                        {aboutAudioStatus !== "idle" ? (
+                          <button type="button" onClick={stopAboutAudio} className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-900 hover:border-gray-900 hover:bg-gray-50 transition">
+                            <i className="fas fa-stop mr-2 text-gold" />
+                            Parar
+                          </button>
+                        ) : null}
+                      </div>
+                    </div>
+
+                    <audio ref={aboutAudioRef} src={aboutAudioSrc} preload="metadata" onLoadedMetadata={(e) => {
+                      const a = e.currentTarget;
+                      setAboutAudioProgress({ current: a.currentTime || 0, duration: Number.isFinite(a.duration) ? a.duration : 0 });
+                    }} onTimeUpdate={(e) => {
+                      const a = e.currentTarget;
+                      setAboutAudioProgress((prev) => ({ ...prev, current: a.currentTime || 0 }));
+                    }} onEnded={() => { setAboutAudioStatus("idle"); }} onError={() => {
+                      const next = aboutAudioSrcIdxRef.current + 1;
+                      if (next < aboutAudioCandidates.length) {
+                        setAboutAudioSrcIdx(next);
+                        setAboutAudioStatus("idle");
+                        setAboutAudioErrorMsg(null);
+                        return;
+                      }
+                      setAboutAudioStatus("error");
+                      setAboutAudioErrorMsg(aboutAudioSrc ? `Não consegui carregar o áudio: ${aboutAudioSrc}` : "Não consegui carregar o áudio agora.");
+                    }} className="sr-only" />
+
+                    {aboutAudioStatus === "error" ? (
+                      <div className="mt-3 rounded-xl border border-gray-200 bg-white p-4 text-sm text-gray-700">
+                        <div className="font-semibold text-gray-900">Áudio indisponível</div>
+                        <p className="mt-1 text-gray-600">{aboutAudioErrorMsg || "Não consegui reproduzir o áudio agora."}</p>
+                        <div className="mt-3 flex flex-col sm:flex-row gap-2">
+                          {aboutAudioSrc ? (
+                            <a href={aboutAudioSrc} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-4 py-2 font-semibold text-gray-900 hover:border-gray-900 hover:bg-gray-50 transition">
+                              Abrir arquivo de áudio
+                              <i className="fas fa-arrow-up-right-from-square ml-2 text-gold" />
+                            </a>
+                          ) : null}
+
+                          {ttsSupported ? (
+                            <button type="button" onClick={onTtsMain} className="inline-flex items-center justify-center rounded-full bg-gray-900 text-white px-4 py-2 font-semibold hover:bg-black transition">
+                              Ouvir pela voz do navegador
+                              <i className="fas fa-volume-high ml-2 text-gold" />
+                            </button>
+                          ) : null}
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : page !== "quem-somos" && ttsSupported ? (
+                  <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div className="text-sm text-gray-600">
+                      Prefere ouvir? <span className="text-gray-900 font-semibold">Toque para escutar a história.</span>
+                      {ttsStatus !== "idle" && ttsProgress.total > 0 ? (
+                        <span className="ml-2 inline-flex items-center rounded-full bg-gray-100 border border-gray-200 px-3 py-1 text-[12px] text-gray-700">
+                          Trecho <span className="font-semibold mx-1">{ttsProgress.current}</span>de <span className="font-semibold ml-1">{ttsProgress.total}</span>
+                        </span>
+                      ) : null}
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2">
+                      <button type="button" onClick={onTtsMain} className="inline-flex items-center justify-center rounded-full bg-gray-900 text-white px-5 py-2.5 text-sm font-semibold hover:bg-black transition">
+                        <i className={ttsStatus === "idle" ? "fas fa-volume-high mr-2 text-gold" : ttsStatus === "speaking" ? "fas fa-pause mr-2 text-gold" : "fas fa-play mr-2 text-gold"} />
+                        {ttsStatus === "idle" ? "Ouvir" : ttsStatus === "speaking" ? "Pausar" : "Continuar"}
+                      </button>
+
+                      {ttsStatus !== "idle" ? (
+                        <button type="button" onClick={onTtsStop} className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-900 hover:border-gray-900 hover:bg-gray-50 transition">
+                          <i className="fas fa-stop mr-2 text-gold" />
+                          Parar
+                        </button>
+                      ) : null}
+                    </div>
+                  </div>
+                ) : null}
+
+                <div className="mt-7 max-w-none space-y-5 text-gray-700 leading-relaxed text-[16px] md:text-[17px]">
+                  {page === "quem-somos" ? (
+                    <>
+                      <p>Somos uma <strong>marmoraria em São Paulo</strong>, localizada na <strong>Zona Sul da cidade de São Paulo</strong>, especializada em transformar mármores, granitos, quartzitos e superfícies premium em bancadas, ilhas, lavatórios, escadas, painéis, nichos, pisos e projetos sob medida.</p>
+                      <p>Atendemos clientes finais, arquitetos, designers de interiores, construtoras e obras residenciais ou comerciais que procuram <strong>marmoraria na Zona Sul</strong>, <strong>marmoraria em São Paulo capital</strong> e uma <strong>marmoraria que atende a Grande São Paulo e região</strong> com orientação técnica, acabamento premium e instalação cuidadosa.</p>
+                      <p>O que fazemos vai além de cortar pedra: orientamos na escolha do material ideal, ajudamos a definir acabamento, paginação dos veios, bordas e recortes, e executamos cada peça para que o resultado final pareça elegante, limpo e coerente com o projeto.</p>
+                      <p>Para quem busca <strong>marmoraria em SP</strong> com atendimento técnico, seleção de chapas, execução sob medida e instalação de alto padrão, a proposta da Douro Mármores é simples: unir beleza, durabilidade e detalhe bem resolvido.</p>
+                    </>
+                  ) : (
+                    <>
+                      <p>Existe um momento que todo mundo reconhece: você entra em um ambiente e sente. Não é só “bonito”. É acolhedor, elegante, com presença. É o tipo de espaço que dá vontade de ficar — e de mostrar.</p>
+                      <p>A gente acredita que a pedra tem esse poder. Não porque ela é cara. Mas porque ela é <strong>verdadeira</strong>: veios únicos, profundidade, textura. Quando bem escolhida e bem executada, ela não compete com o seu projeto — ela <strong>eleva</strong> tudo.</p>
+                      <p>A <strong>Douro Mármores</strong> nasceu para transformar esse “uau” em realidade. Da primeira conversa até o último ajuste, o nosso foco é um só: você olhar para sua bancada, seu painel, sua escada… e pensar: <strong>“era exatamente isso.”</strong></p>
+                    </>
+                  )}
+                </div>
+
+                {page !== "quem-somos" ? (
+                  <>
+                    <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-none">
+                      <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 h-full">
+                        <div className="w-11 h-11 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold">
+                          <i className="fas fa-compass-drafting" />
+                        </div>
+                        <div className="font-bold text-gray-900 mt-4">Para arquitetos</div>
+                        <p className="text-sm text-gray-600 mt-2 leading-relaxed">Você traz a intenção do projeto. Nós cuidamos da execução para que o desenho sobreviva ao mundo real: encaixes, veios, recortes e acabamento que valorizam a arquitetura.</p>
+                      </div>
+

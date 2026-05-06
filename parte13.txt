@@ -1,0 +1,297 @@
+ };
+
+    if (isQuartzitos && !wasQuartzitos) rotate(quartzitosTipStorageKey, quartzitosDecorTips.length, setQuartzitosDecorTipIdx);
+    if (isGranitos && !wasGranitos) rotate(granitosTipStorageKey, granitosDecorTips.length, setGranitosDecorTipIdx);
+    if (isMarmores && !wasMarmores) rotate(marmoresTipStorageKey, marmoresDecorTips.length, setMarmoresDecorTipIdx);
+    if (isSilestone && !wasSilestone) rotate(silestoneTipStorageKey, silestoneDecorTips.length, setSilestoneDecorTipIdx);
+    if (isQuartzoStone && !wasQuartzoStone) rotate(quartzoStoneTipStorageKey, quartzoStoneDecorTips.length, setQuartzoStoneDecorTipIdx);
+    if (isPrimeStone && !wasPrimeStone) rotate(primeStoneTipStorageKey, primeStoneDecorTips.length, setPrimeStoneDecorTipIdx);
+    if (isDekton && !wasDekton) rotate(dektonTipStorageKey, dektonDecorTips.length, setDektonDecorTipIdx);
+    if (isSinth && !wasSinth) rotate(sinthTipStorageKey, sinthDecorTips.length, setSinthDecorTipIdx);
+    if (isLimestone && !wasLimestone) rotate(limestoneTipStorageKey, limestoneDecorTips.length, setLimestoneDecorTipIdx);
+    if (isOnix && !wasOnix) rotate(onixTipStorageKey, onixDecorTips.length, setOnixDecorTipIdx);
+  }, [
+    page,
+    quartzitosDecorTips,
+    granitosDecorTips,
+    marmoresDecorTips,
+    dektonDecorTips,
+    sinthDecorTips,
+    silestoneDecorTips,
+    quartzoStoneDecorTips,
+    limestoneDecorTips,
+    onixDecorTips,
+  ]);
+
+  const topBarRef = useRef<HTMLDivElement | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const lightboxCloseBtnRef = useRef<HTMLButtonElement | null>(null);
+  const [botOpen, setBotOpen] = useState(false);
+  const botCloseBtnRef = useRef<HTMLButtonElement | null>(null);
+
+  const aboutVideoSrc = ASSETS.about.video;
+  const aboutAudioCandidates = useMemo(() => {
+    const list = [
+      ASSETS.about.audio,
+      "/media/about/sobre-nos.mp3",
+      "/media/about/sobre-nos",
+      "https://douromarmores.com.br/media/about/sobre-nos.mp3",
+      "https://douromarmores.com.br/media/about/sobre-nos",
+    ].filter(Boolean) as string[];
+    return Array.from(new Set(list));
+  }, []);
+
+  const [aboutAudioSrcIdx, setAboutAudioSrcIdx] = useState(0);
+  const aboutAudioSrc = aboutAudioCandidates[aboutAudioSrcIdx];
+  const aboutAudioSrcIdxRef = useRef(0);
+  useEffect(() => {
+    aboutAudioSrcIdxRef.current = aboutAudioSrcIdx;
+  }, [aboutAudioSrcIdx]);
+
+  const aboutAudioRef = useRef<HTMLAudioElement | null>(null);
+  const [aboutAudioStatus, setAboutAudioStatus] = useState<"idle" | "playing" | "paused" | "error">("idle");
+  const [aboutAudioErrorMsg, setAboutAudioErrorMsg] = useState<string | null>(null);
+  const [aboutAudioProgress, setAboutAudioProgress] = useState<{ current: number; duration: number }>({ current: 0, duration: 0 });
+
+  useEffect(() => {
+    const a = aboutAudioRef.current;
+    if (!a) return;
+    a.pause();
+    a.currentTime = 0;
+    setAboutAudioStatus("idle");
+    setAboutAudioProgress({ current: 0, duration: 0 });
+  }, [aboutAudioSrc]);
+
+  const formatAudioTime = (s: number) => {
+    if (!Number.isFinite(s) || s <= 0) return "0:00";
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return `${m}:${String(sec).padStart(2, "0")}`;
+  };
+
+  const stopAboutAudio = () => {
+    const a = aboutAudioRef.current;
+    setAboutAudioErrorMsg(null);
+    if (!a) {
+      setAboutAudioStatus("idle");
+      setAboutAudioProgress({ current: 0, duration: 0 });
+      return;
+    }
+    a.pause();
+    a.currentTime = 0;
+    setAboutAudioStatus("idle");
+    setAboutAudioProgress({ current: 0, duration: Number.isFinite(a.duration) ? a.duration : 0 });
+  };
+
+  const ttsSupported = typeof window !== "undefined" && "speechSynthesis" in window;
+  const [ttsStatus, setTtsStatus] = useState<"idle" | "speaking" | "paused">("idle");
+  const [ttsProgress, setTtsProgress] = useState<{ current: number; total: number }>({ current: 0, total: 0 });
+  const ttsUtteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const ttsPartsRef = useRef<string[]>([]);
+  const ttsIndexRef = useRef(0);
+  const ttsCancelledRef = useRef(false);
+  const ttsVoiceRef = useRef<SpeechSynthesisVoice | null>(null);
+
+  const sobreNosAudioParts = useMemo(
+    () => [
+      "Sobre nós.",
+      "Respira fundo por um segundo. Sabe quando você entra em um ambiente… e sente na hora? Não é só bonito. É um silêncio bom. É um conforto que abraça. É presença.",
+      "A gente acredita que casa é isso: um lugar que conta a sua história sem dizer uma palavra. E a pedra, quando é bem escolhida e bem colocada, vira parte dessa história. Ela não é um detalhe… ela é uma assinatura.",
+      "Porque pedra é verdade. Veios que não se repetem. Profundidade. Textura. E aquela sensação de ‘uau’ que não vem de exagero — vem de harmonia.",
+      "O nosso trabalho é transformar intenção em realidade. Da primeira conversa até o último ajuste, o objetivo é simples: você olhar e sentir… era exatamente isso.",
+      "Para arquitetos: você traz a visão. Nós entramos com execução para que o desenho sobreviva ao mundo real — e fique ainda mais bonito quando a luz bate, quando a rotina começa, quando a casa é vivida.",
+      "Para clientes finais: você não precisa saber o nome da pedra. Você só precisa ter certeza de uma coisa: você escolheu certo. E essa certeza é uma paz.",
+      "A nossa inspiração vem do Douro, em Portugal. Um rio que serpenteia entre encostas de vinhas em socalcos — pedra sobre pedra — como se o tempo tivesse aprendido a desenhar.",
+      "No Douro, os melhores vinhos não nascem da pressa. Nascem de escolhas silenciosas: a uva certa, o corte no momento certo, a espera certa. E então o vinho aparece… como um ouro líquido. Nobre. Vivo. Memorável.",
+      "Com pedra, é a mesma filosofia. A natureza entrega a matéria‑prima com personalidade própria. Nós entramos com olhar, técnica e paciência — para revelar o que ela tem de mais bonito.",
+      "E quando tudo encaixa… você não vê ‘obra’. Você vê um ambiente pronto. Leve. Elegante. Um lugar que dá orgulho. Um lugar que dá vontade de ficar.",
+      "Se o vinho do Douro é ouro líquido, a nossa pedra é ouro sólido. Não pelo brilho. Mas pelo valor de durar… e de emocionar todos os dias.",
+    ],
+    []
+  );
+
+  useEffect(() => {
+    if (!ttsSupported) return;
+    const synth = window.speechSynthesis;
+
+    const pickVoice = () => {
+      try {
+        const voices = synth.getVoices();
+        const isPt = (v: SpeechSynthesisVoice) => (v.lang || "").toLowerCase().startsWith("pt");
+        const isPtBr = (v: SpeechSynthesisVoice) => (v.lang || "").toLowerCase().startsWith("pt-br");
+
+        const score = (v: SpeechSynthesisVoice) => {
+          const name = (v.name || "").toLowerCase();
+          const lang = (v.lang || "").toLowerCase();
+          let s = 0;
+          if (lang.startsWith("pt-br")) s += 100;
+          else if (lang.startsWith("pt")) s += 60;
+          if (name.includes("google")) s += 25;
+          if (name.includes("microsoft")) s += 22;
+          if (v.localService) s += 4;
+          if (name.includes("compact")) s -= 8;
+          return s;
+        };
+
+        const candidates = voices.filter((v) => isPt(v));
+        if (candidates.length === 0) {
+          ttsVoiceRef.current = null;
+          return;
+        }
+
+        const bestPtBr = candidates.filter(isPtBr).sort((a, b) => score(b) - score(a))[0] || null;
+        const bestAnyPt = candidates.sort((a, b) => score(b) - score(a))[0] || null;
+        ttsVoiceRef.current = bestPtBr || bestAnyPt;
+      } catch {
+        ttsVoiceRef.current = null;
+      }
+    };
+
+    pickVoice();
+    synth.onvoiceschanged = () => pickVoice();
+    return () => {
+      synth.onvoiceschanged = null;
+    };
+  }, [ttsSupported]);
+
+  const speakNextTtsPart = () => {
+    if (!ttsSupported) return;
+    const synth = window.speechSynthesis;
+    const parts = ttsPartsRef.current;
+    const idx = ttsIndexRef.current;
+    if (ttsCancelledRef.current) return;
+
+    if (idx >= parts.length) {
+      ttsUtteranceRef.current = null;
+      setTtsStatus("idle");
+      setTtsProgress({ current: 0, total: parts.length || 0 });
+      return;
+    }
+
+    const text = parts[idx] || "";
+    const u = new SpeechSynthesisUtterance(text);
+    const voice = ttsVoiceRef.current;
+    u.lang = voice?.lang || "pt-BR";
+    u.rate = 0.98;
+    u.pitch = 1.03;
+    u.volume = 1;
+    if (voice) u.voice = voice;
+
+    u.onend = () => {
+      if (ttsCancelledRef.current) return;
+      ttsIndexRef.current += 1;
+      setTimeout(() => {
+        if (ttsCancelledRef.current) return;
+        speakNextTtsPart();
+      }, 170);
+    };
+
+    u.onerror = () => {
+      ttsUtteranceRef.current = null;
+      setTtsStatus("idle");
+    };
+
+    ttsUtteranceRef.current = u;
+    setTtsProgress({ current: idx + 1, total: parts.length });
+    synth.speak(u);
+  };
+
+  const onTtsStop = () => {
+    if (!ttsSupported) return;
+    ttsCancelledRef.current = true;
+    window.speechSynthesis.cancel();
+    ttsUtteranceRef.current = null;
+    ttsPartsRef.current = [];
+    ttsIndexRef.current = 0;
+    setTtsStatus("idle");
+    setTtsProgress({ current: 0, total: 0 });
+  };
+
+  const onTtsMain = () => {
+    if (!ttsSupported) return;
+    const synth = window.speechSynthesis;
+    if (ttsStatus === "speaking") {
+      synth.pause();
+      setTtsStatus("paused");
+      return;
+    }
+    if (ttsStatus === "paused") {
+      synth.resume();
+      setTtsStatus("speaking");
+      return;
+    }
+
+    onTtsStop();
+    ttsCancelledRef.current = false;
+    ttsPartsRef.current = sobreNosAudioParts;
+    ttsIndexRef.current = 0;
+    setTtsStatus("speaking");
+    setTtsProgress({ current: 1, total: sobreNosAudioParts.length });
+
+    setTimeout(() => {
+      if (ttsCancelledRef.current) return;
+      speakNextTtsPart();
+    }, 60);
+  };
+
+  const onAboutAudioMain = async () => {
+    const a = aboutAudioRef.current;
+    if (!a) return;
+
+    onTtsStop();
+
+    try {
+      if (aboutAudioStatus === "playing") {
+        a.pause();
+        setAboutAudioStatus("paused");
+        return;
+      }
+
+      setAboutAudioErrorMsg(null);
+      a.load();
+      await a.play();
+      setAboutAudioStatus("playing");
+    } catch {
+      setAboutAudioStatus("error");
+      setAboutAudioErrorMsg(aboutAudioSrc ? `Não consegui reproduzir o áudio: ${aboutAudioSrc}` : "Não consegui reproduzir o áudio agora.");
+    }
+  };
+
+  useEffect(() => {
+    const topBar = topBarRef.current;
+    const header = headerRef.current;
+    if (!topBar || !header) return;
+
+    const apply = () => {
+      const topH = topBar.offsetHeight || 0;
+      const headerH = header.offsetHeight || 0;
+      const total = topH + headerH;
+      document.documentElement.style.setProperty("--douro-topbar-h", `${topH}px`);
+      document.documentElement.style.setProperty("--douro-header-h", `${headerH}px`);
+      document.documentElement.style.setProperty("--douro-header-offset", `${total}px`);
+    };
+
+    apply();
+
+    const ro = new ResizeObserver(apply);
+    ro.observe(topBar);
+    ro.observe(header);
+    window.addEventListener("resize", apply, { passive: true });
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", apply);
+    };
+  }, []);
+
+  const [heroVideoUrl, setHeroVideoUrl] = useState<string>(() => ASSETS.hero.video);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("douroHeroVideo");
+      if (saved && saved !== ASSETS.hero.video) setHeroVideoUrl(saved);
+    } catch {
+      // ignore
+    }
+  }, []);

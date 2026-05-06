@@ -1,0 +1,278 @@
+
+function LogoMark({ mode }: { mode: "header" | "footer" }) {
+  const gradId = useId();
+  const gradient = mode === "header" ? `douroGold_${gradId}` : `douroGoldFooter_${gradId}`;
+
+  return (
+    <span
+      className={
+        mode === "header"
+          ? "inline-flex items-center justify-center w-11 h-11 rounded-xl bg-black border border-[rgba(201,169,97,0.3)] shadow-sm"
+          : "inline-flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-white/10 border border-white/15"
+      }
+    >
+      <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id={gradient} x1="8" y1="10" x2="56" y2="54" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#c9a961" />
+            <stop offset="0.5" stopColor="#f0d78c" />
+            <stop offset="1" stopColor="#c9a961" />
+          </linearGradient>
+        </defs>
+        <rect x="7" y="7" width="50" height="50" rx="14" stroke={`url(#${gradient})`} strokeWidth="2" />
+        <path d="M23 46V18h12.4c9.9 0 17.6 5.9 17.6 14s-7.7 14-17.6 14H23Z" stroke={`url(#${gradient})`} strokeWidth="4" strokeLinejoin="round" />
+        <path d="M27 40c5.5-6.4 11.2-4.5 13.6-8.2 2.5-3.8 6.4-3.1 9.8-7.4" stroke="rgba(240,215,140,0.85)" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    </span>
+  );
+}
+
+function SmartImg({
+  src,
+  alt,
+  className,
+  loading,
+  fallbackSrcs = [],
+  style,
+  sizes,
+  fetchPriority,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  loading?: "lazy" | "eager";
+  fallbackSrcs?: string[];
+  style?: React.CSSProperties;
+  sizes?: string;
+  fetchPriority?: "high" | "low" | "auto";
+}) {
+  const placeholder =
+    "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1200'%20height='900'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20x2='1'%20y1='0'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23f3f4f6'/%3E%3Cstop%20offset='1'%20stop-color='%23e5e7eb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='1200'%20height='900'%20fill='url(%23g)'/%3E%3Ctext%20x='50%25'%20y='50%25'%20text-anchor='middle'%20dominant-baseline='middle'%20font-family='Montserrat%2C%20Arial'%20font-size='34'%20fill='%236b7280'%3EImagem%20indispon%C3%ADvel%3C/text%3E%3C/svg%3E";
+
+  const candidates = useMemo(() => {
+    const seeds = [src, ...(fallbackSrcs || [])].filter(Boolean);
+    if (seeds.length === 0) return [placeholder];
+
+    const uniq = new Set<string>();
+    const add = (u: string) => {
+      if (!u) return;
+      uniq.add(u);
+    };
+
+    const ORIGIN = typeof window !== "undefined" ? window.location.origin : "";
+    const MAIN_HOST = "https://douromarmores.com.br";
+    const IS_HSTGR = typeof window !== "undefined" && window.location.hostname.includes("hstgr.io");
+
+    const withHostVariants = (u: string) => {
+      const out: string[] = [];
+      const push = (v: string) => {
+        if (!v) return;
+        out.push(v);
+      };
+
+      if (u.startsWith(MAIN_HOST)) push(u.replace(MAIN_HOST, ""));
+      if (ORIGIN && u.startsWith(ORIGIN)) push(u.replace(ORIGIN, ""));
+
+      const isMainDomain = typeof window !== "undefined" && window.location.hostname === "douromarmores.com.br";
+
+      if (u.startsWith("/")) {
+        if (u.startsWith("/media/")) {
+          const extra = (ASSETS as any).mediaExtraBases as string[] | undefined;
+          if (Array.isArray(extra) && extra.length > 0 && !isMainDomain) {
+            for (const base of extra) push(`${base}${u}`);
+          }
+        }
+
+        push(u);
+        push(`${MAIN_HOST}${u}`);
+        if (ORIGIN) push(`${ORIGIN}${u}`);
+
+        if (u.startsWith("/media/")) {
+          const extra = (ASSETS as any).mediaExtraBases as string[] | undefined;
+          if (Array.isArray(extra)) {
+            for (const base of extra) push(`${base}${u}`);
+          }
+        }
+      } else {
+        push(u);
+      }
+
+      return out;
+    };
+
+    const pathVariants = (u: string) => {
+      const out: string[] = [];
+      const push = (v: string) => {
+        for (const h of withHostVariants(v)) out.push(h);
+      };
+
+      if (IS_HSTGR) {
+        const hasFiles = u.includes("/files/public_html/media/");
+        const hasPreviewBig = u.includes("/api/preview/big/public_html/media/");
+        const hasPreviewMed = u.includes("/api/preview/medium/public_html/media/");
+        const hasPreviewSmall = u.includes("/api/preview/small/public_html/media/");
+        const hasAnyPreview = u.includes("/api/preview/");
+        const hasRootMedia = u.includes("/media/") && !u.includes("/public_html/media/");
+
+        if (hasFiles) {
+          push(u.replace("/files/public_html/media/", "/api/preview/small/public_html/media/"));
+          push(u.replace("/files/public_html/media/", "/api/preview/medium/public_html/media/"));
+          push(u.replace("/files/public_html/media/", "/api/preview/big/public_html/media/"));
+          push(u);
+          push(u.replace("/files/public_html/media/", "/media/"));
+        } else if (hasPreviewBig) {
+          push(u.replace("/api/preview/big/public_html/media/", "/api/preview/small/public_html/media/"));
+          push(u.replace("/api/preview/big/public_html/media/", "/api/preview/medium/public_html/media/"));
+          push(u);
+          push(u.replace("/api/preview/big/public_html/media/", "/files/public_html/media/"));
+          push(u.replace("/api/preview/big/public_html/media/", "/media/"));
+        } else if (hasPreviewMed) {
+          push(u.replace("/api/preview/medium/public_html/media/", "/api/preview/small/public_html/media/"));
+          push(u);
+          push(u.replace("/api/preview/medium/public_html/media/", "/api/preview/big/public_html/media/"));
+          push(u.replace("/api/preview/medium/public_html/media/", "/files/public_html/media/"));
+          push(u.replace("/api/preview/medium/public_html/media/", "/media/"));
+        } else if (hasPreviewSmall) {
+          push(u);
+          push(u.replace("/api/preview/small/public_html/media/", "/api/preview/medium/public_html/media/"));
+          push(u.replace("/api/preview/small/public_html/media/", "/api/preview/big/public_html/media/"));
+          push(u.replace("/api/preview/small/public_html/media/", "/files/public_html/media/"));
+          push(u.replace("/api/preview/small/public_html/media/", "/media/"));
+        } else if (!hasAnyPreview && hasRootMedia) {
+          push(u.replace("/media/", "/api/preview/small/public_html/media/"));
+          push(u.replace("/media/", "/api/preview/medium/public_html/media/"));
+          push(u.replace("/media/", "/api/preview/big/public_html/media/"));
+          push(u.replace("/media/", "/files/public_html/media/"));
+          push(u);
+        } else {
+          push(u);
+        }
+      } else {
+        push(u);
+        push(u.replace("/media/", "/files/public_html/media/"));
+        push(u.replace("/files/public_html/media/", "/media/"));
+        push(u.replace("/media/", "/api/preview/big/public_html/media/"));
+        push(u.replace("/api/preview/big/public_html/media/", "/media/"));
+        push(u.replace("/api/preview/big/", "/api/preview/medium/"));
+        push(u.replace("/api/preview/big/", "/api/preview/small/"));
+      }
+
+      push(u.replace("/quartzitos/", "/quartizitos/"));
+      push(u.replace("/quartizitos/", "/quartzitos/"));
+      push(u.replace("/media/catalog/dekton/", "/media/catalog/laminas/dekton/"));
+      push(u.replace("/media/catalog/laminas/dekton/", "/media/catalog/dekton/"));
+      push(u.replace("/media/catalog/quartzo/", "/media/catalog/quartzos/"));
+      push(u.replace("/media/catalog/quartzos/", "/media/catalog/quartzo/"));
+      push(u.replace("/media/catalog/laminas/sinth/sinth-", "/media/catalog/laminas/sinth/"));
+      push(u.replace("/media/catalog/quartzos/silestone/silestone-", "/media/catalog/quartzos/silestone/"));
+      push(u.replace("/media/catalog/quartzo/silestone/silestone-", "/media/catalog/quartzo/silestone/"));
+      if (u.includes("/silestone/")) push(u.replace(/([a-z])([0-9]{1,3})(\/)/gi, "$1-$2$3"));
+      push(u.replace(/tovanew/gi, "tova-new"));
+      push(u.replace(/tova-new/gi, "tovanew"));
+      push(u.replace("/media/catalog/granitos/granito-", "/media/catalog/granitos/"));
+      push(u.replace("/media/catalog/marmores/marmore-", "/media/catalog/marmores/"));
+      push(u.replace("/media/catalog/quartzitos/quartzito-", "/media/catalog/quartzitos/"));
+      push(u.replace("/media/catalog/limestone/limestone-", "/media/catalog/limestone/"));
+      push(u.replace("/media/catalog/onix/onix-", "/media/catalog/onix/"));
+      push(u.replace("/media/catalog/granitos/granito-branco-ceara-polar/", "/media/catalog/granitos/branco-ceara-polar/"));
+      push(u.replace("/media/catalog/granitos/granito-branco-ceara-polar/", "/media/catalog/granitos/branco-polar/"));
+      push(u.replace("/media/catalog/granitos/granito-branco-pitaya/", "/media/catalog/granitos/branco-pitaya/"));
+      push(u.replace("/media/catalog/granitos/granito-branco-pitaya/", "/media/catalog/granitos/pitaya/"));
+      push(u.replace("pitaya", "pitaia"));
+      push(u.replace("/aplicacao", "/aplicação"));
+      push(u.replace("/aplicação", "/aplicacao"));
+      push(u.replace("/amostra.", "/Amostra."));
+      push(u.replace("/amostra.", "/AMOSTRA."));
+      push(u.replace("/aplicacao.", "/Aplicacao."));
+      push(u.replace("/aplicacao.", "/APLICACAO."));
+      return out;
+    };
+
+    const splitUrl = (u: string) => {
+      const m = u.match(/^(^[^?#]+)([?#].*)?$/);
+      return { core: m?.[1] ?? u, tail: m?.[2] ?? "" };
+    };
+
+    const addWithVariants = (base: string) => {
+      const { core, tail } = splitUrl(base);
+      const addFull = (u: string) => add(`${u}${tail}`);
+      const addCoreVariants = (u: string) => {
+        for (const v of pathVariants(u)) addFull(v);
+      };
+
+      const m = core.match(/^(.*)\.(avif|webp|jpg|jpeg|png|jfif)$/i);
+
+      const addUnsplashOptimized = (u: string) => {
+        if (!u.includes("images.unsplash.com/")) return;
+        try {
+          const url = new URL(u);
+          if (!url.searchParams.get("w")) url.searchParams.set("w", "1200");
+          if (!url.searchParams.get("q")) url.searchParams.set("q", "60");
+          url.searchParams.set("auto", url.searchParams.get("auto") || "format");
+          addCoreVariants(url.toString());
+        } catch {
+          // ignore
+        }
+      };
+
+      addUnsplashOptimized(core);
+      addCoreVariants(core);
+
+      const exts = ["avif", "AVIF", "webp", "WEBP", "jpg", "JPG", "jpeg", "JPEG", "png", "PNG", "jfif", "JFIF"] as const;
+      const originalExts = ["jpg", "JPG", "jpeg", "JPEG", "png", "PNG", "jfif", "JFIF"] as const;
+      const convertedExts = ["webp", "WEBP", "avif", "AVIF"] as const;
+
+      if (m) {
+        const noExt = m[1] || core;
+        for (const ext of exts) addCoreVariants(`${noExt}.${ext}`);
+        for (const o of originalExts) {
+          for (const c of convertedExts) addCoreVariants(`${noExt}.${o}.${c}`);
+        }
+        addCoreVariants(noExt);
+        return;
+      }
+
+      for (const ext of exts) addCoreVariants(`${core}.${ext}`);
+      for (const o of originalExts) {
+        for (const c of convertedExts) addCoreVariants(`${core}.${o}.${c}`);
+      }
+      addCoreVariants(core);
+    };
+
+    for (const seed of seeds) addWithVariants(seed);
+
+    add(placeholder);
+    return Array.from(uniq);
+  }, [src, fallbackSrcs]);
+
+  const [idx, setIdx] = useState(0);
+  const fallbackKey = (fallbackSrcs || []).join("|");
+  useEffect(() => {
+    setIdx(0);
+  }, [src, fallbackKey]);
+
+  const current = candidates[Math.min(idx, candidates.length - 1)] || placeholder;
+
+  const derivedSizes =
+    sizes ||
+    (className?.includes("aspect-square")
+      ? "(min-width: 1024px) 120px, (min-width: 640px) 96px, 84px"
+      : className?.includes("aspect-[16/10]") || className?.includes("aspect-[16/9]")
+        ? "(min-width: 1280px) 900px, (min-width: 1024px) 760px, 100vw"
+        : "100vw");
+
+  return (
+    <img
+      src={current}
+      alt={alt}
+      className={className}
+      loading={loading}
+      decoding="async"
+      sizes={derivedSizes}
+      fetchPriority={fetchPriority}
+      style={style}
+      onError={() => setIdx((v) => Math.min(v + 1, candidates.length - 1))}
+    />
+  );
+}
+

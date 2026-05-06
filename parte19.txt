@@ -1,0 +1,244 @@
+    <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 h-full">
+                        <div className="w-11 h-11 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold">
+                          <i className="fas fa-home" />
+                        </div>
+                        <div className="font-bold text-gray-900 mt-4">Para clientes finais</div>
+                        <p className="text-sm text-gray-600 mt-2 leading-relaxed">Você não precisa saber o nome da pedra. Só precisa ter a certeza de que escolheu certo — e a paz de ver tudo pronto, do jeito que imaginou.</p>
+                      </div>
+                    </div>
+
+                    <div className="mt-10 rounded-3xl border border-gray-100 bg-white p-7 md:p-8 shadow-sm max-w-none">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-[rgba(201,169,97,0.15)] flex items-center justify-center text-gold shrink-0">
+                          <i className="fas fa-gem" />
+                        </div>
+
+                        <div className="min-w-0">
+                          <div className="flex items-center justify-between flex-wrap gap-3">
+                            <div className="font-bold text-gray-900 text-lg">{isQuemSomosPage ? "O que fazemos e onde atuamos" : "Nossa inspiração"}</div>
+                            <div className="text-[11px] tracking-widest uppercase text-gray-500">{isQuemSomosPage ? "São Paulo • Zona Sul • Grande São Paulo" : "Inspiração: Douro • Portugal"}</div>
+                          </div>
+
+                          {isQuemSomosPage ? (
+                            <div className="mt-5 text-gray-700 leading-relaxed space-y-4">
+                              <p>Atuamos como <strong>marmoraria em São Paulo</strong> com foco em projetos sob medida para cozinhas, banheiros, lavabos, escadas, áreas gourmet, painéis, mesas, nichos, pisos e revestimentos em pedra natural ou superfícies industrializadas.</p>
+                              <p>Estamos na <strong>Zona Sul de São Paulo</strong> e atendemos clientes que procuram <strong>marmoraria na Zona Sul</strong>, <strong>marmoraria em São Paulo capital</strong> e <strong>marmoraria na Grande São Paulo</strong> com solução completa: escolha do material, medição, paginação, produção e instalação.</p>
+                              <p>Trabalhamos com <strong>mármores, granitos, quartzitos, quartzos e lâminas sinterizadas</strong>, sempre orientando o cliente sobre qual material faz mais sentido para o uso, a rotina e o estilo do ambiente.</p>
+                              <p>Mais do que entregar pedra, entregamos execução limpa, detalhe bem resolvido e um resultado final pensado para valorizar o imóvel e durar no dia a dia.</p>
+                            </div>
+                          ) : (
+                            <>
+                              <div className="mt-5 text-gray-700 leading-relaxed space-y-4">
+                                <p>Assim como o rio Douro serpenteia entre encostas de vinhas em socalcos, existe ali uma lição simples — e poderosa: o que é realmente extraordinário não nasce da pressa. Naquela paisagem de pedra e sol, cada safra é feita de escolhas silenciosas: a uva certa, o corte no tempo certo, o repouso certo.</p>
+                                <p>É assim que o Douro entrega seus vinhos mais nobres — como um <strong>ouro líquido</strong> que carrega origem, cuidado e memória. A Douro Mármores bebe dessa mesma filosofia: para nós, a pedra também tem um tempo — e um respeito.</p>
+                              </div>
+
+                              <div className="mt-6 text-gray-700 leading-relaxed space-y-4">
+                                <p>A natureza entrega a matéria‑prima com veios únicos e personalidade própria; nós entramos com técnica, olhar e paciência para revelar o melhor dela. Porque quando a peça é bem pensada, bem cortada e bem encaixada, ela não “aparece” como um item da obra: ela vira presença. Vira o ponto onde a sua casa ganha assinatura.</p>
+                                <p>Somos apaixonados por pedra e por detalhes que fazem tudo parecer inevitável. Trabalhamos com <strong>mármores, granitos, quartzitos e superfícies premium</strong> para criar peças sob medida que parecem ter nascido no lugar certo.</p>
+                                <p>A gente conhece o que dá errado — e é justamente por isso que a nossa entrega é silenciosa. Nada chama atenção para “emenda”, “linha”, “desnível”. O que aparece é só a sensação de <strong>um ambiente pronto</strong>.</p>
+                                <p className="font-semibold text-gray-900">Douro é para quem quer abrir a porta e sentir orgulho. Para quem quer receber visitas e ouvir: “Nossa… ficou incrível.”</p>
+                                <p><strong>Douro Mármores:</strong> a beleza da pedra, do jeito que ela merece ser vista.</p>
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="mt-7 flex flex-col sm:flex-row gap-4">
+                        <a href="?p=contato" className="inline-flex items-center justify-center bg-gray-900 text-white px-7 py-4 rounded-full font-semibold hover:bg-black transition btn-glow" onClick={(e) => { e.preventDefault(); onNav("contato"); }}>
+                          <i className="fas fa-calendar-check mr-2 text-gold" />
+                          Quero falar do meu projeto
+                        </a>
+                        <a href="https://wa.me/5511923210038?text=Olá!%20Quero%20orientação%20para%20escolher%20a%20pedra%20ideal%20e%20entender%20a%20faixa%20de%20investimento%20do%20meu%20projeto." target="_blank" rel="noreferrer" className="inline-flex items-center justify-center border-2 border-gray-900 text-gray-900 px-7 py-4 rounded-full font-semibold hover:bg-gray-900 hover:text-white transition">
+                          <i className="fab fa-whatsapp mr-2" />
+                          Falar no WhatsApp
+                        </a>
+                      </div>
+                    </div>
+                  </>
+                ) : null}
+              </div>
+
+              <div className="relative lg:col-span-5 xl:col-span-4 lg:sticky lg:top-28">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-black">
+                  <div className="relative aspect-[4/5] bg-black">
+                    <video key={aboutVideoSrc} className="absolute inset-0 w-full h-full object-cover" autoPlay muted loop playsInline preload="metadata" poster={ASSETS.about.poster} aria-label="Vídeo sobre nós">
+                      <source src={aboutVideoSrc} type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+
+                <div className="mt-6 rounded-3xl bg-gray-50 border border-gray-100 p-6">
+                  <div className="font-bold text-gray-900">O que você leva para casa</div>
+                  <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                    <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Um material escolhido para o seu uso — e não só para a foto.</span></li>
+                    <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Veios e recortes que conversam com a arquitetura, sem ruído visual.</span></li>
+                    <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Encaixes limpos e acabamento que deixa o ambiente leve.</span></li>
+                    <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span>Um ambiente pronto — com presença — para você sentir orgulho todos os dias.</span></li>
+                  </ul>
+
+                  <div className="mt-4 rounded-2xl bg-white border border-gray-100 p-4">
+                    <div className="text-xs uppercase tracking-widest text-gray-500">Em uma frase</div>
+                    <div className="mt-2 font-semibold text-gray-900 leading-snug">Se o vinho do Douro é <span className="text-gold">ouro líquido</span>, a pedra que entregamos é <span className="text-gold">ouro sólido</span>.</div>
+                  </div>
+                </div>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
+                  {([
+                    { icon: "fa-eye", title: "Escolha com clareza", text: "Você entende o que combina com o seu estilo e com a sua rotina." },
+                    { icon: "fa-ruler-combined", title: "Encaixe perfeito", text: "Medidas, recortes e alinhamentos pensados no detalhe." },
+                    { icon: "fa-star", title: "Acabamento que encanta", text: "Uma peça que parece única — e eleva o ambiente inteiro." },
+                  ] as const).map((c) => (
+                    <div key={c.title} className="rounded-2xl border border-gray-100 bg-gray-50 p-5 h-full">
+                      <div className="text-gold text-lg"><i className={`fas ${c.icon}`} /></div>
+                      <div className="font-bold text-gray-900 mt-2">{c.title}</div>
+                      <div className="text-sm text-gray-600 mt-1 leading-relaxed">{c.text}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="como-funciona" className={["py-24 bg-gray-50 relative overflow-hidden", visible.has("como-funciona") ? "" : "hidden"].join(" ")}>
+          <div className="absolute inset-0 gradient-gold-radial opacity-20" aria-hidden="true" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-[rgba(201,169,97,0.10)] rounded-full blur-3xl" aria-hidden="true" />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-5xl mx-auto md:mx-0 text-left">
+              <span className="text-gold font-semibold uppercase tracking-widest text-sm">Como funciona</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 leading-tight">Um processo simples para você <span className="text-gold">escolher certo</span> — e instalar sem surpresa</h2>
+              <p className="text-lg md:text-xl text-gray-600 mt-5 leading-relaxed">Você não compra “uma pedra”. Você compra <strong>resultado final</strong>: encaixe perfeito, veios bem posicionados e um ambiente que parece pronto desde sempre.</p>
+            </div>
+
+            <div className="mt-10 md:mt-12 grid md:grid-cols-12 gap-8 lg:gap-10 items-start">
+              <div className="md:col-span-5 lg:col-span-5">
+                <div className="rounded-3xl bg-white border border-gray-100 shadow-sm p-7">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-[rgba(201,169,97,0.15)] flex items-center justify-center text-gold shrink-0">
+                      <i className="fas fa-shield-check" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="font-bold text-gray-900 text-lg">O que você ganha seguindo o padrão Douro</div>
+                      <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                        <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span><strong>Decisão segura:</strong> material certo para seu uso (e não só para a foto).</span></li>
+                        <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span><strong>Orçamento claro:</strong> você entende o que está pagando (material + engenharia).</span></li>
+                        <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span><strong>Acabamento premium:</strong> emendas discretas, borda limpa e nível perfeito.</span></li>
+                        <li className="flex gap-3"><i className="fas fa-check text-gold mt-1" /><span><strong>Pós‑obra real:</strong> orientação de uso e suporte para manter a beleza no dia a dia.</span></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 grid sm:grid-cols-3 gap-3">
+                    {([
+                      { k: "Tempo", v: "15–30min", d: "Briefing" },
+                      { k: "Visita", v: "1–2h", d: "Medição" },
+                      { k: "Entrega", v: "15–20 dias úteis", d: "Média" },
+                    ] as const).map((m) => (
+                      <div key={m.k} className="rounded-2xl bg-gray-50 border border-gray-100 p-4">
+                        <div className="text-[11px] uppercase tracking-widest text-gray-500">{m.k}</div>
+                        <div className="mt-1 font-bold text-gray-900">{m.v}</div>
+                        <div className="mt-1 text-xs text-gray-600">{m.d}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-6 rounded-3xl bg-gray-900 text-white p-7">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center shrink-0"><i className="fas fa-bolt text-gold" /></div>
+                    <div className="min-w-0">
+                      <div className="font-bold text-lg">Quer acelerar seu orçamento?</div>
+                      <p className="text-white/80 text-sm mt-2 leading-relaxed">Envie <strong>fotos</strong>, <strong>medidas aproximadas</strong> e uma referência de estilo. Você recebe 2–3 opções ideais (com prós/contras) e uma faixa de investimento.</p>
+                      <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                        <a href="https://wa.me/5511923210038?text=Olá!%20Quero%20orientação%20técnica%20(material%20%2B%20faixa%20de%20investimento).%20Vou%20enviar%20fotos%20e%20medidas." target="_blank" rel="noreferrer" className="inline-flex items-center justify-center bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition">
+                          <i className="fab fa-whatsapp mr-2" />
+                          Enviar agora
+                        </a>
+                        <a href="?p=contato" onClick={(e) => { e.preventDefault(); onNav("contato"); }} className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Prefiro formulário</a>
+                      </div>
+                      <div className="mt-3 text-xs text-white/65">Sem compromisso. Resposta em dias úteis.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="md:col-span-7 lg:col-span-7">
+                <div className="rounded-3xl bg-white border border-gray-100 shadow-sm p-7 md:p-8 md:mt-0">
+                  <div className="flex items-end justify-between gap-4 flex-wrap">
+                    <div>
+                      <div className="text-xs uppercase tracking-widest text-gray-500">O processo (6 passos)</div>
+                      <div className="mt-1 font-bold text-gray-900 text-xl">Da conversa ao encaixe perfeito</div>
+                    </div>
+                    <div className="text-sm text-gray-600">Transparente, previsível e sem improviso.</div>
+                  </div>
+
+                  <ol className="mt-8 relative border-s border-gray-200">
+                    {([
+                      { n: "01", icon: "fa-comments", title: "Briefing (15–30 min)", text: "Você conta o que quer sentir no ambiente (estilo, rotina, prioridades). A gente traduz isso em direção de material + acabamento — para você decidir com clareza.", out: "Direção certa, sem dúvida" },
+                      { n: "02", icon: "fa-calculator", title: "Orçamento técnico (com ou sem medidas)", text: "Com fotos e medidas aproximadas, você recebe uma proposta transparente: opções de material + faixa de investimento + escopo do que está incluso. Se você não tiver medidas, podemos fazer uma visita de pré‑medida para orçamento. A medição final (fina) acontece somente após a aprovação do pedido e com a base pronta.", out: "Preço com contexto, sem surpresa" },
+                      { n: "03", icon: "fa-file-signature", title: "Aprovação do pedido (fechamento)", text: "Você aprova a proposta e a gente trava o escopo: acabamento, bordas, recortes, prazos e logística. Quando o material exige, já reservamos a chapa para você não perder a ‘sua’ pedra.", out: "Pedido confirmado, planejamento fechado" },
+                      { n: "04", icon: "fa-ruler-combined", title: "Medição final (no local)", text: "Com móveis/alvenaria prontos, fazemos a medição fina: nível, esquadro e interferências. Pedra não perdoa ‘quase’ — é aqui que evitamos retrabalho e emenda no lugar errado.", out: "Medida exata para corte perfeito" },
+                      { n: "05", icon: "fa-cut", title: "Chapa + paginação + produção", text: "Você aprova a chapa real e nós paginamos veios, emendas e recortes. Depois, corte e beneficiamento em oficina: quina 45º, polimento, furos e reforços invisíveis para segurança.", out: "Peças prontas, acabamento premium" },
+                      { n: "06", icon: "fa-circle-check", title: "Instalação + pós‑obra", text: "Instalamos, nivelamos e finalizamos com checklist. Depois, você recebe orientação de uso/limpeza e suporte — para a beleza continuar na rotina.", out: "Entrega + suporte no dia a dia" },
+                    ] as const).map((s) => (
+                      <li key={s.n} className="ms-7 pb-7 last:pb-0">
+                        <span className="absolute -start-[11px] mt-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-white border border-[rgba(201,169,97,0.55)]"><span className="h-2 w-2 rounded-full bg-gold" aria-hidden="true" /></span>
+                        <div className="rounded-2xl bg-gray-50 border border-gray-100 p-5 hover:bg-white transition">
+                          <div className="flex items-start gap-4 flex-wrap">
+                            <div className="min-w-0 flex-1">
+                              <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gold shrink-0"><i className={`fas ${s.icon}`} /></div>
+                                <div className="min-w-0">
+                                  <div className="text-[11px] tracking-widest uppercase text-gray-500">Passo {s.n}</div>
+                                  <div className="font-bold text-gray-900">{s.title}</div>
+                                </div>
+                              </div>
+                              <p className="mt-3 text-sm text-gray-700 leading-relaxed">{s.text}</p>
+                              <span className="hidden sm:inline-flex lg:hidden mt-4 items-center rounded-full bg-[rgba(201,169,97,0.14)] border border-[rgba(201,169,97,0.35)] px-3 py-1 text-[11px] font-semibold tracking-widest uppercase text-gray-900">{s.out}</span>
+                            </div>
+                            <span className="hidden lg:inline-flex items-center rounded-full bg-[rgba(201,169,97,0.14)] border border-[rgba(201,169,97,0.35)] px-3 py-1 text-[11px] font-semibold tracking-widest uppercase text-gray-900 shrink-0">{s.out}</span>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+
+                  <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="text-sm text-gray-600">Quer o melhor resultado sem estresse? <strong className="text-gray-900">Comece com fotos + medidas aproximadas.</strong></div>
+                    <a href="?p=contato" className="inline-flex items-center bg-gray-900 text-white px-7 py-3 rounded-full font-semibold hover:bg-black transition btn-glow" onClick={(e) => { e.preventDefault(); onNav("contato"); }}>
+                      <i className="fas fa-calendar-check mr-2 text-gold" />
+                      Quero meu orçamento técnico
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="produtos" className={["py-24 bg-white", visible.has("produtos") ? "" : "hidden"].join(" ")}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mb-16 text-left">
+              <span className="text-gold font-semibold uppercase tracking-widest text-sm">Produtos</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">Escolha o Material Ideal para o <span className="text-gold">Seu Projeto</span></h2>
+              <p className="text-xl text-gray-600">Aqui você encontra as categorias mais usadas. Em cada uma, mostramos <strong>amostra real</strong> e <strong>aplicação real</strong> (quando aplicável).</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {produtosHubCards.map((c) => (
+                <a key={c.p} href={`?p=${c.p}`} className="group relative overflow-hidden rounded-2xl aspect-[4/3] hover-lift" onClick={(e) => { e.preventDefault(); onNav(c.p); }}>
+                  <SmartImg src={c.img} fallbackSrcs={c.fallbackSrcs} alt={c.label} className="w-full h-full object-cover transition duration-700 group-hover:scale-110" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">{c.label}</h3>
+                    <p className="text-gray-300 text-sm">{c.desc}</p>
+                    <span className="inline-flex items-center text-gold mt-3 font-semibold">Ver opções <i className="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition" /></span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+

@@ -1,0 +1,299 @@
+   },
+            "marmoraria-cerqueira-cesar": {
+              title: "Marmoraria em Cerqueira César",
+              intro:
+                "Atendemos quem procura marmoraria em Cerqueira César para bancadas, cozinhas, banheiros, lavabos e projetos de alto padrão em mármore, granito, quartzo e quartzito.",
+              bullets: [
+                "Projetos premium para residências e ambientes sofisticados",
+                "Bancadas, lavatórios, cozinhas e lavabos sob medida",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento em Cerqueira César",
+            },
+            "marmoraria-sumare": {
+              title: "Marmoraria no Sumaré",
+              intro:
+                "Atendemos quem busca marmoraria no Sumaré para bancadas, lavatórios, painéis, escadas e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Projetos sob medida para residências e empreendimentos",
+                "Escadas, bancadas, painéis e lavatórios premium",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar orçamento no Sumaré",
+            },
+            "bancada-quartzito-sao-paulo": {
+              title: "Bancada em Quartzito em São Paulo",
+              intro:
+                "Produzimos bancadas em quartzito em São Paulo para cozinhas, ilhas, banheiros e áreas gourmet com veios naturais, alta resistência e acabamento premium sob medida.",
+              bullets: [
+                "Quartzitos claros, exóticos e sofisticados para bancadas",
+                "Paginação do veio, emenda planejada e acabamento premium",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar bancada em quartzito",
+            },
+            "bancada-dekton-sao-paulo": {
+              title: "Bancada em Dekton em São Paulo",
+              intro:
+                "Executamos bancadas em Dekton em São Paulo para cozinhas, áreas gourmet, ilhas e projetos contemporâneos com superfície sinterizada de alta performance.",
+              bullets: [
+                "Dekton para cozinhas, ilhas e bancadas premium",
+                "Baixa porosidade, resistência e visual contemporâneo",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar bancada em Dekton",
+            },
+            "bancada-silestone-sao-paulo": {
+              title: "Bancada em Silestone em São Paulo",
+              intro:
+                "Produzimos bancadas em Silestone em São Paulo para cozinhas e banheiros com visual uniforme, baixa porosidade e acabamento premium sob medida.",
+              bullets: [
+                "Silestone para bancadas de cozinha e banheiro",
+                "Cores premium com estética uniforme",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar bancada em Silestone",
+            },
+            "ilha-cozinha-quartzito-sao-paulo": {
+              title: "Ilha de Cozinha em Quartzito em São Paulo",
+              intro:
+                "Criamos ilhas de cozinha em quartzito em São Paulo com paginação premium, visual sofisticado, alta resistência e acabamento sob medida para projetos de alto padrão.",
+              bullets: [
+                "Quartzitos premium para ilhas protagonistas",
+                "Paginação, meia-esquadria e acabamento de alto padrão",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar ilha em quartzito",
+            },
+            "escada-granito-sao-paulo": {
+              title: "Escada em Granito em São Paulo",
+              intro:
+                "Executamos escadas em granito em São Paulo com corte técnico, acabamento premium e instalação sob medida para projetos residenciais e comerciais.",
+              bullets: [
+                "Granito para escadas internas e externas",
+                "Durabilidade, resistência e acabamento refinado",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar escada em granito",
+            },
+            "lavabo-onix-sao-paulo": {
+              title: "Lavabo em Ônix em São Paulo",
+              intro:
+                "Desenvolvemos lavabos em ônix em São Paulo com cubas, bancadas e painéis de alto impacto visual, translucidez e acabamento premium para projetos sofisticados.",
+              bullets: [
+                "Ônix para lavabos exclusivos e de alto padrão",
+                "Backlight, painéis e cubas sob medida",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar lavabo em ônix",
+            },
+            "painel-quartzito-sao-paulo": {
+              title: "Painel em Quartzito em São Paulo",
+              intro:
+                "Executamos painéis em quartzito em São Paulo para salas, halls, lareiras e ambientes sofisticados com paginação do veio e acabamento premium sob medida.",
+              bullets: [
+                "Painéis em quartzito para ambientes de destaque",
+                "Paginação e recortes com visual de alto padrão",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar painel em quartzito",
+            },
+            "pia-cozinha-granito-sao-paulo": {
+              title: "Pia de Cozinha em Granito em São Paulo",
+              intro:
+                "Produzimos pias e bancadas de cozinha em granito em São Paulo para projetos que pedem resistência, baixa manutenção e acabamento premium no dia a dia.",
+              bullets: [
+                "Granitos para cozinhas e pias sob medida",
+                "Alta resistência para rotina intensa e uso real",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar pia em granito",
+            },
+            "bancada-quartzo-branco-sao-paulo": {
+              title: "Bancada de Quartzo Branco em São Paulo",
+              intro:
+                "Produzimos bancadas de quartzo branco em São Paulo para cozinhas, ilhas, banheiros e lavabos com visual uniforme, baixa porosidade e acabamento premium sob medida.",
+              bullets: [
+                "Quartzo branco para cozinhas e banheiros contemporâneos",
+                "Baixa porosidade e estética uniforme de alto padrão",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar bancada de quartzo branco",
+            },
+            "bancada-preto-sao-gabriel-sao-paulo": {
+              title: "Bancada em Preto São Gabriel em São Paulo",
+              intro:
+                "Executamos bancadas em Preto São Gabriel em São Paulo para cozinhas, áreas gourmet, banheiros e lavabos com alta resistência, baixa manutenção e acabamento premium.",
+              bullets: [
+                "Granito Preto São Gabriel para cozinhas e áreas gourmet",
+                "Alta resistência, praticidade e visual contemporâneo",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar bancada em Preto São Gabriel",
+            },
+            "cuba-esculpida-marmore-sao-paulo": {
+              title: "Cuba Esculpida em Mármore em São Paulo",
+              intro:
+                "Criamos cubas esculpidas em mármore em São Paulo para lavabos e banheiros com acabamento sob medida, desenho autoral e integração elegante com a bancada.",
+              bullets: [
+                "Cubas esculpidas em mármore para lavabos e banheiros",
+                "Projeto sob medida com acabamento premium",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar cuba esculpida em mármore",
+            },
+            "lavatorio-quartzito-sao-paulo": {
+              title: "Lavatório em Quartzito em São Paulo",
+              intro:
+                "Produzimos lavatórios em quartzito em São Paulo para lavabos e banheiros com veios naturais, resistência superior e acabamento premium sob medida.",
+              bullets: [
+                "Quartzito para lavatórios elegantes e duráveis",
+                "Veios naturais e acabamento premium para banheiros",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar lavatório em quartzito",
+            },
+            "ilha-dekton-sao-paulo": {
+              title: "Ilha em Dekton em São Paulo",
+              intro:
+                "Executamos ilhas em Dekton em São Paulo para cozinhas contemporâneas com superfície sinterizada de alta performance, baixa porosidade e acabamento premium.",
+              bullets: [
+                "Dekton para ilhas de cozinha e bancadas contemporâneas",
+                "Superfície sinterizada com alta performance no dia a dia",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar ilha em Dekton",
+            },
+            "churrasqueira-quartzito-sao-paulo": {
+              title: "Churrasqueira em Quartzito em São Paulo",
+              intro:
+                "Desenvolvemos churrasqueiras em quartzito em São Paulo para áreas gourmet com beleza natural, resistência e acabamento premium sob medida.",
+              bullets: [
+                "Quartzito para churrasqueiras e áreas gourmet sofisticadas",
+                "Visual premium com resistência para uso real",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar churrasqueira em quartzito",
+            },
+            "revestimento-lareira-marmore-sao-paulo": {
+              title: "Revestimento de Lareira em Mármore em São Paulo",
+              intro:
+                "Executamos revestimentos de lareira em mármore em São Paulo com paginação premium, cortes limpos e acabamento sofisticado para ambientes de alto padrão.",
+              bullets: [
+                "Painéis e revestimentos em mármore para lareiras",
+                "Paginação do veio e acabamento de alto padrão",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar revestimento de lareira em mármore",
+            },
+            "escada-quartzito-sao-paulo": {
+              title: "Escada em Quartzito em São Paulo",
+              intro:
+                "Produzimos escadas em quartzito em São Paulo com veios naturais, alta resistência e instalação sob medida para projetos residenciais e comerciais.",
+              bullets: [
+                "Quartzito para escadas internas e externas sofisticadas",
+                "Alta resistência, acabamento premium e visual natural",
+                "Atendimento em São Paulo, Grande São Paulo e região",
+              ],
+              cta: "Solicitar escada em quartzito",
+            },
+            "marmoraria-socorro": {
+              title: "Marmoraria no Socorro",
+              intro:
+                "Atendemos quem busca marmoraria no Socorro para bancadas, cozinhas, banheiros, lavabos, áreas gourmet e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Bancadas sob medida para cozinha, banheiro e área gourmet",
+                "Atendimento com medição, produção e instalação técnica",
+                "Atuação no Socorro, Zona Sul e Grande São Paulo",
+              ],
+              cta: "Solicitar orçamento no Socorro",
+            },
+            "marmoraria-alto-da-boa-vista": {
+              title: "Marmoraria no Alto da Boa Vista",
+              intro:
+                "Atendemos clientes que procuram marmoraria no Alto da Boa Vista para bancadas, escadas, lavatórios, painéis e projetos premium em pedra natural e superfícies industrializadas.",
+              bullets: [
+                "Projetos residenciais e comerciais de alto padrão",
+                "Granito, mármore, quartzo, quartzito e Dekton",
+                "Atendimento com acabamento premium e instalação cuidadosa",
+              ],
+              cta: "Solicitar orçamento no Alto da Boa Vista",
+            },
+            "marmoraria-vila-suzana": {
+              title: "Marmoraria na Vila Suzana",
+              intro:
+                "Para quem busca marmoraria na Vila Suzana, atendemos cozinhas, banheiros, lavabos, áreas gourmet e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Bancadas, lavatórios, escadas e painéis premium",
+                "Orientação técnica para material, acabamento e uso",
+                "Atendimento na Vila Suzana, Morumbi e Panamby",
+              ],
+              cta: "Solicitar orçamento na Vila Suzana",
+            },
+            "marmoraria-vila-santa-catarina": {
+              title: "Marmoraria na Vila Santa Catarina",
+              intro:
+                "Atendemos quem procura marmoraria na Vila Santa Catarina para bancadas, nichos, lavatórios, cozinhas e áreas gourmet em pedra natural e superfícies premium sob medida.",
+              bullets: [
+                "Projetos sob medida para ambientes residenciais e comerciais",
+                "Granito, mármore, quartzo e quartzito com acabamento premium",
+                "Atendimento em toda a Zona Sul de São Paulo",
+              ],
+              cta: "Solicitar orçamento na Vila Santa Catarina",
+            },
+            "marmoraria-jardim-marajoara": {
+              title: "Marmoraria no Jardim Marajoara",
+              intro:
+                "Atendemos clientes que buscam marmoraria no Jardim Marajoara para cozinhas, banheiros, lavabos, escadas, áreas gourmet e projetos especiais em pedra natural e superfícies premium.",
+              bullets: [
+                "Projetos para apartamentos, casas e áreas de lazer",
+                "Bancadas, lavatórios, escadas e painéis sob medida",
+                "Atendimento no Jardim Marajoara e bairros vizinhos",
+              ],
+              cta: "Solicitar orçamento no Jardim Marajoara",
+            },
+            "marmoraria-chacara-flora": {
+              title: "Marmoraria na Chácara Flora",
+              intro:
+                "A Douro Mármores atende a Chácara Flora com projetos de alto padrão em bancadas, lavatórios, escadas, lareiras, painéis e áreas gourmet em pedras naturais e superfícies premium.",
+              bullets: [
+                "Projetos sofisticados para residências de alto padrão",
+                "Paginação, acabamento premium e instalação técnica",
+                "Atendimento na Chácara Flora, Alto da Boa Vista e entorno",
+              ],
+              cta: "Solicitar orçamento na Chácara Flora",
+            },
+            "marmoraria-jurubatuba": {
+              title: "Marmoraria em Jurubatuba",
+              intro:
+                "Atendemos quem procura marmoraria em Jurubatuba para cozinhas, bancadas, áreas gourmet, banheiros e projetos residenciais ou comerciais em mármore, granito, quartzo e quartzito.",
+              bullets: [
+                "Projetos sob medida para uso residencial e corporativo",
+                "Acabamento premium e orientação técnica",
+                "Atuação em Jurubatuba e Zona Sul de São Paulo",
+              ],
+              cta: "Solicitar orçamento em Jurubatuba",
+            },
+            "marmoraria-campo-grande": {
+              title: "Marmoraria no Campo Grande",
+              intro:
+                "Atendemos quem busca marmoraria no Campo Grande para bancadas, lavatórios, escadas, painéis e projetos sob medida em mármore, granito, quartzo, quartzito e superfícies premium.",
+              bullets: [
+                "Bancadas de cozinha, lavabo, banheiro e área gourmet",
+                "Projetos com medição, produção e instalação sob medida",
+                "Atendimento no Campo Grande e Zona Sul",
+              ],
+              cta: "Solicitar orçamento no Campo Grande",
+            },
+            "marmoraria-mirandopolis": {
+              title: "Marmoraria em Mirandópolis",
+              intro:
+                "Atendemos clientes que procuram marmoraria em Mirandópolis para cozinhas, banheiros, lavabos, escadas e áreas gourmet com acabamento premium e produção sob medida.",
+              bullets: [
+                "Projetos residenciais e comerciais em pedra natural e superfícies premium",
+                "Bancadas, lavatórios, nichos e painéis sob medida",
+                "Atendimento em Mirandópolis, Saúde e Vila Mariana",
+              ],
+              cta: "Solicitar orçamento em Mirandópolis",
+            },
+         
